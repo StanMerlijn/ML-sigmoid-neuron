@@ -1,22 +1,23 @@
 #include "header/neuron.hpp"
 
 
-Neuron::Neuron(double w1, double w2, double bias) 
-{
-    weights[0] = w1;
-    weights[1] = w2;
-    this->bias = bias;
-}
+Neuron::Neuron(const std::vector<double>& weights, double bias) 
+   : weights(weights), bias(bias) {}
 
 double Neuron::sigmoid(double x)
 {
     return 1 / (1 + exp(-x));    
 }
 
-double Neuron::feedForward(double x1, double x2)
+double Neuron::feedForward(const std::vector<int>& inputs)
 {
     // Calculate the weighted sum of the inputs
-    double weightedSum = x1 * weights[0] + x2 * weights[1] + bias;
+    double weightedSum = bias;
+    for (int i = 0; i < weights.size(); i++)
+    {
+        weightedSum += weights[i] * inputs[i];
+    }
+
     // Return the result of the sigmoid function
     double result = sigmoid(weightedSum);
 
