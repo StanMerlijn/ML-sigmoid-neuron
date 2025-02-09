@@ -8,5 +8,5 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-set(SOURCES test.cpp ../neuron.cpp)
+set(SOURCES test.cpp ../neuron.cpp ../neuronLayer.cpp ../neuronNetwork.cpp)
 add_executable(MLPerceptronTest ${SOURCES})
