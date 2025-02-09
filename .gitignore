@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+# compiled run files
+src/test/compile_run.zsh
+src/test/build/*
