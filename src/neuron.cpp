@@ -1,6 +1,5 @@
 #include "header/neuron.hpp"
 
-
 Neuron::Neuron(const std::vector<double>& weights, double bias) 
    : weights(weights), bias(bias) {}
 
