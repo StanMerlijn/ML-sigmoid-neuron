@@ -1,0 +1,27 @@
+\doxysection{neuron.\+hpp}
+\hypertarget{neuron_8hpp_source}{}\label{neuron_8hpp_source}\index{/Users/stanislav/Github/MachineLearning/ML-\/sigmoid-\/neuron/src/header/neuron.hpp@{/Users/stanislav/Github/MachineLearning/ML-\/sigmoid-\/neuron/src/header/neuron.hpp}}
+\mbox{\hyperlink{neuron_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{neuron_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{neuron_8hpp_source_l00011}00011\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{neuron_8hpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{neuron_8hpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{neuron_8hpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{neuron_8hpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{neuron_8hpp_source_l00024}\mbox{\hyperlink{class_neuron}{00024}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_neuron_a22e1a1bc52e6c233560a120d69130513}{Neuron}}\ \{}
+\DoxyCodeLine{\Hypertarget{neuron_8hpp_source_l00025}00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{neuron_8hpp_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{class_neuron_a22e1a1bc52e6c233560a120d69130513}{Neuron}}(\textcolor{keyword}{const}\ std::vector<double>\&\ weights,\ \textcolor{keywordtype}{double}\ bias);}
+\DoxyCodeLine{\Hypertarget{neuron_8hpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{neuron_8hpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{neuron_8hpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_neuron_a24893b0c92f073daae4c697b35e395f5}{sigmoid}}(\textcolor{keywordtype}{double}\ x);}
+\DoxyCodeLine{\Hypertarget{neuron_8hpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{neuron_8hpp_source_l00046}00046\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_neuron_a83336828c151d2a5f92a485f70c50ec9}{predict}}(\textcolor{keyword}{const}\ std::vector<int>\&\ inputs);}
+\DoxyCodeLine{\Hypertarget{neuron_8hpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{neuron_8hpp_source_l00051}00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_neuron_a5cf2529f3b2b8dae59ee87239ab5f62c}{\_\_str\_\_}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{neuron_8hpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{neuron_8hpp_source_l00053}00053\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{neuron_8hpp_source_l00054}00054\ \ \ \ \ std::vector<double>\ weights;\ }
+\DoxyCodeLine{\Hypertarget{neuron_8hpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{double}\ bias;\ }
+\DoxyCodeLine{\Hypertarget{neuron_8hpp_source_l00056}00056\ \};}
+
+\end{DoxyCode}

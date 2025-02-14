@@ -1,0 +1,96 @@
+\doxysection{Neuron\+Network Class Reference}
+\hypertarget{class_neuron_network}{}\label{class_neuron_network}\index{NeuronNetwork@{NeuronNetwork}}
+
+
+Represents a neural network with multiple layers of neurons.  
+
+
+
+
+{\ttfamily \#include $<$neuron\+Network.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_neuron_network_a07aa50bd1a82c0b32fa0c3f38f12bab9}{Neuron\+Network}} (std\+::vector$<$ \mbox{\hyperlink{class_neuron_layer}{Neuron\+Layer}} $>$ layers)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_neuron_network}{Neuron\+Network} with the given layers. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{class_neuron_network_a1606d994feadaba876b39bd0e975f90e}{feed\+Forward}} (const std\+::vector$<$ int $>$ \&inputs)
+\begin{DoxyCompactList}\small\item\em Performs a feedforward operation. On all the layers sequentially. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_neuron_network_afbb843316fac4aa4235941209fbd047d}{\+\_\+\+\_\+str\+\_\+\+\_\+}} () const
+\begin{DoxyCompactList}\small\item\em Prints the network details. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a neural network with multiple layers of neurons. 
+
+The \doxylink{class_neuron_network}{Neuron\+Network} class has a collection of neuron layers and provides methods to perform feedforward operations and to represent the network as a string. 
+
+Definition at line \mbox{\hyperlink{neuron_network_8hpp_source_l00025}{25}} of file \mbox{\hyperlink{neuron_network_8hpp_source}{neuron\+Network.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_neuron_network_a07aa50bd1a82c0b32fa0c3f38f12bab9}\index{NeuronNetwork@{NeuronNetwork}!NeuronNetwork@{NeuronNetwork}}
+\index{NeuronNetwork@{NeuronNetwork}!NeuronNetwork@{NeuronNetwork}}
+\doxysubsubsection{\texorpdfstring{NeuronNetwork()}{NeuronNetwork()}}
+{\footnotesize\ttfamily \label{class_neuron_network_a07aa50bd1a82c0b32fa0c3f38f12bab9} 
+Neuron\+Network\+::\+Neuron\+Network (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_neuron_layer}{Neuron\+Layer}} $>$}]{layers}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_neuron_network}{Neuron\+Network} with the given layers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em layers} & A vector of neuron layers for the network. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{neuron_network_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{neuron_network_8cpp_source}{neuron\+Network.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_neuron_network_afbb843316fac4aa4235941209fbd047d}\index{NeuronNetwork@{NeuronNetwork}!\_\_str\_\_@{\_\_str\_\_}}
+\index{\_\_str\_\_@{\_\_str\_\_}!NeuronNetwork@{NeuronNetwork}}
+\doxysubsubsection{\texorpdfstring{\_\_str\_\_()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily \label{class_neuron_network_afbb843316fac4aa4235941209fbd047d} 
+void Neuron\+Network\+::\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Prints the network details. 
+
+
+
+Definition at line \mbox{\hyperlink{neuron_network_8cpp_source_l00027}{27}} of file \mbox{\hyperlink{neuron_network_8cpp_source}{neuron\+Network.\+cpp}}.
+
+\Hypertarget{class_neuron_network_a1606d994feadaba876b39bd0e975f90e}\index{NeuronNetwork@{NeuronNetwork}!feedForward@{feedForward}}
+\index{feedForward@{feedForward}!NeuronNetwork@{NeuronNetwork}}
+\doxysubsubsection{\texorpdfstring{feedForward()}{feedForward()}}
+{\footnotesize\ttfamily \label{class_neuron_network_a1606d994feadaba876b39bd0e975f90e} 
+std\+::vector$<$ int $>$ Neuron\+Network\+::feed\+Forward (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{inputs}{}\end{DoxyParamCaption})}
+
+
+
+Performs a feedforward operation. On all the layers sequentially. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inputs} & A vector of input values. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The output of the network. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{neuron_network_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{neuron_network_8cpp_source}{neuron\+Network.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/stanislav/\+Github/\+Machine\+Learning/\+ML-\/sigmoid-\/neuron/src/header/\mbox{\hyperlink{neuron_network_8hpp}{neuron\+Network.\+hpp}}\item 
+/\+Users/stanislav/\+Github/\+Machine\+Learning/\+ML-\/sigmoid-\/neuron/src/\mbox{\hyperlink{neuron_network_8cpp}{neuron\+Network.\+cpp}}\end{DoxyCompactItemize}

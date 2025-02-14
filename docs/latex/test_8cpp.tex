@@ -1,0 +1,207 @@
+\doxysection{/\+Users/stanislav/\+Github/\+Machine\+Learning/\+ML-\/sigmoid-\/neuron/src/test/test.cpp File Reference}
+\hypertarget{test_8cpp}{}\label{test_8cpp}\index{/Users/stanislav/Github/MachineLearning/ML-\/sigmoid-\/neuron/src/test/test.cpp@{/Users/stanislav/Github/MachineLearning/ML-\/sigmoid-\/neuron/src/test/test.cpp}}
+
+
+In this file the tests for the \doxylink{class_neuron}{Neuron}, \doxylink{class_neuron_layer}{Neuron\+Layer} and \doxylink{class_neuron_network}{Neuron\+Network} classes are implemented.  
+
+
+{\ttfamily \#include "{}catch.\+hpp"{}}\newline
+{\ttfamily \#include "{}../header/neuron.\+hpp"{}}\newline
+{\ttfamily \#include "{}../header/neuron\+Layer.\+hpp"{}}\newline
+{\ttfamily \#include "{}../header/neuron\+Network.\+hpp"{}}\newline
+Include dependency graph for test.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{test_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{test_8cpp_aa2406315bdd97e70c038abc810269e74}{TEST\+\_\+\+CASE}} ("{}Neuron AND gate"{}, "{}\mbox{[}neuron\mbox{]}"{})
+\begin{DoxyCompactList}\small\item\em In this test case we test the ability of a single neuron to learn the AND gate. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{test_8cpp_aaea5777fe5bb771f2b3cf1b166c2ddd5}{TEST\+\_\+\+CASE}} ("{}Neuron OR gate"{}, "{}\mbox{[}neuron\mbox{]}"{})
+\begin{DoxyCompactList}\small\item\em In this test case we test the ability of a single neuron to learn the OR gate. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{test_8cpp_ac08b6b89467fcaa1e873ae9cd940121c}{TEST\+\_\+\+CASE}} ("{}Neuron NOT gate"{}, "{}\mbox{[}neuron\mbox{]}"{})
+\begin{DoxyCompactList}\small\item\em In this test case we test the ability of a single neuron to learn the NOT gate. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{test_8cpp_af2b2755090478b311964d946f400bbbb}{TEST\+\_\+\+CASE}} ("{}Neuron NOR gate (NOT OR)"{}, "{}\mbox{[}neuron\mbox{]}"{})
+\begin{DoxyCompactList}\small\item\em In this test case we test the ability of a single neuron to learn the NOR gate. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{test_8cpp_aff8bbc98fc598e1ed1d50d0051d36f1c}{TEST\+\_\+\+CASE}} ("{}Half Adder using Two-\/Layer \mbox{\hyperlink{class_neuron}{Neuron}} Network"{}, "{}\mbox{[}half-\/adder\mbox{]}"{})
+\begin{DoxyCompactList}\small\item\em In this test case we test the ability of a two-\/layer neural network to learn the XOR gate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+In this file the tests for the \doxylink{class_neuron}{Neuron}, \doxylink{class_neuron_layer}{Neuron\+Layer} and \doxylink{class_neuron_network}{Neuron\+Network} classes are implemented. 
+
+Unit tests for the \doxylink{class_neuron}{Neuron}, \doxylink{class_neuron_layer}{Neuron\+Layer} and \doxylink{class_neuron_network}{Neuron\+Network} classes.
+
+\begin{DoxyAuthor}{Author}
+Stan Merlijn 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/02-\/14
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025
+\end{DoxyCopyright}
+This file contains a series of test cases to verify the functionality of the \doxylink{class_neuron}{Neuron} and \doxylink{class_neuron_layer}{Neuron\+Layer} classes. The tests include training and prediction for various logic gates.
+
+Test Cases\+:
+\begin{DoxyItemize}
+\item \doxylink{class_neuron}{Neuron} for AND Gate\+: Tests the \doxylink{class_neuron}{Neuron}\textquotesingle{}s ability to learn the AND gate.
+\item \doxylink{class_neuron}{Neuron} for OR Gate\+: Tests the \doxylink{class_neuron}{Neuron}\textquotesingle{}s ability to learn the OR gate.
+\item \doxylink{class_neuron}{Neuron} for NOT Gate\+: Tests the \doxylink{class_neuron}{Neuron}\textquotesingle{}s ability to learn the NOT gate.
+\item \doxylink{class_neuron}{Neuron} for NOR Gate (3 inputs)\+: Tests the \doxylink{class_neuron}{Neuron}\textquotesingle{}s ability to learn the NOR gate with 3 inputs.
+\item \doxylink{class_neuron_network}{Neuron\+Network} for the XOR gate with 2 inputs.
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+The tests use the Catch2 framework for unit testing. 
+\end{DoxyNote}
+
+
+Definition in file \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{test_8cpp_a656eb5868e824d59f489f910db438420}\index{test.cpp@{test.cpp}!CATCH\_CONFIG\_MAIN@{CATCH\_CONFIG\_MAIN}}
+\index{CATCH\_CONFIG\_MAIN@{CATCH\_CONFIG\_MAIN}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{CATCH\_CONFIG\_MAIN}{CATCH\_CONFIG\_MAIN}}
+{\footnotesize\ttfamily \label{test_8cpp_a656eb5868e824d59f489f910db438420} 
+\#define CATCH\+\_\+\+CONFIG\+\_\+\+MAIN}
+
+
+
+Definition at line \mbox{\hyperlink{test_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{test_8cpp_aff8bbc98fc598e1ed1d50d0051d36f1c}\index{test.cpp@{test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily \label{test_8cpp_aff8bbc98fc598e1ed1d50d0051d36f1c} 
+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Half Adder using Two-\/Layer \mbox{\hyperlink{class_neuron}{Neuron}} Network"{}}]{}{, }\item[{"{}"{}}]{}{\mbox{[}half-\/adder\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+In this test case we test the ability of a two-\/layer neural network to learn the XOR gate. 
+
+The XOR gate is a binary operation that returns true if the inputs are different, and false otherwise. The network consists of two layers\+: a hidden layer with an OR and an AND neuron, and an output layer with a {\itshape XOR} and a carry neuron.
+
+The XOR in this case is not a traditional XOR gate, but a neuron that computes the XOR operation. It works because it can only take 3 inputs which is linearly separable. The inputs are the output of the OR and AND neurons. The are as follows\+: ~\newline
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ x1   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ x2   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ OR   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ AND    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ x1   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ x2   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ OR   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ AND    }\\\cline{1-4}
+\endhead
+0   &0   &0   &0    \\\cline{1-4}
+0   &1   &1   &0    \\\cline{1-4}
+1   &0   &1   &0    \\\cline{1-4}
+1   &1   &1   &1   \\\cline{1-4}
+\end{longtabu}
+
+
+So the only inputs for the XOR neuron are (0,0), (1,0) and (0,0).
+
+XOR = OR -\/ AND; neuron with weights \{1, -\/1\} and bias -\/0.\+5
+\begin{DoxyItemize}
+\item $ x1 = 0, x2 = 0: 1 * 0 + -1 * 0 - 0.5 = -0.5 $
+\item $ x1 = 1, x2 = 0: 1 * 1 + -1 * 0 - 0.5 = 0.5 $
+\item $ x1 = 1, x2 = 1: 1 * 1 + -1 * 1 - 0.5 = -0.5 $ 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{test_8cpp_source_l00137}{137}} of file \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}}.
+
+\Hypertarget{test_8cpp_aa2406315bdd97e70c038abc810269e74}\index{test.cpp@{test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily \label{test_8cpp_aa2406315bdd97e70c038abc810269e74} 
+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Neuron AND gate"{}}]{}{, }\item[{"{}"{}}]{}{\mbox{[}neuron\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+In this test case we test the ability of a single neuron to learn the AND gate. 
+
+The AND gate is a binary operation that returns true if both inputs are true, and false otherwise. With a bias of -\/1.\+5 the dot product will only be greater than 0 if both inputs are 1 ~\newline
+
+\begin{DoxyItemize}
+\item $ x1 = 0, x2 = 0: 1 * 0 + 1 * 0 - 1.5 = -1.5 $
+\item $ x1 = 0, x2 = 1: 1 * 0 + 1 * 1 - 1.5 = -0.5 $
+\item $ x1 = 1, x2 = 0: 1 * 1 + 1 * 0 - 1.5 = -0.5 $
+\item $ x1 = 1, x2 = 1: 1 * 1 + 1 * 1 - 1.5 = 0.5 $ 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{test_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}}.
+
+\Hypertarget{test_8cpp_af2b2755090478b311964d946f400bbbb}\index{test.cpp@{test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily \label{test_8cpp_af2b2755090478b311964d946f400bbbb} 
+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Neuron NOR gate (NOT OR)"{}}]{}{, }\item[{"{}"{}}]{}{\mbox{[}neuron\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+In this test case we test the ability of a single neuron to learn the NOR gate. 
+
+The NOR gate is a binary operation that returns true if both inputs are false, and false otherwise. With a bias of 0.\+5 the dot product will be greater than 0 if both inputs are 0
+\begin{DoxyItemize}
+\item $ x1 = 0, x2 = 0: -1 * 0 + -1 * 0 + 0.5 = 0.5 $ ~\newline
+
+\item $ x1 = 0, x2 = 1: -1 * 0 + -1 * 1 + 0.5 = -0.5 $
+\item $ x1 = 1, x2 = 0: -1 * 1 + -1 * 0 + 0.5 = -0.5 $
+\item $ x1 = 1, x2 = 1: -1 * 1 + -1 * 1 + 0.5 = -1.5 $ 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{test_8cpp_source_l00103}{103}} of file \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}}.
+
+\Hypertarget{test_8cpp_ac08b6b89467fcaa1e873ae9cd940121c}\index{test.cpp@{test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily \label{test_8cpp_ac08b6b89467fcaa1e873ae9cd940121c} 
+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Neuron NOT gate"{}}]{}{, }\item[{"{}"{}}]{}{\mbox{[}neuron\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+In this test case we test the ability of a single neuron to learn the NOT gate. 
+
+The NOT gate is a unary operation that returns true if the input is false, and false otherwise. With a bias of 1 the dot product will be greater than 0 if the first input is 0
+\begin{DoxyItemize}
+\item $ x1 = 1: -2 * 1 + 0 * 1 + 1 = -1 $ ~\newline
+
+\item $ x1 = 0: -2 * 0 + 0 * 0 + 1 = 1  $ ~\newline
+
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{test_8cpp_source_l00083}{83}} of file \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}}.
+
+\Hypertarget{test_8cpp_aaea5777fe5bb771f2b3cf1b166c2ddd5}\index{test.cpp@{test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily \label{test_8cpp_aaea5777fe5bb771f2b3cf1b166c2ddd5} 
+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Neuron OR gate"{}}]{}{, }\item[{"{}"{}}]{}{\mbox{[}neuron\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+In this test case we test the ability of a single neuron to learn the OR gate. 
+
+The OR gate is a binary operation that returns true if at least one of the inputs is true, and false otherwise. With a bias of -\/0.\+5 the dot product will be greater than 0 if any of the inputs are 1
+\begin{DoxyItemize}
+\item $ x1 = 0, x2 = 0: 1 * 0 + 1 * 0 - 0.5 = -0.5 $
+\item $ x1 = 0, x2 = 1: 1 * 0 + 1 * 1 - 0.5 = 0.5 $
+\item $ x1 = 1, x2 = 0: 1 * 1 + 1 * 0 - 0.5 = 0.5 $
+\item $ x1 = 1, x2 = 1: 1 * 1 + 1 * 1 - 0.5 = 1.5  $ 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{test_8cpp_source_l00065}{65}} of file \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}}.
+

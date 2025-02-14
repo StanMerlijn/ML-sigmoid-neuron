@@ -1,0 +1,13 @@
+<map id="/Users/stanislav/Github/MachineLearning/ML&#45;sigmoid&#45;neuron/src/header/neuronLayer.hpp" name="/Users/stanislav/Github/MachineLearning/ML&#45;sigmoid&#45;neuron/src/header/neuronLayer.hpp">
+<area shape="rect" id="Node000001" title="In this file the NeuronLayer class is declared. This class represents a layer of neurons in a neural ..." alt="" coords="15,5,243,61"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,183,77,208"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,63,77,110,52,169,47,167,72,108,104,60"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="182,183,239,208"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="154,60,186,108,207,167,202,168,181,110,150,63"/>
+<area shape="rect" id="Node000004" href="$neuron_8hpp.html" title="In this file the Neuron class is declared. This class represents a single neuron in a neural network." alt="" coords="86,109,172,135"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="132,61,132,93,126,93,126,61"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="116,137,69,175,66,171,112,133"/>
+<area shape="poly" id="edge6_Node000004_Node000003" title=" " alt="" coords="145,133,187,170,184,174,141,137"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="100,183,158,208"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="132,135,132,167,126,167,126,135"/>
+</map>

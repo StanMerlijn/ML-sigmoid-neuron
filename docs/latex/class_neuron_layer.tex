@@ -1,0 +1,96 @@
+\doxysection{Neuron\+Layer Class Reference}
+\hypertarget{class_neuron_layer}{}\label{class_neuron_layer}\index{NeuronLayer@{NeuronLayer}}
+
+
+Represents a layer of neurons in a neural network.  
+
+
+
+
+{\ttfamily \#include $<$neuron\+Layer.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_neuron_layer_a721acf2ce4c9f6cdd45856ecc6b3267e}{Neuron\+Layer}} (std\+::vector$<$ \mbox{\hyperlink{class_neuron}{Neuron}} $>$ neurons)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_neuron_layer}{Neuron\+Layer} with the given neurons. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{class_neuron_layer_a3caa013a743d9711d856ca235b9a4121}{feed\+Forward}} (const std\+::vector$<$ int $>$ \&inputs)
+\begin{DoxyCompactList}\small\item\em Performs a feedforward operation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_neuron_layer_a9f6cfac99b6ff59bb515ef523a6e3b55}{\+\_\+\+\_\+str\+\_\+\+\_\+}} () const
+\begin{DoxyCompactList}\small\item\em Prints the layer details. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a layer of neurons in a neural network. 
+
+The \doxylink{class_neuron_layer}{Neuron\+Layer} class has a collection of neurons and provides methods to perform feedforward operations and to represent the layer as a string. 
+
+Definition at line \mbox{\hyperlink{neuron_layer_8hpp_source_l00024}{24}} of file \mbox{\hyperlink{neuron_layer_8hpp_source}{neuron\+Layer.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_neuron_layer_a721acf2ce4c9f6cdd45856ecc6b3267e}\index{NeuronLayer@{NeuronLayer}!NeuronLayer@{NeuronLayer}}
+\index{NeuronLayer@{NeuronLayer}!NeuronLayer@{NeuronLayer}}
+\doxysubsubsection{\texorpdfstring{NeuronLayer()}{NeuronLayer()}}
+{\footnotesize\ttfamily \label{class_neuron_layer_a721acf2ce4c9f6cdd45856ecc6b3267e} 
+Neuron\+Layer\+::\+Neuron\+Layer (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_neuron}{Neuron}} $>$}]{neurons}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_neuron_layer}{Neuron\+Layer} with the given neurons. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em neurons} & A vector of neurons for the layer. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{neuron_layer_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{neuron_layer_8cpp_source}{neuron\+Layer.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_neuron_layer_a9f6cfac99b6ff59bb515ef523a6e3b55}\index{NeuronLayer@{NeuronLayer}!\_\_str\_\_@{\_\_str\_\_}}
+\index{\_\_str\_\_@{\_\_str\_\_}!NeuronLayer@{NeuronLayer}}
+\doxysubsubsection{\texorpdfstring{\_\_str\_\_()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily \label{class_neuron_layer_a9f6cfac99b6ff59bb515ef523a6e3b55} 
+void Neuron\+Layer\+::\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Prints the layer details. 
+
+
+
+Definition at line \mbox{\hyperlink{neuron_layer_8cpp_source_l00031}{31}} of file \mbox{\hyperlink{neuron_layer_8cpp_source}{neuron\+Layer.\+cpp}}.
+
+\Hypertarget{class_neuron_layer_a3caa013a743d9711d856ca235b9a4121}\index{NeuronLayer@{NeuronLayer}!feedForward@{feedForward}}
+\index{feedForward@{feedForward}!NeuronLayer@{NeuronLayer}}
+\doxysubsubsection{\texorpdfstring{feedForward()}{feedForward()}}
+{\footnotesize\ttfamily \label{class_neuron_layer_a3caa013a743d9711d856ca235b9a4121} 
+std\+::vector$<$ int $>$ Neuron\+Layer\+::feed\+Forward (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{inputs}{}\end{DoxyParamCaption})}
+
+
+
+Performs a feedforward operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inputs} & A vector of input values. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The output of the layer. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{neuron_layer_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{neuron_layer_8cpp_source}{neuron\+Layer.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/stanislav/\+Github/\+Machine\+Learning/\+ML-\/sigmoid-\/neuron/src/header/\mbox{\hyperlink{neuron_layer_8hpp}{neuron\+Layer.\+hpp}}\item 
+/\+Users/stanislav/\+Github/\+Machine\+Learning/\+ML-\/sigmoid-\/neuron/src/\mbox{\hyperlink{neuron_layer_8cpp}{neuron\+Layer.\+cpp}}\end{DoxyCompactItemize}

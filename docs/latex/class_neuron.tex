@@ -1,0 +1,122 @@
+\doxysection{Neuron Class Reference}
+\hypertarget{class_neuron}{}\label{class_neuron}\index{Neuron@{Neuron}}
+
+
+Represents a single neuron in a neural network.  
+
+
+
+
+{\ttfamily \#include $<$neuron.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_neuron_a22e1a1bc52e6c233560a120d69130513}{Neuron}} (const std\+::vector$<$ double $>$ \&weights, double bias)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_neuron}{Neuron} with the given weights and bias. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_neuron_a24893b0c92f073daae4c697b35e395f5}{sigmoid}} (double x)
+\begin{DoxyCompactList}\small\item\em Computes the sigmoid activation function. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_neuron_a83336828c151d2a5f92a485f70c50ec9}{predict}} (const std\+::vector$<$ int $>$ \&inputs)
+\begin{DoxyCompactList}\small\item\em Performs a feedforward operation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_neuron_a5cf2529f3b2b8dae59ee87239ab5f62c}{\+\_\+\+\_\+str\+\_\+\+\_\+}} () const
+\begin{DoxyCompactList}\small\item\em Prints the neuron details. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a single neuron in a neural network. 
+
+This class models a neuron with a set of weights and a bias. It provides methods to compute the sigmoid activation function and to perform a feedforward operation given a set of inputs. 
+
+Definition at line \mbox{\hyperlink{neuron_8hpp_source_l00024}{24}} of file \mbox{\hyperlink{neuron_8hpp_source}{neuron.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_neuron_a22e1a1bc52e6c233560a120d69130513}\index{Neuron@{Neuron}!Neuron@{Neuron}}
+\index{Neuron@{Neuron}!Neuron@{Neuron}}
+\doxysubsubsection{\texorpdfstring{Neuron()}{Neuron()}}
+{\footnotesize\ttfamily \label{class_neuron_a22e1a1bc52e6c233560a120d69130513} 
+Neuron\+::\+Neuron (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{weights}{, }\item[{double}]{bias}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_neuron}{Neuron} with the given weights and bias. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em weights} & A vector of weights for the neuron. \\
+\hline
+{\em bias} & The bias term for the neuron. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{neuron_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{neuron_8cpp_source}{neuron.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_neuron_a5cf2529f3b2b8dae59ee87239ab5f62c}\index{Neuron@{Neuron}!\_\_str\_\_@{\_\_str\_\_}}
+\index{\_\_str\_\_@{\_\_str\_\_}!Neuron@{Neuron}}
+\doxysubsubsection{\texorpdfstring{\_\_str\_\_()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily \label{class_neuron_a5cf2529f3b2b8dae59ee87239ab5f62c} 
+void Neuron\+::\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Prints the neuron details. 
+
+
+
+Definition at line \mbox{\hyperlink{neuron_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{neuron_8cpp_source}{neuron.\+cpp}}.
+
+\Hypertarget{class_neuron_a83336828c151d2a5f92a485f70c50ec9}\index{Neuron@{Neuron}!predict@{predict}}
+\index{predict@{predict}!Neuron@{Neuron}}
+\doxysubsubsection{\texorpdfstring{predict()}{predict()}}
+{\footnotesize\ttfamily \label{class_neuron_a83336828c151d2a5f92a485f70c50ec9} 
+double Neuron\+::predict (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{inputs}{}\end{DoxyParamCaption})}
+
+
+
+Performs a feedforward operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inputs} & A vector of input values. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The output of the neuron after applying the weights, bias, and activation function. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{neuron_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{neuron_8cpp_source}{neuron.\+cpp}}.
+
+\Hypertarget{class_neuron_a24893b0c92f073daae4c697b35e395f5}\index{Neuron@{Neuron}!sigmoid@{sigmoid}}
+\index{sigmoid@{sigmoid}!Neuron@{Neuron}}
+\doxysubsubsection{\texorpdfstring{sigmoid()}{sigmoid()}}
+{\footnotesize\ttfamily \label{class_neuron_a24893b0c92f073daae4c697b35e395f5} 
+double Neuron\+::sigmoid (\begin{DoxyParamCaption}\item[{double}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Computes the sigmoid activation function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The input value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the sigmoid function applied to x. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{neuron_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{neuron_8cpp_source}{neuron.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/stanislav/\+Github/\+Machine\+Learning/\+ML-\/sigmoid-\/neuron/src/header/\mbox{\hyperlink{neuron_8hpp}{neuron.\+hpp}}\item 
+/\+Users/stanislav/\+Github/\+Machine\+Learning/\+ML-\/sigmoid-\/neuron/src/\mbox{\hyperlink{neuron_8cpp}{neuron.\+cpp}}\end{DoxyCompactItemize}

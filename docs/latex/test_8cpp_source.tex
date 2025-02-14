@@ -1,0 +1,77 @@
+\doxysection{test.\+cpp}
+\hypertarget{test_8cpp_source}{}\label{test_8cpp_source}\index{/Users/stanislav/Github/MachineLearning/ML-\/sigmoid-\/neuron/src/test/test.cpp@{/Users/stanislav/Github/MachineLearning/ML-\/sigmoid-\/neuron/src/test/test.cpp}}
+\mbox{\hyperlink{test_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#define\ CATCH\_CONFIG\_MAIN}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}catch.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{neuron_8hpp}{../header/neuron.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{neuron_layer_8hpp}{../header/neuronLayer.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{neuron_network_8hpp}{../header/neuronNetwork.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00045}\mbox{\hyperlink{test_8cpp_aa2406315bdd97e70c038abc810269e74}{00045}}\ \mbox{\hyperlink{test_8cpp_aa2406315bdd97e70c038abc810269e74}{TEST\_CASE}}(\textcolor{stringliteral}{"{}Neuron\ AND\ gate"{}},\ \textcolor{stringliteral}{"{}[neuron]"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{comment}{//\ Create\ a\ neuron\ with\ weights\ 1,\ 1\ and\ bias\ -\/1.5}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{class_neuron}{Neuron}}\ n(\{1,\ 1\},\ -\/1.5);}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00049}00049\ \ \ \ \ REQUIRE(n.predict(\{0,\ 0\})\ ==\ 0);}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00050}00050\ \ \ \ \ REQUIRE(n.predict(\{0,\ 1\})\ ==\ 0);}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00051}00051\ \ \ \ \ REQUIRE(n.predict(\{1,\ 0\})\ ==\ 0);}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00052}00052\ \ \ \ \ REQUIRE(n.predict(\{1,\ 1\})\ ==\ 1);}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00053}00053\ \}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00065}\mbox{\hyperlink{test_8cpp_aaea5777fe5bb771f2b3cf1b166c2ddd5}{00065}}\ \mbox{\hyperlink{test_8cpp_aa2406315bdd97e70c038abc810269e74}{TEST\_CASE}}(\textcolor{stringliteral}{"{}Neuron\ OR\ gate"{}},\ \textcolor{stringliteral}{"{}[neuron]"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{comment}{//\ Create\ a\ neuron\ with\ weights\ 1,\ 1\ and\ bias\ -\/0.5}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00067}00067\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00068}00068\ \ \ \ \ \mbox{\hyperlink{class_neuron}{Neuron}}\ n(\{1,\ 1\},\ -\/0.5);}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00069}00069\ \ \ \ \ REQUIRE(n.predict(\{0,\ 0\})\ ==\ 0);}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00070}00070\ \ \ \ \ REQUIRE(n.predict(\{0,\ 1\})\ ==\ 1);}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00071}00071\ \ \ \ \ REQUIRE(n.predict(\{1,\ 0\})\ ==\ 1);}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00072}00072\ \ \ \ \ REQUIRE(n.predict(\{1,\ 1\})\ ==\ 1);}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00073}00073\ \}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00083}\mbox{\hyperlink{test_8cpp_ac08b6b89467fcaa1e873ae9cd940121c}{00083}}\ \mbox{\hyperlink{test_8cpp_aa2406315bdd97e70c038abc810269e74}{TEST\_CASE}}(\textcolor{stringliteral}{"{}Neuron\ NOT\ gate"{}},\ \textcolor{stringliteral}{"{}[neuron]"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00084}00084\ \ \ \ \ \textcolor{comment}{//\ Create\ a\ neuron\ with\ weights\ -\/2\ and\ 0\ and\ bias\ 1}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00085}00085\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00086}00086\ \ \ \ \ \mbox{\hyperlink{class_neuron}{Neuron}}\ n(\{-\/2,\ 0\},\ 1);}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00087}00087\ \ \ \ \ REQUIRE(n.predict(\{0,\ 0\})\ ==\ 1);}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00088}00088\ \ \ \ \ REQUIRE(n.predict(\{0,\ 0\})\ ==\ 1);}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00089}00089\ \ \ \ \ REQUIRE(n.predict(\{1,\ 0\})\ ==\ 0);}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00090}00090\ \ \ \ \ REQUIRE(n.predict(\{1,\ 0\})\ ==\ 0);}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00091}00091\ \}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00103}\mbox{\hyperlink{test_8cpp_af2b2755090478b311964d946f400bbbb}{00103}}\ \mbox{\hyperlink{test_8cpp_aa2406315bdd97e70c038abc810269e74}{TEST\_CASE}}(\textcolor{stringliteral}{"{}Neuron\ NOR\ gate\ (NOT\ OR)"{}},\ \textcolor{stringliteral}{"{}[neuron]"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00104}00104\ \ \ \ \ \textcolor{comment}{//\ Create\ a\ neuron\ with\ weights\ -\/1,\ -\/1\ and\ bias\ 0.5}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00105}00105\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00106}00106\ \ \ \ \ \mbox{\hyperlink{class_neuron}{Neuron}}\ n(\{-\/1,\ -\/1\},\ 0.5);}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00107}00107\ \ \ \ \ REQUIRE(n.predict(\{0,\ 0\})\ ==\ 1);}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00108}00108\ \ \ \ \ REQUIRE(n.predict(\{0,\ 1\})\ ==\ 0);}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00109}00109\ \ \ \ \ REQUIRE(n.predict(\{1,\ 0\})\ ==\ 0);}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00110}00110\ \ \ \ \ REQUIRE(n.predict(\{1,\ 1\})\ ==\ 0);}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00111}00111\ \}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00137}\mbox{\hyperlink{test_8cpp_aff8bbc98fc598e1ed1d50d0051d36f1c}{00137}}\ \mbox{\hyperlink{test_8cpp_aa2406315bdd97e70c038abc810269e74}{TEST\_CASE}}(\textcolor{stringliteral}{"{}Half\ Adder\ using\ Two-\/Layer\ Neuron\ Network"{}},\ \textcolor{stringliteral}{"{}[half-\/adder]"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00138}00138\ \ \ \ \ \textcolor{comment}{//\ Hidden\ layer:\ compute\ OR\ and\ AND}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00139}00139\ \ \ \ \ \mbox{\hyperlink{class_neuron}{Neuron}}\ n\_or(\{1,\ 1\},\ -\/0.5);\ \ \ \textcolor{comment}{//\ OR\ gate}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00140}00140\ \ \ \ \ \mbox{\hyperlink{class_neuron}{Neuron}}\ n\_and(\{1,\ 1\},\ -\/1.5);\ \ \textcolor{comment}{//\ AND\ gate}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00141}00141\ \ \ \ \ \mbox{\hyperlink{class_neuron_layer}{NeuronLayer}}\ hiddenLayer(\{n\_or,\ n\_and\});}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00142}00142\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00143}00143\ \ \ \ \ \textcolor{comment}{//\ Output\ layer:\ compute\ XOR\ (for\ sum)\ and\ carry}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00144}00144\ \ \ \ \ \mbox{\hyperlink{class_neuron}{Neuron}}\ n\_xor(\{1,\ -\/1\},\ -\/0.5);}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00146}00146\ \ \ \ \ \textcolor{comment}{//\ Carry\ =\ AND;\ neuron\ with\ weights\ \{1,\ 1\}\ and\ bias\ -\/1.5}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00147}00147\ \ \ \ \ \mbox{\hyperlink{class_neuron}{Neuron}}\ n\_carry(\{1,\ 1\},\ -\/1.5);}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00148}00148\ \ \ \ \ \mbox{\hyperlink{class_neuron_layer}{NeuronLayer}}\ outputLayer(\{n\_xor,\ n\_carry\});}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00149}00149\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00150}00150\ \ \ \ \ \textcolor{comment}{//\ Two-\/layer\ network\ for\ half\ adder}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00151}00151\ \ \ \ \ \mbox{\hyperlink{class_neuron_network}{NeuronNetwork}}\ halfAdder(\{hiddenLayer,\ outputLayer\});}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00152}00152\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00153}00153\ \ \ \ \ \textcolor{comment}{//\ Test\ cases\ for\ half\ adder:\ \{Sum,\ Carry\}}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00154}00154\ \ \ \ \ REQUIRE(halfAdder.feedForward(\{0,\ 0\})\ ==\ std::vector<int>\{0,\ 0\});}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00155}00155\ \ \ \ \ REQUIRE(halfAdder.feedForward(\{0,\ 1\})\ ==\ std::vector<int>\{1,\ 0\});}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00156}00156\ \ \ \ \ REQUIRE(halfAdder.feedForward(\{1,\ 0\})\ ==\ std::vector<int>\{1,\ 0\});}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00157}00157\ \ \ \ \ REQUIRE(halfAdder.feedForward(\{1,\ 1\})\ ==\ std::vector<int>\{0,\ 1\});}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00158}00158\ \}}
+
+\end{DoxyCode}

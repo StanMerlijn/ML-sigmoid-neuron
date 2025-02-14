@@ -1,0 +1,32 @@
+\doxysection{neuron\+Network.\+cpp}
+\hypertarget{neuron_network_8cpp_source}{}\label{neuron_network_8cpp_source}\index{/Users/stanislav/Github/MachineLearning/ML-\/sigmoid-\/neuron/src/neuronNetwork.cpp@{/Users/stanislav/Github/MachineLearning/ML-\/sigmoid-\/neuron/src/neuronNetwork.cpp}}
+\mbox{\hyperlink{neuron_network_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{neuron_network_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{neuron_network_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{neuron_network_8hpp}{header/neuronNetwork.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{neuron_network_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{neuron_network_8cpp_source_l00013}\mbox{\hyperlink{class_neuron_network_a07aa50bd1a82c0b32fa0c3f38f12bab9}{00013}}\ \mbox{\hyperlink{class_neuron_network_a07aa50bd1a82c0b32fa0c3f38f12bab9}{NeuronNetwork::NeuronNetwork}}(std::vector<NeuronLayer>\ layers)}
+\DoxyCodeLine{\Hypertarget{neuron_network_8cpp_source_l00014}00014\ \ \ \ \ :\ layers(layers)\ \{\}}
+\DoxyCodeLine{\Hypertarget{neuron_network_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{neuron_network_8cpp_source_l00016}\mbox{\hyperlink{class_neuron_network_a1606d994feadaba876b39bd0e975f90e}{00016}}\ std::vector<int>\ \mbox{\hyperlink{class_neuron_network_a1606d994feadaba876b39bd0e975f90e}{NeuronNetwork::feedForward}}(\textcolor{keyword}{const}\ std::vector<int>\&\ inputs)}
+\DoxyCodeLine{\Hypertarget{neuron_network_8cpp_source_l00017}00017\ \{\ \ \ }
+\DoxyCodeLine{\Hypertarget{neuron_network_8cpp_source_l00018}00018\ \ \ \ \ std::vector<int>\ outputs\ =\ inputs;}
+\DoxyCodeLine{\Hypertarget{neuron_network_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{comment}{//\ Feed\ forward\ through\ each\ layer\ in\ the\ network}}
+\DoxyCodeLine{\Hypertarget{neuron_network_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ layers.size();\ i++)}
+\DoxyCodeLine{\Hypertarget{neuron_network_8cpp_source_l00021}00021\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{neuron_network_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ outputs\ =\ layers[i].feedForward(outputs);}
+\DoxyCodeLine{\Hypertarget{neuron_network_8cpp_source_l00023}00023\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{neuron_network_8cpp_source_l00024}00024\ \ \ \ \ \textcolor{keywordflow}{return}\ outputs;}
+\DoxyCodeLine{\Hypertarget{neuron_network_8cpp_source_l00025}00025\ \}}
+\DoxyCodeLine{\Hypertarget{neuron_network_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{neuron_network_8cpp_source_l00027}\mbox{\hyperlink{class_neuron_network_afbb843316fac4aa4235941209fbd047d}{00027}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_neuron_network_afbb843316fac4aa4235941209fbd047d}{NeuronNetwork::\_\_str\_\_}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{neuron_network_8cpp_source_l00028}00028\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{neuron_network_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{comment}{//\ Print\ the\ network\ details}}
+\DoxyCodeLine{\Hypertarget{neuron_network_8cpp_source_l00030}00030\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}NeuronNetwork\ with\ "{}}\ <<\ layers.size()\ <<\ \textcolor{stringliteral}{"{}\ layers"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{neuron_network_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ layers.size();\ i++)}
+\DoxyCodeLine{\Hypertarget{neuron_network_8cpp_source_l00032}00032\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{neuron_network_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ layers[i].\_\_str\_\_();}
+\DoxyCodeLine{\Hypertarget{neuron_network_8cpp_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{neuron_network_8cpp_source_l00035}00035\ \}}
+
+\end{DoxyCode}

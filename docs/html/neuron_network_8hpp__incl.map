@@ -1,0 +1,18 @@
+<map id="/Users/stanislav/Github/MachineLearning/ML&#45;sigmoid&#45;neuron/src/header/neuronNetwork.hpp" name="/Users/stanislav/Github/MachineLearning/ML&#45;sigmoid&#45;neuron/src/header/neuronNetwork.hpp">
+<area shape="rect" id="Node000001" title="In this file the NeuronNetwork class is declared. This class represents a neural network with multipl..." alt="" coords="5,5,252,61"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="204,256,275,282"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="198,59,227,80,249,108,261,142,263,178,258,213,251,242,246,240,253,212,258,178,256,143,245,110,223,84,195,64"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="41,256,98,282"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="118,63,99,110,89,146,82,183,75,241,69,241,77,182,83,145,94,108,113,61"/>
+<area shape="rect" id="Node000004" href="$neuron_8hpp.html" title="In this file the Neuron class is declared. This class represents a single neuron in a neural network." alt="" coords="108,183,194,208"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="117,62,106,97,105,116,108,134,118,153,130,170,126,173,113,156,103,135,100,116,101,96,112,60"/>
+<area shape="rect" id="Node000006" href="$neuron_layer_8hpp.html" title="In this file the NeuronLayer class is declared. This class represents a layer of neurons in a neural ..." alt="" coords="118,109,235,135"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="146,60,165,94,160,97,141,63"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="168,207,214,244,211,249,164,211"/>
+<area shape="poly" id="edge6_Node000004_Node000003" title=" " alt="" coords="139,211,97,248,93,244,136,207"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="122,256,180,282"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="154,209,154,241,148,241,148,209"/>
+<area shape="poly" id="edge8_Node000006_Node000002" title=" " alt="" coords="185,134,208,182,232,241,227,243,203,184,180,136"/>
+<area shape="poly" id="edge9_Node000006_Node000003" title=" " alt="" coords="154,137,125,157,99,184,84,212,76,241,71,240,79,211,94,181,122,153,151,133"/>
+<area shape="poly" id="edge10_Node000006_Node000004" title=" " alt="" coords="175,136,163,169,158,167,170,134"/>
+</map>

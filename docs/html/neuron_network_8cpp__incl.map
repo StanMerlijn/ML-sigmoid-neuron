@@ -1,0 +1,20 @@
+<map id="/Users/stanislav/Github/MachineLearning/ML&#45;sigmoid&#45;neuron/src/neuronNetwork.cpp" name="/Users/stanislav/Github/MachineLearning/ML&#45;sigmoid&#45;neuron/src/neuronNetwork.cpp">
+<area shape="rect" id="Node000001" title="In this file the NeuronNetwork class is implemented." alt="" coords="5,5,209,61"/>
+<area shape="rect" id="Node000002" href="$neuron_network_8hpp.html" title="In this file the NeuronNetwork class is declared. This class represents a neural network with multipl..." alt="" coords="18,109,196,135"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,61,110,93,104,93,104,61"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="182,330,253,356"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="159,133,197,151,214,164,228,181,241,215,243,252,238,287,230,316,225,315,233,286,237,252,235,216,223,184,210,168,194,155,157,138"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="20,330,77,356"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="102,136,79,184,60,254,53,315,47,314,55,253,74,182,97,134"/>
+<area shape="rect" id="Node000005" href="$neuron_8hpp.html" title="In this file the Neuron class is declared. This class represents a single neuron in a neural network." alt="" coords="87,256,172,282"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="102,136,88,169,84,188,87,208,96,226,109,243,104,247,92,229,82,209,79,188,83,167,97,134"/>
+<area shape="rect" id="Node000007" href="$neuron_layer_8hpp.html" title="In this file the NeuronLayer class is declared. This class represents a layer of neurons in a neural ..." alt="" coords="97,183,213,208"/>
+<area shape="poly" id="edge8_Node000002_Node000007" title=" " alt="" coords="117,133,141,168,136,171,113,136"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="146,280,193,318,189,322,143,285"/>
+<area shape="poly" id="edge7_Node000005_Node000004" title=" " alt="" coords="118,285,75,322,72,318,114,281"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="101,330,158,356"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="132,282,132,314,127,314,127,282"/>
+<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="164,208,187,255,211,315,206,317,182,257,159,210"/>
+<area shape="poly" id="edge10_Node000007_Node000004" title=" " alt="" coords="133,211,104,231,77,258,63,286,55,315,50,314,58,284,73,255,100,227,130,207"/>
+<area shape="poly" id="edge11_Node000007_Node000005" title=" " alt="" coords="153,209,142,243,136,241,148,208"/>
+</map>
