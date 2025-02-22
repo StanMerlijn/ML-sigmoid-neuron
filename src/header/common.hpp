@@ -33,10 +33,10 @@ struct digitData
  * @brief A structure to hold the features and targets read from a CSV file. This is for the digit data set.
  * 
  * This structure contains two members:
- * - features: A Vector of ints where each 64 elements represent an image of a digit(8x8 image).
+ * - images: A Vector of ints where each 64 elements represent an image of a digit(8x8 image).
  * - targets: A vector of integers where each element represents the target value corresponding to the features.
  */
 {
-    std::vector<int> features; 
+    std::vector<int> images; 
     std::vector<int> targets;
 };

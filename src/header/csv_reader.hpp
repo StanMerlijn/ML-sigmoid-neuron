@@ -59,54 +59,6 @@ std::vector<std::vector<std::string>> read_csv(const std::string& filename, char
     return rows;
 }
 
-// Helper conversion function template with specializations.
-template<typename T>
-T convert(const std::string& str);
-
-template<>
-int convert<int>(const std::string& str) {
-    return std::stoi(str);
-}
-
-template<>
-float convert<float>(const std::string& str) {
-    return std::stof(str);
-}
-
-/**
- * @brief Reads a CSV file and returns a vector of the specified type.
- * 
- * This templatized function reads a CSV file, splits each line by the given delimiter,
- * converts the tokens to type T, and returns them.
- * 
- * @tparam T The type to convert the CSV tokens into.
- * @param filename The name of the CSV file to read.
- * @param delimiter The delimiter used in the CSV file.
- * @return A vector of all the tokens in the CSV file converted to type T.
- */
-template<typename T>
-std::vector<T> realdCsvFlat(const std::string& filename, char delimiter = ',')
-{
-    std::vector<T> data;
-    std::ifstream file(filename);
-
-    if (!file.is_open()) {
-        std::cerr << "Error: Could not open file " << filename << std::endl;
-        return data;
-    }
-    
-    std::string line;
-    while (std::getline(file, line)) {
-        std::stringstream ss(line);
-        std::string token;
-
-        while (std::getline(ss, token, delimiter)) {
-            data.push_back(convert<T>(token));
-        }
-    }
-    file.close();
-    return data;
-}
 
 /**
  * @brief Extracts the features from the data (column).
@@ -188,3 +140,68 @@ irisData filterData(const std::vector<std::vector<float>>& features, const std::
  * @param filename The name of the CSV file to read.
  * @return irisData A structure containing the features and target values.
  */
+
+// Helper conversion function template with specializations.
+template<typename T>
+T convert(const std::string& str);
+
+template<>
+int convert<int>(const std::string& str) {
+    return std::stoi(str);
+}
+
+template<>
+float convert<float>(const std::string& str) {
+    return std::stof(str);
+}
+
+/**
+ * @brief Reads a CSV file and returns a vector of the specified type.
+ * 
+ * This templatized function reads a CSV file, splits each line by the given delimiter,
+ * converts the tokens to type T, and returns them.
+ * 
+ * @tparam T The type to convert the CSV tokens into.
+ * @param filename The name of the CSV file to read.
+ * @param delimiter The delimiter used in the CSV file.
+ * @return A vector of all the tokens in the CSV file converted to type T.
+ */
+template<typename T>
+std::vector<T> realdCsvFlat(const std::string& filename, char delimiter = ',')
+{
+    std::vector<T> data;
+    std::ifstream file(filename);
+
+    if (!file.is_open()) {
+        std::cerr << "Error: Could not open file " << filename << std::endl;
+        return data;
+    }
+    
+    std::string line;
+    while (std::getline(file, line)) {
+        std::stringstream ss(line);
+        std::string token;
+
+        while (std::getline(ss, token, delimiter)) {
+            data.push_back(convert<T>(token));
+        }
+    }
+    file.close();
+    return data;
+}
+
+
+digitData readDigitData()
+{  
+    // Not the best way to do this, but it works for now
+    // presumes that the data is in the data folder in the root of the project
+    const std::string filenameImages = "../../data/digits_images.csv";
+    const std::string filenameTargets = "../../data/digits_targets.csv";
+    
+    // Load the data
+    digitData data;
+    data.images = realdCsvFlat<int>(filenameImages);
+    data.targets = realdCsvFlat<int>(filenameTargets);
+
+    return data;
+}

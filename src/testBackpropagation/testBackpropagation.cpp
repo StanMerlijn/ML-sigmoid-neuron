@@ -10,6 +10,7 @@
  */
 #define CATCH_CONFIG_MAIN
 #include "../header/catch.hpp"
+#include "../header/common.hpp"
 #include "../header/csv_reader.hpp"
 
 /**
@@ -18,10 +19,9 @@
  */
 TEST_CASE("Loading digit data", "[backpropagation]") {
     // Load the digit data
-    std::vector<int> targets = realdCsvFlat<int>("../../data/digits_images.csv");
-    std::vector<int> features = realdCsvFlat<int>("../../data/digits_targets.csv");
+    digitData _digitData = readDigitData();
 
     // Check the size of the data
-    REQUIRE(targets.size() == 1797 * 64);
-    REQUIRE(features.size() == 1797);
+    REQUIRE(_digitData.images.size() == 1797 * 64);
+    REQUIRE(_digitData.targets.size() == 1797);
 }
