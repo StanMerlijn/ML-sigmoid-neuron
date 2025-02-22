@@ -9,24 +9,11 @@
  * 
  */
 #pragma once
+#include "common.hpp"
 #include <fstream>
-#include <iostream>
 #include <sstream>
-#include <string>
-#include <vector>
 
-struct irisData
-/**
- * @brief A structure to hold the features and targets read from a CSV file. This is fdor the iris data set.
- * 
- * This structure contains two members:
- * - features: A 2D vector of floats where each inner vector represents a set of features for a single data point.
- * - targets: A vector of integers where each element represents the target value corresponding to the features.
- */
-{
-    std::vector<std::vector<float>> features; 
-    std::vector<int> targets;
-};
+
 
 /**
  * @brief Reads a CSV file and returns a vector of vectors.
@@ -72,6 +59,55 @@ std::vector<std::vector<std::string>> read_csv(const std::string& filename, char
     return rows;
 }
 
+// Helper conversion function template with specializations.
+template<typename T>
+T convert(const std::string& str);
+
+template<>
+int convert<int>(const std::string& str) {
+    return std::stoi(str);
+}
+
+template<>
+float convert<float>(const std::string& str) {
+    return std::stof(str);
+}
+
+/**
+ * @brief Reads a CSV file and returns a vector of the specified type.
+ * 
+ * This templatized function reads a CSV file, splits each line by the given delimiter,
+ * converts the tokens to type T, and returns them.
+ * 
+ * @tparam T The type to convert the CSV tokens into.
+ * @param filename The name of the CSV file to read.
+ * @param delimiter The delimiter used in the CSV file.
+ * @return A vector of all the tokens in the CSV file converted to type T.
+ */
+template<typename T>
+std::vector<T> realdCsvFlat(const std::string& filename, char delimiter = ',')
+{
+    std::vector<T> data;
+    std::ifstream file(filename);
+
+    if (!file.is_open()) {
+        std::cerr << "Error: Could not open file " << filename << std::endl;
+        return data;
+    }
+    
+    std::string line;
+    while (std::getline(file, line)) {
+        std::stringstream ss(line);
+        std::string token;
+
+        while (std::getline(ss, token, delimiter)) {
+            data.push_back(convert<T>(token));
+        }
+    }
+    file.close();
+    return data;
+}
+
 /**
  * @brief Extracts the features from the data (column).
  * 
@@ -81,7 +117,7 @@ std::vector<std::vector<std::string>> read_csv(const std::string& filename, char
  * @param data A vector of vectors representing the rows in the CSV file.
  * @return A vector containing the features.
  */
-std::vector<int> get_targets(const std::vector<std::vector<std::string>>& data)
+std::vector<int> getTargets(const std::vector<std::vector<std::string>>& data)
 {
     std::vector<int> targets;
     for (const auto& row : data) {
@@ -99,7 +135,7 @@ std::vector<int> get_targets(const std::vector<std::vector<std::string>>& data)
  * @param data A vector of vectors representing the rows in the CSV file.
  * @return A vector containing the features.
  */
-std::vector<std::vector<float>> get_features(const std::vector<std::vector<std::string>>& data)
+std::vector<std::vector<float>> getFeatures(const std::vector<std::vector<std::string>>& data)
 {
     std::vector<std::vector<float>> features;
     for (const auto& row : data) {
@@ -125,7 +161,7 @@ std::vector<std::vector<float>> get_features(const std::vector<std::vector<std::
  * @param target The target value to filter out from the data.
  * @return irisData A structure containing the filtered feature data and target values.
  */
-irisData filter_data(const std::vector<std::vector<float>>& features, const std::vector<int>& targets, int target)
+irisData filterData(const std::vector<std::vector<float>>& features, const std::vector<int>& targets, int target)
 {
     std::vector<std::vector<float>> filtered_features;
     std::vector<int> filtered_targets;
@@ -137,3 +173,18 @@ irisData filter_data(const std::vector<std::vector<float>>& features, const std:
     }
     return irisData{filtered_features, filtered_targets};
 }
+
+
+// =================================================================================================
+// Section: reading digits data
+// =================================================================================================
+
+/**
+ * @brief Reads the digit data from a CSV file.
+ * 
+ * This function reads the digit data from a CSV file and returns a structure
+ * containing the features and target values.
+ * 
+ * @param filename The name of the CSV file to read.
+ * @return irisData A structure containing the features and target values.
+ */

@@ -9,7 +9,7 @@
  * 
  */
 #define CATCH_CONFIG_MAIN
-#include "catch.hpp"
+#include "../header/catch.hpp"
 
 #include "../header/neuron.hpp"
 #include "../header/neuronLayer.hpp"
