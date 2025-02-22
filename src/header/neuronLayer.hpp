@@ -34,7 +34,7 @@ public:
      * @param inputs A vector of input values.
      * @return The output of the layer. 
      */
-    std::vector<int> feedForward(const std::vector<int>& inputs);
+    std::vector<float> feedForward(const std::vector<float>& inputs);
     
     /**
      * @brief Prints the layer details.

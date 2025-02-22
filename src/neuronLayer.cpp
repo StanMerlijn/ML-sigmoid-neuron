@@ -14,9 +14,9 @@ NeuronLayer::NeuronLayer(std::vector<Neuron> neurons)
 : neurons(neurons) {}
 
 
-std::vector<int> NeuronLayer::feedForward(const std::vector<int>& inputs)
+std::vector<float> NeuronLayer::feedForward(const std::vector<float>& inputs)
 {   
-    std::vector<int> outputs;
+    std::vector<float> outputs;
     // Reserve space for the outputs
     outputs.reserve(neurons.capacity());
     // Feed forward through each neuron in the layer

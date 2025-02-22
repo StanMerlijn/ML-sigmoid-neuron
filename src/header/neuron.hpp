@@ -9,10 +9,7 @@
  * 
  */
 #pragma once
-#include <iostream>
-#include <cmath>
-#include <vector>
-
+#include "common.hpp"
 /**
  * @class Neuron
  * @brief Represents a single neuron in a neural network.
@@ -28,29 +25,36 @@ public:
      * @param weights A vector of weights for the neuron.
      * @param bias The bias term for the neuron.
      */
-    Neuron(const std::vector<double>& weights, double bias);
-
+    Neuron(const std::vector<float>& weights, float bias);
 
     /**
      * @brief Computes the sigmoid activation function.
      * @param x The input value.
      * @return The result of the sigmoid function applied to x.
      */
-    double sigmoid(double x);
+    float sigmoid(float x);
 
     /**
      * @brief Performs a feedforward operation.
      * @param inputs A vector of input values.
      * @return The output of the neuron after applying the weights, bias, and activation function.
      */
-    double predict(const std::vector<int>& inputs);
+    float predict(const std::vector<float>& inputs);
+
+    /**
+     * @brief Computes the error for a given input and target value. using the derivative of the sigmoid function.
+     * @param inputs A vector of input values.
+     * @param target The target value.
+     * @return The error between the predicted and target values.
+     */
+    float Error(const std::vector<float>& inputs, int target);
 
     /**
      * @brief Prints the neuron details.
      */
     void __str__() const;
-
+    
 private:
-    std::vector<double> weights; /**< The weights for the neuron. */
-    double bias; /**< The bias term for the neuron. */
+    std::vector<float> weights; /**< The weights for the neuron. */
+    float bias; /**< The bias term for the neuron. */
 };

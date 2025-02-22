@@ -12,6 +12,7 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#include <cmath>
 #include <string>
 
 
@@ -40,3 +41,14 @@ struct digitData
     std::vector<int> images; 
     std::vector<int> targets;
 };
+
+
+inline float gradientBetweenNeurons(float& output, float& error)
+{
+    return output * error;
+}
+
+inline float deltaGradient(float& learningRate, float& gradient)
+{
+    return learningRate * gradient;
+}

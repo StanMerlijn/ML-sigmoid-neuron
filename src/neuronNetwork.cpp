@@ -13,9 +13,9 @@
 NeuronNetwork::NeuronNetwork(std::vector<NeuronLayer> layers)
     : layers(layers) {}
 
-std::vector<int> NeuronNetwork::feedForward(const std::vector<int>& inputs)
+std::vector<float> NeuronNetwork::feedForward(const std::vector<float>& inputs)
 {   
-    std::vector<int> outputs = inputs;
+    std::vector<float> outputs = inputs;
     // Feed forward through each layer in the network
     for (int i = 0; i < layers.size(); i++)
     {
