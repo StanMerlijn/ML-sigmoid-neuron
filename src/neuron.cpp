@@ -10,8 +10,8 @@
  */
 #include "header/neuron.hpp"
 
-Neuron::Neuron(const std::vector<float>& weights, float bias) 
-   : weights(weights), bias(bias) {}
+Neuron::Neuron(const std::vector<float>& weights, float bias, float learningRate) 
+    : weights(weights), bias(bias), learningRate(learningRate) {}
 
 float Neuron::sigmoid(float x)
 {

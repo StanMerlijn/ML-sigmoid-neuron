@@ -25,7 +25,7 @@ public:
      * @param weights A vector of weights for the neuron.
      * @param bias The bias term for the neuron.
      */
-    Neuron(const std::vector<float>& weights, float bias);
+    Neuron(const std::vector<float>& weights, float bias, float learningRate = 0.1);
 
     /**
      * @brief Computes the sigmoid activation function.
@@ -40,6 +40,13 @@ public:
      * @return The output of the neuron after applying the weights, bias, and activation function.
      */
     float predict(const std::vector<float>& inputs);
+
+    /**
+     * @brief Updates the weights and bias of the neuron using the given inputs and learning rate.
+     * @param inputs A vector of input values.
+     * @param learningRate The learning rate for updating the weights.
+     */
+    void update(const std::vector<float>& inputs);
 
     /**
      * @brief Computes the error for a given input and target value. using the derivative of the sigmoid function.
@@ -57,4 +64,5 @@ public:
 private:
     std::vector<float> weights; /**< The weights for the neuron. */
     float bias; /**< The bias term for the neuron. */
+    float learningRate; /**< The learning rate for updating the weights. */
 };
