@@ -52,20 +52,40 @@ public:
      * @brief Updates the weights and bias of the neuron. Using the previously calculated errors.
      */
     void update();
-    
-    /**
-     * @brief Computes the error for a given input and target value. using the derivative of the sigmoid function.
-     * @param inputs A vector of input values.
-     * @param target The target value.
-     * @return The error between the predicted and target values.
-     */
-    float Error(const std::vector<float>& inputs, float& target);
 
+    /**
+     * @brief Calculates the error for the output layer.
+     * @param output The output of the neuron.
+     * @param target The target value.
+     * @return The error for the output layer.
+     */
+    float hiddenError(const std::vector<float>& inputs, const std::vector<Neuron*>& neuronsNextLayer, float& target);
+
+    /**
+     * @brief Calculates the error for the hidden layer.
+     * @param output The output of the neuron.
+     * @param target The target value.
+     * @return The error for the hidden layer.
+     */
+    float derivedErrorOutput(float& output);
+
+    /**
+     * @brief Calculates the error for the output layer.
+     * @param output The output of the neuron.
+     * @param target The target value.
+     * @return The error for the output layer.
+     */
+    float ErrorOutput(float& output, float& target);
 
     /**
      * @brief Prints the neuron details.
      */
     void __str__() const;
+
+    std::vector<float> getWeights() const { return _weights; }
+    float getBias() const { return _bias; }
+    float getError() const { return _error; }
+
     
 private:
     std::vector<float> _weights; /**< The weights for the neuron. */
@@ -75,4 +95,5 @@ private:
     // Variables for storing the errors in weights and bias 
     std::vector<float> _dWeights; /**< The change in weights for the neuron. */
     float _dBias; /**< The change in bias term for the neuron. */
+    float _error; /**< The error for the neuron. */
 };

@@ -42,7 +42,9 @@ float Neuron::predict(const std::vector<float>& inputs)
 void Neuron::deltaChange(const std::vector<float>& inputs, float& target)
 {
     // Update the weights and bias
-    float error = Error(inputs, target);
+    float output = predict(inputs);
+    float error = ErrorOutput(output, target);
+    _error = error;
     for (int i = 0; i < _weights.size(); i++)
     {
         float prediction = predict(inputs);
@@ -61,11 +63,33 @@ void Neuron::update()
     _bias -= _dBias;
 }
 
-float Neuron::Error(const std::vector<float>& inputs, float& target)
+float Neuron::hiddenError(const std::vector<float>& inputs, const std::vector<Neuron*>& neuronsNextLayer, float& target)
 {
     float output = predict(inputs);
-    // Calculate the error as the derivative of the sigmoid function
-    return (output * (1 - output)) * -(target - output);
+    float hiddenError = derivedErrorOutput(output);
+
+    float sum = 0;
+    for (const auto n : neuronsNextLayer)
+    {
+        std::vector<float> weights = n->getWeights();
+        float neuronSum = 0;
+        for (int i = 0; i < weights.size(); i++)
+        {
+            neuronSum *= weights[i] * n->getError();
+        }
+        sum += neuronSum;
+    }
+    return hiddenError * sum;
+}
+
+float Neuron::ErrorOutput(float& output, float& target)
+{
+    return derivedErrorOutput(output) * -(target - output);
+}
+
+float Neuron::derivedErrorOutput(float& output)l
+{
+    return output * (1 - output);
 }
 
 void Neuron::__str__() const
