@@ -11,7 +11,11 @@
 #include "header/neuron.hpp"
 
 Neuron::Neuron(const std::vector<float>& weights, float bias, float learningRate) 
-    : weights(weights), bias(bias), learningRate(learningRate) {}
+    : _weights(weights), _bias(bias), _learningRate(learningRate) 
+    {
+        _dBias = 0;
+        _dWeights = std::vector<float>(weights.size(), 0);
+    }
 
 float Neuron::sigmoid(float x)
 {
@@ -22,10 +26,10 @@ float Neuron::sigmoid(float x)
 float Neuron::predict(const std::vector<float>& inputs)
 {
     // Calculate the weighted sum of the inputs
-    float weightedSum = bias;
-    for (int i = 0; i < weights.size(); i++)
+    float weightedSum = _bias;
+    for (int i = 0; i < _weights.size(); i++)
     {
-        weightedSum += weights[i] * inputs[i];
+        weightedSum += _weights[i] * inputs[i];
     }
 
     // Return the result of the sigmoid function
@@ -35,7 +39,29 @@ float Neuron::predict(const std::vector<float>& inputs)
     return result > 0.5 ? 1 : 0;
 }
 
-float Neuron::Error(const std::vector<float>& inputs, int target)
+void Neuron::deltaChange(const std::vector<float>& inputs, float& target)
+{
+    // Update the weights and bias
+    float error = Error(inputs, target);
+    for (int i = 0; i < _weights.size(); i++)
+    {
+        float prediction = predict(inputs);
+        _dWeights[i] += _learningRate * gradientBetweenNeurons(prediction, error);
+    }
+    _dBias += _learningRate * error;
+}
+
+void Neuron::update()
+{
+    // Update the weights and bias
+    for (int i = 0; i < _weights.size(); i++)
+    {
+        _weights[i] -= _dWeights[i];
+    }
+    _bias -= _dBias;
+}
+
+float Neuron::Error(const std::vector<float>& inputs, float& target)
 {
     float output = predict(inputs);
     // Calculate the error as the derivative of the sigmoid function
@@ -46,9 +72,9 @@ void Neuron::__str__() const
 {   
     // Print the neuron details
     std::cout << "Neuron with weights: ";
-    for (int i = 0; i < weights.size(); i++)
+    for (int i = 0; i < _weights.size(); i++)
     {
-        std::cout << weights[i] << " ";
+        std::cout << _weights[i] << " ";
     }
-    std::cout << "and bias: " << bias << std::endl;
+    std::cout << "and bias: " << _bias << std::endl;
 }

@@ -42,19 +42,25 @@ public:
     float predict(const std::vector<float>& inputs);
 
     /**
-     * @brief Updates the weights and bias of the neuron using the given inputs and learning rate.
+     * @brief Calculates errors for the weights and bias of the neuron.
      * @param inputs A vector of input values.
-     * @param learningRate The learning rate for updating the weights.
+     * @param target The target value.
      */
-    void update(const std::vector<float>& inputs);
+    void deltaChange(const std::vector<float>& inputs, float& target);
 
+    /**
+     * @brief Updates the weights and bias of the neuron. Using the previously calculated errors.
+     */
+    void update();
+    
     /**
      * @brief Computes the error for a given input and target value. using the derivative of the sigmoid function.
      * @param inputs A vector of input values.
      * @param target The target value.
      * @return The error between the predicted and target values.
      */
-    float Error(const std::vector<float>& inputs, int target);
+    float Error(const std::vector<float>& inputs, float& target);
+
 
     /**
      * @brief Prints the neuron details.
@@ -62,7 +68,11 @@ public:
     void __str__() const;
     
 private:
-    std::vector<float> weights; /**< The weights for the neuron. */
-    float bias; /**< The bias term for the neuron. */
-    float learningRate; /**< The learning rate for updating the weights. */
+    std::vector<float> _weights; /**< The weights for the neuron. */
+    float _bias; /**< The bias term for the neuron. */
+    float _learningRate; /**< The learning rate for updating the weights. */
+
+    // Variables for storing the errors in weights and bias 
+    std::vector<float> _dWeights; /**< The change in weights for the neuron. */
+    float _dBias; /**< The change in bias term for the neuron. */
 };
