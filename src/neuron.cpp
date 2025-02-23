@@ -10,6 +10,26 @@
  */
 #include "header/neuron.hpp"
 
+
+Neuron::Neuron(int nSizeWeights)
+{
+    _weights.reserve(nSizeWeights);
+    // Set the default variables
+    for (int i = 0; i < nSizeWeights; i++)
+    {
+        _weights.push_back(0.1);
+    }
+
+    _bias = 0.1;
+    _learningRate = 0.1;
+
+    // Set the error variables to zero
+    _dWeights = std::vector<float>(nSizeWeights);
+    _dBias = 0;
+    _error = 0;
+    
+}
+
 Neuron::Neuron(const std::vector<float>& weights, float bias, float learningRate) 
     : _weights(weights), _bias(bias), _learningRate(learningRate) 
     {
@@ -71,6 +91,7 @@ float Neuron::hiddenError(const std::vector<float>& inputs, const std::vector<Ne
     float sum = 0;
     for (const auto n : neuronsNextLayer)
     {
+        // TODO: this copies the vector
         std::vector<float> weights = n->getWeights();
         float neuronSum = 0;
         for (int i = 0; i < weights.size(); i++)
@@ -87,7 +108,7 @@ float Neuron::ErrorOutput(float& output, float& target)
     return derivedErrorOutput(output) * -(target - output);
 }
 
-float Neuron::derivedErrorOutput(float& output)l
+float Neuron::derivedErrorOutput(float& output)
 {
     return output * (1 - output);
 }
@@ -100,5 +121,6 @@ void Neuron::__str__() const
     {
         std::cout << _weights[i] << " ";
     }
-    std::cout << "and bias: " << _bias << std::endl;
+    std::cout << "Bias: " << _bias << " ";
+    std::cout << "Learning rate: " << _learningRate << std::endl;
 }

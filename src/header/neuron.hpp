@@ -21,6 +21,12 @@
 class Neuron {
 public:
     /**
+     * @brief constructer Neuron object.
+     * 
+     */
+    Neuron(int nSizeWeights);
+
+    /**
      * @brief Constructs a Neuron with the given weights and bias.
      * @param weights A vector of weights for the neuron.
      * @param bias The bias term for the neuron.
