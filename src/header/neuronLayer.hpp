@@ -28,6 +28,13 @@ public:
      * @param neurons A vector of neurons for the layer.
      */
     NeuronLayer(std::vector<Neuron> neurons);
+
+    /**
+     * @brief Constructs a NeuronLayer with the given number of neurons and size of weights.
+     * @param nNeurons The number of neurons in the layer.
+     * @param nSizeWeights The size of the weights for each neuron.
+     */
+    NeuronLayer(int nNeurons, int nSizeWeights);
     
     /**
      * @brief Performs a feedforward operation.
@@ -42,5 +49,5 @@ public:
     void __str__() const;
 
 private:
-    std::vector<Neuron> neurons; /**< The neurons in the layer. */
+    std::vector<Neuron> _neurons; /**< The neurons in the layer. */
 };
