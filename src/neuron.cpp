@@ -10,7 +10,7 @@
  */
 #include "header/neuron.hpp"
 
-Neuron::Neuron(int nSizeWeights, float initialWeight)
+Neuron::Neuron(int nSizeWeights, float initialWeight, float initialBias)
 {
     _weights.reserve(nSizeWeights);
     // Set the default variables
@@ -19,7 +19,7 @@ Neuron::Neuron(int nSizeWeights, float initialWeight)
         _weights.push_back(initialWeight);
     }
 
-    _bias = 0.1;
+    _bias = initialBias;
     _learningRate = 0.1;
     _output = 0;
 
@@ -129,11 +129,10 @@ float Neuron::derivedErrorOutput(float output)
 void Neuron::__str__() const
 {   
     // Print the neuron details
-    std::cout << "Neuron with weights: ";
+    printf("\nNeurons with %zu weights: ", _weights.size());
     for (int i = 0; i < _weights.size(); i++)
     {
-        std::cout << _weights[i] << " ";
+        printf("%f ", _weights[i]);
     }
-    std::cout << "Bias: " << _bias << " ";
-    std::cout << "Learning rate: " << _learningRate << std::endl;
+    printf("| Bias = %f | Learning rate = %f", _bias, _learningRate);
 }

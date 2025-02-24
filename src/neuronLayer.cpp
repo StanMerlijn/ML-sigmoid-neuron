@@ -13,7 +13,7 @@
 NeuronLayer::NeuronLayer(std::vector<Neuron> neurons)
     : _neurons(neurons) {}
 
-NeuronLayer::NeuronLayer(int nNeurons, int nSizeWeights, float initialWeight, bool isOutputLayer)
+NeuronLayer::NeuronLayer(int nNeurons, int nSizeWeights, float initialWeight, float initialBias, bool isOutputLayer)
 {
     // nNeurons check
     if (nNeurons == 0) {
@@ -26,7 +26,7 @@ NeuronLayer::NeuronLayer(int nNeurons, int nSizeWeights, float initialWeight, bo
     _neurons.reserve(nNeurons);
     for (int i = 0; i < nNeurons; i++)
     {
-        _neurons.emplace_back(nSizeWeights, initialWeight);
+        _neurons.emplace_back(nSizeWeights, initialWeight, initialBias);
     }
     
 }
@@ -66,7 +66,7 @@ void NeuronLayer::update()
 void NeuronLayer::__str__() const
 {
     // Print the layer details
-    printf("NeuronLayer with %d n neurons", _neurons.size());
+    printf("\nNeuronLayer with %zu neurons", _neurons.size());
     for (int i = 0; i < _neurons.size(); i++)
     {
         _neurons[i].__str__();
