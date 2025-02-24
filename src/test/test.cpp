@@ -9,7 +9,7 @@
  * 
  */
 #define CATCH_CONFIG_MAIN
-#include "../header/catch.hpp"
+#include <catch2/catch_all.hpp>
 
 #include "../header/neuron.hpp"
 #include "../header/neuronLayer.hpp"
@@ -151,8 +151,8 @@ TEST_CASE("Half Adder using Two-Layer Neuron Network", "[half-adder]") {
     NeuronNetwork halfAdder({hiddenLayer, outputLayer});
     
     // Test cases for half adder: {Sum, Carry}
-    REQUIRE(halfAdder.feedForward({0, 0}) == std::vector<int>{0, 0});
-    REQUIRE(halfAdder.feedForward({0, 1}) == std::vector<int>{1, 0});
-    REQUIRE(halfAdder.feedForward({1, 0}) == std::vector<int>{1, 0});
-    REQUIRE(halfAdder.feedForward({1, 1}) == std::vector<int>{0, 1});
+    REQUIRE(halfAdder.feedForward({0, 0}) == std::vector<float>{0, 0});
+    REQUIRE(halfAdder.feedForward({0, 1}) == std::vector<float>{1, 0});
+    REQUIRE(halfAdder.feedForward({1, 0}) == std::vector<float>{1, 0});
+    REQUIRE(halfAdder.feedForward({1, 1}) == std::vector<float>{0, 1});
 }
