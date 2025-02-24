@@ -14,7 +14,6 @@
 #include <vector>
 #include <cmath>
 #include <string>
-#include <assert.h>
 #include <stdio.h>
 
 #define INITIAL_WEIGHT 0.1f
@@ -93,7 +92,7 @@ inline float deltaBias(float& learningRate, float& deltaGradient)
  * @return * template<typename T> 
  */
 template<typename T>
-inline void printVector(const std::vector<T> &vec)
+inline void printVector(const std::vector<T> &vec, const std::string extra = "")
 {
     if constexpr (std::is_floating_point_v<T>) {
         for (const T &item : vec) {
@@ -103,5 +102,8 @@ inline void printVector(const std::vector<T> &vec)
         for (const T &item : vec) {
             printf("%i ", item);
         }
+    }
+    if (!extra.empty()) {
+        printf("%s", extra.c_str());
     }
 }
