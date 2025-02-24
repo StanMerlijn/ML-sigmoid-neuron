@@ -35,23 +35,24 @@ std::vector<float> NeuronLayer::feedForward(const std::vector<float>& inputs)
 {   
     std::vector<float> output;
     // Reserve space for the outputs
-    output.reserve(_neurons.capacity());
+    output.reserve(_neurons.size());
     // Feed forward through each neuron in the layer
     for (int i = 0; i < _neurons.size(); i++)
     {   
         // For now using the activate instead of predict.
         // The predict function is used for binary classification i think.
-        output.push_back(_neurons[i].predict(inputs));
+        output.push_back(_neurons[i].activate(inputs));
     }
     _output = output;
     return output;
 }
 
-void NeuronLayer::computeLayerErrors(const std::vector<float>& inputs, const std::vector<Neuron>& neuronsNextLayer, float target)
+void NeuronLayer::computeLayerErrors(const std::vector<float>& inputs, const std::vector<Neuron>& neuronsNextLayer, 
+    const std::vector<float>& targets)
 {
-    for (Neuron& n : _neurons) {
+    for (int i = 0; i < _neurons.size(); i++) {
         // Compute the erros for each neuron 
-        n.deltaError(inputs, neuronsNextLayer, target, _isOutputLayer);
+        _neurons[i].deltaError(inputs, neuronsNextLayer, targets[i], _isOutputLayer);
     }
 }
 
@@ -71,4 +72,5 @@ void NeuronLayer::__str__() const
     {
         _neurons[i].__str__();
     }
+    printf("\n");
 }

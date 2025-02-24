@@ -49,7 +49,9 @@ public:
      */
     std::vector<float> feedForward(const std::vector<float>& inputs);
     
-    void computeLayerErrors(const std::vector<float>& inputs, const std::vector<Neuron>& neuronsNextLayer, float target);
+    void computeLayerErrors(const std::vector<float>& inputs, const std::vector<Neuron>& neuronsNextLayer, 
+        const std::vector<float>& targets);
+
     void update();
 
     std::vector<Neuron> getNeurons() const { return _neurons; }
