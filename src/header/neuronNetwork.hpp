@@ -23,6 +23,10 @@
  * methods to perform feedforward operations and to represent the network as a string.
  */
 class NeuronNetwork {
+private:
+    std::vector<NeuronLayer> _layers; /**< The layers in the network. */
+    float _currentTarget;
+    
 public:
     /**
      * @brief Constructs a NeuronNetwork with the given layers.
@@ -36,7 +40,7 @@ public:
      * @return The output of the network. 
      */
     NeuronNetwork(std::vector<int> layers);
-
+    
     /**
      * @brief Performs a feedforward operation. On all the layers sequentially.
      * @param inputs A vector of input values.
@@ -44,12 +48,17 @@ public:
      */
     std::vector<float> feedForward(const std::vector<float>& inputs);
     
+    void backPropagation();
+    void update();
+
+    void trainInputs(const std::vector<float>& inputs, const std::vector<float>& targets, int inputSize);
+    
     std::vector<NeuronLayer> getLayers() const { return _layers; }
+    void setTarget(float target) {_currentTarget = target;}
     /**
      * @brief Prints the network details.
      */
     void __str__() const;
 
-private:
-    std::vector<NeuronLayer> _layers; /**< The layers in the network. */
+
 };
