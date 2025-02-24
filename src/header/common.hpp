@@ -14,9 +14,13 @@
 #include <vector>
 #include <cmath>
 #include <string>
+#include <assert.h>
+#include <stdio.h>
 
+#define INITIAL_WEIGHT 0.1
+#define WEIGHT_INPUT_NEURON 1.0
 
- struct irisData
+struct irisData
 /**
  * @brief A structure to hold the features and targets read from a CSV file. This is fdor the iris data set.
  * 
@@ -29,6 +33,7 @@
     std::vector<int> targets;
 };
 
+template<typename T>
 struct digitData
 /**
  * @brief A structure to hold the features and targets read from a CSV file. This is for the digit data set.
@@ -38,8 +43,8 @@ struct digitData
  * - targets: A vector of integers where each element represents the target value corresponding to the features.
  */
 {
-    std::vector<int> images; 
-    std::vector<int> targets;
+    std::vector<T> images; 
+    std::vector<T> targets;
 };
 
 
@@ -51,4 +56,9 @@ inline float gradientBetweenNeurons(float& output, float& error)
 inline float deltaGradient(float& learningRate, float& gradient)
 {
     return learningRate * gradient;
+}
+
+inline float deltaBias(float& learningRate, float& deltaGradient)
+{
+    return learningRate * deltaGradient;
 }
