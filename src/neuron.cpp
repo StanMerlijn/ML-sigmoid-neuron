@@ -130,9 +130,6 @@ void Neuron::__str__() const
 {   
     // Print the neuron details
     printf("\nNeurons with %zu weights: ", _weights.size());
-    for (int i = 0; i < _weights.size(); i++)
-    {
-        printf("%f ", _weights[i]);
-    }
+    printVector(_weights);
     printf("| Bias = %f | Learning rate = %f", _bias, _learningRate);
 }

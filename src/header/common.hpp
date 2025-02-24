@@ -64,3 +64,17 @@ inline float deltaBias(float& learningRate, float& deltaGradient)
 {
     return learningRate * deltaGradient;
 }
+
+template<typename T>
+inline void printVector(const std::vector<T> &vec)
+{
+    if constexpr (std::is_floating_point_v<T>) {
+        for (const T &item : vec) {
+            printf("%.2f ", item);          
+        }
+    } else if constexpr (std::is_integral_v<T>) {
+        for (const T &item : vec) {
+            printf("%i ", item);
+        }
+    }
+}
