@@ -49,22 +49,49 @@ struct digitData
     std::vector<T> targets;
 };
 
-
+/**
+ * @brief This function calculates the gradient between two neurons.
+ * 
+ * @param output The output of the neuron.
+ * @param error The error of the neuron.
+ * @return float The gradient between the neurons.
+ */
 inline float gradientBetweenNeurons(float& output, float& error)
 {
     return output * error;
 }
 
+/**
+ * @brief This function calculates the delta gradient for a neuron.
+ * 
+ * @param learningRate The learning rate of the network.
+ * @param gradient The gradient of the neuron.
+ * @return float The delta gradient.
+ */
 inline float deltaGradient(float& learningRate, float& gradient)
 {
     return learningRate * gradient;
 }
 
+/**
+ * @brief This function calculates the delta bias for a neuron.
+ * 
+ * @param learningRate The learning rate of the network.
+ * @param deltaGradient The gradient of the neuron.
+ * @return float The delta bias.
+ */
 inline float deltaBias(float& learningRate, float& deltaGradient)
 {
     return learningRate * deltaGradient;
 }
 
+
+/**
+ * @brief This function prints the elements of a vector to the console.
+ * 
+ * @param vec Vector to be printed.
+ * @return * template<typename T> 
+ */
 template<typename T>
 inline void printVector(const std::vector<T> &vec)
 {
