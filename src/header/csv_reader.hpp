@@ -190,8 +190,8 @@ std::vector<T> realdCsvFlat(const std::string& filename, char delimiter = ',')
     return data;
 }
 
-
-digitData readDigitData()
+template<typename T>
+digitData<T> readDigitData()
 {  
     // Not the best way to do this, but it works for now
     // presumes that the data is in the data folder in the root of the project
@@ -199,9 +199,9 @@ digitData readDigitData()
     const std::string filenameTargets = "../../data/digits_targets.csv";
     
     // Load the data
-    digitData data;
-    data.images = realdCsvFlat<int>(filenameImages);
-    data.targets = realdCsvFlat<int>(filenameTargets);
+    digitData<T> data;
+    data.images = realdCsvFlat<T>(filenameImages);
+    data.targets = realdCsvFlat<T>(filenameTargets);
 
     return data;
 }
