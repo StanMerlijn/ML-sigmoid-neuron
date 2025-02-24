@@ -25,7 +25,7 @@ using namespace Catch::Matchers;
  */
 TEST_CASE("Loading digit data", "[backpropagation]") {
     // Load the digit data
-    digitData _digitData = readDigitData();
+    digitData _digitData = readDigitData<int>();
 
     // Check the size of the data
     REQUIRE(_digitData.images.size() == 1797 * 64);
@@ -41,10 +41,10 @@ TEST_CASE("Testing initialization of the NeuronLayer", "[NeuronLayer]")
 {
     // create a neuronLayer with 10 neurons
     int nNeurons = 10;
-    NeuronLayer nl(nNeurons, 4, 0.1);
+    NeuronLayer nL(nNeurons, 4, 0.1, false);
 
-    REQUIRE(nl.getNeurons().size() == nNeurons);
-    nl.__str__();
+    REQUIRE(nL.getNeurons().size() == nNeurons);
+    nL.__str__();
     SUCCEED("Successfully initialized NeuronLayer");
 }
 
@@ -60,7 +60,7 @@ TEST_CASE("Testing initialization of the NeuronNetwork", "[NeuronNetwork]")
     std::vector<int> layers = {sizeInput, hidden1, hidden2, sizeOutput};
 
     // BENCHMARK("Initializing Neural Network"){
-    //     NeuronNetwork nn(layers);
+    //     NeuronNetwork nN(layers);
     // };
 
     NeuronNetwork nn(layers);
@@ -70,7 +70,8 @@ TEST_CASE("Testing initialization of the NeuronNetwork", "[NeuronNetwork]")
 
     // Check the input weigths
     for(int i = 0; i < neuronLayers.size(); i++) {
-        std::vector<Neuron> neurons = neuronLayers[i].getNeurons();
+        NeuronLayer nL = neuronLayers[i];
+        std::vector<Neuron> neurons = nL.getNeurons();
         std::vector<float> weights = neurons[0].getWeights();
 
         // Get the weight from 1 neuron since all should be same for a initialized layer
@@ -87,6 +88,50 @@ TEST_CASE("Testing initialization of the NeuronNetwork", "[NeuronNetwork]")
             REQUIRE(weights.size() == layers[i - 1]);
         }
 
-        // Check the inputs sizes / weights the 2, 3, 4th layer
+        // Check bool isOutputLayer
+        if (i == neuronLayers.size()-1) {
+            REQUIRE(nL.getLayerType() == true);
+        } else {
+            REQUIRE(nL.getLayerType() == false);
+        } 
+    }  
+}
+
+TEST_CASE("NeuronNetwork Learning digit data", "[backpropagation]") {
+    // Load the digit dataset
+    digitData digits = readDigitData<float>();
+    
+    // We expect 1797 examples where each image consists of 64 integer values.
+    int numData = digits.targets.size();
+    int inputSize = 64;
+    int outputSize = 10;
+
+    // Define a network architecture: an input layer of 64 neurons,
+    // one hidden layer of 16 neurons, and an output layer of 10 neurons.
+    std::vector<int> layers = { inputSize, 16, outputSize };
+    NeuronNetwork nn(layers);
+
+    std::vector<float> targets(digits.targets.begin(), digits.targets.end());
+    std::vector<float> images(digits.images.begin(), digits.images.end());
+    
+    int imageSize = 64;
+
+    nn.trainInputs(images, targets, imageSize);
+    
+    // Get the first 100 elements and check if the model can classify the
+    // Loop over each input
+    for (int i = 0; i < 100; i++) {
+        int startIndex = i * imageSize;
+        std::vector<float> input(imageSize);
+        
+        for (int j = 0; j < imageSize; j++) {
+            input[j] = images[startIndex + j];
+        }
+
+        float target = targets[i];
+        nn.setTarget(target);
+        std::vector<float> prediction = nn.feedForward(input);
+        float pred = prediction[0];
+        REQUIRE_THAT(target, WithinRel(pred, 0.0001f));
     }
 }
