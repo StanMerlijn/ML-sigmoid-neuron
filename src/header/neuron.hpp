@@ -24,7 +24,7 @@ public:
      * @brief constructer Neuron object.
      * 
      */
-    Neuron(int nSizeWeights);
+    Neuron(int nSizeWeights, float initialWeight);
 
     /**
      * @brief Constructs a Neuron with the given weights and bias.

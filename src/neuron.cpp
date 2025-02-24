@@ -10,14 +10,13 @@
  */
 #include "header/neuron.hpp"
 
-
-Neuron::Neuron(int nSizeWeights)
+Neuron::Neuron(int nSizeWeights, float initialWeight)
 {
     _weights.reserve(nSizeWeights);
     // Set the default variables
     for (int i = 0; i < nSizeWeights; i++)
     {
-        _weights.push_back(0.1);
+        _weights.push_back(initialWeight);
     }
 
     _bias = 0.1;

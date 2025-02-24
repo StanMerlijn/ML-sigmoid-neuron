@@ -11,7 +11,6 @@
 #pragma once
 #include <iostream>
 #include <vector>
-
 #include "neuron.hpp"
 
 /**
@@ -33,8 +32,9 @@ public:
      * @brief Constructs a NeuronLayer with the given number of neurons and size of weights.
      * @param nNeurons The number of neurons in the layer.
      * @param nSizeWeights The size of the weights for each neuron.
+     * @param initialWeight The initial weights of the neurons.
      */
-    NeuronLayer(int nNeurons, int nSizeWeights);
+    NeuronLayer(int nNeurons, int nSizeWeights, float initialWeight);
     
     /**
      * @brief Performs a feedforward operation.
@@ -43,6 +43,7 @@ public:
      */
     std::vector<float> feedForward(const std::vector<float>& inputs);
     
+    std::vector<Neuron> getNeurons() const { return _neurons; }
     /**
      * @brief Prints the layer details.
      */

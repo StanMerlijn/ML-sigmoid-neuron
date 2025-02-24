@@ -35,13 +35,21 @@ public:
      * @param inputs A vector of input values.
      * @return The output of the network. 
      */
+    NeuronNetwork(std::vector<int> layers);
+
+    /**
+     * @brief Performs a feedforward operation. On all the layers sequentially.
+     * @param inputs A vector of input values.
+     * @return The output of the network. 
+     */
     std::vector<float> feedForward(const std::vector<float>& inputs);
     
+    std::vector<NeuronLayer> getLayers() const { return _layers; }
     /**
      * @brief Prints the network details.
      */
     void __str__() const;
 
 private:
-    std::vector<NeuronLayer> layers; /**< The layers in the network. */
+    std::vector<NeuronLayer> _layers; /**< The layers in the network. */
 };
