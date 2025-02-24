@@ -25,8 +25,9 @@
 class NeuronNetwork {
 private:
     std::vector<NeuronLayer> _layers; /**< The layers in the network. */
-    float _currentTarget;
-    
+    std::vector<float> _currentTargets;
+    std::vector<float> _outputMask;
+
 public:
     /**
      * @brief Constructs a NeuronNetwork with the given layers.
@@ -39,7 +40,7 @@ public:
      * @param inputs A vector of input values.
      * @return The output of the network. 
      */
-    NeuronNetwork(std::vector<int> layers);
+    NeuronNetwork(std::vector<int> layers, std::vector<float> outPutMask);
     
     /**
      * @brief Performs a feedforward operation. On all the layers sequentially.
@@ -53,8 +54,10 @@ public:
 
     void trainInputs(const std::vector<float>& inputs, const std::vector<float>& targets, int inputSize);
     
+    void maskTarget(float target);
     std::vector<NeuronLayer> getLayers() const { return _layers; }
-    void setTarget(float target) {_currentTarget = target;}
+    void setTarget(std::vector<float>& targets) {_currentTargets = targets;}
+
     /**
      * @brief Prints the network details.
      */

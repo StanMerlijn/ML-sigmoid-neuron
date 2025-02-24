@@ -13,8 +13,10 @@
 NeuronNetwork::NeuronNetwork(std::vector<NeuronLayer> layers)
     : _layers(layers) {}
 
-NeuronNetwork::NeuronNetwork(std::vector<int> layers)
+NeuronNetwork::NeuronNetwork(std::vector<int> layers, std::vector<float> outputMask)
 {   
+    _outputMask = outputMask;
+    _currentTargets.resize(layers.back());
     _layers.reserve(layers.size());
     int LastIndex = layers.size() - 1;
 
@@ -53,17 +55,16 @@ std::vector<float> NeuronNetwork::feedForward(const std::vector<float>& inputs)
 
 void NeuronNetwork::backPropagation()
 {
-    // Reverse loop
-    for (int i = _layers.size()-1; i > 0; i--) {
+    int last = _layers.size() -1;
+    _layers[last].computeLayerErrors(_layers[last].getOutput(), std::vector<Neuron>(), _currentTargets);
+    
+    // Reverse loop For hidden layers
+    for (int i = last-1; i > 0; i--) {
         // If is output neuron compute the output error
-        if (i == _layers.size()-1) { // If i == _layers.size() -1 then its the output layer
-            _layers[i].computeLayerErrors(_layers[i -1].getOutput(), std::vector<Neuron>(), _currentTarget);
-        } else if (i == 0) { // If i == 0 then its the input layer
-            continue;
-        } else { // Hidden layers
-            std::vector<Neuron> neuronsNextLayer = _layers[i + 1].getNeurons();
-            _layers[i].computeLayerErrors(_layers[i -1].getOutput(), neuronsNextLayer, _currentTarget);
-        }
+        if (i == 0) continue; // If i == 0 then its the input layer
+            
+        std::vector<Neuron> neuronsNextLayer = _layers[i + 1].getNeurons();
+        _layers[i].computeLayerErrors(_layers[i -1].getOutput(), neuronsNextLayer, _currentTargets);
     }
 }
 
@@ -78,7 +79,9 @@ void NeuronNetwork::trainInputs(const std::vector<float>& inputs, const std::vec
 {
     // Check if the flat input is the same as the targets
     if (!((inputs.size() / inputSize) == targets.size())) {
-        printf("Input length and targets mutch match");
+        printf("Input length and targets mutch match\nVector outputMask and targets");
+        printVector(_outputMask, "outputMask\n");
+        printVector(targets, "targets\n");
         exit(1);
     }
 
@@ -90,8 +93,14 @@ void NeuronNetwork::trainInputs(const std::vector<float>& inputs, const std::vec
             input[j] = inputs[startIndex + j];
         }
 
+        // printf("For input: ");
+        // for (float& in : input) printf("%f ", in);
+        // printf("\nTarget = %f", targets[i]);
+        
         // Set the current target
-        setTarget(targets[i]);
+        // setTarget(targets[i]);
+
+        maskTarget(targets[i]);
 
         // make a prediction for the network
         feedForward(input);
@@ -102,6 +111,27 @@ void NeuronNetwork::trainInputs(const std::vector<float>& inputs, const std::vec
         // Update the network
         update();
     }
+}
+
+void NeuronNetwork::maskTarget(float target)
+{
+    if (_outputMask.size() != _currentTargets.size()) {
+        printf("OutputMask and current targets are not the same size\n");
+        printVector(_outputMask, "outputMask\n");
+        printVector(_currentTargets, "_currentTargets\n");
+        exit(1);
+    }
+
+    for (int i = 0; i < _outputMask.size(); i++)
+    {   
+        float maskValue = _outputMask[i];
+        if (maskValue == target) {
+            _currentTargets[i] = 1.0f;
+        } else {
+            _currentTargets[i] = 0.0f;
+        }
+    }
+    
 }
 
 void NeuronNetwork::__str__() const
