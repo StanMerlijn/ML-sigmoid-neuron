@@ -21,6 +21,12 @@
  * methods to perform feedforward operations and to represent the layer as a string.
  */
 class NeuronLayer {
+private:
+    std::vector<Neuron> _neurons; /**< The neurons in the layer. */
+    bool _isOutputLayer;
+
+    std::vector<float> _output;
+    
 public:
     /**
      * @brief Constructs a NeuronLayer with the given neurons.
@@ -34,7 +40,7 @@ public:
      * @param nSizeWeights The size of the weights for each neuron.
      * @param initialWeight The initial weights of the neurons.
      */
-    NeuronLayer(int nNeurons, int nSizeWeights, float initialWeight);
+    NeuronLayer(int nNeurons, int nSizeWeights, float initialWeight, bool isOutputNeuron);
     
     /**
      * @brief Performs a feedforward operation.
@@ -43,12 +49,14 @@ public:
      */
     std::vector<float> feedForward(const std::vector<float>& inputs);
     
+    void computeLayerErrors(const std::vector<float>& inputs, const std::vector<Neuron>& neuronsNextLayer, float target);
+    void update();
+
     std::vector<Neuron> getNeurons() const { return _neurons; }
+    std::vector<float> getOutput() const { return _output; }
+    bool getLayerType() const { return _isOutputLayer; }
     /**
      * @brief Prints the layer details.
      */
     void __str__() const;
-
-private:
-    std::vector<Neuron> _neurons; /**< The neurons in the layer. */
 };
