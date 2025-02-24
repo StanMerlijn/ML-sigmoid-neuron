@@ -30,10 +30,10 @@ NeuronNetwork::NeuronNetwork(std::vector<int> layers)
 
         // Check in layer is input layer
         if (i == 0) {
-            _layers.emplace_back(layers[i], 1, WEIGHT_INPUT_NEURON, 1.0, isOutputLayer);
+            _layers.emplace_back(layers[i], 1, INITIAL_WEIGHT_INPUTN, INITIAL_BIAS_INPUTN, isOutputLayer);
         } else {
             // If not input Layer size of weight is the sizeN of last layer
-            _layers.emplace_back(layers[i], layers[i - 1], INITIAL_WEIGHT, 0.1, isOutputLayer);
+            _layers.emplace_back(layers[i], layers[i - 1], INITIAL_WEIGHT, INITIAL_BIAS, isOutputLayer);
         }    
     }
 }

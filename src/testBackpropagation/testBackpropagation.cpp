@@ -85,15 +85,15 @@ TEST_CASE("Testing initialization of the NeuronNetwork", "[NeuronNetwork]")
             if (i == 0) {
                 SECTION("Input Neurons") {
                     // Input layer must always have 1 weight that is 1
-                    REQUIRE_THAT(weight, WithinRel(WEIGHT_INPUT_NEURON));
-                    REQUIRE_THAT(bias, WithinRel(BIAS_INPUT_NEURON));
+                    REQUIRE_THAT(weight, WithinRel(INITIAL_WEIGHT_INPUTN));
+                    REQUIRE_THAT(bias, WithinRel(INITIAL_BIAS_INPUTN));
                     REQUIRE(weights.size() == 1);
                 }
             } else {
                 SECTION("Hidden and output Neurons") {
                     // Hidden layers and output layer must have 0.1 as weights and inputSize == amount of neurons in the last layer
-                    REQUIRE_THAT(weight, WithinRel(INITIAL_WEIGHT, 0.0001f));
-                    REQUIRE_THAT(bias, WithinRel(INITIAL_BIAS, 0.0001f));
+                    REQUIRE_THAT(weight, WithinRel(INITIAL_WEIGHT));
+                    REQUIRE_THAT(bias, WithinRel(INITIAL_BIAS));
                     REQUIRE(weights.size() == layers[i - 1]);
                 }
             }

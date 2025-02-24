@@ -17,8 +17,10 @@
 #include <assert.h>
 #include <stdio.h>
 
-#define INITIAL_WEIGHT 0.1
-#define WEIGHT_INPUT_NEURON 1.0
+#define INITIAL_WEIGHT 0.1f
+#define INITIAL_WEIGHT_INPUTN 1.0f
+#define INITIAL_BIAS 0.1f
+#define INITIAL_BIAS_INPUTN 1.0f
 
 struct irisData
 /**
