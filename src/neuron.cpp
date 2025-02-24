@@ -21,6 +21,7 @@ Neuron::Neuron(int nSizeWeights, float initialWeight)
 
     _bias = 0.1;
     _learningRate = 0.1;
+    _output = 0;
 
     // Set the error variables to zero
     _dWeights = std::vector<float>(nSizeWeights);
@@ -42,7 +43,7 @@ float Neuron::sigmoid(float x)
     return 1 / (1 + exp(-x));    
 }
 
-float Neuron::predict(const std::vector<float>& inputs)
+float Neuron::activate(const std::vector<float>& inputs)
 {
     // Calculate the weighted sum of the inputs
     float weightedSum = _bias;
@@ -52,17 +53,30 @@ float Neuron::predict(const std::vector<float>& inputs)
     }
 
     // Return the result of the sigmoid function
-    float result = sigmoid(weightedSum);
-
-    // Return 1 if the result is greater than 0.5, otherwise return 0(threshold)
-    return result > 0.5 ? 1 : 0;
+    float output = sigmoid(weightedSum);
+    _output = output; // store for propagation later
+    return output;
 }
 
-void Neuron::deltaChange(const std::vector<float>& inputs, float& target)
+float Neuron::predict(const std::vector<float>& inputs)
+{
+    // Return 1 if the result is greater than 0.5, otherwise return 0(threshold)
+    return (activate(inputs) > 0.5) ? 1 : 0;
+}
+
+void Neuron::deltaError(const std::vector<float>& inputs, const std::vector<Neuron>& neuronsNextLayer, float target, bool isOutputNeuron)
 {
     // Update the weights and bias
-    float output = predict(inputs);
-    float error = ErrorOutput(output, target);
+    float output = activate(inputs);
+    float error;
+    
+    // Compute the error for output neurons and normal neuros
+    if (isOutputNeuron) {
+        error = ErrorOutput(output, target);
+    } else {
+        error = ErrorHidden(inputs, neuronsNextLayer);
+    }
+
     _error = error;
     for (int i = 0; i < _weights.size(); i++)
     {
@@ -82,7 +96,7 @@ void Neuron::update()
     _bias -= _dBias;
 }
 
-float Neuron::hiddenError(const std::vector<float>& inputs, const std::vector<Neuron*>& neuronsNextLayer, float& target)
+float Neuron::ErrorHidden(const std::vector<float>& inputs, const std::vector<Neuron>& neuronsNextLayer)
 {
     float output = predict(inputs);
     float hiddenError = derivedErrorOutput(output);
@@ -91,23 +105,23 @@ float Neuron::hiddenError(const std::vector<float>& inputs, const std::vector<Ne
     for (const auto n : neuronsNextLayer)
     {
         // TODO: this copies the vector
-        std::vector<float> weights = n->getWeights();
+        std::vector<float> weights = n.getWeights();
         float neuronSum = 0;
         for (int i = 0; i < weights.size(); i++)
         {
-            neuronSum *= weights[i] * n->getError();
+            neuronSum *= weights[i] * n.getError();
         }
         sum += neuronSum;
     }
     return hiddenError * sum;
 }
 
-float Neuron::ErrorOutput(float& output, float& target)
+float Neuron::ErrorOutput(float output, float target)
 {
     return derivedErrorOutput(output) * -(target - output);
 }
 
-float Neuron::derivedErrorOutput(float& output)
+float Neuron::derivedErrorOutput(float output)
 {
     return output * (1 - output);
 }
