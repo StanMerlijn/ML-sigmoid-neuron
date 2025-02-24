@@ -29,13 +29,13 @@ private:
     std::vector<float> _dWeights; /**< The change in weights for the neuron. */
     float _dBias; /**< The change in bias term for the neuron. */
     float _error; /**< The error for the neuron. */
-    
+
 public:
     /**
      * @brief constructer Neuron object.
      * 
      */
-    Neuron(int nSizeWeights, float initialWeight);
+    Neuron(int nSizeWeights, float initialWeight, float initialBias);
 
     /**
      * @brief Constructs a Neuron with the given weights and bias.

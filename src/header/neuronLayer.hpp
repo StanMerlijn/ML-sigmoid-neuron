@@ -26,7 +26,7 @@ private:
     bool _isOutputLayer;
 
     std::vector<float> _output;
-    
+
 public:
     /**
      * @brief Constructs a NeuronLayer with the given neurons.
@@ -40,7 +40,7 @@ public:
      * @param nSizeWeights The size of the weights for each neuron.
      * @param initialWeight The initial weights of the neurons.
      */
-    NeuronLayer(int nNeurons, int nSizeWeights, float initialWeight, bool isOutputNeuron);
+    NeuronLayer(int nNeurons, int nSizeWeights, float initialWeight, float initialBias, bool isOutputNeuron);
     
     /**
      * @brief Performs a feedforward operation.
