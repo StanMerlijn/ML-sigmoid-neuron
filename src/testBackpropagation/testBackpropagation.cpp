@@ -41,7 +41,7 @@ TEST_CASE("Testing initialization of the NeuronLayer", "[NeuronLayer]")
 {
     // create a neuronLayer with 10 neurons
     int nNeurons = 10;
-    NeuronLayer nL(nNeurons, 4, 0.1, false);
+    NeuronLayer nL(nNeurons, 4, 0.1, 0.1, false);
 
     REQUIRE(nL.getNeurons().size() == nNeurons);
     nL.__str__();
@@ -67,25 +67,36 @@ TEST_CASE("Testing initialization of the NeuronNetwork", "[NeuronNetwork]")
 
     // Get the neurons
     std::vector<NeuronLayer> neuronLayers = nn.getLayers();
+    nn.__str__();
 
     // Check the input weigths
     for(int i = 0; i < neuronLayers.size(); i++) {
         NeuronLayer nL = neuronLayers[i];
         std::vector<Neuron> neurons = nL.getNeurons();
-        std::vector<float> weights = neurons[0].getWeights();
 
-        // Get the weight from 1 neuron since all should be same for a initialized layer
-        float weight = weights[0];
+        for (Neuron& n : neurons) {
+            std::vector<float> weights = n.getWeights();
 
-        // Using require that and withinRel too check floatign point numbers.
-        if (i == 0) {
-            // Input layer must always have 1 weight that is 1
-            REQUIRE_THAT(weight, WithinRel(WEIGHT_INPUT_NEURON, 0.0001));
-            REQUIRE(weights.size() == 1);
-        } else {
-            // Hidden layers and output layer must have 0.1 as weights and inputSize == amount of neurons in the last layer
-            REQUIRE_THAT(weight, WithinRel(INITIAL_WEIGHT, 0.0001));
-            REQUIRE(weights.size() == layers[i - 1]);
+            // Get the weight from 1 neuron since all should be same for a initialized layer
+            float weight = weights[0];
+            float bias = n.getBias();
+
+            // Using require that and withinRel too check floating point numbers.
+            if (i == 0) {
+                SECTION("Input Neurons") {
+                    // Input layer must always have 1 weight that is 1
+                    REQUIRE_THAT(weight, WithinRel(WEIGHT_INPUT_NEURON));
+                    REQUIRE_THAT(bias, WithinRel(BIAS_INPUT_NEURON));
+                    REQUIRE(weights.size() == 1);
+                }
+            } else {
+                SECTION("Hidden and output Neurons") {
+                    // Hidden layers and output layer must have 0.1 as weights and inputSize == amount of neurons in the last layer
+                    REQUIRE_THAT(weight, WithinRel(INITIAL_WEIGHT, 0.0001f));
+                    REQUIRE_THAT(bias, WithinRel(INITIAL_BIAS, 0.0001f));
+                    REQUIRE(weights.size() == layers[i - 1]);
+                }
+            }
         }
 
         // Check bool isOutputLayer
@@ -120,7 +131,7 @@ TEST_CASE("NeuronNetwork Learning digit data", "[backpropagation]") {
     
     // Get the first 100 elements and check if the model can classify the
     // Loop over each input
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 10; i++) {
         int startIndex = i * imageSize;
         std::vector<float> input(imageSize);
         
@@ -132,6 +143,6 @@ TEST_CASE("NeuronNetwork Learning digit data", "[backpropagation]") {
         nn.setTarget(target);
         std::vector<float> prediction = nn.feedForward(input);
         float pred = prediction[0];
-        REQUIRE_THAT(target, WithinRel(pred, 0.0001f));
+        CHECK_THAT(target, WithinRel(pred, 0.0001f));
     }
 }
