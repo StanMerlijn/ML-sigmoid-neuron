@@ -11,15 +11,16 @@
 
 #pragma once
 #include <iostream>
+#include <algorithm>
 #include <vector>
 #include <cmath>
 #include <string>
 #include <stdio.h>
 
-#define INITIAL_WEIGHT 0.1f
-#define INITIAL_WEIGHT_INPUTN 1.0f
-#define INITIAL_BIAS 0.1f
-#define INITIAL_BIAS_INPUTN 1.0f
+#define INITIAL_WEIGHT 0.5f
+#define INITIAL_WEIGHT_INPUTN 0.5f
+#define INITIAL_BIAS 0.5f
+#define INITIAL_BIAS_INPUTN 0.5f
 
 struct irisData
 /**
@@ -105,5 +106,19 @@ inline void printVector(const std::vector<T> &vec, const std::string extra = "")
     }
     if (!extra.empty()) {
         printf("%s", extra.c_str());
+    }
+}
+
+template<typename T>
+void normalizeVector(std::vector<T> &vec)
+{
+    T maxElement = *std::max_element(vec.begin(), vec.end());
+    T minElement = *std::min_element(vec.begin(), vec.end());
+    T minMax = maxElement - minElement;
+
+    // https://www.statology.org/normalize-data-between-0-and-1/
+    for (unsigned int i = 0; i < vec.size(); i++) {
+        T xi = vec[i]; 
+        vec[i] = (xi - minElement) / minMax;
     }
 }

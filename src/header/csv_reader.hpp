@@ -200,7 +200,9 @@ digitData<T> readDigitData()
     
     // Load the data
     digitData<T> data;
-    data.images = realdCsvFlat<T>(filenameImages);
+    std::vector<T> images = realdCsvFlat<T>(filenameImages);
+    normalizeVector(images);
+    data.images = images;
     data.targets = realdCsvFlat<T>(filenameTargets);
 
     return data;
