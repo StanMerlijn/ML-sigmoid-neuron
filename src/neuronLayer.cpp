@@ -15,6 +15,7 @@ NeuronLayer::NeuronLayer(std::vector<Neuron> neurons)
 
 NeuronLayer::NeuronLayer(int nNeurons, int nSizeWeights)
 {
+    _output.resize(nNeurons);
     // nNeurons check
     if (nNeurons == 0) {
         printf("nNeuron must be atleast 1 is %d", nNeurons) ;
@@ -32,20 +33,16 @@ NeuronLayer::NeuronLayer(int nNeurons, int nSizeWeights)
     }
 }
 
-std::vector<float> NeuronLayer::feedForward(const std::vector<float>& inputs)
+std::vector<float>& NeuronLayer::feedForward(const std::vector<float>& inputs)
 {   
-    std::vector<float> output;
-    // Reserve space for the outputs
-    output.reserve(_neurons.size());
     // Feed forward through each neuron in the layer
     for (std::size_t i = 0; i < _neurons.size(); i++)
     {   
         // For now using the activate instead of predict.
         // The predict function is used for binary classification i think.
-        output.push_back(_neurons[i].activate(inputs));
+        _output[i] = _neurons[i].activate(inputs);
     }
-    _output = output;
-    return output;
+    return _output;
 }
 
 void NeuronLayer::computeOutputErros(const std::vector<float> &targets)

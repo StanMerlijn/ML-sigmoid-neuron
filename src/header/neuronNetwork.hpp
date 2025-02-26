@@ -26,6 +26,8 @@ private:
     std::vector<float> _currentTargets;
     std::vector<float> _outputMask;
 
+    std::vector<float> _currentLayerOutput;
+
 public:
     /**
      * @brief Constructs a NeuronNetwork with the given layers.

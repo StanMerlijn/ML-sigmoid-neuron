@@ -15,12 +15,13 @@ NeuronNetwork::NeuronNetwork(std::vector<NeuronLayer> layers)
 
 NeuronNetwork::NeuronNetwork(std::vector<int> layerSizes, std::vector<float> outputMask)
 {   
+    _inputVec.reserve(layerSizes.front());
     _outputMask = outputMask;
     _currentTargets.resize(layerSizes.back());
     _layers.reserve(layerSizes.size());
+        
+    _currentLayerOutput.resize(*std::max_element(layerSizes.begin(), layerSizes.end()));
     
-    // int LastIndex = layers.size() - 1;
-
     for (std::size_t i = 1; i < layerSizes.size(); i++)
     { 
         if (i == 1) {
@@ -34,13 +35,13 @@ NeuronNetwork::NeuronNetwork(std::vector<int> layerSizes, std::vector<float> out
 std::vector<float> NeuronNetwork::feedForward(const std::vector<float>& inputs)
 {   
     _inputVec = inputs;
-    std::vector<float> output = inputs;
+    _currentLayerOutput = inputs;
     // Feed forward through each layer in the network
     for (std::size_t i = 0; i < _layers.size(); i++)
     {
-        output = _layers[i].feedForward(output);
+        _currentLayerOutput = _layers[i].feedForward(_currentLayerOutput);
     }
-    return output;
+    return _currentLayerOutput;
 }
 
 std::vector<float> NeuronNetwork::predict(const std::vector<float>& input)
@@ -56,17 +57,12 @@ void NeuronNetwork::backPropagation()
     // Reverse loop For hidden layers
     for (int i = last-1; i > -1; i--) {
         // If is output neuron compute the output error
-        // std::vector<float> layerInput;
-
         if (i == 0) { // If i == 0 then its the input layer
-            // layerInput = _inputVec;
             _layers[i].computeHiddenErrors(_inputVec, _layers[i + 1].getNeurons());
         } else {
-            // layerInput = _layers[i-1].getOutput();
             _layers[i].computeHiddenErrors(_layers[i-1].getOutput(), _layers[i + 1].getNeurons());
         }
 
-        // printf("\n\nFor layer %i", i);
     }
 }
 
