@@ -68,7 +68,7 @@ public:
      * @brief Returns the neurons in the layer.
      * @return A vector of neurons.
      */
-    std::vector<Neuron>& getNeurons() { return _neurons; }
+    const std::vector<Neuron>& getNeurons() { return _neurons; }
     
     /**
      * @brief Returns the output of the layer.

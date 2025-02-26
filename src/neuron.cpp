@@ -13,6 +13,7 @@
 Neuron::Neuron(int nSizeWeights, float initialWeight, float initialBias)
 {
     _weights = std::vector<float>(nSizeWeights, initialWeight);
+    _lastInput.reserve(nSizeWeights);
 
     _delta = 0;
     _bias = initialBias;
