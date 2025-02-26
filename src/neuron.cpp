@@ -65,21 +65,8 @@ void Neuron::update()
     _bias -= _learningRate * _delta;
 }
 
-float Neuron::computeHiddenDelta(const std::vector<float>& inputs, 
-    const std::vector<float>& downStreamWeights, 
-    const std::vector<float>& downStreamDeltas)
+float Neuron::computeHiddenDelta(const std::vector<float>& inputs, float sum)
 {
-    // Check if downStreamWeights and downStreamDeltas are the same size
-    if (downStreamWeights.size() != downStreamDeltas.size()) {
-        throw std::runtime_error("Vector downStreamWeights and downStreamDeltas must be same size");
-    }
-
-    float sum = 0;
-    for (std::size_t i = 0; i < downStreamWeights.size(); i++)
-    {
-        sum += downStreamWeights[i] * downStreamDeltas[i];
-    }
-
     _delta = sigmoidDerivative(_lastOutput) * sum;;
     return _delta;
 }

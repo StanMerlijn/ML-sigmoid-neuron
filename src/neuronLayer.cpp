@@ -43,6 +43,9 @@ NeuronLayer::NeuronLayer(int nNeurons, int nSizeWeights)
         printf("nNeuron must be atleast 1 is %d", nNeurons) ;
         return;    
     } 
+    // std::vector<float> _downStreamWeights(nextLayerSize);
+    // std::vector<float> _downStreamDeltas(nextLayerSize);
+    
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_real_distribution<> dis(0.1f, 1.0f);
@@ -52,7 +55,6 @@ NeuronLayer::NeuronLayer(int nNeurons, int nSizeWeights)
     {
         _neurons.emplace_back(nSizeWeights, dis(gen), dis(gen));
     }
-    
 }
 
 std::vector<float> NeuronLayer::feedForward(const std::vector<float>& inputs)
@@ -81,26 +83,18 @@ void NeuronLayer::computeOutputErros(const std::vector<float> &targets)
 
 void NeuronLayer::computeHiddenErrors(const std::vector<float>& inputs, const std::vector<Neuron>& neuronsNextLayer)
 {
-    // Simply get the first neurons weight size
-    std::vector<float> downStreamWeights;
-    std::vector<float> downStreamDeltas;
-
-    downStreamWeights.reserve(neuronsNextLayer.size());
-    downStreamDeltas.reserve(neuronsNextLayer.size());
+    // // Simply get the first neurons weight size
     for (std::size_t i = 0; i < _neurons.size(); i++) {
 
+        float sum = 0.0f;
+        
         // Loop over neurons in next layer
         for (std::size_t j = 0; j < neuronsNextLayer.size(); j++)
         {
-            Neuron nextNeuron = neuronsNextLayer[j];
-            downStreamWeights.push_back(nextNeuron.getWeights()[i]);
-            downStreamDeltas.push_back(nextNeuron.getError());
+            sum += neuronsNextLayer[j].getWeights()[i] * neuronsNextLayer[j].getError();
         }
         
-        _neurons[i].computeHiddenDelta(inputs, downStreamWeights, downStreamDeltas);
-        
-        downStreamWeights.clear();
-        downStreamDeltas.clear();
+        _neurons[i].computeHiddenDelta(inputs, sum);
     }
 }
 
