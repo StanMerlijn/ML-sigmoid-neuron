@@ -51,7 +51,6 @@ std::vector<float> NeuronNetwork::predict(const std::vector<float>& input)
 void NeuronNetwork::backPropagation()
 {
     int last = _layers.size() -1;
-    // printf("\n\nOutput layers errors");
     _layers[last].computeOutputErros(_currentTargets);
 
     // Reverse loop For hidden layers
@@ -69,10 +68,6 @@ void NeuronNetwork::backPropagation()
         std::vector<Neuron> neuronsNextLayer = _layers.at(i + 1).getNeurons();
         _layers[i].computeHiddenErrors(layerInput, neuronsNextLayer);
     }
-
-    // Compute input layer 
-    // _layers.at(0).computeHiddenErrors(_inputVec, _layers.at(1).getNeurons());
-
 }
 
 void NeuronNetwork::update()
@@ -103,15 +98,8 @@ void NeuronNetwork::trainInputs(const std::vector<float>& inputs, const std::vec
                 input[j] = inputs[startIndex + j];
             }
 
-            // printf("For input: ");
-            // for (float& in : input) printf("%f ", in);
-            // printf("\nTarget = %f", targets[i]);
-            
-            // Set the current target
-            // setTarget(targets[i]);
-
+            // Set the target for the network
             maskTarget(targets[i]);
-            // _currentTargets = {targets[i]};
 
             // make a prediction for the network
             feedForward(input);
@@ -129,8 +117,6 @@ void NeuronNetwork::maskTarget(float target)
 {
     if (_outputMask.size() != _currentTargets.size()) {
         throw std::runtime_error("OutputMask and current targets are not the same size");
-        // printVector(_outputMask, "outputMask\n");
-        // printVector(_currentTargets, "_currentTargets\n");
         exit(1);
     }
 
@@ -149,7 +135,6 @@ void NeuronNetwork::maskTarget(float target)
 void NeuronNetwork::__str__() const
 {
     // Print the network details
-    // std::cout << "NeuronNetwork with " << _layers.size() << " layers" << std::endl;
     printf("\nNeuronNetwork with %zu layers\n", _layers.size());
     for (std::size_t i = 0; i < _layers.size(); i++)
     {

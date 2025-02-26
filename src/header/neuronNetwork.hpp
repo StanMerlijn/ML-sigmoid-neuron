@@ -48,16 +48,51 @@ public:
      */
     std::vector<float> feedForward(const std::vector<float>& inputs);
 
+    /**
+     * @brief Performs a prediction operation. On all the layers sequentially.
+     * @param inputs A vector of input values.
+     * @return The output of the network. 
+     */
     std::vector<float> predict(const std::vector<float>& input);
 
+    /**
+     * @brief Performs a backpropagation operation. On all the layers sequentially.
+     */
     void backPropagation();
+    
+    /**
+     * @brief Updates the neurons in the network.
+     */
     void update();
 
+    /**
+     * @brief Trains the network on a set of inputs and targets.
+     * @param inputs A vector of input values.
+     * @param targets A vector of target values.
+     * @param inputSize The size of the input values.
+     * @param maxTrainingSamples The maximum number of training samples.
+     */
     void trainInputs(const std::vector<float>& inputs, const std::vector<float>& targets, 
         int inputSize, int maxTrainingSamples);
     
+    /**
+     * @brief Masks the target values in the network.
+     * 
+     * @param target The target value to mask.
+     */
     void maskTarget(float target);
+    
+    /**
+     * @brief Returns the layers in the network.
+     * @return A vector of neuron layers.
+     */
     std::vector<NeuronLayer> getLayers() const { return _layers; }
+    
+    /**
+     * @brief Sets the target values in the network.
+     * 
+     * @param targets The target values to set.
+     */
     void setTarget(std::vector<float>& targets) {_currentTargets = targets;}
 
     /**

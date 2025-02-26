@@ -25,8 +25,8 @@ Neuron::Neuron(int nSizeWeights, float initialWeight, float initialBias)
     _lastOutput = 0;
 }
 
-// Neuron::Neuron(const std::vector<float>& weights, float bias, float learningRate) 
-//     : _weights(weights), _bias(bias), _learningRate(learningRate) {}
+Neuron::Neuron(const std::vector<float>& weights, float bias, float learningRate) 
+    : _weights(weights), _bias(bias), _learningRate(learningRate) {}
 
 float Neuron::sigmoid(float x)
 {

@@ -13,29 +13,6 @@
 NeuronLayer::NeuronLayer(std::vector<Neuron> neurons)
     : _neurons(neurons) {}
 
-NeuronLayer::NeuronLayer(int nNeurons, int nSizeWeights, float initialWeight, float initialBias, bool isOutputLayer)
-{
-    // nNeurons check
-    if (nNeurons == 0) {
-        printf("nNeuron must be atleast 1 is %d", nNeurons) ;
-        return;    
-    }
-
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_real_distribution<> dis(0.5f, 0.75f);
-
-    float _initialBias = dis(gen);
-    float _initialWeight = dis(gen);
-
-    _neurons.reserve(nNeurons);
-    for (std::size_t i = 0; i < nNeurons; i++)
-    {
-        _neurons.emplace_back(nSizeWeights, _initialWeight, _initialBias);
-    }
-    
-}
-
 NeuronLayer::NeuronLayer(int nNeurons, int nSizeWeights)
 {
     // nNeurons check
@@ -43,8 +20,6 @@ NeuronLayer::NeuronLayer(int nNeurons, int nSizeWeights)
         printf("nNeuron must be atleast 1 is %d", nNeurons) ;
         return;    
     } 
-    // std::vector<float> _downStreamWeights(nextLayerSize);
-    // std::vector<float> _downStreamDeltas(nextLayerSize);
     
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -87,7 +62,7 @@ void NeuronLayer::computeHiddenErrors(const std::vector<float>& inputs, const st
     for (std::size_t i = 0; i < _neurons.size(); i++) {
 
         float sum = 0.0f;
-        
+
         // Loop over neurons in next layer
         for (std::size_t j = 0; j < neuronsNextLayer.size(); j++)
         {

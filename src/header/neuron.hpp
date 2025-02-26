@@ -21,11 +21,11 @@
 class Neuron {
 private:
     std::vector<float> _weights; /**< The weights for the neuron. */
-    std::vector<float> _lastInput;
+    std::vector<float> _lastInput; /**< The last input values. */
     float _bias; /**< The bias term for the neuron. */
     float _learningRate; /**< The learning rate for updating the weights. */
     float _lastOutput; /**< The last saved output of the neuron. */
-    float _delta;
+    float _delta; /**< The error for the neuron. */
 
 public:
     /**
@@ -99,12 +99,28 @@ public:
     float computeOutputDelta(float target);
 
     /**
+     * @brief Returns the weights of the neuron.
+     * @return A vector of weights.
+     */
+    std::vector<float> getWeights() const { return _weights; }
+    
+    /**
+     * @brief Returns the bias of the neuron.
+     * @return The bias value.
+     */
+    float getBias() const { return _bias; }
+    
+    /**
+     * @brief Returns the error of the neuron.
+     * @return The error value.
+     */
+    float getError() const { return _delta; }
+    
+    /**
      * @brief Prints the neuron details.
      */
     void __str__() const;
 
-    std::vector<float> getWeights() const { return _weights; }
-    float getBias() const { return _bias; }
-    float getError() const { return _delta; }
+    
 
 };

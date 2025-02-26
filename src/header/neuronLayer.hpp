@@ -36,10 +36,7 @@ public:
      * @brief Constructs a NeuronLayer with the given number of neurons and size of weights.
      * @param nNeurons The number of neurons in the layer.
      * @param nSizeWeights The size of the weights for each neuron.
-     * @param initialWeight The initial weights of the neurons.
      */
-    NeuronLayer(int nNeurons, int nSizeWeights, float initialWeight, float initialBias, bool isOutputNeuron);
-    
     NeuronLayer(int nNeurons, int nSizeWeights);
     
     /**
@@ -48,14 +45,37 @@ public:
      * @return The output of the layer. 
      */
     std::vector<float> feedForward(const std::vector<float>& inputs);
+
+    /**
+     * @brief Computes the output errors for the layer.
+     * @param targets A vector of target values.
+     */
     void computeOutputErros(const std::vector<float> &targets);
     
+    /**
+     * @brief Computes the hidden errors for the layer.
+     * @param inputs A vector of input values.
+     * @param neuronsNextLayer A vector of neurons in the next layer.
+     */
     void computeHiddenErrors(const std::vector<float>& inputs, const std::vector<Neuron>& neuronsNextLayer);
     
+    /**
+     * @brief Updates the neurons in the layer.
+     */
     void update();
 
+    /**
+     * @brief Returns the neurons in the layer.
+     * @return A vector of neurons.
+     */
     std::vector<Neuron> getNeurons() const { return _neurons; }
+    
+    /**
+     * @brief Returns the output of the layer.
+     * @return A vector of floats.
+     */
     std::vector<float> getOutput() const { return _output; }
+    
     /**
      * @brief Prints the layer details.
      */
