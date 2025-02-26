@@ -20,6 +20,26 @@
 #include <random>
 #include <chrono>
 
+// Function to check new operator 
+static int s_Allocations = 0;
+
+void* operator new(size_t size)
+{
+    s_Allocations++;
+    return malloc(size);
+}
+
+// Macro version for when you want to time a block of code in-place.
+#define MEASURE_BLOCK(message, code_block)              \
+    {                                                   \
+        auto start = std::chrono::high_resolution_clock::now(); \
+        code_block;                                     \
+        auto end = std::chrono::high_resolution_clock::now();   \
+        auto duration = std::chrono::duration<double, std::milli>(end - start).count();   \
+        std::cout << message << " took " << duration << " ms" << std::endl; \
+    }
+
+
 using namespace Catch::Matchers;
 
 /**
@@ -122,16 +142,12 @@ TEST_CASE("XOR Neural Network", "[NeuronNetwork][XOR]")
         1.0f, 
         0.0f 
     };
-    nn.__str__();
+    s_Allocations = 0;
 
-    std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
+    MEASURE_BLOCK("Training the network XOR", {
+        nn.trainInputs(inputs, targets, 2, 0, 2000);
+    });
 
-    nn.trainInputs(inputs, targets, 2, 0);
-
-    std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
-    std::cout << "Time difference = " << std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() << "[µs]" << std::endl;
-
-    nn.__str__();
     for (int i = 0; i < targets.size(); i++)
     {
         int startIndex = i * 2;
@@ -150,7 +166,6 @@ TEST_CASE("XOR Neural Network", "[NeuronNetwork][XOR]")
 }
 
 TEST_CASE("NeuronNetwork Learning digit data", "[backpropagation]") {
-    return;
     // Load the digit dataset
     digitData digits = readDigitData<float>();
     
@@ -161,7 +176,7 @@ TEST_CASE("NeuronNetwork Learning digit data", "[backpropagation]") {
 
     // Define a network architecture: an input layer of 64 neurons,
     // one hidden layer of 16 neurons, and an output layer of 10 neurons.
-    std::vector<int> layers = { inputSize, 16, 16, outputSize };
+    std::vector<int> layers = { inputSize, 16, outputSize };
     std::vector<float> outputMask = {0.0f, 1.0f, 2.0f, 3.0f, 4.0f, 5.0f, 6.0f, 7.0f, 8.0f, 9.0f};
     
     NeuronNetwork nn(layers, outputMask);
@@ -171,7 +186,9 @@ TEST_CASE("NeuronNetwork Learning digit data", "[backpropagation]") {
     
     int imageSize = 64;
 
-    nn.trainInputs(images, targets, imageSize, 2);
+    MEASURE_BLOCK("Training the network", {
+        nn.trainInputs(images, targets, imageSize, 0, 2000);
+    });
     
     int nToCheck = 20;
 
@@ -181,6 +198,7 @@ TEST_CASE("NeuronNetwork Learning digit data", "[backpropagation]") {
     std::uniform_int_distribution<> dist(min, max);
     printf("\nOutputMask \t\t     ");
     printVector(outputMask, "\n");
+
     // Get the first 100 elements and check if the model can classify the
     // Loop over each input
     for (int i = 0; i < nToCheck; i++) {
@@ -196,11 +214,10 @@ TEST_CASE("NeuronNetwork Learning digit data", "[backpropagation]") {
         float target = targets[randomIndex];
         nn.maskTarget(target);
         std::vector<float> prediction = nn.feedForward(input);
-        float pred = prediction[0];
       
         printf("Prediction for target %.2f | ", target);
         printVector(prediction, "\n");
 
-        // CHECK_THAT(target, WithinRel(pred));
+        // CHECK_THAT(target, WithinRel(prediction[target], 0.01f));
     }
 }
