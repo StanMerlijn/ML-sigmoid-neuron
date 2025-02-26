@@ -24,9 +24,9 @@ NeuronNetwork::NeuronNetwork(std::vector<int> layerSizes, std::vector<float> out
     for (std::size_t i = 1; i < layerSizes.size(); i++)
     { 
         if (i == 1) {
-            _layers.emplace_back(layerSizes.at(i), layerSizes.front());
+            _layers.emplace_back(layerSizes[i], layerSizes.front());
         } else {
-            _layers.emplace_back(layerSizes.at(i), layerSizes[i-1]);
+            _layers.emplace_back(layerSizes[i], layerSizes[i-1]);
         }
     }
 }
@@ -38,7 +38,7 @@ std::vector<float> NeuronNetwork::feedForward(const std::vector<float>& inputs)
     // Feed forward through each layer in the network
     for (std::size_t i = 0; i < _layers.size(); i++)
     {
-        output = _layers.at(i).feedForward(output);
+        output = _layers[i].feedForward(output);
     }
     return output;
 }
@@ -53,7 +53,7 @@ void NeuronNetwork::backPropagation()
     int last = _layers.size() -1;
     // printf("\n\nOutput layers errors");
     _layers[last].computeOutputErros(_currentTargets);
-    
+
     // Reverse loop For hidden layers
     for (int i = last-1; i > -1; i--) {
         // If is output neuron compute the output error
@@ -67,7 +67,7 @@ void NeuronNetwork::backPropagation()
 
         // printf("\n\nFor layer %i", i);
         std::vector<Neuron> neuronsNextLayer = _layers.at(i + 1).getNeurons();
-        _layers.at(i).computeHiddenErrors(layerInput, neuronsNextLayer);
+        _layers[i].computeHiddenErrors(layerInput, neuronsNextLayer);
     }
 
     // Compute input layer 
@@ -92,28 +92,26 @@ void NeuronNetwork::trainInputs(const std::vector<float>& inputs, const std::vec
     }
 
     if (maxTrainingSamples == 0) maxTrainingSamples = targets.size();
+    std::vector<float> input(inputSize);
 
     for (int x = 0; x < 10000; x++) {
         // Loop over each input
         for (std::size_t i = 0; i < targets.size(); i++) {
 
-            std::vector<float> input(inputSize);
-            
             int startIndex = i * inputSize;
-
             for (std::size_t j = 0; j < inputSize; j++) {
-                input.at(j) = inputs.at(startIndex + j);
+                input[j] = inputs[startIndex + j];
             }
 
             // printf("For input: ");
             // for (float& in : input) printf("%f ", in);
-            // printf("\nTarget = %f", targets.at(i));
+            // printf("\nTarget = %f", targets[i]);
             
             // Set the current target
-            // setTarget(targets.at(i));
+            // setTarget(targets[i]);
 
-            maskTarget(targets.at(i));
-            // _currentTargets = {targets.at(i)};
+            maskTarget(targets[i]);
+            // _currentTargets = {targets[i]};
 
             // make a prediction for the network
             feedForward(input);
@@ -138,11 +136,11 @@ void NeuronNetwork::maskTarget(float target)
 
     for (std::size_t i = 0; i < _outputMask.size(); i++)
     {   
-        float maskValue = _outputMask.at(i);
+        float maskValue = _outputMask[i];
         if (maskValue == target) {
-            _currentTargets.at(i) = 1.0f;
+            _currentTargets[i] = 1.0f;
         } else {
-            _currentTargets.at(i) = 0.0f;
+            _currentTargets[i] = 0.0f;
         }
     }
     
@@ -155,6 +153,6 @@ void NeuronNetwork::__str__() const
     printf("\nNeuronNetwork with %zu layers\n", _layers.size());
     for (std::size_t i = 0; i < _layers.size(); i++)
     {
-        _layers.at(i).__str__();
+        _layers[i].__str__();
     }
 }

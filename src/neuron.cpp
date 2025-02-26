@@ -41,7 +41,7 @@ float Neuron::activate(const std::vector<float>& inputs)
     float weightedSum = _bias;
     for (std::size_t i = 0; i < _weights.size(); i++)
     {
-        weightedSum += _weights.at(i) * inputs.at(i);
+        weightedSum += _weights[i] * inputs[i];
     }
 
     // Return the result of the sigmoid function
@@ -60,7 +60,7 @@ void Neuron::update()
     // Update the weights and bias
     for (std::size_t i = 0; i < _weights.size(); i++)
     {
-        _weights.at(i) -= _learningRate * _lastInput.at(i) * _delta;
+        _weights[i] -= _learningRate * _lastInput[i] * _delta;
     }
     _bias -= _learningRate * _delta;
 }
@@ -77,7 +77,7 @@ float Neuron::computeHiddenDelta(const std::vector<float>& inputs,
     float sum = 0;
     for (std::size_t i = 0; i < downStreamWeights.size(); i++)
     {
-        sum += downStreamWeights.at(i) * downStreamDeltas.at(i);
+        sum += downStreamWeights[i] * downStreamDeltas[i];
     }
 
     _delta = sigmoidDerivative(_lastOutput) * sum;;

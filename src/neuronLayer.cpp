@@ -65,7 +65,7 @@ std::vector<float> NeuronLayer::feedForward(const std::vector<float>& inputs)
     {   
         // For now using the activate instead of predict.
         // The predict function is used for binary classification i think.
-        output.push_back(_neurons.at(i).activate(inputs));
+        output.push_back(_neurons[i].activate(inputs));
     }
     _output = output;
     return output;
@@ -75,7 +75,7 @@ void NeuronLayer::computeOutputErros(const std::vector<float> &targets)
 {
     // Will only run for the output neurons 
     for (std::size_t i = 0; i < targets.size(); i++) {
-        _neurons.at(i).computeOutputDelta(targets.at(i));
+        _neurons[i].computeOutputDelta(targets[i]);
     }
 }
 
@@ -92,12 +92,12 @@ void NeuronLayer::computeHiddenErrors(const std::vector<float>& inputs, const st
         // Loop over neurons in next layer
         for (std::size_t j = 0; j < neuronsNextLayer.size(); j++)
         {
-            Neuron nextNeuron = neuronsNextLayer.at(j);
-            downStreamWeights.push_back(nextNeuron.getWeights().at(i));
+            Neuron nextNeuron = neuronsNextLayer[j];
+            downStreamWeights.push_back(nextNeuron.getWeights()[i]);
             downStreamDeltas.push_back(nextNeuron.getError());
         }
         
-        _neurons.at(i).computeHiddenDelta(inputs, downStreamWeights, downStreamDeltas);
+        _neurons[i].computeHiddenDelta(inputs, downStreamWeights, downStreamDeltas);
         
         downStreamWeights.clear();
         downStreamDeltas.clear();
@@ -118,7 +118,7 @@ void NeuronLayer::__str__() const
     printf("\nNeuronLayer with %zu neurons", _neurons.size());
     for (std::size_t i = 0; i < _neurons.size(); i++)
     {
-        _neurons.at(i).__str__();
+        _neurons[i].__str__();
     }
     printf("\n");
 }

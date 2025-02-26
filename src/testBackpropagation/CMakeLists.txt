@@ -8,6 +8,12 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+# Set this if you want to use the debugger
+# if(NOT CMAKE_BUILD_TYPE)
+#     set(CMAKE_BUILD_TYPE Debug)
+# endif()
+
+
 # Get the catch2 lib
 Include(FetchContent)
 
@@ -19,6 +25,7 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(Catch2)
 
+# add_compile_definitions(-debug )
 set(SOURCES 
     testBackpropagation.cpp 
     ../neuron.cpp 
