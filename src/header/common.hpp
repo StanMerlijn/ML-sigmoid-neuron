@@ -12,6 +12,7 @@
 #pragma once
 #include <iostream>
 #include <algorithm>
+#include <random>
 #include <vector>
 #include <cmath>
 #include <string>
@@ -117,8 +118,8 @@ void normalizeVector(std::vector<T> &vec)
     T minMax = maxElement - minElement;
 
     // https://www.statology.org/normalize-data-between-0-and-1/
-    for (unsigned int i = 0; i < vec.size(); i++) {
+    for (std::size_t i = 0; i < vec.size(); i++) {
         T xi = vec[i]; 
-        vec[i] = (xi - minElement) / minMax;
+        vec.at(i) = (xi - minElement) / minMax;
     }
 }

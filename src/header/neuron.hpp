@@ -80,7 +80,9 @@ public:
      * @param target The target value.
      * @return The error for the ou tput layer.
      */
-    float computeHiddenDelta(const std::vector<float>& inputs, const std::vector<Neuron>& neuronsNextLayer);
+    float computeHiddenDelta(const std::vector<float>& inputs, 
+        const std::vector<float>& downStreamWeights, 
+        const std::vector<float>& downStreamDeltas);
 
     /**
      * @brief Calculates the error for the hidden layer.

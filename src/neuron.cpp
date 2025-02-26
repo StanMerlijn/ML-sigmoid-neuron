@@ -19,13 +19,14 @@ Neuron::Neuron(int nSizeWeights, float initialWeight, float initialBias)
         _weights.push_back(initialWeight);
     }
 
+    _delta = 0;
     _bias = initialBias;
     _learningRate = 0.5;
     _lastOutput = 0;
 }
 
-Neuron::Neuron(const std::vector<float>& weights, float bias, float learningRate) 
-    : _weights(weights), _bias(bias), _learningRate(learningRate) {}
+// Neuron::Neuron(const std::vector<float>& weights, float bias, float learningRate) 
+//     : _weights(weights), _bias(bias), _learningRate(learningRate) {}
 
 float Neuron::sigmoid(float x)
 {
@@ -64,19 +65,22 @@ void Neuron::update()
     _bias -= _learningRate * _delta;
 }
 
-float Neuron::computeHiddenDelta(const std::vector<float>& inputs, const std::vector<Neuron>& neuronsNextLayer)
+float Neuron::computeHiddenDelta(const std::vector<float>& inputs, 
+    const std::vector<float>& downStreamWeights, 
+    const std::vector<float>& downStreamDeltas)
 {
-    float sum = 0;
-    for (const Neuron& n : neuronsNextLayer)
-    {
-        // float neuronContribution = 0;
-        for (std::size_t i = 0; i < n.getWeights().size(); i++)
-        {
-            sum += n.getWeights().at(i) * n.getError();
-        }
+    // Check if downStreamWeights and downStreamDeltas are the same size
+    if (downStreamWeights.size() != downStreamDeltas.size()) {
+        throw std::runtime_error("Vector downStreamWeights and downStreamDeltas must be same size");
     }
-    float hiddenError = sigmoidDerivative(_lastOutput) * sum;
-    _delta = hiddenError;
+
+    float sum = 0;
+    for (std::size_t i = 0; i < downStreamWeights.size(); i++)
+    {
+        sum += downStreamWeights.at(i) * downStreamDeltas.at(i);
+    }
+
+    _delta = sigmoidDerivative(_lastOutput) * sum;;
     return _delta;
 }
 

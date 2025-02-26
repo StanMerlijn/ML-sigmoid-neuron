@@ -23,8 +23,6 @@
 class NeuronLayer {
 private:
     std::vector<Neuron> _neurons; /**< The neurons in the layer. */
-    bool _isOutputLayer;
-
     std::vector<float> _output;
 
 public:
@@ -52,14 +50,12 @@ public:
     std::vector<float> feedForward(const std::vector<float>& inputs);
     void computeOutputErros(const std::vector<float> &targets);
     
-    void computeHiddenErrors(const std::vector<float>& inputs, const std::vector<Neuron>& neuronsNextLayer, 
-        const std::vector<float>& targets);
+    void computeHiddenErrors(const std::vector<float>& inputs, const std::vector<Neuron>& neuronsNextLayer);
     
     void update();
 
     std::vector<Neuron> getNeurons() const { return _neurons; }
     std::vector<float> getOutput() const { return _output; }
-    bool getLayerType() const { return _isOutputLayer; }
     /**
      * @brief Prints the layer details.
      */
