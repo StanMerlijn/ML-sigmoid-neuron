@@ -12,12 +12,7 @@
 
 Neuron::Neuron(int nSizeWeights, float initialWeight, float initialBias)
 {
-    _weights.reserve(nSizeWeights);
-    // Set the default variables
-    for (std::size_t i = 0; i < nSizeWeights; i++)
-    {
-        _weights.push_back(initialWeight);
-    }
+    _weights = std::vector<float>(nSizeWeights, initialWeight);
 
     _delta = 0;
     _bias = initialBias;
@@ -39,6 +34,7 @@ float Neuron::activate(const std::vector<float>& inputs)
     // Calculate the weighted sum of the inputs
     _lastInput = inputs;
     float weightedSum = _bias;
+
     for (std::size_t i = 0; i < _weights.size(); i++)
     {
         weightedSum += _weights[i] * inputs[i];
