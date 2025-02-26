@@ -15,13 +15,15 @@ NeuronNetwork::NeuronNetwork(std::vector<NeuronLayer> layers)
 
 NeuronNetwork::NeuronNetwork(std::vector<int> layerSizes, std::vector<float> outputMask)
 {   
-    _inputVec.reserve(layerSizes.front());
+
     _outputMask = outputMask;
+
+    _inputVec.resize(layerSizes.front());
     _currentTargets.resize(layerSizes.back());
     _layers.reserve(layerSizes.size());
-        
+
+    _tempOutputBuffer.resize(*std::max_element(layerSizes.begin(), layerSizes.end()));    
     _currentLayerOutput.resize(*std::max_element(layerSizes.begin(), layerSizes.end()));
-    
     for (std::size_t i = 1; i < layerSizes.size(); i++)
     { 
         if (i == 1) {
@@ -32,10 +34,23 @@ NeuronNetwork::NeuronNetwork(std::vector<int> layerSizes, std::vector<float> out
     }
 }
 
-std::vector<float> NeuronNetwork::feedForward(const std::vector<float>& inputs)
+const std::vector<float>& NeuronNetwork::feedForward(const std::vector<float>& inputs)
 {   
+
+    // printf("Input size %zu\n", inputs.size());
+    // //
+    // printf("_inputVec size %zu\n", _inputVec.size());
+    // printf("_currentLayerOutput size %zu\n", _currentLayerOutput.size());
+    // printf("_inputVec capacity %zu\n", _inputVec.capacity());
+    // printf("_currentLayerOutput capacity %zu\n", _currentLayerOutput.capacity());
+    // printf("Before assigning, _inputVec capacity: %zu, size: %zu\n", _inputVec.capacity(), _inputVec.size());
     _inputVec = inputs;
+    // printf("After assigning, _inputVec capacity: %zu, size: %zu\n", _inputVec.capacity(), _inputVec.size());
+
+    // printf("Before assigning, _currentLayerOutput capacity: %zu, size: %zu\n", _currentLayerOutput.capacity(), _currentLayerOutput.size());
     _currentLayerOutput = inputs;
+    // printf("After assigning, _currentLayerOutput capacity: %zu, size: %zu\n", _currentLayerOutput.capacity(), _currentLayerOutput.size());
+        
     // Feed forward through each layer in the network
     for (std::size_t i = 0; i < _layers.size(); i++)
     {
@@ -74,7 +89,7 @@ void NeuronNetwork::update()
 }
 
 void NeuronNetwork::trainInputs(const std::vector<float>& inputs, const std::vector<float>& targets, 
-    int inputSize, int maxTrainingSamples)
+    int inputSize, int maxTrainingSamples, int epochs)
 {
     // Check if the flat input is the same as the targets
     if (!((inputs.size() / inputSize) == targets.size())) {
@@ -85,7 +100,7 @@ void NeuronNetwork::trainInputs(const std::vector<float>& inputs, const std::vec
     if (maxTrainingSamples == 0) maxTrainingSamples = targets.size();
     std::vector<float> input(inputSize);
 
-    for (int x = 0; x < 10000; x++) {
+    for (int x = 0; x < epochs; x++) {
         // Loop over each input
         for (std::size_t i = 0; i < targets.size(); i++) {
             for (std::size_t j = 0; j < inputSize; j++) {

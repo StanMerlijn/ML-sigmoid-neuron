@@ -21,13 +21,13 @@
  */
 class NeuronNetwork {
 private:
-    std::vector<float> _inputVec;
     std::vector<NeuronLayer> _layers; /**< The layers in the network. */
     std::vector<float> _currentTargets;
     std::vector<float> _outputMask;
 
+    std::vector<float> _inputVec;
     std::vector<float> _currentLayerOutput;
-
+    std::vector<float> _tempOutputBuffer;
 public:
     /**
      * @brief Constructs a NeuronNetwork with the given layers.
@@ -48,7 +48,7 @@ public:
      * @param inputs A vector of input values.
      * @return The ouπtput of the network. 
      */
-    std::vector<float> feedForward(const std::vector<float>& inputs);
+    const std::vector<float>& feedForward(const std::vector<float>& inputs);
 
     /**
      * @brief Performs a prediction operation. On all the layers sequentially.
@@ -75,7 +75,7 @@ public:
      * @param maxTrainingSamples The maximum number of training samples.
      */
     void trainInputs(const std::vector<float>& inputs, const std::vector<float>& targets, 
-        int inputSize, int maxTrainingSamples);
+        int inputSize, int maxTrainingSamples, int epochs);
     
     /**
      * @brief Masks the target values in the network.
