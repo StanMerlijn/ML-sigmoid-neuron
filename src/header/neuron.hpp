@@ -21,14 +21,11 @@
 class Neuron {
 private:
     std::vector<float> _weights; /**< The weights for the neuron. */
+    std::vector<float> _lastInput;
     float _bias; /**< The bias term for the neuron. */
     float _learningRate; /**< The learning rate for updating the weights. */
-    float _output; /**< The last saved output of the neuron. */
-
-    // Variables for storing the errors in weights and bias 
-    std::vector<float> _dWeights; /**< The change in weights for the neuron. */
-    float _dBias; /**< The change in bias term for the neuron. */
-    float _error; /**< The error for the neuron. */
+    float _lastOutput; /**< The last saved output of the neuron. */
+    float _delta;
 
 public:
     /**
@@ -83,7 +80,7 @@ public:
      * @param target The target value.
      * @return The error for the ou tput layer.
      */
-    float ErrorHidden(const std::vector<float>& inputs, const std::vector<Neuron>& neuronsNextLayer);
+    float computeHiddenDelta(const std::vector<float>& inputs, const std::vector<Neuron>& neuronsNextLayer);
 
     /**
      * @brief Calculates the error for the hidden layer.
@@ -91,7 +88,7 @@ public:
      * @param target The target value.
      * @return The error for the hidden layer.
      */
-    float derivedErrorOutput(float output);
+    float sigmoidDerivative(float output);
 
     /**
      * @brief Calculates the error for the output layer.
@@ -99,7 +96,7 @@ public:
      * @param target The target value.
      * @return The error for the output layer.
      */
-    float ErrorOutput(float output, float target);
+    float computeOutputDelta(float target);
 
     /**
      * @brief Prints the neuron details.
@@ -108,6 +105,6 @@ public:
 
     std::vector<float> getWeights() const { return _weights; }
     float getBias() const { return _bias; }
-    float getError() const { return _error; }
+    float getError() const { return _delta; }
 
 };

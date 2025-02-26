@@ -23,10 +23,33 @@ NeuronLayer::NeuronLayer(int nNeurons, int nSizeWeights, float initialWeight, fl
 
     _isOutputLayer = isOutputLayer;
 
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_real_distribution<> dis(0.1f, 1.0f);
+
     _neurons.reserve(nNeurons);
-    for (int i = 0; i < nNeurons; i++)
+    for (std::size_t i = 0; i < nNeurons; i++)
     {
-        _neurons.emplace_back(nSizeWeights, initialWeight, initialBias);
+        _neurons.emplace_back(nSizeWeights, dis(gen), dis(gen));
+    }
+    
+}
+
+NeuronLayer::NeuronLayer(int nNeurons, int nSizeWeights)
+{
+    // nNeurons check
+    if (nNeurons == 0) {
+        printf("nNeuron must be atleast 1 is %d", nNeurons) ;
+        return;    
+    } 
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_real_distribution<> dis(0.1f, 1.0f);
+
+    _neurons.reserve(nNeurons);
+    for (std::size_t i = 0; i < nNeurons; i++)
+    {
+        _neurons.emplace_back(nSizeWeights, dis(gen), dis(gen));
     }
     
 }
@@ -37,22 +60,31 @@ std::vector<float> NeuronLayer::feedForward(const std::vector<float>& inputs)
     // Reserve space for the outputs
     output.reserve(_neurons.size());
     // Feed forward through each neuron in the layer
-    for (int i = 0; i < _neurons.size(); i++)
+    for (std::size_t i = 0; i < _neurons.size(); i++)
     {   
         // For now using the activate instead of predict.
         // The predict function is used for binary classification i think.
-        output.push_back(_neurons[i].activate(inputs));
+        output.push_back(_neurons.at(i).activate(inputs));
     }
     _output = output;
     return output;
 }
 
-void NeuronLayer::computeLayerErrors(const std::vector<float>& inputs, const std::vector<Neuron>& neuronsNextLayer, 
+void NeuronLayer::computeOutputErros(const std::vector<float> &targets)
+{
+    // Will only run for the output neurons 
+    for (std::size_t i = 0; i < targets.size(); i++) {
+        _neurons.at(i).computeOutputDelta(targets.at(i));
+    }
+}
+
+void NeuronLayer::computeHiddenErrors(const std::vector<float>& inputs, const std::vector<Neuron>& neuronsNextLayer, 
     const std::vector<float>& targets)
 {
-    for (int i = 0; i < _neurons.size(); i++) {
+    for (std::size_t i = 0; i < _neurons.size(); i++) {
         // Compute the erros for each neuron 
-        _neurons[i].deltaError(inputs, neuronsNextLayer, targets[i], _isOutputLayer);
+        // _neurons.at(i).deltaError(inputs, neuronsNextLayer, targets.at(i), _isOutputLayer);
+        _neurons.at(i).computeHiddenDelta(inputs, neuronsNextLayer);
     }
 }
 
@@ -68,9 +100,9 @@ void NeuronLayer::__str__() const
 {
     // Print the layer details
     printf("\nNeuronLayer with %zu neurons", _neurons.size());
-    for (int i = 0; i < _neurons.size(); i++)
+    for (std::size_t i = 0; i < _neurons.size(); i++)
     {
-        _neurons[i].__str__();
+        _neurons.at(i).__str__();
     }
     printf("\n");
 }

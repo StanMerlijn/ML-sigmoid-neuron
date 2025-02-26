@@ -8,10 +8,7 @@
  * @copyright Copyright (c) 2025
  * 
  */
-#pragma once    
-#include <iostream>
-#include <vector>
-
+#pragma once
 #include "neuron.hpp"
 #include "neuronLayer.hpp"
 
@@ -24,6 +21,7 @@
  */
 class NeuronNetwork {
 private:
+    std::vector<float> _inputVec;
     std::vector<NeuronLayer> _layers; /**< The layers in the network. */
     std::vector<float> _currentTargets;
     std::vector<float> _outputMask;
@@ -42,17 +40,21 @@ public:
      */
     NeuronNetwork(std::vector<int> layers, std::vector<float> outPutMask);
     
+    
     /**
      * @brief Performs a feedforward operation. On all the layers sequentially.
      * @param inputs A vector of input values.
-     * @return The output of the network. 
+     * @return The ouπtput of the network. 
      */
     std::vector<float> feedForward(const std::vector<float>& inputs);
-    
+
+    std::vector<float> predict(const std::vector<float>& input);
+
     void backPropagation();
     void update();
 
-    void trainInputs(const std::vector<float>& inputs, const std::vector<float>& targets, int inputSize);
+    void trainInputs(const std::vector<float>& inputs, const std::vector<float>& targets, 
+        int inputSize, int maxTrainingSamples);
     
     void maskTarget(float target);
     std::vector<NeuronLayer> getLayers() const { return _layers; }

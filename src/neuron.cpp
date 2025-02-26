@@ -14,28 +14,18 @@ Neuron::Neuron(int nSizeWeights, float initialWeight, float initialBias)
 {
     _weights.reserve(nSizeWeights);
     // Set the default variables
-    for (int i = 0; i < nSizeWeights; i++)
+    for (std::size_t i = 0; i < nSizeWeights; i++)
     {
         _weights.push_back(initialWeight);
     }
 
     _bias = initialBias;
-    _learningRate = 0.1;
-    _output = 0;
-
-    // Set the error variables to zero
-    _dWeights = std::vector<float>(nSizeWeights);
-    _dBias = 0;
-    _error = 0;
-    
+    _learningRate = 0.5;
+    _lastOutput = 0;
 }
 
 Neuron::Neuron(const std::vector<float>& weights, float bias, float learningRate) 
-    : _weights(weights), _bias(bias), _learningRate(learningRate) 
-    {
-        _dBias = 0;
-        _dWeights = std::vector<float>(weights.size(), 0);
-    }
+    : _weights(weights), _bias(bias), _learningRate(learningRate) {}
 
 float Neuron::sigmoid(float x)
 {
@@ -46,16 +36,16 @@ float Neuron::sigmoid(float x)
 float Neuron::activate(const std::vector<float>& inputs)
 {
     // Calculate the weighted sum of the inputs
+    _lastInput = inputs;
     float weightedSum = _bias;
-    for (int i = 0; i < _weights.size(); i++)
+    for (std::size_t i = 0; i < _weights.size(); i++)
     {
-        weightedSum += _weights[i] * inputs[i];
+        weightedSum += _weights.at(i) * inputs.at(i);
     }
 
     // Return the result of the sigmoid function
-    float output = sigmoid(weightedSum);
-    _output = output; // store for propagation later
-    return output;
+    _lastOutput = sigmoid(weightedSum);
+    return _lastOutput;
 }
 
 float Neuron::predict(const std::vector<float>& inputs)
@@ -64,64 +54,39 @@ float Neuron::predict(const std::vector<float>& inputs)
     return (activate(inputs) > 0.5) ? 1 : 0;
 }
 
-void Neuron::deltaError(const std::vector<float>& inputs, const std::vector<Neuron>& neuronsNextLayer, float target, bool isOutputNeuron)
-{
-    // Update the weights and bias
-    float output = activate(inputs);
-    float error;
-    
-    // Compute the error for output neurons and normal neuros
-    if (isOutputNeuron) {
-        error = ErrorOutput(output, target);
-    } else {
-        error = ErrorHidden(inputs, neuronsNextLayer);
-    }
-
-    _error = error;
-    for (int i = 0; i < _weights.size(); i++)
-    {
-        float prediction = predict(inputs);
-        _dWeights[i] += _learningRate * gradientBetweenNeurons(prediction, error);
-    }
-    _dBias += _learningRate * error;
-}
-
 void Neuron::update()
 {
     // Update the weights and bias
-    for (int i = 0; i < _weights.size(); i++)
+    for (std::size_t i = 0; i < _weights.size(); i++)
     {
-        _weights[i] -= _dWeights[i];
+        _weights.at(i) -= _learningRate * _lastInput.at(i) * _delta;
     }
-    _bias -= _dBias;
+    _bias -= _learningRate * _delta;
 }
 
-float Neuron::ErrorHidden(const std::vector<float>& inputs, const std::vector<Neuron>& neuronsNextLayer)
+float Neuron::computeHiddenDelta(const std::vector<float>& inputs, const std::vector<Neuron>& neuronsNextLayer)
 {
-    float output = predict(inputs);
-    float hiddenError = derivedErrorOutput(output);
-
     float sum = 0;
-    for (const auto n : neuronsNextLayer)
+    for (const Neuron& n : neuronsNextLayer)
     {
-        // TODO: this copies the vector
-        std::vector<float> weights = n.getWeights();
-        float neuronSum = 0;
-        for (int i = 0; i < weights.size(); i++)
+        // float neuronContribution = 0;
+        for (std::size_t i = 0; i < n.getWeights().size(); i++)
         {
-            neuronSum *= weights[i] * n.getError();
+            sum += n.getWeights().at(i) * n.getError();
         }
-        sum += neuronSum;
     }
-    return hiddenError * sum;
+    float hiddenError = sigmoidDerivative(_lastOutput) * sum;
+    _delta = hiddenError;
+    return _delta;
 }
 
-float Neuron::ErrorOutput(float output, float target)
+float Neuron::computeOutputDelta(float target)
 {
-    return derivedErrorOutput(output) * -(target - output);
+    _delta = sigmoidDerivative(_lastOutput) * -(target - _lastOutput);
+    return _delta;
 }
 
-float Neuron::derivedErrorOutput(float output)
+float Neuron::sigmoidDerivative(float output)
 {
     return output * (1 - output);
 }

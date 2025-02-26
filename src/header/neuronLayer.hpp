@@ -42,16 +42,19 @@ public:
      */
     NeuronLayer(int nNeurons, int nSizeWeights, float initialWeight, float initialBias, bool isOutputNeuron);
     
+    NeuronLayer(int nNeurons, int nSizeWeights);
+    
     /**
      * @brief Performs a feedforward operation.
      * @param inputs A vector of input values.
      * @return The output of the layer. 
      */
     std::vector<float> feedForward(const std::vector<float>& inputs);
+    void computeOutputErros(const std::vector<float> &targets);
     
-    void computeLayerErrors(const std::vector<float>& inputs, const std::vector<Neuron>& neuronsNextLayer, 
+    void computeHiddenErrors(const std::vector<float>& inputs, const std::vector<Neuron>& neuronsNextLayer, 
         const std::vector<float>& targets);
-
+    
     void update();
 
     std::vector<Neuron> getNeurons() const { return _neurons; }
