@@ -44,7 +44,7 @@ TEST_CASE("Testing initialization of the NeuronLayer", "[NeuronLayer]")
 {
     // create a neuronLayer with 10 neurons
     int nNeurons = 10;
-    NeuronLayer nL(nNeurons, 4, 0.1, 0.1, false);
+    NeuronLayer nL(nNeurons, 4);
 
     REQUIRE(nL.getNeurons().size() == nNeurons);
     nL.__str__();
