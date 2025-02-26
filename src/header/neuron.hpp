@@ -102,7 +102,7 @@ public:
      * @brief Returns the weights of the neuron.
      * @return A vector of weights.
      */
-    std::vector<float> getWeights() const { return _weights; }
+    const std::vector<float>& getWeights() const { return _weights; }
     
     /**
      * @brief Returns the bias of the neuron.

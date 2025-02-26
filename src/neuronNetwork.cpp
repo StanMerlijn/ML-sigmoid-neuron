@@ -56,17 +56,17 @@ void NeuronNetwork::backPropagation()
     // Reverse loop For hidden layers
     for (int i = last-1; i > -1; i--) {
         // If is output neuron compute the output error
-        std::vector<float> layerInput;
+        // std::vector<float> layerInput;
 
         if (i == 0) { // If i == 0 then its the input layer
-            layerInput = _inputVec;
+            // layerInput = _inputVec;
+            _layers[i].computeHiddenErrors(_inputVec, _layers[i + 1].getNeurons());
         } else {
-            layerInput = _layers.at(i-1).getOutput();
+            // layerInput = _layers[i-1].getOutput();
+            _layers[i].computeHiddenErrors(_layers[i-1].getOutput(), _layers[i + 1].getNeurons());
         }
 
         // printf("\n\nFor layer %i", i);
-        std::vector<Neuron> neuronsNextLayer = _layers.at(i + 1).getNeurons();
-        _layers[i].computeHiddenErrors(layerInput, neuronsNextLayer);
     }
 }
 
@@ -92,10 +92,8 @@ void NeuronNetwork::trainInputs(const std::vector<float>& inputs, const std::vec
     for (int x = 0; x < 10000; x++) {
         // Loop over each input
         for (std::size_t i = 0; i < targets.size(); i++) {
-
-            int startIndex = i * inputSize;
             for (std::size_t j = 0; j < inputSize; j++) {
-                input[j] = inputs[startIndex + j];
+                input[j] = inputs[i * inputSize + j];
             }
 
             // Set the target for the network
@@ -122,8 +120,7 @@ void NeuronNetwork::maskTarget(float target)
 
     for (std::size_t i = 0; i < _outputMask.size(); i++)
     {   
-        float maskValue = _outputMask[i];
-        if (maskValue == target) {
+        if (_outputMask[i] == target) {
             _currentTargets[i] = 1.0f;
         } else {
             _currentTargets[i] = 0.0f;
@@ -135,6 +132,7 @@ void NeuronNetwork::maskTarget(float target)
 void NeuronNetwork::__str__() const
 {
     // Print the network details
+    // std::cout << "NeuronNetwork with " << _layers.size() << " layers" << std::endl;
     printf("\nNeuronNetwork with %zu layers\n", _layers.size());
     for (std::size_t i = 0; i < _layers.size(); i++)
     {
