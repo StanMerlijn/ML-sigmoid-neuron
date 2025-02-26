@@ -50,7 +50,7 @@ public:
      * @brief Computes the output errors for the layer.
      * @param targets A vector of target values.
      */
-    void computeOutputErros(const std::vector<float> &targets);
+    void computeOutputErros(const std::vector<float>& targets);
     
     /**
      * @brief Computes the hidden errors for the layer.

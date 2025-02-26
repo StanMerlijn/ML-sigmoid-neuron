@@ -67,7 +67,7 @@ public:
      * @param inputs A vector of input values.
      * @param target The target value.
      */
-    void deltaError(const std::vector<float>& inputs,const std::vector<Neuron>& neuronsNextLayer, float target, bool isOutputNeuron);
+    void deltaError(const std::vector<float>& inputs, const std::vector<Neuron>& neuronsNextLayer, float target, bool isOutputNeuron);
 
     /**
      * @brief Updates the weights and bias of the neuron. Using the previously calculated errors.
