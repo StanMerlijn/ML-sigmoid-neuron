@@ -126,6 +126,51 @@ TEST_CASE("Testing initialization of the NeuronNetwork", "[NeuronNetwork]")
     }  
 }
 
+TEST_CASE("AND neural Network", "[NeuronNetwork][AND]") 
+{
+    NeuronNetwork nn({2, 1}, {1.0f});
+
+    std::vector<float> inputs = {
+        0.0f, 0.0f, 
+        0.0f, 1.0f, 
+        1.0f, 0.0f, 
+        1.0f, 1.0f
+    };
+    std::vector<float> targets = { 
+        0.0f, 
+        0.0f, 
+        0.0f, 
+        1.0f 
+    };
+
+    MEASURE_BLOCK("Training the network AND", {
+        nn.trainInputs(inputs, targets, 2, 0, 10000);
+    });
+
+    // Check if the network can predict the correct output
+    for (int i = 0; i < targets.size(); i++)
+    {
+        int startIndex = i * 2;
+        std::vector<float> input(2);
+        
+        for (int j = 0; j < 2; j++) {
+            input[j] = inputs[startIndex + j];
+        }
+
+        std::vector<float> prediction = nn.predict(input);    
+        
+        printf("For input ");
+        printVector(input, " Prediction ");
+        printVector(prediction, "\n");
+
+        if (i == 3) { // Checks for 1 1
+            CHECK_THAT(prediction[0], WithinAbs(1.0f, 0.05f));
+        } else { // Checks for 0 0, 0 1, 1 0
+            CHECK_THAT(prediction[0], WithinAbs(0.0f, 0.05f));
+        }
+    }
+}
+
 TEST_CASE("XOR Neural Network", "[NeuronNetwork][XOR]") 
 {
     NeuronNetwork nn({2, 2, 1}, {1});
@@ -142,10 +187,9 @@ TEST_CASE("XOR Neural Network", "[NeuronNetwork][XOR]")
         1.0f, 
         0.0f 
     };
-    s_Allocations = 0;
 
     MEASURE_BLOCK("Training the network XOR", {
-        nn.trainInputs(inputs, targets, 2, 0, 2000);
+        nn.trainInputs(inputs, targets, 2, 0, 10000);
     });
 
     for (int i = 0; i < targets.size(); i++)
@@ -179,17 +223,26 @@ TEST_CASE("NeuronNetwork Learning digit data", "[backpropagation]") {
     std::vector<int> layers = { inputSize, 16, outputSize };
     std::vector<float> outputMask = {0.0f, 1.0f, 2.0f, 3.0f, 4.0f, 5.0f, 6.0f, 7.0f, 8.0f, 9.0f};
     
+    s_Allocations = 0;
+    
     NeuronNetwork nn(layers, outputMask);
+
+    printf("Digit data NN Allocations: %d\n", s_Allocations);
 
     std::vector<float> targets(digits.targets.begin(), digits.targets.end());
     std::vector<float> images(digits.images.begin(), digits.images.end());
     
     int imageSize = 64;
 
+    s_Allocations = 0;
+
     MEASURE_BLOCK("Training the network", {
         nn.trainInputs(images, targets, imageSize, 0, 2000);
     });
     
+    nn.trainInputs(images, targets, imageSize, 0, 2000);
+    printf("Digit data Allocations: %d\n", s_Allocations);
+
     int nToCheck = 20;
 
     std::random_device rd;
