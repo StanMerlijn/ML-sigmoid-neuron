@@ -11,14 +11,16 @@
 #include "header/neuron.hpp"
 
 Neuron::Neuron(int nSizeWeights, float initialWeight, float initialBias)
-{
+{   
+    // Initialize the weights and bias
     _weights = std::vector<float>(nSizeWeights, initialWeight);
     _lastInput.reserve(nSizeWeights);
-
-    _delta = 0;
+    
+    // Initialize the delta and learning rate
+    _delta = 0.0f;
     _bias = initialBias;
-    _learningRate = 0.5;
-    _lastOutput = 0;
+    _learningRate = 0.5f;
+    _lastOutput = 0.0f;
 }
 
 Neuron::Neuron(const std::vector<float>& weights, float bias, float learningRate) 
@@ -36,6 +38,7 @@ float Neuron::activate(const std::vector<float>& inputs)
     _lastInput = inputs;
     float weightedSum = _bias;
 
+    // Dot product of the weights and inputs
     for (std::size_t i = 0; i < _weights.size(); i++)
     {
         weightedSum += _weights[i] * inputs[i];
@@ -59,6 +62,7 @@ void Neuron::update()
     {
         _weights[i] -= _learningRate * _lastInput[i] * _delta;
     }
+    // Update the bias
     _bias -= _learningRate * _delta;
 }
 
