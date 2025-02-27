@@ -27,6 +27,8 @@ private:
     std::vector<float> _inputVec;
     std::vector<float> _currentLayerOutput;
     std::vector<float> _tempOutputBuffer;
+
+    std::vector<float> _outputMask;
 public:
     /**
      * @brief Constructs a NeuronNetwork with the given layers.
@@ -59,13 +61,13 @@ public:
     /**
      * @brief Performs a backpropagation operation. On all the layers sequentially.
      */
-    void backPropagation(const std::vector<float>& target);
+    void backPropagation(const std::vector<float>& targets);
     
+    void maskTarget(float target);
     /**
      * @brief Updates the neurons in the network.
      */
     void update();
-
     /**
      * @brief Trains the network on a set of inputs and targets.
      * @param inputs A vector of input values.
@@ -73,8 +75,7 @@ public:
      * @param inputSize The size of the input values.
      * @param maxTrainingSamples The maximum number of training samples.
      */
-    void trainInputs(const std::vector<float>& inputs, const std::vector<float>& targets, 
-        int inputSize, int targetSize, int epochs);
+    void trainInputs2D(const std::vector<std::vector<float>>& inputs, const std::vector<std::vector<float>>& targets, int epochs);
     
     /**
      * @brief Returns the layers in the network.
