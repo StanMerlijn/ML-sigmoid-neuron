@@ -191,6 +191,22 @@ std::vector<T> realdCsvFlat(const std::string& filename, char delimiter = ',')
 }
 
 template<typename T>
+std::vector<std::vector<T>> create2DVector(const std::vector<T> vec, int size)
+{
+    std::vector<std::vector<T>> data;
+    data.reserve(vec.size() / size);
+    for (int i = 0; i < vec.size(); i += size) {
+        std::vector<T> row;
+        for (int j = 0; j < size; j++) {
+            row.push_back(vec[i + j]);
+        }
+        data.push_back(row);
+    }
+
+    return data;
+}
+
+template<typename T>
 digitData<T> readDigitData()
 {  
     // Not the best way to do this, but it works for now
@@ -206,4 +222,34 @@ digitData<T> readDigitData()
     data.targets = realdCsvFlat<T>(filenameTargets);
 
     return data;
+}
+
+template<typename T>
+std::vector<T> maskData(std::vector<T>& data, std::vector<T>& mask)
+{   
+    T off, on;
+    if constexpr (std::is_floating_point_v<T>) {
+        off = 0.1f;
+        on  = 1.0f;
+    } else if constexpr (std::is_integral_v<T>) {
+        off = 0;
+        on  = 1;
+    } else {
+        throw std::runtime_error("Data type not supported");
+    }
+
+    std::vector<T> maskedData;
+    maskedData.reserve(data.size() * mask.size());    
+    for (std::size_t i = 0; i < data.size(); i++)
+    {
+        for (std::size_t j = 0; j < mask.size();j++)
+        {
+            if (data.at(i) == mask.at(j)) {
+                maskedData.emplace_back(on);
+            } else {
+                maskedData.emplace_back(off);
+            }
+        }
+    }
+    return maskedData;
 }
