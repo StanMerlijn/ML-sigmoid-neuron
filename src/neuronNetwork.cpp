@@ -57,11 +57,11 @@ std::vector<float> NeuronNetwork::predict(const std::vector<float>& input)
     return feedForward(input);
 }
 
-void NeuronNetwork::backPropagation()
+void NeuronNetwork::backPropagation(const std::vector<float>& target)
 {
     // Compute the output errors
     int last = _layers.size() -1;
-    _layers[last].computeOutputErros(_currentTargets);
+    _layers[last].computeOutputErros(target);
 
     // Reverse loop For hidden layers
     for (int i = last-1; i > -1; i--) {
@@ -106,33 +106,12 @@ void NeuronNetwork::trainInputs(const std::vector<float>& inputs, const std::vec
             for (std::size_t j = 0; j < targetSize; j++) {
                 target[j] = targets[i * targetSize + j];
             }
-            _currentTargets = target;
-
             // maskTarget(targets[i]); // Set the target for the network
             feedForward(input);     // Feed forward
-            backPropagation();      // Back propagate
+            backPropagation(target);      // Back propagate
             update();               // Update the weights
         }
     }
-}
-
-void NeuronNetwork::maskTarget(float target)
-{
-    if (_outputMask.size() != _currentTargets.size()) {
-        throw std::runtime_error("OutputMask and current targets are not the same size");
-        exit(1);
-    }
-
-    // Set the target to the current target
-    for (std::size_t i = 0; i < _outputMask.size(); i++)
-    {   
-        if (_outputMask[i] == target) {
-            _currentTargets[i] = 1.0f;
-        } else {
-            _currentTargets[i] = 0.0f;
-        }
-    }
-    
 }
 
 void NeuronNetwork::__str__() const

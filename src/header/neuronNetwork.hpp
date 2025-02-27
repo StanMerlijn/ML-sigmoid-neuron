@@ -59,7 +59,7 @@ public:
     /**
      * @brief Performs a backpropagation operation. On all the layers sequentially.
      */
-    void backPropagation();
+    void backPropagation(const std::vector<float>& target);
     
     /**
      * @brief Updates the neurons in the network.
@@ -75,13 +75,6 @@ public:
      */
     void trainInputs(const std::vector<float>& inputs, const std::vector<float>& targets, 
         int inputSize, int targetSize, int epochs);
-    
-    /**
-     * @brief Masks the target values in the network.
-     * 
-     * @param target The target value to mask.
-     */
-    void maskTarget(float target);
     
     /**
      * @brief Returns the layers in the network.
