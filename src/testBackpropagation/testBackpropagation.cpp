@@ -88,7 +88,7 @@ TEST_CASE("Testing initialization of the NeuronNetwork", "[NeuronNetwork]")
     //     NeuronNetwork nN(layers, outputMask);
     // };
 
-    NeuronNetwork nn(layers, outputMask);
+    NeuronNetwork nn(layers);
 
     // Get the neurons
     std::vector<NeuronLayer> neuronLayers = nn.getLayers();
@@ -128,39 +128,35 @@ TEST_CASE("Testing initialization of the NeuronNetwork", "[NeuronNetwork]")
 
 TEST_CASE("AND neural Network", "[NeuronNetwork][AND]") 
 {
-    NeuronNetwork nn({2, 1}, {1.0f});
+    NeuronNetwork nn({2, 1});
+    int inputSize = 2;
+    int targetSize = 1;
 
-    std::vector<float> inputs = {
-        0.0f, 0.0f, 
-        0.0f, 1.0f, 
-        1.0f, 0.0f, 
-        1.0f, 1.0f
+    std::vector<std::vector<float>> inputs = {
+        {0.0f, 0.0f}, 
+        {0.0f, 1.0f}, 
+        {1.0f, 0.0f}, 
+        {1.0f, 1.0f}
     };
-    std::vector<float> targets = { 
-        0.0f, 
-        0.0f, 
-        0.0f, 
-        1.0f 
+    std::vector<std::vector<float>> targets = { 
+        {0.0f}, 
+        {0.0f}, 
+        {0.0f}, 
+        {1.0f} 
     };
 
     MEASURE_BLOCK("Training the network AND", {
-        nn.trainInputs(inputs, targets, 2, 0, 10000);
+        nn.trainInputs2D(inputs, targets, 10000);
     });
 
     // Check if the network can predict the correct output
     for (int i = 0; i < targets.size(); i++)
-    {
-        int startIndex = i * 2;
-        std::vector<float> input(2);
-        
-        for (int j = 0; j < 2; j++) {
-            input[j] = inputs[startIndex + j];
-        }
+    {     
 
-        std::vector<float> prediction = nn.predict(input);    
+        std::vector<float> prediction = nn.predict(inputs[i]);    
         
         printf("For input ");
-        printVector(input, " Prediction ");
+        printVector(inputs[i], " Prediction ");
         printVector(prediction, "\n");
 
         if (i == 3) { // Checks for 1 1
@@ -173,39 +169,149 @@ TEST_CASE("AND neural Network", "[NeuronNetwork][AND]")
 
 TEST_CASE("XOR Neural Network", "[NeuronNetwork][XOR]") 
 {
-    NeuronNetwork nn({2, 2, 1}, {1});
-
-    std::vector<float> inputs = {
-        0.0f, 0.0f, 
-        0.0f, 1.0f, 
-        1.0f, 0.0f, 
-        1.0f, 1.0f
+    NeuronNetwork nn({2, 2, 1});
+    int inputSize = 2;
+    int targetSize = 1;
+    
+    std::vector<std::vector<float>> inputs = {
+        {0.0f, 0.0f}, 
+        {0.0f, 1.0f}, 
+        {1.0f, 0.0f}, 
+        {1.0f, 1.0f}
     };
-    std::vector<float> targets = { 
-        0.0f, 
-        1.0f, 
-        1.0f, 
-        0.0f 
+    std::vector<std::vector<float>> targets = { 
+        {0.0f}, 
+        {1.0f}, 
+        {1.0f}, 
+        {0.0f} 
     };
 
     MEASURE_BLOCK("Training the network XOR", {
-        nn.trainInputs(inputs, targets, 2, 0, 10000);
+        nn.trainInputs2D(inputs, targets, 10000);
     });
 
     for (int i = 0; i < targets.size(); i++)
     {
-        int startIndex = i * 2;
-        std::vector<float> input(2);
-        
-        for (int j = 0; j < 2; j++) {
-            input[j] = inputs[startIndex + j];
-        }
-
-        std::vector<float> prediction = nn.predict(input);    
+        std::vector<float> prediction = nn.predict(inputs[i]);    
         
         printf("For input ");
-        printVector(input, " Prediction ");
+        printVector(inputs[i], " Prediction ");
         printVector(prediction, "\n");
+        
+        // Check if the network can predict the correct output
+        if (i == 1 || i == 2) { // Checks for 0 1, 1 0
+            CHECK_THAT(prediction[0], WithinAbs(1.0f, 0.05f));
+        } else { // Checks for 0 0, 1 1
+            CHECK_THAT(prediction[0], WithinAbs(0.0f, 0.05f));
+        }
+    }
+}
+
+TEST_CASE("Half adder Neuron Network", "[NeuronNetwork][HalfAdder]") 
+{
+    NeuronNetwork nn({2, 3, 2});
+    int inputSize = 2;
+    int targetSize = 2;
+
+    std::vector<std::vector<float>> inputs = {
+        {0.0f, 0.0f}, 
+        {1.0f, 0.0f}, 
+        {0.0f, 1.0f}, 
+        {1.0f, 1.0f}
+    };
+    std::vector<std::vector<float>> targets = {
+        {0.0f, 0.0f}, 
+        {1.0f, 0.0f}, 
+        {1.0f, 0.0f},
+        {0.0f, 1.0f}
+    };
+
+    MEASURE_BLOCK("Training the network Half Adder", {
+        nn.trainInputs2D(inputs, targets, 10000);
+    });
+
+    for (int i = 0; i < targets.size(); i++)
+    {
+        std::vector<float> prediction = nn.predict(inputs[i]);    
+        
+        printf("For input ");
+        printVector(inputs[i], " Prediction ");
+        printVector(prediction, "\n");
+
+        // Check if the network can predict the correct output
+        if (i == 1 || i == 2) { // Checks for 0 1, 1 0
+            CHECK_THAT(prediction[0], WithinAbs(1.0f, 0.05f));
+        } else { // Checks for 0 0, 1 1
+            CHECK_THAT(prediction[0], WithinAbs(0.0f, 0.05f));
+        }
+    }
+}
+
+TEST_CASE("NeuronNetwork Learning Iris dataset", "[backpropagation]") {
+    // Read the iris data set
+    std::vector<std::vector<std::string>> data = read_csv("../../data/iris.csv"); 
+
+    // Extract the features and targets
+    std::vector<std::vector<float>> features = getFeatures(data);
+    std::vector<float>              targets  = getTargets(data); 
+
+    // We expect 150 examples where each image consists of 4 integer values.
+    int inputSize = 4;
+    int outputSize = 3;
+    // len of features and targets should be the same
+
+    // Define a network architecture: an input layer of 4 neurons,
+    // one hidden layer of 16 neurons, and an output layer of 3 neurons.
+    std::vector<int> layers = { inputSize, 16, outputSize };
+    std::vector<float> outputMask = {0.0f, 1.0f, 2.0f};
+
+    // Mask the targets
+    std::vector<float> maskedData = maskData(targets, outputMask);
+    std::vector<std::vector<float>> targetMaskedData = create2DVector(maskedData, outputSize);
+
+    NeuronNetwork nn(layers);
+
+    MEASURE_BLOCK("Training the network", {
+        nn.trainInputs2D(features, targetMaskedData, 2000);
+    });
+
+    s_Allocations = 0;
+    nn.trainInputs2D(features, targetMaskedData,  2000);
+    printf("Iris data Allocations: %d\n", s_Allocations);
+
+    // Number of features to check
+    int nToCheck = 20;
+
+    // Randomly select nToCheck images and check if the network can classify them
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    int min = 0, max = targets.size() -1;
+    std::uniform_int_distribution<> dist(min, max);
+
+    // Print the output mask for the network
+    printf("\nOutputMask \t\t     ");
+    printVector(outputMask, "\n");
+
+    // Loop over each input
+    for (int i = 0; i < nToCheck; i++) {
+        // Get a random index
+        int randomIndex = dist(gen);
+
+        // Get the input and target
+        std::vector<float> target = targetMaskedData[randomIndex];
+        float targetValue         = targets[randomIndex];
+
+        // Predict the output
+        std::vector<float> prediction = nn.feedForward(features[randomIndex]);
+        // Print the predictions
+        printf("Prediction for target %.2f | ", targetValue);
+        printVector(prediction, "\n");
+
+        // Find the target in the target mask
+        auto it = std::find(target.begin(), target.end(), 1.0f);
+        int targetIndex = std::distance(target.begin(), it);
+
+        CHECK_THAT(1.0f, WithinRel(prediction[targetIndex], 0.05f));
     }
 }
 
@@ -223,54 +329,57 @@ TEST_CASE("NeuronNetwork Learning digit data", "[backpropagation]") {
     std::vector<int> layers = { inputSize, 16, outputSize };
     std::vector<float> outputMask = {0.0f, 1.0f, 2.0f, 3.0f, 4.0f, 5.0f, 6.0f, 7.0f, 8.0f, 9.0f};
     
-    s_Allocations = 0;
+    std::vector<float> maskedData = maskData(digits.targets, outputMask);
     
-    NeuronNetwork nn(layers, outputMask);
+    std::vector<std::vector<float>> targetMaskedData = create2DVector(maskedData, outputSize);
+    std::vector<std::vector<float>> imagesMaskedData = create2DVector(digits.images, inputSize);
 
-    printf("Digit data NN Allocations: %d\n", s_Allocations);
+    NeuronNetwork nn(layers);
 
     std::vector<float> targets(digits.targets.begin(), digits.targets.end());
     std::vector<float> images(digits.images.begin(), digits.images.end());
-    
-    int imageSize = 64;
-
-    s_Allocations = 0;
 
     MEASURE_BLOCK("Training the network", {
-        nn.trainInputs(images, targets, imageSize, 0, 2000);
+        nn.trainInputs2D(imagesMaskedData, targetMaskedData, 2000);
     });
-    
-    nn.trainInputs(images, targets, imageSize, 0, 2000);
+
+    s_Allocations = 0;
+    nn.trainInputs2D(imagesMaskedData, targetMaskedData,  2000);
     printf("Digit data Allocations: %d\n", s_Allocations);
 
+    // Number of features to check
     int nToCheck = 20;
 
+    // Randomly select nToCheck images and check if the network can classify them
     std::random_device rd;
     std::mt19937 gen(rd());
     int min = 0, max = targets.size() -1;
     std::uniform_int_distribution<> dist(min, max);
+
+    // Print the output mask for the network
     printf("\nOutputMask \t\t     ");
     printVector(outputMask, "\n");
 
-    // Get the first 100 elements and check if the model can classify the
     // Loop over each input
     for (int i = 0; i < nToCheck; i++) {
+        // Get a random index
         int randomIndex = dist(gen);
-        int startIndex = randomIndex * imageSize;
 
-        std::vector<float> input(imageSize);
-        
-        for (int j = 0; j < imageSize; j++) {
-            input[j] = images[startIndex + j];
-        }
+        // Get the input and target
+        std::vector<float> input = imagesMaskedData[randomIndex];
+        std::vector<float> target = targetMaskedData[randomIndex];
+        float targetValue = digits.targets[randomIndex];
 
-        float target = targets[randomIndex];
-        nn.maskTarget(target);
+        // Predict the output
         std::vector<float> prediction = nn.feedForward(input);
-      
-        printf("Prediction for target %.2f | ", target);
+        // Print the predictions
+        printf("Prediction for target %.2f | ", targetValue);
         printVector(prediction, "\n");
 
-        // CHECK_THAT(target, WithinRel(prediction[target], 0.01f));
+        // Find the target in the target mask
+        auto it = std::find(target.begin(), target.end(), 1.0f);
+        int targetIndex = std::distance(target.begin(), it);
+
+        CHECK_THAT(1.0f, WithinRel(prediction[targetIndex], 0.05f));
     }
 }
