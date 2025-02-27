@@ -33,7 +33,7 @@ struct irisData
  */
 {
     std::vector<std::vector<float>> features; 
-    std::vector<int> targets;
+    std::vector<float> targets;
 };
 
 template<typename T>
@@ -48,6 +48,22 @@ struct digitData
 {
     std::vector<T> images; 
     std::vector<T> targets;
+};
+
+/**
+ * @brief A structure to hold the features and targets read from a CSV file. This is for the digit data set.
+ * 
+ * This structure contains two members:
+ * - images: A Vector of ints where each 64 elements represent an image of a digit(8x8 image).
+ * - targets: A vector of integers where each element represents the target value corresponding to the features.
+ */
+template<typename T>
+struct TrainTestSplit
+{
+    std::vector<std::vector<T>> trainFeatures;
+    std::vector<std::vector<T>> testFeatures;
+    std::vector<std::vector<T>> trainTargets;
+    std::vector<std::vector<T>> testTargets;
 };
 
 /**
@@ -110,6 +126,13 @@ inline void printVector(const std::vector<T> &vec, const std::string extra = "")
     }
 }
 
+/**
+ * @brief This function creates a 2D vector from a 1D vector.
+ * 
+ * @param vec The 1D vector to be converted.
+ * @param size The size of the inner vectors.
+ * @return std::vector<std::vector<T>> The 2D vector.
+ */
 template<typename T>
 void normalizeVector(std::vector<T> &vec)
 {
