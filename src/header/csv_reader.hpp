@@ -232,7 +232,7 @@ std::vector<T> maskData(std::vector<T>& data, std::vector<T>& mask)
 {   
     T off, on;
     if constexpr (std::is_floating_point_v<T>) {
-        off = 0.1f;
+        off = 0.0f;
         on  = 1.0f;
     } else if constexpr (std::is_integral_v<T>) {
         off = 0;

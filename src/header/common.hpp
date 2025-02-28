@@ -171,6 +171,35 @@ void normalizeVector(std::vector<T> &vec)
 }
 
 template<typename T>
+void normalize2DVector(std::vector<std::vector<T>> &vec)
+{
+    // Get the max and min element out of the 2D vector
+    T maxElement, minElement = 0;
+    T newMaxElement, newMinElement = 0;
+    for (std::vector<T> &innerVec : vec) {
+        newMaxElement = *std::max_element(innerVec.begin(), innerVec.end());
+        newMinElement = *std::min_element(innerVec.begin(), innerVec.end());
+        if (newMaxElement > maxElement) {
+            maxElement = newMaxElement;
+        }
+        if (newMinElement < minElement) {
+            minElement = newMinElement;
+        }
+    }
+
+    T minMax = maxElement - minElement;
+
+    // https://www.statology.org/normalize-data-between-0-and-1/
+    for (std::vector<T> &innerVec : vec) {
+        for (std::size_t i = 0; i < innerVec.size(); i++) {
+            T xi = innerVec[i]; 
+            innerVec.at(i) = (xi - minElement) / minMax;
+        }
+    }
+
+}
+
+template<typename T>
 TrainTestSplit<T> createTrainTestSplit(
     const std::vector<std::vector<T>>& features, 
     const std::vector<std::vector<T>>& targets, 
@@ -182,6 +211,10 @@ TrainTestSplit<T> createTrainTestSplit(
     tts.testFeatures.reserve(features.size() * (1 - splitRatio));
     tts.trainTargets.reserve(targets.size() * splitRatio);
     tts.testTargets.reserve(targets.size() * (1 - splitRatio));
+
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> dis(0, 1);
 
     for (std::size_t i = 0; i < features.size(); i++)
     {

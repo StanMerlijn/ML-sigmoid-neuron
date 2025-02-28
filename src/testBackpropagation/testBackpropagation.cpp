@@ -247,7 +247,11 @@ TEST_CASE("Half adder Neuron Network", "[NeuronNetwork][HalfAdder]")
     }
 }
 
-TEST_CASE("NeuronNetwork Learning Iris dataset", "[backpropagation]") {
+TEST_CASE("NeuronNetwork Learning Iris dataset", "[backpropagation][Iris]") {
+    // =================================================================================================
+    // Load the iris dataset
+    // =================================================================================================
+    
     // Read the iris data set
     std::vector<std::vector<std::string>> data = read_csv("../../data/iris.csv"); 
 
@@ -262,60 +266,100 @@ TEST_CASE("NeuronNetwork Learning Iris dataset", "[backpropagation]") {
 
     // Define a network architecture: an input layer of 4 neurons,
     // one hidden layer of 16 neurons, and an output layer of 3 neurons.
-    std::vector<int> layers = { inputSize, 16, outputSize };
+    std::vector<int> layers = { inputSize, 4, outputSize };
     std::vector<float> outputMask = {0.0f, 1.0f, 2.0f};
 
     // Mask the targets
     std::vector<float> maskedData = maskData(targets, outputMask);
     std::vector<std::vector<float>> targetMaskedData = create2DVector(maskedData, outputSize);
 
+    // Create training and test split 
+    normalize2DVector(features);
+    
+    TrainTestSplit tts(features, targetMaskedData, 0.90);
+    // for (auto& row : tts.trainFeatures) {
+    //     printVector(row, "\n");
+    // }
+    // for (auto& row : tts.trainTargets) {
+    //     printVector(row, "\n");
+    // }
+
+    // for (auto& row : tts.testFeatures) {
+    //     printVector(row, "\n");
+    // }
+    // for (auto& row : tts.testTargets) {
+    //     printVector(row, "\n");
+    // }
+    // =================================================================================================
+    // Train the network
+    // =================================================================================================
+
     NeuronNetwork nn(layers);
+    printf("vector size %zu\n", tts.trainFeatures.size());
 
     MEASURE_BLOCK("Training the network", {
-        nn.trainInputs2D(features, targetMaskedData, 2000);
+        nn.trainInputs2D(tts.trainFeatures, tts.trainTargets, 2000);
     });
 
     s_Allocations = 0;
-    nn.trainInputs2D(features, targetMaskedData,  2000);
+    nn.trainInputs2D(tts.trainFeatures, tts.trainTargets,  5000);
     printf("Iris data Allocations: %d\n", s_Allocations);
 
-    // Number of features to check
-    int nToCheck = 20;
-
-    // Randomly select nToCheck images and check if the network can classify them
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    int min = 0, max = targets.size() -1;
-    std::uniform_int_distribution<> dist(min, max);
-
     // Print the output mask for the network
-    printf("\nOutputMask \t\t     ");
+    printf("\nOutputMask \t ");
     printVector(outputMask, "\n");
 
-    // Loop over each input
-    for (int i = 0; i < nToCheck; i++) {
-        // Get a random index
-        int randomIndex = dist(gen);
+    SECTION("Testing test set") {
+        for (std::size_t i = 0; i < tts.testFeatures.size(); i++) {
+            std::vector<float> input = tts.testFeatures[i];
+            std::vector<float> target = tts.testTargets[i];
+            std::vector<float> prediction = nn.feedForward(input);
+            printVector(input, " | ");
+            printVector(prediction, "\n");
+            for (std::size_t j = 0; j < prediction.size(); j++) {
+                if (target[j] > 0.95f) { // Check if the target is 1
+                    CHECK_THAT(prediction[j], WithinAbs(1.0f, 0.1f));
+                } else {
+                    CHECK_THAT(prediction[j], WithinAbs(0.0f, 0.1f));
+                }
+            }
+        }   
+    }
 
-        // Get the input and target
-        std::vector<float> target = targetMaskedData[randomIndex];
-        float targetValue         = targets[randomIndex];
+    SECTION("Testing Random predictions") {
+        // Randomly select nToCheck images and check if the network can classify them
+        int nToCheck = 20;
+        std::random_device rd;
+        std::mt19937 gen(rd());
+        int min = 0, max = tts.testTargets.size() -1;
+        std::uniform_int_distribution<> dist(min, max);
 
-        // Predict the output
-        std::vector<float> prediction = nn.feedForward(features[randomIndex]);
-        // Print the predictions
-        printf("Prediction for target %.2f | ", targetValue);
-        printVector(prediction, "\n");
+        
+        for (int i = 0; i < nToCheck; i++) {
+            int randomIndex = dist(gen);
+            std::vector<float> input = tts.trainFeatures[randomIndex];
+            std::vector<float> target = tts.trainTargets[randomIndex];
+            std::vector<float> prediction = nn.feedForward(input);
 
-        // Find the target in the target mask
-        auto it = std::find(target.begin(), target.end(), 1.0f);
-        int targetIndex = std::distance(target.begin(), it);
+            printVector(target, "| ");
+            printVector(prediction, "\n");
 
-        CHECK_THAT(1.0f, WithinRel(prediction[targetIndex], 0.05f));
+            for (std::size_t j = 0; j < prediction.size(); j++) {
+                if (target[j] > 0.95f) { // Check if the target is 1
+                    CHECK_THAT(1.0f, WithinAbs(prediction[j], 0.1f));
+                } else {
+                    CHECK_THAT(0.0f, WithinAbs(prediction[j], 0.1f));
+                }
+            }
+        }
     }
 }
 
 TEST_CASE("NeuronNetwork Learning digit data", "[backpropagation]") {
+    // =================================================================================================
+    // Load the digit dataset
+    // =================================================================================================
+
     // Load the digit dataset
     digitData digits = readDigitData<float>();
     
@@ -329,57 +373,86 @@ TEST_CASE("NeuronNetwork Learning digit data", "[backpropagation]") {
     std::vector<int> layers = { inputSize, 16, outputSize };
     std::vector<float> outputMask = {0.0f, 1.0f, 2.0f, 3.0f, 4.0f, 5.0f, 6.0f, 7.0f, 8.0f, 9.0f};
     
+    // Mask the targets
     std::vector<float> maskedData = maskData(digits.targets, outputMask);
     
+    // Create 2D vectors for the target and input data
     std::vector<std::vector<float>> targetMaskedData = create2DVector(maskedData, outputSize);
     std::vector<std::vector<float>> imagesMaskedData = create2DVector(digits.images, inputSize);
+    normalize2DVector(imagesMaskedData);
+
+    // Train and test split
+    TrainTestSplit tts(imagesMaskedData, targetMaskedData, 0.90);
+
+    // =================================================================================================
+    // Train the network
+    // =================================================================================================
 
     NeuronNetwork nn(layers);
 
-    std::vector<float> targets(digits.targets.begin(), digits.targets.end());
-    std::vector<float> images(digits.images.begin(), digits.images.end());
+    printf("vector size for test features %zu\n", tts.testFeatures.size());
 
     MEASURE_BLOCK("Training the network", {
-        nn.trainInputs2D(imagesMaskedData, targetMaskedData, 2000);
+        nn.trainInputs2D(tts.trainFeatures, tts.trainTargets, 2000);
     });
 
     s_Allocations = 0;
-    nn.trainInputs2D(imagesMaskedData, targetMaskedData,  2000);
+    nn.trainInputs2D(tts.trainFeatures, tts.trainTargets,  5000);
     printf("Digit data Allocations: %d\n", s_Allocations);
 
     // Number of features to check
-    int nToCheck = 20;
+    SECTION("Testing test set") {
+        printf("Testing the test split for digit dataset\n");
+        for (std::size_t i = 0; i < tts.testFeatures.size(); i++) {
+            std::vector<float> input = tts.testFeatures[i];
+            std::vector<float> target = tts.testTargets[i];
+            std::vector<float> prediction = nn.feedForward(input);
+            printVector(target, " | ");
+            printVector(prediction, "\n");
 
-    // Randomly select nToCheck images and check if the network can classify them
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    int min = 0, max = targets.size() -1;
-    std::uniform_int_distribution<> dist(min, max);
+            for (std::size_t j = 0; j < prediction.size(); j++) {
+                if (target[j] > 0.95f) { // Check if the target is 1
+                    CHECK_THAT(prediction[j], WithinAbs(1.0f, 0.1f));
+                } else {
+                    CHECK_THAT(prediction[j], WithinAbs(0.0f, 0.1f));
+                }
+            }
+        }   
+    }
 
-    // Print the output mask for the network
-    printf("\nOutputMask \t\t     ");
-    printVector(outputMask, "\n");
 
-    // Loop over each input
-    for (int i = 0; i < nToCheck; i++) {
-        // Get a random index
-        int randomIndex = dist(gen);
+    SECTION("Testing random predictions") {
+        printf("Testing random predictions for digit dataset\n");
+        // Randomly select nToCheck images and check if the network can classify them
+        int nToCheck = 20;
+        std::random_device rd;
+        std::mt19937 gen(rd());
+        int min = 0, max = tts.testTargets.size() -1;
+        std::uniform_int_distribution<> dist(min, max);
 
-        // Get the input and target
-        std::vector<float> input = imagesMaskedData[randomIndex];
-        std::vector<float> target = targetMaskedData[randomIndex];
-        float targetValue = digits.targets[randomIndex];
+        // Print the output mask for the network
+        printf("\nOutputMask \t\t     ");
+        printVector(outputMask, "\n");
 
-        // Predict the output
-        std::vector<float> prediction = nn.feedForward(input);
-        // Print the predictions
-        printf("Prediction for target %.2f | ", targetValue);
-        printVector(prediction, "\n");
+        for (int i = 0; i < nToCheck; i++) {
+            int randomIndex = dist(gen);
 
-        // Find the target in the target mask
-        auto it = std::find(target.begin(), target.end(), 1.0f);
-        int targetIndex = std::distance(target.begin(), it);
+            std::vector<float> input = tts.trainFeatures[randomIndex];
+            std::vector<float> target = tts.trainTargets[randomIndex];
+            float targetValue = digits.targets[randomIndex];
 
-        CHECK_THAT(1.0f, WithinRel(prediction[targetIndex], 0.05f));
+            // Predict the output
+            std::vector<float> prediction = nn.feedForward(input);
+
+            // Print the predictions
+            printf("Prediction for target %.2f | ", targetValue);
+            printVector(prediction, "\n");
+
+            // Find the target in the target mask
+            int targetIndex = static_cast<int>(targetValue);
+
+            // NOTE: The prediction is a probability, it can be false.
+            CHECK_THAT(1.0f, WithinRel(prediction[targetIndex], 0.1f));
+        }
     }
 }
