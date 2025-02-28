@@ -295,7 +295,7 @@ TEST_CASE("NeuronNetwork Learning Iris dataset", "[backpropagation][Iris]") {
     // =================================================================================================
     
     // Read the iris data set
-    std::vector<std::vector<std::string>> data = read_csv("../../data/iris.csv"); 
+    std::vector<std::vector<std::string>> data = readCsv("../../data/iris.csv"); 
 
     // Extract the features and targets
     std::vector<std::vector<float>> features = getFeatures(data);

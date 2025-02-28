@@ -1,26 +1,26 @@
-<map id="/Users/stanislav/Github/HU&#45;AI&#45;year2/MachineLearning/ML&#45;sigmoid&#45;neuron/src/header/neuronNetwork.hpp" name="/Users/stanislav/Github/HU&#45;AI&#45;year2/MachineLearning/ML&#45;sigmoid&#45;neuron/src/header/neuronNetwork.hpp">
-<area shape="rect" id="Node000001" title="In this file the NeuronNetwork class is declared. This class represents a neural network with multipl..." alt="" coords="318,5,518,76"/>
-<area shape="rect" id="Node000002" href="$neuron_8hpp.html" title="In this file the Neuron class is declared. This class represents a single neuron in a neural network." alt="" coords="328,198,413,223"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="411,77,380,183,375,182,406,76"/>
-<area shape="rect" id="Node000011" href="$neuron_layer_8hpp.html" title="In this file the NeuronLayer class is declared. This class represents a layer of neurons in a neural ..." alt="" coords="408,124,524,150"/>
-<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="438,75,455,109,451,111,433,78"/>
-<area shape="rect" id="Node000003" href="$common_8hpp.html" title="In this file the common utilities are defined." alt="" coords="290,271,386,297"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="367,225,352,258,347,256,362,222"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="518,345,590,371"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="376,295,505,337,503,342,374,300"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="90,345,165,371"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="303,300,179,342,177,337,302,295"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="189,345,253,371"/>
-<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="320,300,255,339,252,334,317,295"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="438,345,495,371"/>
-<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="361,295,432,335,430,339,359,300"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="278,345,335,371"/>
-<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="335,298,320,332,315,330,330,296"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="360,345,413,371"/>
-<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="348,296,372,330,367,333,344,299"/>
-<area shape="rect" id="Node000010" title=" " alt="" coords="5,345,66,371"/>
-<area shape="poly" id="edge9_Node000003_Node000010" title=" " alt="" coords="290,299,81,347,80,342,289,293"/>
-<area shape="poly" id="edge13_Node000011_Node000002" title=" " alt="" coords="451,152,400,191,397,186,448,148"/>
-<area shape="poly" id="edge11_Node000011_Node000004" title=" " alt="" coords="473,149,546,330,541,332,468,151"/>
-<area shape="poly" id="edge12_Node000011_Node000007" title=" " alt="" coords="469,150,469,330,464,330,464,150"/>
+<map id="neuronNetwork.hpp" name="neuronNetwork.hpp">
+<area shape="rect" id="Node000001" title="In this file the NeuronNetwork class is declared. This class represents a neural network with multipl..." alt="" coords="351,5,485,31"/>
+<area shape="rect" id="Node000002" href="$neuron_8hpp.html" title="In this file the Neuron class is declared. This class represents a single neuron in a neural network." alt="" coords="328,153,413,178"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="416,32,398,80,380,139,375,137,393,78,411,30"/>
+<area shape="rect" id="Node000011" href="$neuron_layer_8hpp.html" title="In this file the NeuronLayer class is declared. This class represents a layer of neurons in a neural ..." alt="" coords="408,79,524,105"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="428,30,452,64,447,67,424,33"/>
+<area shape="rect" id="Node000003" href="$common_8hpp.html" title="In this file the common utilities are defined." alt="" coords="290,226,386,252"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="367,180,352,213,347,211,362,177"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="518,300,590,326"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="376,250,505,292,503,297,374,255"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="90,300,165,326"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="303,255,179,297,177,292,302,250"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="189,300,253,326"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="320,255,255,294,252,289,317,250"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="438,300,495,326"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="361,250,432,290,430,294,359,255"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="278,300,335,326"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="335,253,320,287,315,285,330,251"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="360,300,413,326"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="348,251,372,285,367,288,344,254"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="5,300,66,326"/>
+<area shape="poly" id="edge9_Node000003_Node000010" title=" " alt="" coords="290,254,81,302,80,297,289,248"/>
+<area shape="poly" id="edge13_Node000011_Node000002" title=" " alt="" coords="451,107,400,146,397,141,448,103"/>
+<area shape="poly" id="edge11_Node000011_Node000004" title=" " alt="" coords="473,104,546,285,541,287,468,106"/>
+<area shape="poly" id="edge12_Node000011_Node000007" title=" " alt="" coords="469,105,469,285,464,285,464,105"/>
 </map>

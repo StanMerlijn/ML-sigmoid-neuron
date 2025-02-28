@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ML perceptron sigmoid neuron (P3): ML-perceptron</title>
+<title>ML perceptron sigmoid neuron (P3): ML-backpropation</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -109,7 +109,7 @@ $(function(){initNavTree('md__2_users_2stanislav_2_github_2_h_u-_a_i-year2_2_mac
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">ML-perceptron</div></div>
+  <div class="headertitle"><div class="title">ML-backpropation</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="autotoc_md5"></a></p>
@@ -122,6 +122,7 @@ Introduction</h1>
 <p>In this repository, we implement and test the backpropagation algorithm for training a neural network. Building upon a previously implemented neuron network, the project extends the model by incorporating error calculations, gradient computations, and simultaneous weight and bias updates using backpropagation. The network is trained using an online training approach and evaluated through various tasks including learning AND and XOR gates, constructing a half adder, and classifying both the Iris and Digit datasets. Performance is assessed by measuring classification accuracy and training efficiency. You can find the assignment <a href="https://canvas.hu.nl/courses/44675/assignments/343531">here</a></p>
 <h1><a class="anchor" id="autotoc_md8"></a>
 Documentation</h1>
+<p>For this assignment, documentation was generated using Doxygen. The LaTeX documentation can be found <a href="docs/latex/refman.pdf">here</a> and if you want to run the HTML local website, you can open the <a href="docs/html/index.html">index.html</a> in a browser.</p>
 <h1><a class="anchor" id="autotoc_md9"></a>
 Installing</h1>
 <p>Enter the test dir then</p>
@@ -129,6 +130,8 @@ Installing</h1>
 <div class="fragment"><div class="line">cmake -S . -B build</div>
 </div><!-- fragment --><p>Build the project:</p>
 <div class="fragment"><div class="line">cmake --build build</div>
+</div><!-- fragment --><p> For enhanced build performance, it's recommended to compile in parallel using:</p>
+<div class="fragment"><div class="line">cmake --build build --parallel &lt;n threads&gt;</div>
 </div><!-- fragment --><p>Run the executable:</p>
 <div class="fragment"><div class="line">./build/MLPerceptronTest</div>
 </div><!-- fragment --> </div></div><!-- contents -->

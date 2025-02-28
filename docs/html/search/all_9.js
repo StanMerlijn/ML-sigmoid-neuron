@@ -10,5 +10,6 @@ var searchData=
   ['neuronnetwork_7',['NeuronNetwork',['../class_neuron_network.html',1,'NeuronNetwork'],['../class_neuron_network.html#a07aa50bd1a82c0b32fa0c3f38f12bab9',1,'NeuronNetwork::NeuronNetwork(std::vector&lt; NeuronLayer &gt; layers)'],['../class_neuron_network.html#ac68e07dd909430cc101fa3d7fb6d79d3',1,'NeuronNetwork::NeuronNetwork(std::vector&lt; int &gt; layers)']]],
   ['neuronnetwork_2ecpp_8',['neuronNetwork.cpp',['../neuron_network_8cpp.html',1,'']]],
   ['neuronnetwork_2ehpp_9',['neuronNetwork.hpp',['../neuron_network_8hpp.html',1,'']]],
-  ['normalizevector_10',['normalizeVector',['../common_8hpp.html#aa0d7c531e422a118acbfa56d256729ac',1,'common.hpp']]]
+  ['normalize2dvector_10',['normalize2DVector',['../common_8hpp.html#a04d8d14e34e107e70a33029e25f00018',1,'common.hpp']]],
+  ['normalizevector_11',['normalizeVector',['../common_8hpp.html#aa0d7c531e422a118acbfa56d256729ac',1,'common.hpp']]]
 ];

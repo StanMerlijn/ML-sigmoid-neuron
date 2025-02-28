@@ -23,7 +23,6 @@
 #define INITIAL_BIAS 0.5f
 #define INITIAL_BIAS_INPUTN 0.5f
 
-struct irisData
 /**
  * @brief A structure to hold the features and targets read from a CSV file. This is fdor the iris data set.
  * 
@@ -31,13 +30,12 @@ struct irisData
  * - features: A 2D vector of floats where each inner vector represents a set of features for a single data point.
  * - targets: A vector of integers where each element represents the target value corresponding to the features.
  */
+struct irisData
 {
     std::vector<std::vector<float>> features; 
     std::vector<float> targets;
 };
 
-template<typename T>
-struct digitData
 /**
  * @brief A structure to hold the features and targets read from a CSV file. This is for the digit data set.
  * 
@@ -45,10 +43,13 @@ struct digitData
  * - images: A Vector of ints where each 64 elements represent an image of a digit(8x8 image).
  * - targets: A vector of integers where each element represents the target value corresponding to the features.
  */
+template<typename T>
+struct digitData
 {
     std::vector<T> images; 
     std::vector<T> targets;
 };
+
 // Add forward declaration for TrainTestSplit
 template<typename T>
 struct TrainTestSplit;
@@ -64,7 +65,7 @@ TrainTestSplit<T> createTrainTestSplit(
  * @brief A structure to hold the features and targets read from a CSV file. This is for the digit data set.
  * 
  * This structure contains two members:
- * - images: A Vector of ints where each 64 elements represent an image of a digit(8x8 image).
+ * - trainFeatures: A 2D vector of floats where each inner vector represents a set of features for a single data point.
  * - targets: A vector of integers where each element represents the target value corresponding to the features.
  */
 template<typename T>
@@ -170,6 +171,13 @@ void normalizeVector(std::vector<T> &vec)
     }
 }
 
+/**
+ * @brief This function creates a 2D vector from a 1D vector.
+ * 
+ * @param vec The 1D vector to be converted.
+ * @param size The size of the inner vectors.
+ * @return std::vector<std::vector<T>> The 2D vector.
+ */
 template<typename T>
 void normalize2DVector(std::vector<std::vector<T>> &vec)
 {
@@ -199,6 +207,14 @@ void normalize2DVector(std::vector<std::vector<T>> &vec)
 
 }
 
+/**
+ * @brief Create a Train Test Split object from the features and targets.
+ * 
+ * @param features The 2D vector of features to split.
+ * @param targets The 2D vector of targets to split.
+ * @param splitRatio The ratio to split the data.
+ * @return TrainTestSplit<T> The TrainTestSplit object.
+ */
 template<typename T>
 TrainTestSplit<T> createTrainTestSplit(
     const std::vector<std::vector<T>>& features, 

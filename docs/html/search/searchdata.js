@@ -4,7 +4,7 @@ var indexSectionsWithContent =
   1: "dinot",
   2: "cnot",
   3: "_abcdfgnprstuw",
-  4: "mnps"
+  4: "bmns"
 };
 
 var indexSectionNames =

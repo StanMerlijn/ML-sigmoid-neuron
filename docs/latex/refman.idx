@@ -1,0 +1,178 @@
+\indexentry{ML-\/sigmoid-\/neuron@{ML-\/sigmoid-\/neuron}|hyperpage}{1}
+\indexentry{ML-\/backpropation@{ML-\/backpropation}|hyperpage}{3}
+\indexentry{digitData$<$ T $>$@{digitData$<$ T $>$}|hyperpage}{11}
+\indexentry{digitData$<$ T $>$@{digitData$<$ T $>$}!images@{images}|hyperpage}{11}
+\indexentry{images@{images}!digitData$<$ T $>$@{digitData$<$ T $>$}|hyperpage}{11}
+\indexentry{digitData$<$ T $>$@{digitData$<$ T $>$}!targets@{targets}|hyperpage}{11}
+\indexentry{targets@{targets}!digitData$<$ T $>$@{digitData$<$ T $>$}|hyperpage}{11}
+\indexentry{irisData@{irisData}|hyperpage}{12}
+\indexentry{irisData@{irisData}!features@{features}|hyperpage}{12}
+\indexentry{features@{features}!irisData@{irisData}|hyperpage}{12}
+\indexentry{irisData@{irisData}!targets@{targets}|hyperpage}{12}
+\indexentry{targets@{targets}!irisData@{irisData}|hyperpage}{12}
+\indexentry{Neuron@{Neuron}|hyperpage}{13}
+\indexentry{Neuron@{Neuron}!Neuron@{Neuron}|hyperpage}{14}
+\indexentry{Neuron@{Neuron}!Neuron@{Neuron}|hyperpage}{14}
+\indexentry{Neuron@{Neuron}!Neuron@{Neuron}|hyperpage}{14}
+\indexentry{Neuron@{Neuron}!Neuron@{Neuron}|hyperpage}{14}
+\indexentry{Neuron@{Neuron}!\_\_str\_\_@{\_\_str\_\_}|hyperpage}{15}
+\indexentry{\_\_str\_\_@{\_\_str\_\_}!Neuron@{Neuron}|hyperpage}{15}
+\indexentry{Neuron@{Neuron}!activate@{activate}|hyperpage}{15}
+\indexentry{activate@{activate}!Neuron@{Neuron}|hyperpage}{15}
+\indexentry{Neuron@{Neuron}!computeHiddenDelta@{computeHiddenDelta}|hyperpage}{15}
+\indexentry{computeHiddenDelta@{computeHiddenDelta}!Neuron@{Neuron}|hyperpage}{15}
+\indexentry{Neuron@{Neuron}!computeOutputDelta@{computeOutputDelta}|hyperpage}{15}
+\indexentry{computeOutputDelta@{computeOutputDelta}!Neuron@{Neuron}|hyperpage}{15}
+\indexentry{Neuron@{Neuron}!deltaError@{deltaError}|hyperpage}{16}
+\indexentry{deltaError@{deltaError}!Neuron@{Neuron}|hyperpage}{16}
+\indexentry{Neuron@{Neuron}!getBias@{getBias}|hyperpage}{16}
+\indexentry{getBias@{getBias}!Neuron@{Neuron}|hyperpage}{16}
+\indexentry{Neuron@{Neuron}!getError@{getError}|hyperpage}{16}
+\indexentry{getError@{getError}!Neuron@{Neuron}|hyperpage}{16}
+\indexentry{Neuron@{Neuron}!getWeights@{getWeights}|hyperpage}{16}
+\indexentry{getWeights@{getWeights}!Neuron@{Neuron}|hyperpage}{16}
+\indexentry{Neuron@{Neuron}!predict@{predict}|hyperpage}{17}
+\indexentry{predict@{predict}!Neuron@{Neuron}|hyperpage}{17}
+\indexentry{Neuron@{Neuron}!sigmoid@{sigmoid}|hyperpage}{17}
+\indexentry{sigmoid@{sigmoid}!Neuron@{Neuron}|hyperpage}{17}
+\indexentry{Neuron@{Neuron}!sigmoidDerivative@{sigmoidDerivative}|hyperpage}{17}
+\indexentry{sigmoidDerivative@{sigmoidDerivative}!Neuron@{Neuron}|hyperpage}{17}
+\indexentry{Neuron@{Neuron}!update@{update}|hyperpage}{18}
+\indexentry{update@{update}!Neuron@{Neuron}|hyperpage}{18}
+\indexentry{NeuronLayer@{NeuronLayer}|hyperpage}{18}
+\indexentry{NeuronLayer@{NeuronLayer}!NeuronLayer@{NeuronLayer}|hyperpage}{19}
+\indexentry{NeuronLayer@{NeuronLayer}!NeuronLayer@{NeuronLayer}|hyperpage}{19}
+\indexentry{NeuronLayer@{NeuronLayer}!NeuronLayer@{NeuronLayer}|hyperpage}{19}
+\indexentry{NeuronLayer@{NeuronLayer}!NeuronLayer@{NeuronLayer}|hyperpage}{19}
+\indexentry{NeuronLayer@{NeuronLayer}!\_\_str\_\_@{\_\_str\_\_}|hyperpage}{19}
+\indexentry{\_\_str\_\_@{\_\_str\_\_}!NeuronLayer@{NeuronLayer}|hyperpage}{19}
+\indexentry{NeuronLayer@{NeuronLayer}!computeHiddenErrors@{computeHiddenErrors}|hyperpage}{19}
+\indexentry{computeHiddenErrors@{computeHiddenErrors}!NeuronLayer@{NeuronLayer}|hyperpage}{19}
+\indexentry{NeuronLayer@{NeuronLayer}!computeOutputErros@{computeOutputErros}|hyperpage}{20}
+\indexentry{computeOutputErros@{computeOutputErros}!NeuronLayer@{NeuronLayer}|hyperpage}{20}
+\indexentry{NeuronLayer@{NeuronLayer}!feedForward@{feedForward}|hyperpage}{20}
+\indexentry{feedForward@{feedForward}!NeuronLayer@{NeuronLayer}|hyperpage}{20}
+\indexentry{NeuronLayer@{NeuronLayer}!getNeurons@{getNeurons}|hyperpage}{20}
+\indexentry{getNeurons@{getNeurons}!NeuronLayer@{NeuronLayer}|hyperpage}{20}
+\indexentry{NeuronLayer@{NeuronLayer}!getOutput@{getOutput}|hyperpage}{20}
+\indexentry{getOutput@{getOutput}!NeuronLayer@{NeuronLayer}|hyperpage}{20}
+\indexentry{NeuronLayer@{NeuronLayer}!update@{update}|hyperpage}{21}
+\indexentry{update@{update}!NeuronLayer@{NeuronLayer}|hyperpage}{21}
+\indexentry{NeuronNetwork@{NeuronNetwork}|hyperpage}{21}
+\indexentry{NeuronNetwork@{NeuronNetwork}!NeuronNetwork@{NeuronNetwork}|hyperpage}{22}
+\indexentry{NeuronNetwork@{NeuronNetwork}!NeuronNetwork@{NeuronNetwork}|hyperpage}{22}
+\indexentry{NeuronNetwork@{NeuronNetwork}!NeuronNetwork@{NeuronNetwork}|hyperpage}{22}
+\indexentry{NeuronNetwork@{NeuronNetwork}!NeuronNetwork@{NeuronNetwork}|hyperpage}{22}
+\indexentry{NeuronNetwork@{NeuronNetwork}!\_\_str\_\_@{\_\_str\_\_}|hyperpage}{22}
+\indexentry{\_\_str\_\_@{\_\_str\_\_}!NeuronNetwork@{NeuronNetwork}|hyperpage}{22}
+\indexentry{NeuronNetwork@{NeuronNetwork}!backPropagation@{backPropagation}|hyperpage}{22}
+\indexentry{backPropagation@{backPropagation}!NeuronNetwork@{NeuronNetwork}|hyperpage}{22}
+\indexentry{NeuronNetwork@{NeuronNetwork}!feedForward@{feedForward}|hyperpage}{23}
+\indexentry{feedForward@{feedForward}!NeuronNetwork@{NeuronNetwork}|hyperpage}{23}
+\indexentry{NeuronNetwork@{NeuronNetwork}!getLayers@{getLayers}|hyperpage}{23}
+\indexentry{getLayers@{getLayers}!NeuronNetwork@{NeuronNetwork}|hyperpage}{23}
+\indexentry{NeuronNetwork@{NeuronNetwork}!maskTarget@{maskTarget}|hyperpage}{23}
+\indexentry{maskTarget@{maskTarget}!NeuronNetwork@{NeuronNetwork}|hyperpage}{23}
+\indexentry{NeuronNetwork@{NeuronNetwork}!predict@{predict}|hyperpage}{23}
+\indexentry{predict@{predict}!NeuronNetwork@{NeuronNetwork}|hyperpage}{23}
+\indexentry{NeuronNetwork@{NeuronNetwork}!setTarget@{setTarget}|hyperpage}{24}
+\indexentry{setTarget@{setTarget}!NeuronNetwork@{NeuronNetwork}|hyperpage}{24}
+\indexentry{NeuronNetwork@{NeuronNetwork}!trainInputs2D@{trainInputs2D}|hyperpage}{24}
+\indexentry{trainInputs2D@{trainInputs2D}!NeuronNetwork@{NeuronNetwork}|hyperpage}{24}
+\indexentry{NeuronNetwork@{NeuronNetwork}!update@{update}|hyperpage}{24}
+\indexentry{update@{update}!NeuronNetwork@{NeuronNetwork}|hyperpage}{24}
+\indexentry{OutputNueron@{OutputNueron}|hyperpage}{25}
+\indexentry{TrainTestSplit$<$ T $>$@{TrainTestSplit$<$ T $>$}|hyperpage}{25}
+\indexentry{TrainTestSplit$<$ T $>$@{TrainTestSplit$<$ T $>$}!TrainTestSplit@{TrainTestSplit}|hyperpage}{26}
+\indexentry{TrainTestSplit@{TrainTestSplit}!TrainTestSplit$<$ T $>$@{TrainTestSplit$<$ T $>$}|hyperpage}{26}
+\indexentry{TrainTestSplit$<$ T $>$@{TrainTestSplit$<$ T $>$}!testFeatures@{testFeatures}|hyperpage}{26}
+\indexentry{testFeatures@{testFeatures}!TrainTestSplit$<$ T $>$@{TrainTestSplit$<$ T $>$}|hyperpage}{26}
+\indexentry{TrainTestSplit$<$ T $>$@{TrainTestSplit$<$ T $>$}!testTargets@{testTargets}|hyperpage}{26}
+\indexentry{testTargets@{testTargets}!TrainTestSplit$<$ T $>$@{TrainTestSplit$<$ T $>$}|hyperpage}{26}
+\indexentry{TrainTestSplit$<$ T $>$@{TrainTestSplit$<$ T $>$}!trainFeatures@{trainFeatures}|hyperpage}{27}
+\indexentry{trainFeatures@{trainFeatures}!TrainTestSplit$<$ T $>$@{TrainTestSplit$<$ T $>$}|hyperpage}{27}
+\indexentry{TrainTestSplit$<$ T $>$@{TrainTestSplit$<$ T $>$}!trainTargets@{trainTargets}|hyperpage}{27}
+\indexentry{trainTargets@{trainTargets}!TrainTestSplit$<$ T $>$@{TrainTestSplit$<$ T $>$}|hyperpage}{27}
+\indexentry{create\_dataset.py@{create\_dataset.py}|hyperpage}{29}
+\indexentry{create\_dataset.py@{create\_dataset.py}!save\_digits\_dataset@{save\_digits\_dataset}|hyperpage}{29}
+\indexentry{save\_digits\_dataset@{save\_digits\_dataset}!create\_dataset.py@{create\_dataset.py}|hyperpage}{29}
+\indexentry{create\_dataset.py@{create\_dataset.py}!write\_to\_csv@{write\_to\_csv}|hyperpage}{29}
+\indexentry{write\_to\_csv@{write\_to\_csv}!create\_dataset.py@{create\_dataset.py}|hyperpage}{29}
+\indexentry{create\_dataset.py@{create\_dataset.py}|hyperpage}{30}
+\indexentry{common.hpp@{common.hpp}|hyperpage}{30}
+\indexentry{common.hpp@{common.hpp}!INITIAL\_BIAS@{INITIAL\_BIAS}|hyperpage}{32}
+\indexentry{INITIAL\_BIAS@{INITIAL\_BIAS}!common.hpp@{common.hpp}|hyperpage}{32}
+\indexentry{common.hpp@{common.hpp}!INITIAL\_BIAS\_INPUTN@{INITIAL\_BIAS\_INPUTN}|hyperpage}{32}
+\indexentry{INITIAL\_BIAS\_INPUTN@{INITIAL\_BIAS\_INPUTN}!common.hpp@{common.hpp}|hyperpage}{32}
+\indexentry{common.hpp@{common.hpp}!INITIAL\_WEIGHT@{INITIAL\_WEIGHT}|hyperpage}{32}
+\indexentry{INITIAL\_WEIGHT@{INITIAL\_WEIGHT}!common.hpp@{common.hpp}|hyperpage}{32}
+\indexentry{common.hpp@{common.hpp}!INITIAL\_WEIGHT\_INPUTN@{INITIAL\_WEIGHT\_INPUTN}|hyperpage}{32}
+\indexentry{INITIAL\_WEIGHT\_INPUTN@{INITIAL\_WEIGHT\_INPUTN}!common.hpp@{common.hpp}|hyperpage}{32}
+\indexentry{common.hpp@{common.hpp}!createTrainTestSplit@{createTrainTestSplit}|hyperpage}{32}
+\indexentry{createTrainTestSplit@{createTrainTestSplit}!common.hpp@{common.hpp}|hyperpage}{32}
+\indexentry{common.hpp@{common.hpp}!deltaBias@{deltaBias}|hyperpage}{33}
+\indexentry{deltaBias@{deltaBias}!common.hpp@{common.hpp}|hyperpage}{33}
+\indexentry{common.hpp@{common.hpp}!deltaGradient@{deltaGradient}|hyperpage}{33}
+\indexentry{deltaGradient@{deltaGradient}!common.hpp@{common.hpp}|hyperpage}{33}
+\indexentry{common.hpp@{common.hpp}!gradientBetweenNeurons@{gradientBetweenNeurons}|hyperpage}{33}
+\indexentry{gradientBetweenNeurons@{gradientBetweenNeurons}!common.hpp@{common.hpp}|hyperpage}{33}
+\indexentry{common.hpp@{common.hpp}!normalize2DVector@{normalize2DVector}|hyperpage}{34}
+\indexentry{normalize2DVector@{normalize2DVector}!common.hpp@{common.hpp}|hyperpage}{34}
+\indexentry{common.hpp@{common.hpp}!normalizeVector@{normalizeVector}|hyperpage}{34}
+\indexentry{normalizeVector@{normalizeVector}!common.hpp@{common.hpp}|hyperpage}{34}
+\indexentry{common.hpp@{common.hpp}!printVector@{printVector}|hyperpage}{34}
+\indexentry{printVector@{printVector}!common.hpp@{common.hpp}|hyperpage}{34}
+\indexentry{common.hpp@{common.hpp}|hyperpage}{35}
+\indexentry{csv\_reader.hpp@{csv\_reader.hpp}|hyperpage}{37}
+\indexentry{csv\_reader.hpp@{csv\_reader.hpp}!convert@{convert}|hyperpage}{38}
+\indexentry{convert@{convert}!csv\_reader.hpp@{csv\_reader.hpp}|hyperpage}{38}
+\indexentry{csv\_reader.hpp@{csv\_reader.hpp}!convert$<$ float $>$@{convert$<$ float $>$}|hyperpage}{39}
+\indexentry{convert$<$ float $>$@{convert$<$ float $>$}!csv\_reader.hpp@{csv\_reader.hpp}|hyperpage}{39}
+\indexentry{csv\_reader.hpp@{csv\_reader.hpp}!convert$<$ int $>$@{convert$<$ int $>$}|hyperpage}{39}
+\indexentry{convert$<$ int $>$@{convert$<$ int $>$}!csv\_reader.hpp@{csv\_reader.hpp}|hyperpage}{39}
+\indexentry{csv\_reader.hpp@{csv\_reader.hpp}!create2DVector@{create2DVector}|hyperpage}{39}
+\indexentry{create2DVector@{create2DVector}!csv\_reader.hpp@{csv\_reader.hpp}|hyperpage}{39}
+\indexentry{csv\_reader.hpp@{csv\_reader.hpp}!filterData@{filterData}|hyperpage}{39}
+\indexentry{filterData@{filterData}!csv\_reader.hpp@{csv\_reader.hpp}|hyperpage}{39}
+\indexentry{csv\_reader.hpp@{csv\_reader.hpp}!getFeatures@{getFeatures}|hyperpage}{39}
+\indexentry{getFeatures@{getFeatures}!csv\_reader.hpp@{csv\_reader.hpp}|hyperpage}{39}
+\indexentry{csv\_reader.hpp@{csv\_reader.hpp}!getTargets@{getTargets}|hyperpage}{40}
+\indexentry{getTargets@{getTargets}!csv\_reader.hpp@{csv\_reader.hpp}|hyperpage}{40}
+\indexentry{csv\_reader.hpp@{csv\_reader.hpp}!maskData@{maskData}|hyperpage}{40}
+\indexentry{maskData@{maskData}!csv\_reader.hpp@{csv\_reader.hpp}|hyperpage}{40}
+\indexentry{csv\_reader.hpp@{csv\_reader.hpp}!readCsv@{readCsv}|hyperpage}{40}
+\indexentry{readCsv@{readCsv}!csv\_reader.hpp@{csv\_reader.hpp}|hyperpage}{40}
+\indexentry{csv\_reader.hpp@{csv\_reader.hpp}!readDigitData@{readDigitData}|hyperpage}{41}
+\indexentry{readDigitData@{readDigitData}!csv\_reader.hpp@{csv\_reader.hpp}|hyperpage}{41}
+\indexentry{csv\_reader.hpp@{csv\_reader.hpp}!realdCsvFlat@{realdCsvFlat}|hyperpage}{41}
+\indexentry{realdCsvFlat@{realdCsvFlat}!csv\_reader.hpp@{csv\_reader.hpp}|hyperpage}{41}
+\indexentry{csv\_reader.hpp@{csv\_reader.hpp}|hyperpage}{42}
+\indexentry{neuron.hpp@{neuron.hpp}|hyperpage}{44}
+\indexentry{neuron.hpp@{neuron.hpp}|hyperpage}{45}
+\indexentry{neuronLayer.hpp@{neuronLayer.hpp}|hyperpage}{46}
+\indexentry{neuronLayer.hpp@{neuronLayer.hpp}|hyperpage}{47}
+\indexentry{neuronNetwork.hpp@{neuronNetwork.hpp}|hyperpage}{47}
+\indexentry{neuronNetwork.hpp@{neuronNetwork.hpp}|hyperpage}{49}
+\indexentry{outputNeuron.hpp@{outputNeuron.hpp}|hyperpage}{49}
+\indexentry{outputNeuron.hpp@{outputNeuron.hpp}|hyperpage}{51}
+\indexentry{neuron.cpp@{neuron.cpp}|hyperpage}{51}
+\indexentry{neuron.cpp@{neuron.cpp}|hyperpage}{52}
+\indexentry{neuronLayer.cpp@{neuronLayer.cpp}|hyperpage}{53}
+\indexentry{neuronLayer.cpp@{neuronLayer.cpp}|hyperpage}{54}
+\indexentry{neuronNetwork.cpp@{neuronNetwork.cpp}|hyperpage}{55}
+\indexentry{neuronNetwork.cpp@{neuronNetwork.cpp}|hyperpage}{56}
+\indexentry{test.cpp@{test.cpp}|hyperpage}{57}
+\indexentry{test.cpp@{test.cpp}!CATCH\_CONFIG\_MAIN@{CATCH\_CONFIG\_MAIN}|hyperpage}{59}
+\indexentry{CATCH\_CONFIG\_MAIN@{CATCH\_CONFIG\_MAIN}!test.cpp@{test.cpp}|hyperpage}{59}
+\indexentry{test.cpp@{test.cpp}!TEST\_CASE@{TEST\_CASE}|hyperpage}{59}
+\indexentry{TEST\_CASE@{TEST\_CASE}!test.cpp@{test.cpp}|hyperpage}{59}
+\indexentry{test.cpp@{test.cpp}!TEST\_CASE@{TEST\_CASE}|hyperpage}{60}
+\indexentry{TEST\_CASE@{TEST\_CASE}!test.cpp@{test.cpp}|hyperpage}{60}
+\indexentry{test.cpp@{test.cpp}!TEST\_CASE@{TEST\_CASE}|hyperpage}{60}
+\indexentry{TEST\_CASE@{TEST\_CASE}!test.cpp@{test.cpp}|hyperpage}{60}
+\indexentry{test.cpp@{test.cpp}!TEST\_CASE@{TEST\_CASE}|hyperpage}{60}
+\indexentry{TEST\_CASE@{TEST\_CASE}!test.cpp@{test.cpp}|hyperpage}{60}
+\indexentry{test.cpp@{test.cpp}!TEST\_CASE@{TEST\_CASE}|hyperpage}{61}
+\indexentry{TEST\_CASE@{TEST\_CASE}!test.cpp@{test.cpp}|hyperpage}{61}
+\indexentry{test.cpp@{test.cpp}|hyperpage}{61}
+\indexentry{testBackpropagation.cpp@{testBackpropagation.cpp}|hyperpage}{62}

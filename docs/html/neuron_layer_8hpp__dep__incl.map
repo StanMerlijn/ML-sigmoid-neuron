@@ -1,15 +1,15 @@
-<map id="/Users/stanislav/Github/HU&#45;AI&#45;year2/MachineLearning/ML&#45;sigmoid&#45;neuron/src/header/neuronLayer.hpp" name="/Users/stanislav/Github/HU&#45;AI&#45;year2/MachineLearning/ML&#45;sigmoid&#45;neuron/src/header/neuronLayer.hpp">
-<area shape="rect" id="Node000001" title="In this file the NeuronLayer class is declared. This class represents a layer of neurons in a neural ..." alt="" coords="335,5,535,76"/>
-<area shape="rect" id="Node000002" href="$neuron_network_8hpp.html" title="In this file the NeuronNetwork class is declared. This class represents a neural network with multipl..." alt="" coords="267,124,467,195"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="409,91,389,125,385,122,405,88"/>
-<area shape="rect" id="Node000004" href="$test_8cpp.html" title="In this file the tests for the Neuron, NeuronLayer and NeuronNetwork classes are implemented." alt="" coords="5,243,206,313"/>
-<area shape="poly" id="edge6_Node000001_Node000004" title=" " alt="" coords="329,85,292,104,256,126,221,154,188,185,135,244,131,240,184,181,218,150,253,122,289,100,327,80"/>
-<area shape="rect" id="Node000005" href="$test_backpropagation_8cpp_source.html" title=" " alt="" coords="528,243,808,313"/>
-<area shape="poly" id="edge7_Node000001_Node000005" title=" " alt="" coords="463,88,499,149,531,193,562,218,596,240,593,244,559,223,528,196,495,152,459,91"/>
-<area shape="rect" id="Node000006" href="$neuron_layer_8cpp.html" title="In this file the NeuronLayer class is implemented." alt="" coords="541,132,798,187"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="519,81,616,129,614,133,517,86"/>
-<area shape="rect" id="Node000003" href="$neuron_network_8cpp.html" title="In this file the NeuronNetwork class is implemented." alt="" coords="230,250,504,306"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="370,210,370,250,364,250,364,210"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="276,204,184,245,182,240,274,199"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="472,198,580,240,578,245,470,203"/>
+<map id="neuronLayer.hpp" name="neuronLayer.hpp">
+<area shape="rect" id="Node000001" title="In this file the NeuronLayer class is declared. This class represents a layer of neurons in a neural ..." alt="" coords="153,5,270,31"/>
+<area shape="rect" id="Node000002" href="$neuron_layer_8cpp.html" title="In this file the NeuronLayer class is implemented." alt="" coords="5,79,122,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,41,90,81,88,76,171,36"/>
+<area shape="rect" id="Node000003" href="$neuron_network_8hpp.html" title="In this file the NeuronNetwork class is declared. This class represents a neural network with multipl..." alt="" coords="196,79,331,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="231,42,257,77,253,80,227,45"/>
+<area shape="rect" id="Node000005" href="$test_8cpp.html" title="In this file the tests for the Neuron, NeuronLayer and NeuronNetwork classes are implemented." alt="" coords="104,153,172,178"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="201,46,147,153,142,151,196,44"/>
+<area shape="rect" id="Node000006" href="$test_backpropagation_8cpp_source.html" title=" " alt="" coords="354,153,520,178"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="260,35,302,53,344,77,392,115,428,151,424,154,389,119,341,81,299,58,258,39"/>
+<area shape="rect" id="Node000004" href="$neuron_network_8cpp.html" title="In this file the NeuronNetwork class is implemented." alt="" coords="196,153,331,178"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="266,120,266,152,261,152,261,120"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="231,115,161,154,158,150,228,110"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="308,108,408,150,406,155,306,113"/>
 </map>

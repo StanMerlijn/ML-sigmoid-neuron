@@ -47,7 +47,7 @@ public:
     /**
      * @brief Performs a feedforward operation. On all the layers sequentially.
      * @param inputs A vector of input values.
-     * @return The ouπtput of the network. 
+     * @return The output of the network. 
      */
     const std::vector<float>& feedForward(const std::vector<float>& inputs);
 

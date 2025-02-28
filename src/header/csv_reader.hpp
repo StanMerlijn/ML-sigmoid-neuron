@@ -29,7 +29,7 @@
  * @param delimiter The delimiter used in the CSV file.
  * @return A vector of vectors representing the rows in the CSV file.
  */
-std::vector<std::vector<std::string>> read_csv(const std::string& filename, char delimiter=',')
+std::vector<std::vector<std::string>> readCsv(const std::string& filename, char delimiter=',')
 {
     // Create a vector to store the rows
     std::vector<std::vector<std::string>> rows;
