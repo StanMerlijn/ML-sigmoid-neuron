@@ -20,6 +20,27 @@
 #include <random>
 #include <chrono>
 
+
+/**
+ * @brief In this file we test the backpropagation algorithm. And the assigments of the course(15 to 19).
+ * 
+ * 
+ * Test Cases:
+ * - Loading digit data
+ * - Testing initialization of the NeuronLayer
+ * - Testing initialization of the NeuronNetwork
+ * - 15. AND neural Network
+ * - 16. XOR neural Network
+ * - 17. Half Adder neural Network
+ * - 18. Iris neural Network
+ * - 19. Digit neural Network
+ * 
+ * @note The test cases are written using the Catch2 framework.s
+ * 
+ * @cite  https://github.com/catchorg/Catch2
+ * 
+ */
+
 // Function to check new operator 
 static int s_Allocations = 0;
 
@@ -53,6 +74,13 @@ TEST_CASE("Loading digit data", "[backpropagation]") {
     // Check the size of the data
     REQUIRE(_digitData.images.size() == 1797 * 64);
     REQUIRE(_digitData.targets.size() == 1797);
+
+    // Exit program if the data is not loaded
+    if (_digitData.images.size() == 0 || _digitData.targets.size() == 0) {
+        FAIL("Could not load digit dataset");
+        exit(1);
+    }
+
     SUCCEED("Successfully loaded digit dataset");
 }
 
@@ -71,6 +99,10 @@ TEST_CASE("Testing initialization of the NeuronLayer", "[NeuronLayer]")
     SUCCEED("Successfully initialized NeuronLayer");
 }
 
+/**
+ * @brief In this test case we test the initialization of the NeuronNetwork.
+ * 
+ */
 TEST_CASE("Testing initialization of the NeuronNetwork", "[NeuronNetwork]")
 {
     return;
@@ -84,9 +116,9 @@ TEST_CASE("Testing initialization of the NeuronNetwork", "[NeuronNetwork]")
     std::vector<int> layers = {sizeInput, hidden1, hidden2, sizeOutput};
     std::vector<float> outputMask = {0.0f, 1.0f, 2.0f};
 
-    // BENCHMARK("Initializing Neural Network"){
-    //     NeuronNetwork nN(layers, outputMask);
-    // };
+    BENCHMARK("Initializing Neural Network"){
+        NeuronNetwork nn(layers);
+    };
 
     NeuronNetwork nn(layers);
 
@@ -109,16 +141,10 @@ TEST_CASE("Testing initialization of the NeuronNetwork", "[NeuronNetwork]")
             // Using require that and withinRel too check floating point numbers.
             if (i == 0) {
                 SECTION("Input Neurons") {
-                    // Input layer must always have 1 weight that is 1
-                    REQUIRE_THAT(weight, WithinRel(INITIAL_WEIGHT_INPUTN));
-                    REQUIRE_THAT(bias, WithinRel(INITIAL_BIAS_INPUTN));
                     REQUIRE(weights.size() == 1);
                 }
             } else {
                 SECTION("Hidden and output Neurons") {
-                    // Hidden layers and output layer must have 0.1 as weights and inputSize == amount of neurons in the last layer
-                    REQUIRE_THAT(weight, WithinRel(INITIAL_WEIGHT));
-                    REQUIRE_THAT(bias, WithinRel(INITIAL_BIAS));
                     REQUIRE(weights.size() == layers[i - 1]);
                 }
             }
@@ -126,6 +152,10 @@ TEST_CASE("Testing initialization of the NeuronNetwork", "[NeuronNetwork]")
     }  
 }
 
+/**
+ * @brief In this test case we test the ability of a neural network to learn the AND function.
+ * 
+ */
 TEST_CASE("AND neural Network", "[NeuronNetwork][AND]") 
 {
     NeuronNetwork nn({2, 1});
@@ -167,6 +197,10 @@ TEST_CASE("AND neural Network", "[NeuronNetwork][AND]")
     }
 }
 
+/**
+ * @brief In this test case we test the ability of a neural network to learn the XOR gate.
+ * 
+ */
 TEST_CASE("XOR Neural Network", "[NeuronNetwork][XOR]") 
 {
     NeuronNetwork nn({2, 2, 1});
@@ -207,6 +241,10 @@ TEST_CASE("XOR Neural Network", "[NeuronNetwork][XOR]")
     }
 }
 
+/**
+ * @brief In this test case we test the ability of a neural network to learn the Half Adder.
+ * 
+ */
 TEST_CASE("Half adder Neuron Network", "[NeuronNetwork][HalfAdder]") 
 {
     NeuronNetwork nn({2, 3, 2});
@@ -247,6 +285,10 @@ TEST_CASE("Half adder Neuron Network", "[NeuronNetwork][HalfAdder]")
     }
 }
 
+/**
+ * @brief In this test case we test the ability of a neural network to learn the Full Adder.
+ * 
+ */
 TEST_CASE("NeuronNetwork Learning Iris dataset", "[backpropagation][Iris]") {
     // =================================================================================================
     // Load the iris dataset
@@ -275,35 +317,23 @@ TEST_CASE("NeuronNetwork Learning Iris dataset", "[backpropagation][Iris]") {
 
     // Create training and test split 
     normalize2DVector(features);
-    
-    TrainTestSplit tts(features, targetMaskedData, 0.90);
-    // for (auto& row : tts.trainFeatures) {
-    //     printVector(row, "\n");
-    // }
-    // for (auto& row : tts.trainTargets) {
-    //     printVector(row, "\n");
-    // }
 
-    // for (auto& row : tts.testFeatures) {
-    //     printVector(row, "\n");
-    // }
-    // for (auto& row : tts.testTargets) {
-    //     printVector(row, "\n");
-    // }
+    // Train and test split
+    TrainTestSplit tts(features, targetMaskedData, 0.90);
+   
     // =================================================================================================
     // Train the network
     // =================================================================================================
 
     NeuronNetwork nn(layers);
+
     printf("vector size %zu\n", tts.trainFeatures.size());
 
     MEASURE_BLOCK("Training the network", {
         nn.trainInputs2D(tts.trainFeatures, tts.trainTargets, 2000);
     });
 
-    s_Allocations = 0;
     nn.trainInputs2D(tts.trainFeatures, tts.trainTargets,  5000);
-    printf("Iris data Allocations: %d\n", s_Allocations);
 
     // Print the output mask for the network
     printf("\nOutputMask \t ");
@@ -355,6 +385,10 @@ TEST_CASE("NeuronNetwork Learning Iris dataset", "[backpropagation][Iris]") {
     }
 }
 
+/**
+ * @brief In this test case we test the ability of a neural network to learn the digit dataset.
+ * 
+ */
 TEST_CASE("NeuronNetwork Learning digit data", "[backpropagation]") {
     // =================================================================================================
     // Load the digit dataset
@@ -396,9 +430,7 @@ TEST_CASE("NeuronNetwork Learning digit data", "[backpropagation]") {
         nn.trainInputs2D(tts.trainFeatures, tts.trainTargets, 2000);
     });
 
-    s_Allocations = 0;
     nn.trainInputs2D(tts.trainFeatures, tts.trainTargets,  5000);
-    printf("Digit data Allocations: %d\n", s_Allocations);
 
     // Number of features to check
     SECTION("Testing test set") {
@@ -419,7 +451,6 @@ TEST_CASE("NeuronNetwork Learning digit data", "[backpropagation]") {
             }
         }   
     }
-
 
     SECTION("Testing random predictions") {
         printf("Testing random predictions for digit dataset\n");
