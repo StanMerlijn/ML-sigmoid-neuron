@@ -49,7 +49,17 @@ struct digitData
     std::vector<T> images; 
     std::vector<T> targets;
 };
+// Add forward declaration for TrainTestSplit
+template<typename T>
+struct TrainTestSplit;
 
+// Forward declaration
+template<typename T>
+TrainTestSplit<T> createTrainTestSplit(
+    const std::vector<std::vector<T>>& features, 
+    const std::vector<std::vector<T>>& targets, 
+    float splitRatio);
+    
 /**
  * @brief A structure to hold the features and targets read from a CSV file. This is for the digit data set.
  * 
@@ -60,6 +70,19 @@ struct digitData
 template<typename T>
 struct TrainTestSplit
 {
+    // Constructors
+    TrainTestSplit() = default;
+    TrainTestSplit(const std::vector<std::vector<T>>& features, 
+        const std::vector<std::vector<T>>& targets, 
+        float splitRatio)
+    {
+        TrainTestSplit<T> tts = createTrainTestSplit(features, targets, splitRatio);
+        trainFeatures = tts.trainFeatures;
+        testFeatures = tts.testFeatures;
+        trainTargets = tts.trainTargets;
+        testTargets = tts.testTargets;
+    }
+
     std::vector<std::vector<T>> trainFeatures;
     std::vector<std::vector<T>> testFeatures;
     std::vector<std::vector<T>> trainTargets;
@@ -145,4 +168,30 @@ void normalizeVector(std::vector<T> &vec)
         T xi = vec[i]; 
         vec.at(i) = (xi - minElement) / minMax;
     }
+}
+
+template<typename T>
+TrainTestSplit<T> createTrainTestSplit(
+    const std::vector<std::vector<T>>& features, 
+    const std::vector<std::vector<T>>& targets, 
+    float splitRatio)
+{
+    TrainTestSplit<T> tts;
+    // Reserve the memory for the vectors
+    tts.trainFeatures.reserve(features.size() * splitRatio);
+    tts.testFeatures.reserve(features.size() * (1 - splitRatio));
+    tts.trainTargets.reserve(targets.size() * splitRatio);
+    tts.testTargets.reserve(targets.size() * (1 - splitRatio));
+
+    for (std::size_t i = 0; i < features.size(); i++)
+    {
+        if (i < features.size() * splitRatio) {
+            tts.trainFeatures.emplace_back(features[i]);
+            tts.trainTargets.emplace_back(targets[i]);
+        } else {
+            tts.testFeatures.emplace_back(features[i]);
+            tts.testTargets.emplace_back(targets[i]);
+        }
+    }
+    return tts;
 }
