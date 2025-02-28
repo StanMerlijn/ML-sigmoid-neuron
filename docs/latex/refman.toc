@@ -4,61 +4,152 @@
 \contentsline {section}{\numberline {1.2}Introduction}{1}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Documentation}{1}{section.1.3}%
 \contentsline {section}{\numberline {1.4}Installing}{1}{section.1.4}%
-\contentsline {chapter}{\numberline {2}Class Index}{3}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Class List}{3}{section.2.1}%
-\contentsline {chapter}{\numberline {3}File Index}{5}{chapter.3}%
-\contentsline {section}{\numberline {3.1}File List}{5}{section.3.1}%
-\contentsline {chapter}{\numberline {4}Class Documentation}{7}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Neuron Class Reference}{7}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Detailed Description}{7}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Constructor \& Destructor Documentation}{7}{subsection.4.1.2}%
-\contentsline {subsubsection}{\numberline {4.1.2.1}Neuron()}{7}{subsubsection.4.1.2.1}%
-\contentsline {subsection}{\numberline {4.1.3}Member Function Documentation}{8}{subsection.4.1.3}%
-\contentsline {subsubsection}{\numberline {4.1.3.1}\_\_str\_\_()}{8}{subsubsection.4.1.3.1}%
-\contentsline {subsubsection}{\numberline {4.1.3.2}predict()}{8}{subsubsection.4.1.3.2}%
-\contentsline {subsubsection}{\numberline {4.1.3.3}sigmoid()}{8}{subsubsection.4.1.3.3}%
-\contentsline {section}{\numberline {4.2}Neuron\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Layer Class Reference}{9}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Detailed Description}{9}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Constructor \& Destructor Documentation}{9}{subsection.4.2.2}%
-\contentsline {subsubsection}{\numberline {4.2.2.1}NeuronLayer()}{9}{subsubsection.4.2.2.1}%
-\contentsline {subsection}{\numberline {4.2.3}Member Function Documentation}{9}{subsection.4.2.3}%
-\contentsline {subsubsection}{\numberline {4.2.3.1}\_\_str\_\_()}{9}{subsubsection.4.2.3.1}%
-\contentsline {subsubsection}{\numberline {4.2.3.2}feedForward()}{9}{subsubsection.4.2.3.2}%
-\contentsline {section}{\numberline {4.3}Neuron\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Network Class Reference}{10}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Detailed Description}{10}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Constructor \& Destructor Documentation}{10}{subsection.4.3.2}%
-\contentsline {subsubsection}{\numberline {4.3.2.1}NeuronNetwork()}{10}{subsubsection.4.3.2.1}%
-\contentsline {subsection}{\numberline {4.3.3}Member Function Documentation}{11}{subsection.4.3.3}%
-\contentsline {subsubsection}{\numberline {4.3.3.1}\_\_str\_\_()}{11}{subsubsection.4.3.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.3.2}feedForward()}{11}{subsubsection.4.3.3.2}%
-\contentsline {chapter}{\numberline {5}File Documentation}{13}{chapter.5}%
-\contentsline {section}{\numberline {5.1}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/stanislav/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Github/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Machine\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Learning/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ML-\/sigmoid-\/neuron/src/header/neuron.hpp File Reference}{13}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Detailed Description}{14}{subsection.5.1.1}%
-\contentsline {section}{\numberline {5.2}neuron.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{15}{section.5.2}%
-\contentsline {section}{\numberline {5.3}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/stanislav/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Github/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Machine\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Learning/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ML-\/sigmoid-\/neuron/src/header/neuron\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Layer.hpp File Reference}{15}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Detailed Description}{16}{subsection.5.3.1}%
-\contentsline {section}{\numberline {5.4}neuron\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Layer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{17}{section.5.4}%
-\contentsline {section}{\numberline {5.5}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/stanislav/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Github/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Machine\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Learning/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ML-\/sigmoid-\/neuron/src/header/neuron\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Network.hpp File Reference}{17}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}Detailed Description}{18}{subsection.5.5.1}%
-\contentsline {section}{\numberline {5.6}neuron\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Network.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{19}{section.5.6}%
-\contentsline {section}{\numberline {5.7}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/stanislav/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Github/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Machine\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Learning/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ML-\/sigmoid-\/neuron/src/neuron.cpp File Reference}{19}{section.5.7}%
-\contentsline {subsection}{\numberline {5.7.1}Detailed Description}{19}{subsection.5.7.1}%
-\contentsline {section}{\numberline {5.8}neuron.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{20}{section.5.8}%
-\contentsline {section}{\numberline {5.9}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/stanislav/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Github/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Machine\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Learning/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ML-\/sigmoid-\/neuron/src/neuron\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Layer.cpp File Reference}{21}{section.5.9}%
-\contentsline {subsection}{\numberline {5.9.1}Detailed Description}{21}{subsection.5.9.1}%
-\contentsline {section}{\numberline {5.10}neuron\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Layer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{22}{section.5.10}%
-\contentsline {section}{\numberline {5.11}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/stanislav/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Github/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Machine\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Learning/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ML-\/sigmoid-\/neuron/src/neuron\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Network.cpp File Reference}{22}{section.5.11}%
-\contentsline {subsection}{\numberline {5.11.1}Detailed Description}{23}{subsection.5.11.1}%
-\contentsline {section}{\numberline {5.12}neuron\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Network.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{24}{section.5.12}%
-\contentsline {section}{\numberline {5.13}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/stanislav/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Github/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Machine\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Learning/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ML-\/sigmoid-\/neuron/src/test/test.cpp File Reference}{24}{section.5.13}%
-\contentsline {subsection}{\numberline {5.13.1}Detailed Description}{25}{subsection.5.13.1}%
-\contentsline {subsection}{\numberline {5.13.2}Macro Definition Documentation}{26}{subsection.5.13.2}%
-\contentsline {subsubsection}{\numberline {5.13.2.1}CATCH\_CONFIG\_MAIN}{26}{subsubsection.5.13.2.1}%
-\contentsline {subsection}{\numberline {5.13.3}Function Documentation}{26}{subsection.5.13.3}%
-\contentsline {subsubsection}{\numberline {5.13.3.1}TEST\_CASE()\hspace {0.1cm}{\footnotesize \ttfamily [1/5]}}{26}{subsubsection.5.13.3.1}%
-\contentsline {subsubsection}{\numberline {5.13.3.2}TEST\_CASE()\hspace {0.1cm}{\footnotesize \ttfamily [2/5]}}{27}{subsubsection.5.13.3.2}%
-\contentsline {subsubsection}{\numberline {5.13.3.3}TEST\_CASE()\hspace {0.1cm}{\footnotesize \ttfamily [3/5]}}{27}{subsubsection.5.13.3.3}%
-\contentsline {subsubsection}{\numberline {5.13.3.4}TEST\_CASE()\hspace {0.1cm}{\footnotesize \ttfamily [4/5]}}{28}{subsubsection.5.13.3.4}%
-\contentsline {subsubsection}{\numberline {5.13.3.5}TEST\_CASE()\hspace {0.1cm}{\footnotesize \ttfamily [5/5]}}{28}{subsubsection.5.13.3.5}%
-\contentsline {section}{\numberline {5.14}test.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{28}{section.5.14}%
-\contentsline {chapter}{Index}{31}{section*.18}%
+\contentsline {chapter}{\numberline {2}ML-\/perceptron}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Student}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Introduction}{3}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Documentation}{3}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Installing}{3}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Hierarchical Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Class Hierarchy}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Class Index}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Class List}{7}{section.4.1}%
+\contentsline {chapter}{\numberline {5}File Index}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}File List}{9}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Class Documentation}{11}{chapter.6}%
+\contentsline {section}{\numberline {6.1}digit\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data$<$ T $>$ Struct Template Reference}{11}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Detailed Description}{11}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Member Data Documentation}{11}{subsection.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.2.1}images}{11}{subsubsection.6.1.2.1}%
+\contentsline {subsubsection}{\numberline {6.1.2.2}targets}{12}{subsubsection.6.1.2.2}%
+\contentsline {section}{\numberline {6.2}iris\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data Struct Reference}{12}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Detailed Description}{12}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Member Data Documentation}{12}{subsection.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.2.1}features}{12}{subsubsection.6.2.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2.2}targets}{13}{subsubsection.6.2.2.2}%
+\contentsline {section}{\numberline {6.3}Neuron Class Reference}{13}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Detailed Description}{14}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Constructor \& Destructor Documentation}{14}{subsection.6.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.2.1}Neuron()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{14}{subsubsection.6.3.2.1}%
+\contentsline {subsubsection}{\numberline {6.3.2.2}Neuron()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{14}{subsubsection.6.3.2.2}%
+\contentsline {subsection}{\numberline {6.3.3}Member Function Documentation}{15}{subsection.6.3.3}%
+\contentsline {subsubsection}{\numberline {6.3.3.1}\_\_str\_\_()}{15}{subsubsection.6.3.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.3.2}activate()}{15}{subsubsection.6.3.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.3.3}computeHiddenDelta()}{15}{subsubsection.6.3.3.3}%
+\contentsline {subsubsection}{\numberline {6.3.3.4}computeOutputDelta()}{15}{subsubsection.6.3.3.4}%
+\contentsline {subsubsection}{\numberline {6.3.3.5}deltaError()}{16}{subsubsection.6.3.3.5}%
+\contentsline {subsubsection}{\numberline {6.3.3.6}getBias()}{16}{subsubsection.6.3.3.6}%
+\contentsline {subsubsection}{\numberline {6.3.3.7}getError()}{16}{subsubsection.6.3.3.7}%
+\contentsline {subsubsection}{\numberline {6.3.3.8}getWeights()}{17}{subsubsection.6.3.3.8}%
+\contentsline {subsubsection}{\numberline {6.3.3.9}predict()}{17}{subsubsection.6.3.3.9}%
+\contentsline {subsubsection}{\numberline {6.3.3.10}sigmoid()}{17}{subsubsection.6.3.3.10}%
+\contentsline {subsubsection}{\numberline {6.3.3.11}sigmoidDerivative()}{17}{subsubsection.6.3.3.11}%
+\contentsline {subsubsection}{\numberline {6.3.3.12}update()}{18}{subsubsection.6.3.3.12}%
+\contentsline {section}{\numberline {6.4}Neuron\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Layer Class Reference}{18}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Detailed Description}{19}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Constructor \& Destructor Documentation}{19}{subsection.6.4.2}%
+\contentsline {subsubsection}{\numberline {6.4.2.1}NeuronLayer()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{19}{subsubsection.6.4.2.1}%
+\contentsline {subsubsection}{\numberline {6.4.2.2}NeuronLayer()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{19}{subsubsection.6.4.2.2}%
+\contentsline {subsection}{\numberline {6.4.3}Member Function Documentation}{19}{subsection.6.4.3}%
+\contentsline {subsubsection}{\numberline {6.4.3.1}\_\_str\_\_()}{19}{subsubsection.6.4.3.1}%
+\contentsline {subsubsection}{\numberline {6.4.3.2}computeHiddenErrors()}{19}{subsubsection.6.4.3.2}%
+\contentsline {subsubsection}{\numberline {6.4.3.3}computeOutputErros()}{20}{subsubsection.6.4.3.3}%
+\contentsline {subsubsection}{\numberline {6.4.3.4}feedForward()}{20}{subsubsection.6.4.3.4}%
+\contentsline {subsubsection}{\numberline {6.4.3.5}getNeurons()}{20}{subsubsection.6.4.3.5}%
+\contentsline {subsubsection}{\numberline {6.4.3.6}getOutput()}{21}{subsubsection.6.4.3.6}%
+\contentsline {subsubsection}{\numberline {6.4.3.7}update()}{21}{subsubsection.6.4.3.7}%
+\contentsline {section}{\numberline {6.5}Neuron\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Network Class Reference}{21}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Detailed Description}{22}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}Constructor \& Destructor Documentation}{22}{subsection.6.5.2}%
+\contentsline {subsubsection}{\numberline {6.5.2.1}NeuronNetwork()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{22}{subsubsection.6.5.2.1}%
+\contentsline {subsubsection}{\numberline {6.5.2.2}NeuronNetwork()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{22}{subsubsection.6.5.2.2}%
+\contentsline {subsection}{\numberline {6.5.3}Member Function Documentation}{22}{subsection.6.5.3}%
+\contentsline {subsubsection}{\numberline {6.5.3.1}\_\_str\_\_()}{22}{subsubsection.6.5.3.1}%
+\contentsline {subsubsection}{\numberline {6.5.3.2}backPropagation()}{23}{subsubsection.6.5.3.2}%
+\contentsline {subsubsection}{\numberline {6.5.3.3}feedForward()}{23}{subsubsection.6.5.3.3}%
+\contentsline {subsubsection}{\numberline {6.5.3.4}getLayers()}{23}{subsubsection.6.5.3.4}%
+\contentsline {subsubsection}{\numberline {6.5.3.5}maskTarget()}{23}{subsubsection.6.5.3.5}%
+\contentsline {subsubsection}{\numberline {6.5.3.6}predict()}{23}{subsubsection.6.5.3.6}%
+\contentsline {subsubsection}{\numberline {6.5.3.7}setTarget()}{24}{subsubsection.6.5.3.7}%
+\contentsline {subsubsection}{\numberline {6.5.3.8}trainInputs2D()}{24}{subsubsection.6.5.3.8}%
+\contentsline {subsubsection}{\numberline {6.5.3.9}update()}{24}{subsubsection.6.5.3.9}%
+\contentsline {section}{\numberline {6.6}Output\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Nueron Class Reference}{25}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}Detailed Description}{25}{subsection.6.6.1}%
+\contentsline {section}{\numberline {6.7}Train\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Split$<$ T $>$ Struct Template Reference}{25}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Detailed Description}{26}{subsection.6.7.1}%
+\contentsline {subsection}{\numberline {6.7.2}Constructor \& Destructor Documentation}{26}{subsection.6.7.2}%
+\contentsline {subsubsection}{\numberline {6.7.2.1}TrainTestSplit()}{26}{subsubsection.6.7.2.1}%
+\contentsline {subsection}{\numberline {6.7.3}Member Data Documentation}{26}{subsection.6.7.3}%
+\contentsline {subsubsection}{\numberline {6.7.3.1}testFeatures}{26}{subsubsection.6.7.3.1}%
+\contentsline {subsubsection}{\numberline {6.7.3.2}testTargets}{27}{subsubsection.6.7.3.2}%
+\contentsline {subsubsection}{\numberline {6.7.3.3}trainFeatures}{27}{subsubsection.6.7.3.3}%
+\contentsline {subsubsection}{\numberline {6.7.3.4}trainTargets}{27}{subsubsection.6.7.3.4}%
+\contentsline {chapter}{\numberline {7}File Documentation}{29}{chapter.7}%
+\contentsline {section}{\numberline {7.1}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/stanislav/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Github/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}HU-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}AI-\/year2/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Machine\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Learning/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ML-\/sigmoid-\/neuron/data/create\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}dataset.py File Reference}{29}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Detailed Description}{29}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Function Documentation}{29}{subsection.7.1.2}%
+\contentsline {subsubsection}{\numberline {7.1.2.1}save\_digits\_dataset()}{29}{subsubsection.7.1.2.1}%
+\contentsline {subsubsection}{\numberline {7.1.2.2}write\_to\_csv()}{29}{subsubsection.7.1.2.2}%
+\contentsline {section}{\numberline {7.2}create\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}dataset.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}py}{30}{section.7.2}%
+\contentsline {section}{\numberline {7.3}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/stanislav/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Github/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}HU-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}AI-\/year2/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Machine\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Learning/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ML-\/sigmoid-\/neuron/src/header/common.hpp File Reference}{30}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Detailed Description}{32}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Macro Definition Documentation}{32}{subsection.7.3.2}%
+\contentsline {subsubsection}{\numberline {7.3.2.1}INITIAL\_BIAS}{32}{subsubsection.7.3.2.1}%
+\contentsline {subsubsection}{\numberline {7.3.2.2}INITIAL\_BIAS\_INPUTN}{33}{subsubsection.7.3.2.2}%
+\contentsline {subsubsection}{\numberline {7.3.2.3}INITIAL\_WEIGHT}{33}{subsubsection.7.3.2.3}%
+\contentsline {subsubsection}{\numberline {7.3.2.4}INITIAL\_WEIGHT\_INPUTN}{33}{subsubsection.7.3.2.4}%
+\contentsline {subsection}{\numberline {7.3.3}Function Documentation}{33}{subsection.7.3.3}%
+\contentsline {subsubsection}{\numberline {7.3.3.1}createTrainTestSplit()}{33}{subsubsection.7.3.3.1}%
+\contentsline {subsubsection}{\numberline {7.3.3.2}deltaBias()}{33}{subsubsection.7.3.3.2}%
+\contentsline {subsubsection}{\numberline {7.3.3.3}deltaGradient()}{33}{subsubsection.7.3.3.3}%
+\contentsline {subsubsection}{\numberline {7.3.3.4}gradientBetweenNeurons()}{34}{subsubsection.7.3.3.4}%
+\contentsline {subsubsection}{\numberline {7.3.3.5}normalizeVector()}{34}{subsubsection.7.3.3.5}%
+\contentsline {subsubsection}{\numberline {7.3.3.6}printVector()}{34}{subsubsection.7.3.3.6}%
+\contentsline {section}{\numberline {7.4}common.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{35}{section.7.4}%
+\contentsline {section}{\numberline {7.5}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/stanislav/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Github/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}HU-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}AI-\/year2/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Machine\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Learning/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ML-\/sigmoid-\/neuron/src/header/csv\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}reader.hpp File Reference}{36}{section.7.5}%
+\contentsline {subsection}{\numberline {7.5.1}Detailed Description}{38}{subsection.7.5.1}%
+\contentsline {subsection}{\numberline {7.5.2}Function Documentation}{38}{subsection.7.5.2}%
+\contentsline {subsubsection}{\numberline {7.5.2.1}convert()}{38}{subsubsection.7.5.2.1}%
+\contentsline {subsubsection}{\numberline {7.5.2.2}convert$<$ float $>$()}{39}{subsubsection.7.5.2.2}%
+\contentsline {subsubsection}{\numberline {7.5.2.3}convert$<$ int $>$()}{39}{subsubsection.7.5.2.3}%
+\contentsline {subsubsection}{\numberline {7.5.2.4}create2DVector()}{39}{subsubsection.7.5.2.4}%
+\contentsline {subsubsection}{\numberline {7.5.2.5}filterData()}{39}{subsubsection.7.5.2.5}%
+\contentsline {subsubsection}{\numberline {7.5.2.6}getFeatures()}{40}{subsubsection.7.5.2.6}%
+\contentsline {subsubsection}{\numberline {7.5.2.7}getTargets()}{40}{subsubsection.7.5.2.7}%
+\contentsline {subsubsection}{\numberline {7.5.2.8}maskData()}{40}{subsubsection.7.5.2.8}%
+\contentsline {subsubsection}{\numberline {7.5.2.9}read\_csv()}{40}{subsubsection.7.5.2.9}%
+\contentsline {subsubsection}{\numberline {7.5.2.10}readDigitData()}{41}{subsubsection.7.5.2.10}%
+\contentsline {subsubsection}{\numberline {7.5.2.11}realdCsvFlat()}{41}{subsubsection.7.5.2.11}%
+\contentsline {section}{\numberline {7.6}csv\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}reader.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{42}{section.7.6}%
+\contentsline {section}{\numberline {7.7}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/stanislav/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Github/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}HU-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}AI-\/year2/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Machine\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Learning/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ML-\/sigmoid-\/neuron/src/header/neuron.hpp File Reference}{44}{section.7.7}%
+\contentsline {subsection}{\numberline {7.7.1}Detailed Description}{45}{subsection.7.7.1}%
+\contentsline {section}{\numberline {7.8}neuron.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{45}{section.7.8}%
+\contentsline {section}{\numberline {7.9}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/stanislav/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Github/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}HU-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}AI-\/year2/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Machine\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Learning/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ML-\/sigmoid-\/neuron/src/header/neuron\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Layer.hpp File Reference}{46}{section.7.9}%
+\contentsline {subsection}{\numberline {7.9.1}Detailed Description}{47}{subsection.7.9.1}%
+\contentsline {section}{\numberline {7.10}neuron\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Layer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{47}{section.7.10}%
+\contentsline {section}{\numberline {7.11}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/stanislav/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Github/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}HU-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}AI-\/year2/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Machine\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Learning/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ML-\/sigmoid-\/neuron/src/header/neuron\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Network.hpp File Reference}{48}{section.7.11}%
+\contentsline {subsection}{\numberline {7.11.1}Detailed Description}{49}{subsection.7.11.1}%
+\contentsline {section}{\numberline {7.12}neuron\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Network.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{49}{section.7.12}%
+\contentsline {section}{\numberline {7.13}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/stanislav/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Github/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}HU-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}AI-\/year2/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Machine\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Learning/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ML-\/sigmoid-\/neuron/src/header/output\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Neuron.hpp File Reference}{50}{section.7.13}%
+\contentsline {subsection}{\numberline {7.13.1}Detailed Description}{50}{subsection.7.13.1}%
+\contentsline {section}{\numberline {7.14}output\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Neuron.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hpp}{51}{section.7.14}%
+\contentsline {section}{\numberline {7.15}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/stanislav/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Github/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}HU-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}AI-\/year2/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Machine\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Learning/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ML-\/sigmoid-\/neuron/src/neuron.cpp File Reference}{51}{section.7.15}%
+\contentsline {subsection}{\numberline {7.15.1}Detailed Description}{51}{subsection.7.15.1}%
+\contentsline {section}{\numberline {7.16}neuron.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{52}{section.7.16}%
+\contentsline {section}{\numberline {7.17}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/stanislav/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Github/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}HU-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}AI-\/year2/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Machine\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Learning/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ML-\/sigmoid-\/neuron/src/neuron\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Layer.cpp File Reference}{53}{section.7.17}%
+\contentsline {subsection}{\numberline {7.17.1}Detailed Description}{53}{subsection.7.17.1}%
+\contentsline {section}{\numberline {7.18}neuron\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Layer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{54}{section.7.18}%
+\contentsline {section}{\numberline {7.19}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/stanislav/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Github/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}HU-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}AI-\/year2/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Machine\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Learning/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ML-\/sigmoid-\/neuron/src/neuron\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Network.cpp File Reference}{55}{section.7.19}%
+\contentsline {subsection}{\numberline {7.19.1}Detailed Description}{55}{subsection.7.19.1}%
+\contentsline {section}{\numberline {7.20}neuron\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Network.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{56}{section.7.20}%
+\contentsline {section}{\numberline {7.21}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/stanislav/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Github/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}HU-\/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}AI-\/year2/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Machine\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Learning/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ML-\/sigmoid-\/neuron/src/test/test.cpp File Reference}{58}{section.7.21}%
+\contentsline {subsection}{\numberline {7.21.1}Detailed Description}{59}{subsection.7.21.1}%
+\contentsline {subsection}{\numberline {7.21.2}Macro Definition Documentation}{60}{subsection.7.21.2}%
+\contentsline {subsubsection}{\numberline {7.21.2.1}CATCH\_CONFIG\_MAIN}{60}{subsubsection.7.21.2.1}%
+\contentsline {subsection}{\numberline {7.21.3}Function Documentation}{60}{subsection.7.21.3}%
+\contentsline {subsubsection}{\numberline {7.21.3.1}TEST\_CASE()\hspace {0.1cm}{\footnotesize \ttfamily [1/5]}}{60}{subsubsection.7.21.3.1}%
+\contentsline {subsubsection}{\numberline {7.21.3.2}TEST\_CASE()\hspace {0.1cm}{\footnotesize \ttfamily [2/5]}}{61}{subsubsection.7.21.3.2}%
+\contentsline {subsubsection}{\numberline {7.21.3.3}TEST\_CASE()\hspace {0.1cm}{\footnotesize \ttfamily [3/5]}}{61}{subsubsection.7.21.3.3}%
+\contentsline {subsubsection}{\numberline {7.21.3.4}TEST\_CASE()\hspace {0.1cm}{\footnotesize \ttfamily [4/5]}}{61}{subsubsection.7.21.3.4}%
+\contentsline {subsubsection}{\numberline {7.21.3.5}TEST\_CASE()\hspace {0.1cm}{\footnotesize \ttfamily [5/5]}}{62}{subsubsection.7.21.3.5}%
+\contentsline {section}{\numberline {7.22}test.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{62}{section.7.22}%
+\contentsline {section}{\numberline {7.23}test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Backpropagation.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{63}{section.7.23}%

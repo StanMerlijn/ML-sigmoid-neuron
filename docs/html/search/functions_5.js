@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['test_5fcase_0',['TEST_CASE',['../test_8cpp.html#aa2406315bdd97e70c038abc810269e74',1,'TEST_CASE(&quot;Neuron AND gate&quot;, &quot;[neuron]&quot;):&#160;test.cpp'],['../test_8cpp.html#aaea5777fe5bb771f2b3cf1b166c2ddd5',1,'TEST_CASE(&quot;Neuron OR gate&quot;, &quot;[neuron]&quot;):&#160;test.cpp'],['../test_8cpp.html#ac08b6b89467fcaa1e873ae9cd940121c',1,'TEST_CASE(&quot;Neuron NOT gate&quot;, &quot;[neuron]&quot;):&#160;test.cpp'],['../test_8cpp.html#af2b2755090478b311964d946f400bbbb',1,'TEST_CASE(&quot;Neuron NOR gate (NOT OR)&quot;, &quot;[neuron]&quot;):&#160;test.cpp'],['../test_8cpp.html#aff8bbc98fc598e1ed1d50d0051d36f1c',1,'TEST_CASE(&quot;Half Adder using Two-Layer Neuron Network&quot;, &quot;[half-adder]&quot;):&#160;test.cpp']]]
+  ['feedforward_0',['feedForward',['../class_neuron_layer.html#ae1321e96085805de5b172df13cc5a157',1,'NeuronLayer::feedForward()'],['../class_neuron_network.html#a24903c532713fe34bdc4f7c49f327730',1,'NeuronNetwork::feedForward()']]],
+  ['filterdata_1',['filterData',['../csv__reader_8hpp.html#ac59e889471fd50a6b55ea333a879fe74',1,'csv_reader.hpp']]]
 ];

@@ -1,0 +1,499 @@
+\doxysection{omp.\+h}
+\hypertarget{omp_8h_source}{}\label{omp_8h_source}\index{/Users/stanislav/Github/HU-\/AI-\/year2/MachineLearning/ML-\/sigmoid-\/neuron/src/header/omp.h@{/Users/stanislav/Github/HU-\/AI-\/year2/MachineLearning/ML-\/sigmoid-\/neuron/src/header/omp.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00002}00002\ \textcolor{comment}{\ *\ include/omp.h.var}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00003}00003\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00006}00006\ \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===//}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00007}00007\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00008}00008\ \textcolor{comment}{//\ Part\ of\ the\ LLVM\ Project,\ under\ the\ Apache\ License\ v2.0\ with\ LLVM\ Exceptions.}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00009}00009\ \textcolor{comment}{//\ See\ https://llvm.org/LICENSE.txt\ for\ license\ information.}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00010}00010\ \textcolor{comment}{//\ SPDX-\/License-\/Identifier:\ Apache-\/2.0\ WITH\ LLVM-\/exception}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00011}00011\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00012}00012\ \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===//}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00015}00015\ \textcolor{preprocessor}{\#ifndef\ \_\_OMP\_H}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00016}00016\ \textcolor{preprocessor}{\#\ \ \ define\ \_\_OMP\_H}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00018}00018\ \textcolor{preprocessor}{\#\ \ \ include\ <stddef.h>}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00019}00019\ \textcolor{preprocessor}{\#\ \ \ include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00020}00020\ \textcolor{preprocessor}{\#\ \ \ include\ <stdint.h>}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00022}00022\ \textcolor{preprocessor}{\#\ \ \ define\ KMP\_VERSION\_MAJOR\ \ \ \ 5}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00023}00023\ \textcolor{preprocessor}{\#\ \ \ define\ KMP\_VERSION\_MINOR\ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00024}00024\ \textcolor{preprocessor}{\#\ \ \ define\ KMP\_VERSION\_BUILD\ \ \ \ 20140926}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00025}00025\ \textcolor{preprocessor}{\#\ \ \ define\ KMP\_BUILD\_DATE\ \ \ \ \ \ \ "{}No\_Timestamp"{}}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00027}00027\ \textcolor{preprocessor}{\#\ \ \ ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00029}00029\ \textcolor{preprocessor}{\#\ \ \ endif}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00031}00031\ \textcolor{preprocessor}{\#\ \ \ define\ omp\_set\_affinity\_format\ \ \ ompc\_set\_affinity\_format}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00032}00032\ \textcolor{preprocessor}{\#\ \ \ define\ omp\_get\_affinity\_format\ \ \ ompc\_get\_affinity\_format}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00033}00033\ \textcolor{preprocessor}{\#\ \ \ define\ omp\_display\_affinity\ \ \ \ \ \ ompc\_display\_affinity}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00034}00034\ \textcolor{preprocessor}{\#\ \ \ define\ omp\_capture\_affinity\ \ \ \ \ \ ompc\_capture\_affinity}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00036}00036\ \textcolor{preprocessor}{\#\ \ \ if\ defined(\_WIN32)}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00037}00037\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ define\ \_\_KAI\_KMPC\_CONVENTION\ \_\_cdecl}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00038}00038\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ ifndef\ \_\_KMP\_IMP}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00039}00039\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ \ \ \ \ define\ \_\_KMP\_IMP\ \_\_declspec(dllimport)}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00040}00040\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ endif}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00041}00041\ \textcolor{preprocessor}{\#\ \ \ else}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00042}00042\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ define\ \_\_KAI\_KMPC\_CONVENTION}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00043}00043\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ ifndef\ \_\_KMP\_IMP}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00044}00044\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ \ \ \ \ define\ \_\_KMP\_IMP}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00045}00045\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ endif}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00046}00046\ \textcolor{preprocessor}{\#\ \ \ endif}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00048}00048\ \ \ \ \ \textcolor{comment}{/*\ schedule\ kind\ constants\ */}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00049}00049\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ omp\_sched\_t\ \{}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ omp\_sched\_static\ \ =\ 1,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ omp\_sched\_dynamic\ =\ 2,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ omp\_sched\_guided\ \ =\ 3,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ omp\_sched\_auto\ \ \ \ =\ 4,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ omp\_sched\_monotonic\ =\ 0x80000000}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00055}00055\ \ \ \ \ \}\ omp\_sched\_t;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00057}00057\ \ \ \ \ \textcolor{comment}{/*\ set\ API\ functions\ */}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00058}00058\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_set\_num\_threads\ (\textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00059}00059\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_set\_dynamic\ \ \ \ \ (\textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00060}00060\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_set\_nested\ \ \ \ \ \ (\textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00061}00061\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_set\_max\_active\_levels\ (\textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00062}00062\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_set\_schedule\ \ \ \ \ \ \ \ \ \ (omp\_sched\_t,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00064}00064\ \ \ \ \ \textcolor{comment}{/*\ query\ API\ functions\ */}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00065}00065\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_get\_num\_threads\ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00066}00066\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_get\_dynamic\ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00067}00067\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_get\_nested\ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00068}00068\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_get\_max\_threads\ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00069}00069\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_get\_thread\_num\ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00070}00070\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_get\_num\_procs\ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00071}00071\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_in\_parallel\ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00072}00072\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_in\_final\ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00073}00073\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_get\_active\_level\ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00074}00074\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_get\_level\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00075}00075\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_get\_ancestor\_thread\_num\ (\textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00076}00076\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_get\_team\_size\ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00077}00077\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_get\_thread\_limit\ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00078}00078\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_get\_max\_active\_levels\ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00079}00079\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_get\_schedule\ \ \ \ \ \ \ \ \ \ \ \ (omp\_sched\_t\ *,\ \textcolor{keywordtype}{int}\ *);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00080}00080\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_get\_max\_task\_priority\ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00082}00082\ \ \ \ \ \textcolor{comment}{/*\ lock\ API\ functions\ */}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00083}\mbox{\hyperlink{structomp__lock__t}{00083}}\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structomp__lock__t}{omp\_lock\_t}}\ \{}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *\ \_lk;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00085}00085\ \ \ \ \ \}\ \mbox{\hyperlink{structomp__lock__t}{omp\_lock\_t}};}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00087}00087\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_init\_lock\ \ \ \ (\mbox{\hyperlink{structomp__lock__t}{omp\_lock\_t}}\ *);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00088}00088\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_set\_lock\ \ \ \ \ (\mbox{\hyperlink{structomp__lock__t}{omp\_lock\_t}}\ *);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00089}00089\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_unset\_lock\ \ \ (\mbox{\hyperlink{structomp__lock__t}{omp\_lock\_t}}\ *);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00090}00090\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_destroy\_lock\ (\mbox{\hyperlink{structomp__lock__t}{omp\_lock\_t}}\ *);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00091}00091\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_test\_lock\ \ \ \ (\mbox{\hyperlink{structomp__lock__t}{omp\_lock\_t}}\ *);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00093}00093\ \ \ \ \ \textcolor{comment}{/*\ nested\ lock\ API\ functions\ */}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00094}\mbox{\hyperlink{structomp__nest__lock__t}{00094}}\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structomp__nest__lock__t}{omp\_nest\_lock\_t}}\ \{}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *\ \_lk;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00096}00096\ \ \ \ \ \}\ \mbox{\hyperlink{structomp__nest__lock__t}{omp\_nest\_lock\_t}};}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00098}00098\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_init\_nest\_lock\ \ \ \ (\mbox{\hyperlink{structomp__nest__lock__t}{omp\_nest\_lock\_t}}\ *);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00099}00099\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_set\_nest\_lock\ \ \ \ \ (\mbox{\hyperlink{structomp__nest__lock__t}{omp\_nest\_lock\_t}}\ *);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00100}00100\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_unset\_nest\_lock\ \ \ (\mbox{\hyperlink{structomp__nest__lock__t}{omp\_nest\_lock\_t}}\ *);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00101}00101\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_destroy\_nest\_lock\ (\mbox{\hyperlink{structomp__nest__lock__t}{omp\_nest\_lock\_t}}\ *);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00102}00102\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_test\_nest\_lock\ \ \ \ (\mbox{\hyperlink{structomp__nest__lock__t}{omp\_nest\_lock\_t}}\ *);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00104}00104\ \ \ \ \ \textcolor{comment}{/*\ OpenMP\ 5.0\ \ Synchronization\ hints*/}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00105}00105\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ omp\_sync\_hint\_t\ \{}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00106}00106\ \ \ \ \ \ \ \ \ omp\_sync\_hint\_none\ \ \ \ \ \ \ \ \ \ \ =\ 0,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00107}00107\ \ \ \ \ \ \ \ \ omp\_lock\_hint\_none\ \ \ \ \ \ \ \ \ \ \ =\ omp\_sync\_hint\_none,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00108}00108\ \ \ \ \ \ \ \ \ omp\_sync\_hint\_uncontended\ \ \ \ =\ 1,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00109}00109\ \ \ \ \ \ \ \ \ omp\_lock\_hint\_uncontended\ \ \ \ =\ omp\_sync\_hint\_uncontended,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00110}00110\ \ \ \ \ \ \ \ \ omp\_sync\_hint\_contended\ \ \ \ \ \ =\ (1<<1),}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00111}00111\ \ \ \ \ \ \ \ \ omp\_lock\_hint\_contended\ \ \ \ \ \ =\ omp\_sync\_hint\_contended,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00112}00112\ \ \ \ \ \ \ \ \ omp\_sync\_hint\_nonspeculative\ =\ (1<<2),}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00113}00113\ \ \ \ \ \ \ \ \ omp\_lock\_hint\_nonspeculative\ =\ omp\_sync\_hint\_nonspeculative,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00114}00114\ \ \ \ \ \ \ \ \ omp\_sync\_hint\_speculative\ \ \ \ =\ (1<<3),}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00115}00115\ \ \ \ \ \ \ \ \ omp\_lock\_hint\_speculative\ \ \ \ =\ omp\_sync\_hint\_speculative,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00116}00116\ \ \ \ \ \ \ \ \ kmp\_lock\_hint\_hle\ \ \ \ \ \ \ \ \ \ \ \ =\ (1<<16),}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00117}00117\ \ \ \ \ \ \ \ \ kmp\_lock\_hint\_rtm\ \ \ \ \ \ \ \ \ \ \ \ =\ (1<<17),}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00118}00118\ \ \ \ \ \ \ \ \ kmp\_lock\_hint\_adaptive\ \ \ \ \ \ \ =\ (1<<18)}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00119}00119\ \ \ \ \ \}\ omp\_sync\_hint\_t;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00121}00121\ \ \ \ \ \textcolor{comment}{/*\ lock\ hint\ type\ for\ dynamic\ user\ lock\ */}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00122}00122\ \ \ \ \ \textcolor{keyword}{typedef}\ omp\_sync\_hint\_t\ omp\_lock\_hint\_t;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00124}00124\ \ \ \ \ \textcolor{comment}{/*\ hinted\ lock\ initializers\ */}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00125}00125\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \_\_KAI\_KMPC\_CONVENTION\ omp\_init\_lock\_with\_hint(\mbox{\hyperlink{structomp__lock__t}{omp\_lock\_t}}\ *,\ omp\_lock\_hint\_t);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00126}00126\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \_\_KAI\_KMPC\_CONVENTION\ omp\_init\_nest\_lock\_with\_hint(\mbox{\hyperlink{structomp__nest__lock__t}{omp\_nest\_lock\_t}}\ *,\ omp\_lock\_hint\_t);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00128}00128\ \ \ \ \ \textcolor{comment}{/*\ time\ API\ functions\ */}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00129}00129\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{double}\ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_get\_wtime\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00130}00130\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{double}\ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_get\_wtick\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00132}00132\ \ \ \ \ \textcolor{comment}{/*\ OpenMP\ 4.0\ */}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00133}00133\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_get\_default\_device\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00134}00134\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_set\_default\_device\ (\textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00135}00135\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_is\_initial\_device\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00136}00136\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_get\_num\_devices\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00137}00137\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_get\_num\_teams\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00138}00138\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_get\_team\_num\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00139}00139\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_get\_cancellation\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00141}00141\ \ \ \ \ \textcolor{comment}{/*\ OpenMP\ 4.5\ */}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00142}00142\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_get\_initial\_device\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00143}00143\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}*\ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_target\_alloc(\textcolor{keywordtype}{size\_t},\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00144}00144\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_target\_free(\textcolor{keywordtype}{void}\ *,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00145}00145\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_target\_is\_present(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00146}00146\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_target\_memcpy(\textcolor{keywordtype}{void}\ *,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *,\ \textcolor{keywordtype}{size\_t},\ \textcolor{keywordtype}{size\_t},\ \textcolor{keywordtype}{size\_t},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00147}00147\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_target\_memcpy\_rect(\textcolor{keywordtype}{void}\ *,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *,\ \textcolor{keywordtype}{size\_t},\ \textcolor{keywordtype}{int},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ *,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ *,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ *,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ *,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ *,\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00149}00149\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_target\_associate\_ptr(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *,\ \textcolor{keywordtype}{size\_t},\ \textcolor{keywordtype}{size\_t},\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00150}00150\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_target\_disassociate\_ptr(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00152}00152\ \ \ \ \ \textcolor{comment}{/*\ OpenMP\ 5.0\ */}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00153}00153\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_get\_device\_num\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00154}00154\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{void}\ *\ omp\_depend\_t;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00156}00156\ \ \ \ \ \textcolor{comment}{/*\ OpenMP\ 5.1\ interop\ */}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00157}00157\ \ \ \ \ \textcolor{keyword}{typedef}\ intptr\_t\ omp\_intptr\_t;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00159}00159\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \_\_KAI\_KMPC\_CONVENTION\ ompx\_dump\_mapping\_tables(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00161}00161\ \ \ \ \ \textcolor{comment}{/*\ 0..omp\_get\_num\_interop\_properties()-\/1\ are\ reserved\ for\ implementation-\/defined\ properties\ */}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00162}00162\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ omp\_interop\_property\ \{}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00163}00163\ \ \ \ \ \ \ \ \ omp\_ipr\_fr\_id\ =\ -\/1,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00164}00164\ \ \ \ \ \ \ \ \ omp\_ipr\_fr\_name\ =\ -\/2,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00165}00165\ \ \ \ \ \ \ \ \ omp\_ipr\_vendor\ =\ -\/3,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00166}00166\ \ \ \ \ \ \ \ \ omp\_ipr\_vendor\_name\ =\ -\/4,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00167}00167\ \ \ \ \ \ \ \ \ omp\_ipr\_device\_num\ =\ -\/5,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00168}00168\ \ \ \ \ \ \ \ \ omp\_ipr\_platform\ =\ -\/6,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00169}00169\ \ \ \ \ \ \ \ \ omp\_ipr\_device\ =\ -\/7,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00170}00170\ \ \ \ \ \ \ \ \ omp\_ipr\_device\_context\ =\ -\/8,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00171}00171\ \ \ \ \ \ \ \ \ omp\_ipr\_targetsync\ =\ -\/9,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00172}00172\ \ \ \ \ \ \ \ \ omp\_ipr\_first\ =\ -\/9}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00173}00173\ \ \ \ \ \}\ omp\_interop\_property\_t;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00175}00175\ \textcolor{preprocessor}{\ \ \ \ \#define\ omp\_interop\_none\ 0}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00177}00177\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ omp\_interop\_rc\ \{}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00178}00178\ \ \ \ \ \ \ \ \ omp\_irc\_no\_value\ =\ 1,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00179}00179\ \ \ \ \ \ \ \ \ omp\_irc\_success\ =\ 0,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00180}00180\ \ \ \ \ \ \ \ \ omp\_irc\_empty\ =\ -\/1,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00181}00181\ \ \ \ \ \ \ \ \ omp\_irc\_out\_of\_range\ =\ -\/2,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00182}00182\ \ \ \ \ \ \ \ \ omp\_irc\_type\_int\ =\ -\/3,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00183}00183\ \ \ \ \ \ \ \ \ omp\_irc\_type\_ptr\ =\ -\/4,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00184}00184\ \ \ \ \ \ \ \ \ omp\_irc\_type\_str\ =\ -\/5,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00185}00185\ \ \ \ \ \ \ \ \ omp\_irc\_other\ =\ -\/6}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00186}00186\ \ \ \ \ \}\ omp\_interop\_rc\_t;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00188}00188\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ omp\_interop\_fr\ \{}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00189}00189\ \ \ \ \ \ \ \ \ omp\_ifr\_cuda\ =\ 1,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00190}00190\ \ \ \ \ \ \ \ \ omp\_ifr\_cuda\_driver\ =\ 2,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00191}00191\ \ \ \ \ \ \ \ \ omp\_ifr\_opencl\ =\ 3,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00192}00192\ \ \ \ \ \ \ \ \ omp\_ifr\_sycl\ =\ 4,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00193}00193\ \ \ \ \ \ \ \ \ omp\_ifr\_hip\ =\ 5,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00194}00194\ \ \ \ \ \ \ \ \ omp\_ifr\_level\_zero\ =\ 6,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00195}00195\ \ \ \ \ \ \ \ \ omp\_ifr\_last\ =\ 7}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00196}00196\ \ \ \ \ \}\ omp\_interop\_fr\_t;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00198}00198\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{void}\ *\ omp\_interop\_t;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00199}00199\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00203}00203\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_get\_num\_interop\_properties(\textcolor{keyword}{const}\ omp\_interop\_t);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00207}00207\ \ \ \ \ \textcolor{keyword}{extern}\ omp\_intptr\_t\ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_get\_interop\_int(\textcolor{keyword}{const}\ omp\_interop\_t,\ omp\_interop\_property\_t,\ \textcolor{keywordtype}{int}\ *);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00211}00211\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ *\ \ \ \ \ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_get\_interop\_ptr(\textcolor{keyword}{const}\ omp\_interop\_t,\ omp\_interop\_property\_t,\ \textcolor{keywordtype}{int}\ *);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00215}00215\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_get\_interop\_str(\textcolor{keyword}{const}\ omp\_interop\_t,\ omp\_interop\_property\_t,\ \textcolor{keywordtype}{int}\ *);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00219}00219\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_get\_interop\_name(\textcolor{keyword}{const}\ omp\_interop\_t,\ omp\_interop\_property\_t);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00223}00223\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_get\_interop\_type\_desc(\textcolor{keyword}{const}\ omp\_interop\_t,\ omp\_interop\_property\_t);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00227}00227\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_get\_interop\_rc\_desc(\textcolor{keyword}{const}\ omp\_interop\_t,\ omp\_interop\_rc\_t);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00228}00228\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00229}00229\ \ \ \ \ \textcolor{comment}{/*\ OpenMP\ 5.1\ device\ memory\ routines\ */}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00230}00230\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00234}00234\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_target\_memcpy\_async(\textcolor{keywordtype}{void}\ *,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *,\ \textcolor{keywordtype}{size\_t},\ \textcolor{keywordtype}{size\_t},\ \textcolor{keywordtype}{size\_t},\ \textcolor{keywordtype}{int},}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ omp\_depend\_t\ *);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00239}00239\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_target\_memcpy\_rect\_async(\textcolor{keywordtype}{void}\ *,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *,\ \textcolor{keywordtype}{size\_t},\ \textcolor{keywordtype}{int},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ *,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ *,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ *,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ *,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ *,\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int},\ omp\_depend\_t\ *);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00242}00242\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00243}00243\ \ \ \ \ \textcolor{comment}{/*\ OpenMP\ 6.0\ device\ memory\ routines\ */}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00244}00244\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ *\ \_\_KAI\_KMPC\_CONVENTION\ omp\_target\_memset(\textcolor{keywordtype}{void}\ *,\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{size\_t},\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00245}00245\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ *\ \_\_KAI\_KMPC\_CONVENTION\ omp\_target\_memset\_async(\textcolor{keywordtype}{void}\ *,\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{size\_t},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ omp\_depend\_t\ *);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00246}00246\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00250}00250\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ *\ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_get\_mapped\_ptr(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00251}00251\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ omp\_target\_is\_accessible(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *,\ \textcolor{keywordtype}{size\_t},\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00252}00252\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00253}00253\ \ \ \ \ \textcolor{comment}{/*\ kmp\ API\ functions\ */}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00254}00254\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ kmp\_get\_stacksize\ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00255}00255\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ kmp\_set\_stacksize\ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00256}00256\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{size\_t}\ \_\_KAI\_KMPC\_CONVENTION\ \ kmp\_get\_stacksize\_s\ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00257}00257\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ kmp\_set\_stacksize\_s\ \ \ \ \ \ \ \ (\textcolor{keywordtype}{size\_t});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00258}00258\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ kmp\_get\_blocktime\ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00259}00259\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ kmp\_get\_library\ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00260}00260\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ kmp\_set\_blocktime\ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00261}00261\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ kmp\_set\_library\ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00262}00262\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ kmp\_set\_library\_serial\ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00263}00263\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ kmp\_set\_library\_turnaround\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00264}00264\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ kmp\_set\_library\_throughput\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00265}00265\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ kmp\_set\_defaults\ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{char}\ \textcolor{keyword}{const}\ *);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00266}00266\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ kmp\_set\_disp\_num\_buffers\ \ \ (\textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00267}00267\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00268}00268\ \ \ \ \ \textcolor{comment}{/*\ Intel\ affinity\ API\ */}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00269}00269\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{void}\ *\ kmp\_affinity\_mask\_t;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00270}00270\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00271}00271\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ kmp\_set\_affinity\ \ \ \ \ \ \ \ \ \ \ \ \ (kmp\_affinity\_mask\_t\ *);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00272}00272\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ kmp\_get\_affinity\ \ \ \ \ \ \ \ \ \ \ \ \ (kmp\_affinity\_mask\_t\ *);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00273}00273\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ kmp\_get\_affinity\_max\_proc\ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00274}00274\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ kmp\_create\_affinity\_mask\ \ \ \ \ (kmp\_affinity\_mask\_t\ *);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00275}00275\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ kmp\_destroy\_affinity\_mask\ \ \ \ (kmp\_affinity\_mask\_t\ *);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00276}00276\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ kmp\_set\_affinity\_mask\_proc\ \ \ (\textcolor{keywordtype}{int},\ kmp\_affinity\_mask\_t\ *);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00277}00277\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ kmp\_unset\_affinity\_mask\_proc\ (\textcolor{keywordtype}{int},\ kmp\_affinity\_mask\_t\ *);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00278}00278\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ kmp\_get\_affinity\_mask\_proc\ \ \ (\textcolor{keywordtype}{int},\ kmp\_affinity\_mask\_t\ *);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00279}00279\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00280}00280\ \ \ \ \ \textcolor{comment}{/*\ OpenMP\ 4.0\ affinity\ API\ */}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00281}00281\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ omp\_proc\_bind\_t\ \{}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00282}00282\ \ \ \ \ \ \ \ \ omp\_proc\_bind\_false\ =\ 0,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00283}00283\ \ \ \ \ \ \ \ \ omp\_proc\_bind\_true\ =\ 1,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00284}00284\ \ \ \ \ \ \ \ \ omp\_proc\_bind\_master\ =\ 2,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00285}00285\ \ \ \ \ \ \ \ \ omp\_proc\_bind\_close\ =\ 3,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00286}00286\ \ \ \ \ \ \ \ \ omp\_proc\_bind\_spread\ =\ 4}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00287}00287\ \ \ \ \ \}\ omp\_proc\_bind\_t;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00288}00288\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00289}00289\ \ \ \ \ \textcolor{keyword}{extern}\ omp\_proc\_bind\_t\ \_\_KAI\_KMPC\_CONVENTION\ omp\_get\_proc\_bind\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00290}00290\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00291}00291\ \ \ \ \ \textcolor{comment}{/*\ OpenMP\ 4.5\ affinity\ API\ */}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00292}00292\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \_\_KAI\_KMPC\_CONVENTION\ omp\_get\_num\_places\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00293}00293\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \_\_KAI\_KMPC\_CONVENTION\ omp\_get\_place\_num\_procs\ (\textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00294}00294\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \_\_KAI\_KMPC\_CONVENTION\ omp\_get\_place\_proc\_ids\ (\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}\ *);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00295}00295\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \_\_KAI\_KMPC\_CONVENTION\ omp\_get\_place\_num\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00296}00296\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \_\_KAI\_KMPC\_CONVENTION\ omp\_get\_partition\_num\_places\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00297}00297\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \_\_KAI\_KMPC\_CONVENTION\ omp\_get\_partition\_place\_nums\ (\textcolor{keywordtype}{int}\ *);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00298}00298\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00299}00299\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ *\ \_\_KAI\_KMPC\_CONVENTION\ \ kmp\_malloc\ \ (\textcolor{keywordtype}{size\_t});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00300}00300\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ *\ \_\_KAI\_KMPC\_CONVENTION\ \ kmp\_aligned\_malloc\ \ (\textcolor{keywordtype}{size\_t},\ \textcolor{keywordtype}{size\_t});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00301}00301\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ *\ \_\_KAI\_KMPC\_CONVENTION\ \ kmp\_calloc\ \ (\textcolor{keywordtype}{size\_t},\ \textcolor{keywordtype}{size\_t});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00302}00302\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ *\ \_\_KAI\_KMPC\_CONVENTION\ \ kmp\_realloc\ (\textcolor{keywordtype}{void}\ *,\ \textcolor{keywordtype}{size\_t});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00303}00303\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ kmp\_free\ \ \ \ (\textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00304}00304\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00305}00305\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ kmp\_set\_warnings\_on(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00306}00306\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \_\_KAI\_KMPC\_CONVENTION\ \ kmp\_set\_warnings\_off(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00307}00307\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00308}00308\ \ \ \ \ \textcolor{comment}{/*\ OpenMP\ 5.0\ Tool\ Control\ */}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00309}00309\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ omp\_control\_tool\_result\_t\ \{}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00310}00310\ \ \ \ \ \ \ \ \ omp\_control\_tool\_notool\ =\ -\/2,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00311}00311\ \ \ \ \ \ \ \ \ omp\_control\_tool\_nocallback\ =\ -\/1,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00312}00312\ \ \ \ \ \ \ \ \ omp\_control\_tool\_success\ =\ 0,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00313}00313\ \ \ \ \ \ \ \ \ omp\_control\_tool\_ignored\ =\ 1}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00314}00314\ \ \ \ \ \}\ omp\_control\_tool\_result\_t;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00315}00315\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00316}00316\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ omp\_control\_tool\_t\ \{}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00317}00317\ \ \ \ \ \ \ \ \ omp\_control\_tool\_start\ =\ 1,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00318}00318\ \ \ \ \ \ \ \ \ omp\_control\_tool\_pause\ =\ 2,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00319}00319\ \ \ \ \ \ \ \ \ omp\_control\_tool\_flush\ =\ 3,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00320}00320\ \ \ \ \ \ \ \ \ omp\_control\_tool\_end\ =\ 4}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00321}00321\ \ \ \ \ \}\ omp\_control\_tool\_t;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00322}00322\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00323}00323\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \_\_KAI\_KMPC\_CONVENTION\ omp\_control\_tool(\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}*);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00324}00324\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00325}00325\ \ \ \ \ \textcolor{comment}{/*\ OpenMP\ 5.0\ Memory\ Management\ */}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00326}00326\ \ \ \ \ \textcolor{keyword}{typedef}\ uintptr\_t\ omp\_uintptr\_t;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00327}00327\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00328}00328\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00329}00329\ \ \ \ \ \ \ \ \ omp\_atk\_sync\_hint\ =\ 1,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00330}00330\ \ \ \ \ \ \ \ \ omp\_atk\_alignment\ =\ 2,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00331}00331\ \ \ \ \ \ \ \ \ omp\_atk\_access\ =\ 3,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00332}00332\ \ \ \ \ \ \ \ \ omp\_atk\_pool\_size\ =\ 4,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00333}00333\ \ \ \ \ \ \ \ \ omp\_atk\_fallback\ =\ 5,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00334}00334\ \ \ \ \ \ \ \ \ omp\_atk\_fb\_data\ =\ 6,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00335}00335\ \ \ \ \ \ \ \ \ omp\_atk\_pinned\ =\ 7,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00336}00336\ \ \ \ \ \ \ \ \ omp\_atk\_partition\ =\ 8}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00337}00337\ \ \ \ \ \}\ omp\_alloctrait\_key\_t;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00338}00338\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00339}00339\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00340}00340\ \ \ \ \ \ \ \ \ omp\_atv\_false\ =\ 0,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00341}00341\ \ \ \ \ \ \ \ \ omp\_atv\_true\ =\ 1,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00342}00342\ \ \ \ \ \ \ \ \ omp\_atv\_contended\ =\ 3,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00343}00343\ \ \ \ \ \ \ \ \ omp\_atv\_uncontended\ =\ 4,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00344}00344\ \ \ \ \ \ \ \ \ omp\_atv\_serialized\ =\ 5,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00345}00345\ \ \ \ \ \ \ \ \ omp\_atv\_sequential\ =\ omp\_atv\_serialized,\ \textcolor{comment}{//\ (deprecated)}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00346}00346\ \ \ \ \ \ \ \ \ omp\_atv\_private\ =\ 6,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00347}00347\ \ \ \ \ \ \ \ \ omp\_atv\_all\ =\ 7,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00348}00348\ \ \ \ \ \ \ \ \ omp\_atv\_thread\ =\ 8,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00349}00349\ \ \ \ \ \ \ \ \ omp\_atv\_pteam\ =\ 9,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00350}00350\ \ \ \ \ \ \ \ \ omp\_atv\_cgroup\ =\ 10,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00351}00351\ \ \ \ \ \ \ \ \ omp\_atv\_default\_mem\_fb\ =\ 11,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00352}00352\ \ \ \ \ \ \ \ \ omp\_atv\_null\_fb\ =\ 12,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00353}00353\ \ \ \ \ \ \ \ \ omp\_atv\_abort\_fb\ =\ 13,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00354}00354\ \ \ \ \ \ \ \ \ omp\_atv\_allocator\_fb\ =\ 14,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00355}00355\ \ \ \ \ \ \ \ \ omp\_atv\_environment\ =\ 15,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00356}00356\ \ \ \ \ \ \ \ \ omp\_atv\_nearest\ =\ 16,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00357}00357\ \ \ \ \ \ \ \ \ omp\_atv\_blocked\ =\ 17,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00358}00358\ \ \ \ \ \ \ \ \ omp\_atv\_interleaved\ =\ 18}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00359}00359\ \ \ \ \ \}\ omp\_alloctrait\_value\_t;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00360}00360\ \textcolor{preprocessor}{\ \ \ \ \#define\ omp\_atv\_default\ ((omp\_uintptr\_t)-\/1)}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00361}00361\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00362}\mbox{\hyperlink{structomp__alloctrait__t}{00362}}\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00363}00363\ \ \ \ \ \ \ \ \ omp\_alloctrait\_key\_t\ key;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00364}00364\ \ \ \ \ \ \ \ \ omp\_uintptr\_t\ value;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00365}00365\ \ \ \ \ \}\ \mbox{\hyperlink{structomp__alloctrait__t}{omp\_alloctrait\_t}};}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00366}00366\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00367}00367\ \textcolor{preprocessor}{\#\ \ \ if\ defined(\_WIN32)}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00368}00368\ \ \ \ \ \textcolor{comment}{//\ On\ Windows\ cl\ and\ icl\ do\ not\ support\ 64-\/bit\ enum,\ let's\ use\ integer\ then.}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00369}00369\ \ \ \ \ \textcolor{keyword}{typedef}\ omp\_uintptr\_t\ omp\_allocator\_handle\_t;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00370}00370\ \ \ \ \ \textcolor{keyword}{extern}\ \_\_KMP\_IMP\ omp\_allocator\_handle\_t\ \textcolor{keyword}{const}\ omp\_null\_allocator;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00371}00371\ \ \ \ \ \textcolor{keyword}{extern}\ \_\_KMP\_IMP\ omp\_allocator\_handle\_t\ \textcolor{keyword}{const}\ omp\_default\_mem\_alloc;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00372}00372\ \ \ \ \ \textcolor{keyword}{extern}\ \_\_KMP\_IMP\ omp\_allocator\_handle\_t\ \textcolor{keyword}{const}\ omp\_large\_cap\_mem\_alloc;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00373}00373\ \ \ \ \ \textcolor{keyword}{extern}\ \_\_KMP\_IMP\ omp\_allocator\_handle\_t\ \textcolor{keyword}{const}\ omp\_const\_mem\_alloc;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00374}00374\ \ \ \ \ \textcolor{keyword}{extern}\ \_\_KMP\_IMP\ omp\_allocator\_handle\_t\ \textcolor{keyword}{const}\ omp\_high\_bw\_mem\_alloc;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00375}00375\ \ \ \ \ \textcolor{keyword}{extern}\ \_\_KMP\_IMP\ omp\_allocator\_handle\_t\ \textcolor{keyword}{const}\ omp\_low\_lat\_mem\_alloc;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00376}00376\ \ \ \ \ \textcolor{keyword}{extern}\ \_\_KMP\_IMP\ omp\_allocator\_handle\_t\ \textcolor{keyword}{const}\ omp\_cgroup\_mem\_alloc;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00377}00377\ \ \ \ \ \textcolor{keyword}{extern}\ \_\_KMP\_IMP\ omp\_allocator\_handle\_t\ \textcolor{keyword}{const}\ omp\_pteam\_mem\_alloc;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00378}00378\ \ \ \ \ \textcolor{keyword}{extern}\ \_\_KMP\_IMP\ omp\_allocator\_handle\_t\ \textcolor{keyword}{const}\ omp\_thread\_mem\_alloc;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00379}00379\ \ \ \ \ \textcolor{keyword}{extern}\ \_\_KMP\_IMP\ omp\_allocator\_handle\_t\ \textcolor{keyword}{const}\ llvm\_omp\_target\_host\_mem\_alloc;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00380}00380\ \ \ \ \ \textcolor{keyword}{extern}\ \_\_KMP\_IMP\ omp\_allocator\_handle\_t\ \textcolor{keyword}{const}\ llvm\_omp\_target\_shared\_mem\_alloc;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00381}00381\ \ \ \ \ \textcolor{keyword}{extern}\ \_\_KMP\_IMP\ omp\_allocator\_handle\_t\ \textcolor{keyword}{const}\ llvm\_omp\_target\_device\_mem\_alloc;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00382}00382\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00383}00383\ \ \ \ \ \textcolor{keyword}{typedef}\ omp\_uintptr\_t\ omp\_memspace\_handle\_t;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00384}00384\ \ \ \ \ \textcolor{keyword}{extern}\ \_\_KMP\_IMP\ omp\_memspace\_handle\_t\ \textcolor{keyword}{const}\ omp\_default\_mem\_space;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00385}00385\ \ \ \ \ \textcolor{keyword}{extern}\ \_\_KMP\_IMP\ omp\_memspace\_handle\_t\ \textcolor{keyword}{const}\ omp\_large\_cap\_mem\_space;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00386}00386\ \ \ \ \ \textcolor{keyword}{extern}\ \_\_KMP\_IMP\ omp\_memspace\_handle\_t\ \textcolor{keyword}{const}\ omp\_const\_mem\_space;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00387}00387\ \ \ \ \ \textcolor{keyword}{extern}\ \_\_KMP\_IMP\ omp\_memspace\_handle\_t\ \textcolor{keyword}{const}\ omp\_high\_bw\_mem\_space;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00388}00388\ \ \ \ \ \textcolor{keyword}{extern}\ \_\_KMP\_IMP\ omp\_memspace\_handle\_t\ \textcolor{keyword}{const}\ omp\_low\_lat\_mem\_space;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00389}00389\ \ \ \ \ \textcolor{keyword}{extern}\ \_\_KMP\_IMP\ omp\_memspace\_handle\_t\ \textcolor{keyword}{const}\ llvm\_omp\_target\_host\_mem\_space;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00390}00390\ \ \ \ \ \textcolor{keyword}{extern}\ \_\_KMP\_IMP\ omp\_memspace\_handle\_t\ \textcolor{keyword}{const}\ llvm\_omp\_target\_shared\_mem\_space;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00391}00391\ \ \ \ \ \textcolor{keyword}{extern}\ \_\_KMP\_IMP\ omp\_memspace\_handle\_t\ \textcolor{keyword}{const}\ llvm\_omp\_target\_device\_mem\_space;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00392}00392\ \textcolor{preprocessor}{\#\ \ \ else}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00393}00393\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ if\ \_\_cplusplus\ >=\ 201103}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00394}00394\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ omp\_allocator\_handle\_t\ :\ omp\_uintptr\_t}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00395}00395\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ else}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00396}00396\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ omp\_allocator\_handle\_t}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00397}00397\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ endif}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00398}00398\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00399}00399\ \ \ \ \ \ \ omp\_null\_allocator\ =\ 0,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00400}00400\ \ \ \ \ \ \ omp\_default\_mem\_alloc\ =\ 1,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00401}00401\ \ \ \ \ \ \ omp\_large\_cap\_mem\_alloc\ =\ 2,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00402}00402\ \ \ \ \ \ \ omp\_const\_mem\_alloc\ =\ 3,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00403}00403\ \ \ \ \ \ \ omp\_high\_bw\_mem\_alloc\ =\ 4,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00404}00404\ \ \ \ \ \ \ omp\_low\_lat\_mem\_alloc\ =\ 5,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00405}00405\ \ \ \ \ \ \ omp\_cgroup\_mem\_alloc\ =\ 6,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00406}00406\ \ \ \ \ \ \ omp\_pteam\_mem\_alloc\ =\ 7,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00407}00407\ \ \ \ \ \ \ omp\_thread\_mem\_alloc\ =\ 8,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00408}00408\ \ \ \ \ \ \ llvm\_omp\_target\_host\_mem\_alloc\ =\ 100,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00409}00409\ \ \ \ \ \ \ llvm\_omp\_target\_shared\_mem\_alloc\ =\ 101,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00410}00410\ \ \ \ \ \ \ llvm\_omp\_target\_device\_mem\_alloc\ =\ 102,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00411}00411\ \ \ \ \ \ \ KMP\_ALLOCATOR\_MAX\_HANDLE\ =\ UINTPTR\_MAX}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00412}00412\ \ \ \ \ \}\ omp\_allocator\_handle\_t;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00413}00413\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ if\ \_\_cplusplus\ >=\ 201103}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00414}00414\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ omp\_memspace\_handle\_t\ :\ omp\_uintptr\_t}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00415}00415\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ else}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00416}00416\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ omp\_memspace\_handle\_t}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00417}00417\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ endif}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00418}00418\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00419}00419\ \ \ \ \ \ \ omp\_default\_mem\_space\ =\ 0,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00420}00420\ \ \ \ \ \ \ omp\_large\_cap\_mem\_space\ =\ 1,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00421}00421\ \ \ \ \ \ \ omp\_const\_mem\_space\ =\ 2,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00422}00422\ \ \ \ \ \ \ omp\_high\_bw\_mem\_space\ =\ 3,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00423}00423\ \ \ \ \ \ \ omp\_low\_lat\_mem\_space\ =\ 4,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00424}00424\ \ \ \ \ \ \ llvm\_omp\_target\_host\_mem\_space\ =\ 100,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00425}00425\ \ \ \ \ \ \ llvm\_omp\_target\_shared\_mem\_space\ =\ 101,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00426}00426\ \ \ \ \ \ \ llvm\_omp\_target\_device\_mem\_space\ =\ 102,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00427}00427\ \ \ \ \ \ \ KMP\_MEMSPACE\_MAX\_HANDLE\ =\ UINTPTR\_MAX}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00428}00428\ \ \ \ \ \}\ omp\_memspace\_handle\_t;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00429}00429\ \textcolor{preprocessor}{\#\ \ \ endif}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00430}00430\ \ \ \ \ \textcolor{keyword}{extern}\ omp\_allocator\_handle\_t\ \_\_KAI\_KMPC\_CONVENTION\ omp\_init\_allocator(omp\_memspace\_handle\_t\ m,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00431}00431\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ntraits,\ \mbox{\hyperlink{structomp__alloctrait__t}{omp\_alloctrait\_t}}\ traits[]);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00432}00432\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \_\_KAI\_KMPC\_CONVENTION\ omp\_destroy\_allocator(omp\_allocator\_handle\_t\ allocator);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00433}00433\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00434}00434\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \_\_KAI\_KMPC\_CONVENTION\ omp\_set\_default\_allocator(omp\_allocator\_handle\_t\ a);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00435}00435\ \ \ \ \ \textcolor{keyword}{extern}\ omp\_allocator\_handle\_t\ \_\_KAI\_KMPC\_CONVENTION\ omp\_get\_default\_allocator(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00436}00436\ \textcolor{preprocessor}{\#\ \ \ ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00437}00437\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ *\_\_KAI\_KMPC\_CONVENTION\ omp\_alloc(\textcolor{keywordtype}{size\_t}\ size,\ omp\_allocator\_handle\_t\ a\ =\ omp\_null\_allocator);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00438}00438\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ *\_\_KAI\_KMPC\_CONVENTION\ omp\_aligned\_alloc(\textcolor{keywordtype}{size\_t}\ align,\ \textcolor{keywordtype}{size\_t}\ size,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00439}00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ omp\_allocator\_handle\_t\ a\ =\ omp\_null\_allocator);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00440}00440\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ *\_\_KAI\_KMPC\_CONVENTION\ omp\_calloc(\textcolor{keywordtype}{size\_t}\ nmemb,\ \textcolor{keywordtype}{size\_t}\ size,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00441}00441\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ omp\_allocator\_handle\_t\ a\ =\ omp\_null\_allocator);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00442}00442\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ *\_\_KAI\_KMPC\_CONVENTION\ omp\_aligned\_calloc(\textcolor{keywordtype}{size\_t}\ align,\ \textcolor{keywordtype}{size\_t}\ nmemb,\ \textcolor{keywordtype}{size\_t}\ size,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00443}00443\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ omp\_allocator\_handle\_t\ a\ =\ omp\_null\_allocator);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00444}00444\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ *\_\_KAI\_KMPC\_CONVENTION\ omp\_realloc(\textcolor{keywordtype}{void}\ *ptr,\ \textcolor{keywordtype}{size\_t}\ size,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00445}00445\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ omp\_allocator\_handle\_t\ allocator\ =\ omp\_null\_allocator,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00446}00446\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ omp\_allocator\_handle\_t\ free\_allocator\ =\ omp\_null\_allocator);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00447}00447\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \_\_KAI\_KMPC\_CONVENTION\ omp\_free(\textcolor{keywordtype}{void}\ *\ ptr,\ omp\_allocator\_handle\_t\ a\ =\ omp\_null\_allocator);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00448}00448\ \textcolor{preprocessor}{\#\ \ \ else}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00449}00449\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ *\_\_KAI\_KMPC\_CONVENTION\ omp\_alloc(\textcolor{keywordtype}{size\_t}\ size,\ omp\_allocator\_handle\_t\ a);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00450}00450\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ *\_\_KAI\_KMPC\_CONVENTION\ omp\_aligned\_alloc(\textcolor{keywordtype}{size\_t}\ align,\ \textcolor{keywordtype}{size\_t}\ size,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00451}00451\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ omp\_allocator\_handle\_t\ a);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00452}00452\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ *\_\_KAI\_KMPC\_CONVENTION\ omp\_calloc(\textcolor{keywordtype}{size\_t}\ nmemb,\ \textcolor{keywordtype}{size\_t}\ size,\ omp\_allocator\_handle\_t\ a);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00453}00453\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ *\_\_KAI\_KMPC\_CONVENTION\ omp\_aligned\_calloc(\textcolor{keywordtype}{size\_t}\ align,\ \textcolor{keywordtype}{size\_t}\ nmemb,\ \textcolor{keywordtype}{size\_t}\ size,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00454}00454\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ omp\_allocator\_handle\_t\ a);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00455}00455\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ *\_\_KAI\_KMPC\_CONVENTION\ omp\_realloc(\textcolor{keywordtype}{void}\ *ptr,\ \textcolor{keywordtype}{size\_t}\ size,\ omp\_allocator\_handle\_t\ allocator,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00456}00456\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ omp\_allocator\_handle\_t\ free\_allocator);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00457}00457\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \_\_KAI\_KMPC\_CONVENTION\ omp\_free(\textcolor{keywordtype}{void}\ *ptr,\ omp\_allocator\_handle\_t\ a);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00458}00458\ \textcolor{preprocessor}{\#\ \ \ endif}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00459}00459\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00460}00460\ \ \ \ \ \textcolor{comment}{/*\ OpenMP\ 5.0\ Affinity\ Format\ */}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00461}00461\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \_\_KAI\_KMPC\_CONVENTION\ omp\_set\_affinity\_format(\textcolor{keywordtype}{char}\ \textcolor{keyword}{const}\ *);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00462}00462\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{size\_t}\ \_\_KAI\_KMPC\_CONVENTION\ omp\_get\_affinity\_format(\textcolor{keywordtype}{char}\ *,\ \textcolor{keywordtype}{size\_t});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00463}00463\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \_\_KAI\_KMPC\_CONVENTION\ omp\_display\_affinity(\textcolor{keywordtype}{char}\ \textcolor{keyword}{const}\ *);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00464}00464\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{size\_t}\ \_\_KAI\_KMPC\_CONVENTION\ omp\_capture\_affinity(\textcolor{keywordtype}{char}\ *,\ \textcolor{keywordtype}{size\_t},\ \textcolor{keywordtype}{char}\ \textcolor{keyword}{const}\ *);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00465}00465\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00466}00466\ \ \ \ \ \textcolor{comment}{/*\ OpenMP\ 5.0\ events\ */}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00467}00467\ \textcolor{preprocessor}{\#\ \ \ if\ defined(\_WIN32)}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00468}00468\ \ \ \ \ \textcolor{comment}{//\ On\ Windows\ cl\ and\ icl\ do\ not\ support\ 64-\/bit\ enum,\ let's\ use\ integer\ then.}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00469}00469\ \ \ \ \ \textcolor{keyword}{typedef}\ omp\_uintptr\_t\ omp\_event\_handle\_t;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00470}00470\ \textcolor{preprocessor}{\#\ \ \ else}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00471}00471\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ omp\_event\_handle\_t\ \{\ KMP\_EVENT\_MAX\_HANDLE\ =\ UINTPTR\_MAX\ \}\ omp\_event\_handle\_t;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00472}00472\ \textcolor{preprocessor}{\#\ \ \ endif}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00473}00473\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \_\_KAI\_KMPC\_CONVENTION\ omp\_fulfill\_event\ (\ omp\_event\_handle\_t\ event\ );}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00474}00474\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00475}00475\ \ \ \ \ \textcolor{comment}{/*\ OpenMP\ 5.0\ Pause\ Resources\ */}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00476}00476\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ omp\_pause\_resource\_t\ \{}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00477}00477\ \ \ \ \ \ \ omp\_pause\_resume\ =\ 0,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00478}00478\ \ \ \ \ \ \ omp\_pause\_soft\ =\ 1,}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00479}00479\ \ \ \ \ \ \ omp\_pause\_hard\ =\ 2}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00480}00480\ \ \ \ \ \}\ omp\_pause\_resource\_t;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00481}00481\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \_\_KAI\_KMPC\_CONVENTION\ omp\_pause\_resource(omp\_pause\_resource\_t,\ \textcolor{keywordtype}{int});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00482}00482\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \_\_KAI\_KMPC\_CONVENTION\ omp\_pause\_resource\_all(omp\_pause\_resource\_t);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00483}00483\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00484}00484\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \_\_KAI\_KMPC\_CONVENTION\ omp\_get\_supported\_active\_levels(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00485}00485\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00486}00486\ \ \ \ \ \textcolor{comment}{/*\ OpenMP\ 5.1\ */}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00487}00487\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \_\_KAI\_KMPC\_CONVENTION\ omp\_set\_num\_teams(\textcolor{keywordtype}{int}\ num\_teams);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00488}00488\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \_\_KAI\_KMPC\_CONVENTION\ omp\_get\_max\_teams(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00489}00489\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \_\_KAI\_KMPC\_CONVENTION\ omp\_set\_teams\_thread\_limit(\textcolor{keywordtype}{int}\ limit);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00490}00490\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \_\_KAI\_KMPC\_CONVENTION\ omp\_get\_teams\_thread\_limit(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00491}00491\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00492}00492\ \ \ \ \ \textcolor{comment}{/*\ OpenMP\ 5.1\ Display\ Environment\ */}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00493}00493\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ omp\_display\_env(\textcolor{keywordtype}{int}\ verbose);}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00494}00494\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00495}00495\ \textcolor{preprocessor}{\#\ \ \ if\ defined(\_OPENMP)\ \&\&\ \_OPENMP\ >=\ 201811}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00496}00496\ \textcolor{preprocessor}{\ \ \ \ \#pragma\ omp\ begin\ declare\ variant\ match(device=\{kind(host)\})}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00497}00497\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ omp\_is\_initial\_device(\textcolor{keywordtype}{void})\ \{\ \textcolor{keywordflow}{return}\ 1;\ \}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00498}00498\ \textcolor{preprocessor}{\ \ \ \ \#pragma\ omp\ end\ declare\ variant}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00499}00499\ \textcolor{preprocessor}{\ \ \ \ \#pragma\ omp\ begin\ declare\ variant\ match(device=\{kind(nohost)\})}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00500}00500\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ omp\_is\_initial\_device(\textcolor{keywordtype}{void})\ \{\ \textcolor{keywordflow}{return}\ 0;\ \}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00501}00501\ \textcolor{preprocessor}{\ \ \ \ \#pragma\ omp\ end\ declare\ variant}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00502}00502\ \textcolor{preprocessor}{\#\ \ \ endif}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00503}00503\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00504}00504\ \ \ \ \ \textcolor{comment}{/*\ OpenMP\ 5.2\ */}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00505}00505\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \_\_KAI\_KMPC\_CONVENTION\ omp\_in\_explicit\_task(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00506}00506\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00507}00507\ \ \ \ \ \textcolor{comment}{/*\ LLVM\ Extensions\ */}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00508}00508\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ *llvm\_omp\_target\_dynamic\_shared\_alloc(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00509}00509\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00510}00510\ \textcolor{preprocessor}{\#\ \ \ undef\ \_\_KAI\_KMPC\_CONVENTION}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00511}00511\ \textcolor{preprocessor}{\#\ \ \ undef\ \_\_KMP\_IMP}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00512}00512\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00513}00513\ \ \ \ \ \textcolor{comment}{/*\ Warning:}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00514}00514\ \textcolor{comment}{\ \ \ \ \ \ \ The\ following\ typedefs\ are\ not\ standard,\ deprecated\ and\ will\ be\ removed\ in\ a\ future\ release.}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00515}00515\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00516}00516\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{int}\ \ \ \ \ omp\_int\_t;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00517}00517\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{double}\ \ omp\_wtime\_t;}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00518}00518\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00519}00519\ \textcolor{preprocessor}{\#\ \ \ ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00520}00520\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00521}00521\ \textcolor{preprocessor}{\#\ \ \ endif}}
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00522}00522\ }
+\DoxyCodeLine{\Hypertarget{omp_8h_source_l00523}00523\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_OMP\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

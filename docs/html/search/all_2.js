@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['feedforward_0',['feedForward',['../class_neuron_layer.html#a3caa013a743d9711d856ca235b9a4121',1,'NeuronLayer::feedForward()'],['../class_neuron_network.html#a1606d994feadaba876b39bd0e975f90e',1,'NeuronNetwork::feedForward()']]]
+  ['backpropagation_0',['backPropagation',['../class_neuron_network.html#a261796a9a1b140cf1efeb80ab4f21a11',1,'NeuronNetwork']]]
 ];

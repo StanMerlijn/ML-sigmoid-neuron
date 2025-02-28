@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ML perceptron sigmoid neuron (P3): /Users/stanislav/Github/MachineLearning/ML-sigmoid-neuron/src/header/neuronNetwork.hpp Source File</title>
+<title>ML perceptron sigmoid neuron (P3): /Users/stanislav/Github/HU-AI-year2/MachineLearning/ML-sigmoid-neuron/src/header/neuronNetwork.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -113,29 +113,55 @@ $(function(){initNavTree('neuron_network_8hpp_source.html',''); initResizable(tr
 </div><!--header-->
 <div class="contents">
 <a href="neuron_network_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#pragma once    </span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="neuron_8hpp.html">neuron.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="neuron_layer_8hpp.html">neuronLayer.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
-<div class="foldopen" id="foldopen00025" data-start="{" data-end="};">
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_neuron_network.html">   25</a></span><span class="keyword">class </span><a class="code hl_function" href="class_neuron_network.html#a07aa50bd1a82c0b32fa0c3f38f12bab9">NeuronNetwork</a> {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_function" href="class_neuron_network.html#a07aa50bd1a82c0b32fa0c3f38f12bab9">NeuronNetwork</a>(std::vector&lt;NeuronLayer&gt; layers);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    std::vector&lt;int&gt; <a class="code hl_function" href="class_neuron_network.html#a1606d994feadaba876b39bd0e975f90e">feedForward</a>(<span class="keyword">const</span> std::vector&lt;int&gt;&amp; inputs);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_neuron_network.html#afbb843316fac4aa4235941209fbd047d">__str__</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    std::vector&lt;NeuronLayer&gt; layers; </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>};</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="neuron_8hpp.html">neuron.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="neuron_layer_8hpp.html">neuronLayer.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_neuron_network.html">   22</a></span><span class="keyword">class </span><a class="code hl_function" href="class_neuron_network.html#a07aa50bd1a82c0b32fa0c3f38f12bab9">NeuronNetwork</a> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    std::vector&lt;NeuronLayer&gt; _layers; </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    std::vector&lt;float&gt; _currentTargets;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    std::vector&lt;float&gt; _inputVec;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    std::vector&lt;float&gt; _currentLayerOutput;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    std::vector&lt;float&gt; _tempOutputBuffer;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    std::vector&lt;float&gt; _outputMask;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_function" href="class_neuron_network.html#a07aa50bd1a82c0b32fa0c3f38f12bab9">NeuronNetwork</a>(std::vector&lt;NeuronLayer&gt; layers);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <a class="code hl_function" href="class_neuron_network.html#a07aa50bd1a82c0b32fa0c3f38f12bab9">NeuronNetwork</a>(std::vector&lt;int&gt; layers);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keyword">const</span> std::vector&lt;float&gt;&amp; <a class="code hl_function" href="class_neuron_network.html#a24903c532713fe34bdc4f7c49f327730">feedForward</a>(<span class="keyword">const</span> std::vector&lt;float&gt;&amp; inputs);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    std::vector&lt;float&gt; <a class="code hl_function" href="class_neuron_network.html#accc3fa6f6f0355f7cce77daa423209ad">predict</a>(<span class="keyword">const</span> std::vector&lt;float&gt;&amp; input);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_neuron_network.html#a261796a9a1b140cf1efeb80ab4f21a11">backPropagation</a>(<span class="keyword">const</span> std::vector&lt;float&gt;&amp; targets);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordtype">void</span> maskTarget(<span class="keywordtype">float</span> target);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_neuron_network.html#a5076c9a5f131e6665c6241de72487748">update</a>();</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_neuron_network.html#ac256ee88197f4827c3b873385e016ffe">trainInputs2D</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;float&gt;&gt;&amp; inputs, <span class="keyword">const</span> std::vector&lt;std::vector&lt;float&gt;&gt;&amp; targets, <span class="keywordtype">int</span> epochs);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="class_neuron_network.html#a11cbabd86e73a9101a089313af3ad2ae">   84</a></span>    std::vector&lt;NeuronLayer&gt; <a class="code hl_function" href="class_neuron_network.html#a11cbabd86e73a9101a089313af3ad2ae">getLayers</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _layers; }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="class_neuron_network.html#afcd87fd05d40dbbe564b27899568529a">   91</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_neuron_network.html#afcd87fd05d40dbbe564b27899568529a">setTarget</a>(std::vector&lt;float&gt;&amp; targets) {_currentTargets = targets;}</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_neuron_network.html#afbb843316fac4aa4235941209fbd047d">__str__</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>};</div>
 </div>
 <div class="ttc" id="aclass_neuron_network_html_a07aa50bd1a82c0b32fa0c3f38f12bab9"><div class="ttname"><a href="class_neuron_network.html#a07aa50bd1a82c0b32fa0c3f38f12bab9">NeuronNetwork::NeuronNetwork</a></div><div class="ttdeci">NeuronNetwork(std::vector&lt; NeuronLayer &gt; layers)</div><div class="ttdoc">Constructs a NeuronNetwork with the given layers.</div><div class="ttdef"><b>Definition</b> <a href="neuron_network_8cpp_source.html#l00013">neuronNetwork.cpp:13</a></div></div>
-<div class="ttc" id="aclass_neuron_network_html_a1606d994feadaba876b39bd0e975f90e"><div class="ttname"><a href="class_neuron_network.html#a1606d994feadaba876b39bd0e975f90e">NeuronNetwork::feedForward</a></div><div class="ttdeci">std::vector&lt; int &gt; feedForward(const std::vector&lt; int &gt; &amp;inputs)</div><div class="ttdoc">Performs a feedforward operation. On all the layers sequentially.</div><div class="ttdef"><b>Definition</b> <a href="neuron_network_8cpp_source.html#l00016">neuronNetwork.cpp:16</a></div></div>
-<div class="ttc" id="aclass_neuron_network_html_afbb843316fac4aa4235941209fbd047d"><div class="ttname"><a href="class_neuron_network.html#afbb843316fac4aa4235941209fbd047d">NeuronNetwork::__str__</a></div><div class="ttdeci">void __str__() const</div><div class="ttdoc">Prints the network details.</div><div class="ttdef"><b>Definition</b> <a href="neuron_network_8cpp_source.html#l00027">neuronNetwork.cpp:27</a></div></div>
+<div class="ttc" id="aclass_neuron_network_html_a11cbabd86e73a9101a089313af3ad2ae"><div class="ttname"><a href="class_neuron_network.html#a11cbabd86e73a9101a089313af3ad2ae">NeuronNetwork::getLayers</a></div><div class="ttdeci">std::vector&lt; NeuronLayer &gt; getLayers() const</div><div class="ttdoc">Returns the layers in the network.</div><div class="ttdef"><b>Definition</b> <a href="#l00084">neuronNetwork.hpp:84</a></div></div>
+<div class="ttc" id="aclass_neuron_network_html_a24903c532713fe34bdc4f7c49f327730"><div class="ttname"><a href="class_neuron_network.html#a24903c532713fe34bdc4f7c49f327730">NeuronNetwork::feedForward</a></div><div class="ttdeci">const std::vector&lt; float &gt; &amp; feedForward(const std::vector&lt; float &gt; &amp;inputs)</div><div class="ttdoc">Performs a feedforward operation. On all the layers sequentially.</div><div class="ttdef"><b>Definition</b> <a href="neuron_network_8cpp_source.html#l00039">neuronNetwork.cpp:39</a></div></div>
+<div class="ttc" id="aclass_neuron_network_html_a261796a9a1b140cf1efeb80ab4f21a11"><div class="ttname"><a href="class_neuron_network.html#a261796a9a1b140cf1efeb80ab4f21a11">NeuronNetwork::backPropagation</a></div><div class="ttdeci">void backPropagation(const std::vector&lt; float &gt; &amp;targets)</div><div class="ttdoc">Performs a backpropagation operation. On all the layers sequentially.</div><div class="ttdef"><b>Definition</b> <a href="neuron_network_8cpp_source.html#l00057">neuronNetwork.cpp:57</a></div></div>
+<div class="ttc" id="aclass_neuron_network_html_a5076c9a5f131e6665c6241de72487748"><div class="ttname"><a href="class_neuron_network.html#a5076c9a5f131e6665c6241de72487748">NeuronNetwork::update</a></div><div class="ttdeci">void update()</div><div class="ttdoc">Updates the neurons in the network.</div><div class="ttdef"><b>Definition</b> <a href="neuron_network_8cpp_source.html#l00074">neuronNetwork.cpp:74</a></div></div>
+<div class="ttc" id="aclass_neuron_network_html_ac256ee88197f4827c3b873385e016ffe"><div class="ttname"><a href="class_neuron_network.html#ac256ee88197f4827c3b873385e016ffe">NeuronNetwork::trainInputs2D</a></div><div class="ttdeci">void trainInputs2D(const std::vector&lt; std::vector&lt; float &gt; &gt; &amp;inputs, const std::vector&lt; std::vector&lt; float &gt; &gt; &amp;targets, int epochs)</div><div class="ttdoc">Trains the network on a set of inputs and targets.</div><div class="ttdef"><b>Definition</b> <a href="neuron_network_8cpp_source.html#l00081">neuronNetwork.cpp:81</a></div></div>
+<div class="ttc" id="aclass_neuron_network_html_accc3fa6f6f0355f7cce77daa423209ad"><div class="ttname"><a href="class_neuron_network.html#accc3fa6f6f0355f7cce77daa423209ad">NeuronNetwork::predict</a></div><div class="ttdeci">std::vector&lt; float &gt; predict(const std::vector&lt; float &gt; &amp;input)</div><div class="ttdoc">Performs a prediction operation. On all the layers sequentially.</div><div class="ttdef"><b>Definition</b> <a href="neuron_network_8cpp_source.html#l00052">neuronNetwork.cpp:52</a></div></div>
+<div class="ttc" id="aclass_neuron_network_html_afbb843316fac4aa4235941209fbd047d"><div class="ttname"><a href="class_neuron_network.html#afbb843316fac4aa4235941209fbd047d">NeuronNetwork::__str__</a></div><div class="ttdeci">void __str__() const</div><div class="ttdoc">Prints the network details.</div><div class="ttdef"><b>Definition</b> <a href="neuron_network_8cpp_source.html#l00153">neuronNetwork.cpp:153</a></div></div>
+<div class="ttc" id="aclass_neuron_network_html_afcd87fd05d40dbbe564b27899568529a"><div class="ttname"><a href="class_neuron_network.html#afcd87fd05d40dbbe564b27899568529a">NeuronNetwork::setTarget</a></div><div class="ttdeci">void setTarget(std::vector&lt; float &gt; &amp;targets)</div><div class="ttdoc">Sets the target values in the network.</div><div class="ttdef"><b>Definition</b> <a href="#l00091">neuronNetwork.hpp:91</a></div></div>
 <div class="ttc" id="aneuron_8hpp_html"><div class="ttname"><a href="neuron_8hpp.html">neuron.hpp</a></div><div class="ttdoc">In this file the Neuron class is declared. This class represents a single neuron in a neural network.</div></div>
 <div class="ttc" id="aneuron_layer_8hpp_html"><div class="ttname"><a href="neuron_layer_8hpp.html">neuronLayer.hpp</a></div><div class="ttdoc">In this file the NeuronLayer class is declared. This class represents a layer of neurons in a neural ...</div></div>
 </div><!-- fragment --></div><!-- contents -->

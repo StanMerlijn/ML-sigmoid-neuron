@@ -126,9 +126,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a721acf2ce4c9f6cdd45856ecc6b3267e" id="r_a721acf2ce4c9f6cdd45856ecc6b3267e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a721acf2ce4c9f6cdd45856ecc6b3267e">NeuronLayer</a> (std::vector&lt; <a class="el" href="class_neuron.html">Neuron</a> &gt; neurons)</td></tr>
 <tr class="memdesc:a721acf2ce4c9f6cdd45856ecc6b3267e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_neuron_layer.html" title="Represents a layer of neurons in a neural network.">NeuronLayer</a> with the given neurons.  <br /></td></tr>
 <tr class="separator:a721acf2ce4c9f6cdd45856ecc6b3267e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3caa013a743d9711d856ca235b9a4121" id="r_a3caa013a743d9711d856ca235b9a4121"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3caa013a743d9711d856ca235b9a4121">feedForward</a> (const std::vector&lt; int &gt; &amp;inputs)</td></tr>
-<tr class="memdesc:a3caa013a743d9711d856ca235b9a4121"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a feedforward operation.  <br /></td></tr>
-<tr class="separator:a3caa013a743d9711d856ca235b9a4121"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f9e2281624ff5b98314f02d5c243d8e" id="r_a3f9e2281624ff5b98314f02d5c243d8e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f9e2281624ff5b98314f02d5c243d8e">NeuronLayer</a> (int nNeurons, int nSizeWeights)</td></tr>
+<tr class="memdesc:a3f9e2281624ff5b98314f02d5c243d8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_neuron_layer.html" title="Represents a layer of neurons in a neural network.">NeuronLayer</a> with the given number of neurons and size of weights.  <br /></td></tr>
+<tr class="separator:a3f9e2281624ff5b98314f02d5c243d8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1321e96085805de5b172df13cc5a157" id="r_ae1321e96085805de5b172df13cc5a157"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1321e96085805de5b172df13cc5a157">feedForward</a> (const std::vector&lt; float &gt; &amp;inputs)</td></tr>
+<tr class="memdesc:ae1321e96085805de5b172df13cc5a157"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a feedforward operation.  <br /></td></tr>
+<tr class="separator:ae1321e96085805de5b172df13cc5a157"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5735211176c5268ffa46958cc27e701" id="r_ae5735211176c5268ffa46958cc27e701"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5735211176c5268ffa46958cc27e701">computeOutputErros</a> (const std::vector&lt; float &gt; &amp;targets)</td></tr>
+<tr class="memdesc:ae5735211176c5268ffa46958cc27e701"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the output errors for the layer.  <br /></td></tr>
+<tr class="separator:ae5735211176c5268ffa46958cc27e701"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6b42fdb9f3705d7d875794f1ca244eb" id="r_ae6b42fdb9f3705d7d875794f1ca244eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6b42fdb9f3705d7d875794f1ca244eb">computeHiddenErrors</a> (const std::vector&lt; float &gt; &amp;inputs, const std::vector&lt; <a class="el" href="class_neuron.html">Neuron</a> &gt; &amp;neuronsNextLayer)</td></tr>
+<tr class="memdesc:ae6b42fdb9f3705d7d875794f1ca244eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the hidden errors for the layer.  <br /></td></tr>
+<tr class="separator:ae6b42fdb9f3705d7d875794f1ca244eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e3906bee15b14174c4caf4824ac9397" id="r_a8e3906bee15b14174c4caf4824ac9397"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e3906bee15b14174c4caf4824ac9397">update</a> ()</td></tr>
+<tr class="memdesc:a8e3906bee15b14174c4caf4824ac9397"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the neurons in the layer.  <br /></td></tr>
+<tr class="separator:a8e3906bee15b14174c4caf4824ac9397"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad54a2dda955d49b7c665970b7944bf31" id="r_ad54a2dda955d49b7c665970b7944bf31"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="class_neuron.html">Neuron</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad54a2dda955d49b7c665970b7944bf31">getNeurons</a> ()</td></tr>
+<tr class="memdesc:ad54a2dda955d49b7c665970b7944bf31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the neurons in the layer.  <br /></td></tr>
+<tr class="separator:ad54a2dda955d49b7c665970b7944bf31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d8741c949323d86d30d7f247e35f9e1" id="r_a1d8741c949323d86d30d7f247e35f9e1"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; float &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d8741c949323d86d30d7f247e35f9e1">getOutput</a> () const</td></tr>
+<tr class="memdesc:a1d8741c949323d86d30d7f247e35f9e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the output of the layer.  <br /></td></tr>
+<tr class="separator:a1d8741c949323d86d30d7f247e35f9e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f6cfac99b6ff59bb515ef523a6e3b55" id="r_a9f6cfac99b6ff59bb515ef523a6e3b55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f6cfac99b6ff59bb515ef523a6e3b55">__str__</a> () const</td></tr>
 <tr class="memdesc:a9f6cfac99b6ff59bb515ef523a6e3b55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the layer details.  <br /></td></tr>
 <tr class="separator:a9f6cfac99b6ff59bb515ef523a6e3b55"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,10 +155,10 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p>Represents a layer of neurons in a neural network. </p>
 <p>The <a class="el" href="class_neuron_layer.html" title="Represents a layer of neurons in a neural network.">NeuronLayer</a> class has a collection of neurons and provides methods to perform feedforward operations and to represent the layer as a string. </p>
 
-<p class="definition">Definition at line <a class="el" href="neuron_layer_8hpp_source.html#l00024">24</a> of file <a class="el" href="neuron_layer_8hpp_source.html">neuronLayer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="neuron_layer_8hpp_source.html#l00023">23</a> of file <a class="el" href="neuron_layer_8hpp_source.html">neuronLayer.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a721acf2ce4c9f6cdd45856ecc6b3267e" name="a721acf2ce4c9f6cdd45856ecc6b3267e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a721acf2ce4c9f6cdd45856ecc6b3267e">&#9670;&#160;</a></span>NeuronLayer()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a721acf2ce4c9f6cdd45856ecc6b3267e">&#9670;&#160;</a></span>NeuronLayer() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -166,6 +184,38 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a3f9e2281624ff5b98314f02d5c243d8e" name="a3f9e2281624ff5b98314f02d5c243d8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f9e2281624ff5b98314f02d5c243d8e">&#9670;&#160;</a></span>NeuronLayer() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">NeuronLayer::NeuronLayer </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nNeurons</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nSizeWeights</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="class_neuron_layer.html" title="Represents a layer of neurons in a neural network.">NeuronLayer</a> with the given number of neurons and size of weights. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nNeurons</td><td>The number of neurons in the layer. </td></tr>
+    <tr><td class="paramname">nSizeWeights</td><td>The size of the weights for each neuron. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="neuron_layer_8cpp_source.html#l00016">16</a> of file <a class="el" href="neuron_layer_8cpp_source.html">neuronLayer.cpp</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a9f6cfac99b6ff59bb515ef523a6e3b55" name="a9f6cfac99b6ff59bb515ef523a6e3b55"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9f6cfac99b6ff59bb515ef523a6e3b55">&#9670;&#160;</a></span>__str__()</h2>
@@ -184,20 +234,79 @@ Public Member Functions</h2></td></tr>
 
 <p>Prints the layer details. </p>
 
-<p class="definition">Definition at line <a class="el" href="neuron_layer_8cpp_source.html#l00031">31</a> of file <a class="el" href="neuron_layer_8cpp_source.html">neuronLayer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="neuron_layer_8cpp_source.html#l00081">81</a> of file <a class="el" href="neuron_layer_8cpp_source.html">neuronLayer.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a3caa013a743d9711d856ca235b9a4121" name="a3caa013a743d9711d856ca235b9a4121"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3caa013a743d9711d856ca235b9a4121">&#9670;&#160;</a></span>feedForward()</h2>
+<a id="ae6b42fdb9f3705d7d875794f1ca244eb" name="ae6b42fdb9f3705d7d875794f1ca244eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6b42fdb9f3705d7d875794f1ca244eb">&#9670;&#160;</a></span>computeHiddenErrors()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; int &gt; NeuronLayer::feedForward </td>
+          <td class="memname">void NeuronLayer::computeHiddenErrors </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; int &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>inputs</em></span></td><td>)</td>
+          <td class="paramtype">const std::vector&lt; float &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>inputs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="class_neuron.html">Neuron</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>neuronsNextLayer</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the hidden errors for the layer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inputs</td><td>A vector of input values. </td></tr>
+    <tr><td class="paramname">neuronsNextLayer</td><td>A vector of neurons in the next layer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="neuron_layer_8cpp_source.html#l00056">56</a> of file <a class="el" href="neuron_layer_8cpp_source.html">neuronLayer.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ae5735211176c5268ffa46958cc27e701" name="ae5735211176c5268ffa46958cc27e701"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5735211176c5268ffa46958cc27e701">&#9670;&#160;</a></span>computeOutputErros()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NeuronLayer::computeOutputErros </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; float &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>targets</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the output errors for the layer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">targets</td><td>A vector of target values. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="neuron_layer_8cpp_source.html#l00048">48</a> of file <a class="el" href="neuron_layer_8cpp_source.html">neuronLayer.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ae1321e96085805de5b172df13cc5a157" name="ae1321e96085805de5b172df13cc5a157"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1321e96085805de5b172df13cc5a157">&#9670;&#160;</a></span>feedForward()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; float &gt; &amp; NeuronLayer::feedForward </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; float &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>inputs</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -212,13 +321,94 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The output of the layer. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="neuron_layer_8cpp_source.html#l00017">17</a> of file <a class="el" href="neuron_layer_8cpp_source.html">neuronLayer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="neuron_layer_8cpp_source.html#l00036">36</a> of file <a class="el" href="neuron_layer_8cpp_source.html">neuronLayer.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ad54a2dda955d49b7c665970b7944bf31" name="ad54a2dda955d49b7c665970b7944bf31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad54a2dda955d49b7c665970b7944bf31">&#9670;&#160;</a></span>getNeurons()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; <a class="el" href="class_neuron.html">Neuron</a> &gt; &amp; NeuronLayer::getNeurons </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the neurons in the layer. </p>
+<dl class="section return"><dt>Returns</dt><dd>A vector of neurons. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="neuron_layer_8hpp_source.html#l00071">71</a> of file <a class="el" href="neuron_layer_8hpp_source.html">neuronLayer.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a1d8741c949323d86d30d7f247e35f9e1" name="a1d8741c949323d86d30d7f247e35f9e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d8741c949323d86d30d7f247e35f9e1">&#9670;&#160;</a></span>getOutput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; float &gt; &amp; NeuronLayer::getOutput </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the output of the layer. </p>
+<dl class="section return"><dt>Returns</dt><dd>A vector of floats. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="neuron_layer_8hpp_source.html#l00077">77</a> of file <a class="el" href="neuron_layer_8hpp_source.html">neuronLayer.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8e3906bee15b14174c4caf4824ac9397" name="a8e3906bee15b14174c4caf4824ac9397"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e3906bee15b14174c4caf4824ac9397">&#9670;&#160;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NeuronLayer::update </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Updates the neurons in the layer. </p>
+
+<p class="definition">Definition at line <a class="el" href="neuron_layer_8cpp_source.html#l00073">73</a> of file <a class="el" href="neuron_layer_8cpp_source.html">neuronLayer.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/Users/stanislav/Github/MachineLearning/ML-sigmoid-neuron/src/header/<a class="el" href="neuron_layer_8hpp_source.html">neuronLayer.hpp</a></li>
-<li>/Users/stanislav/Github/MachineLearning/ML-sigmoid-neuron/src/<a class="el" href="neuron_layer_8cpp_source.html">neuronLayer.cpp</a></li>
+<li>/Users/stanislav/Github/HU-AI-year2/MachineLearning/ML-sigmoid-neuron/src/header/<a class="el" href="neuron_layer_8hpp_source.html">neuronLayer.hpp</a></li>
+<li>/Users/stanislav/Github/HU-AI-year2/MachineLearning/ML-sigmoid-neuron/src/<a class="el" href="neuron_layer_8cpp_source.html">neuronLayer.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

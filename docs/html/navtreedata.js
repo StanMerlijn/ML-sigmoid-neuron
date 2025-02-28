@@ -26,9 +26,16 @@ var NAVTREE =
 [
   [ "ML perceptron sigmoid neuron (P3)", "index.html", [
     [ "ML-sigmoid-neuron", "index.html", "index" ],
+    [ "ML-perceptron", "md__2_users_2stanislav_2_github_2_h_u-_a_i-year2_2_machine_learning_2_m_l-sigmoid-neuron_2_r_e_a_d_m_e___backpropagation.html", [
+      [ "Student", "md__2_users_2stanislav_2_github_2_h_u-_a_i-year2_2_machine_learning_2_m_l-sigmoid-neuron_2_r_e_a_d_m_e___backpropagation.html#autotoc_md6", null ],
+      [ "Introduction", "md__2_users_2stanislav_2_github_2_h_u-_a_i-year2_2_machine_learning_2_m_l-sigmoid-neuron_2_r_e_a_d_m_e___backpropagation.html#autotoc_md7", null ],
+      [ "Documentation", "md__2_users_2stanislav_2_github_2_h_u-_a_i-year2_2_machine_learning_2_m_l-sigmoid-neuron_2_r_e_a_d_m_e___backpropagation.html#autotoc_md8", null ],
+      [ "Installing", "md__2_users_2stanislav_2_github_2_h_u-_a_i-year2_2_machine_learning_2_m_l-sigmoid-neuron_2_r_e_a_d_m_e___backpropagation.html#autotoc_md9", null ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
+      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", null ],
         [ "Functions", "functions_func.html", null ]

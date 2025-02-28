@@ -1,0 +1,61 @@
+\doxysection{/\+Users/stanislav/\+Github/\+HU-\/\+AI-\/year2/\+Machine\+Learning/\+ML-\/sigmoid-\/neuron/data/create\+\_\+dataset.py File Reference}
+\hypertarget{create__dataset_8py}{}\label{create__dataset_8py}\index{/Users/stanislav/Github/HU-\/AI-\/year2/MachineLearning/ML-\/sigmoid-\/neuron/data/create\_dataset.py@{/Users/stanislav/Github/HU-\/AI-\/year2/MachineLearning/ML-\/sigmoid-\/neuron/data/create\_dataset.py}}
+
+
+Module for creating and saving the digits dataset.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{create__dataset_8py_a86f58dbb8d4caf14f5931d8d4d84e097}{create\+\_\+dataset.\+write\+\_\+to\+\_\+csv}} (np.\+ndarray data, str filename)
+\begin{DoxyCompactList}\small\item\em Writes a Num\+Py array to a CSV file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{create__dataset_8py_af7ada4e3783d698490247f95a764accb}{create\+\_\+dataset.\+save\+\_\+digits\+\_\+dataset}} ()
+\begin{DoxyCompactList}\small\item\em Loads the digits dataset and saves image and target data into CSV files. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Module for creating and saving the digits dataset. 
+
+This module loads the digits dataset from scikit-\/learn, converts the images and targets to integers, and writes them to CSV files using a helper function. 
+
+Definition in file \mbox{\hyperlink{create__dataset_8py_source}{create\+\_\+dataset.\+py}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{create__dataset_8py_af7ada4e3783d698490247f95a764accb}\index{create\_dataset.py@{create\_dataset.py}!save\_digits\_dataset@{save\_digits\_dataset}}
+\index{save\_digits\_dataset@{save\_digits\_dataset}!create\_dataset.py@{create\_dataset.py}}
+\doxysubsubsection{\texorpdfstring{save\_digits\_dataset()}{save\_digits\_dataset()}}
+{\footnotesize\ttfamily \label{create__dataset_8py_af7ada4e3783d698490247f95a764accb} 
+create\+\_\+dataset.\+save\+\_\+digits\+\_\+dataset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Loads the digits dataset and saves image and target data into CSV files. 
+
+This function loads the digits dataset from scikit-\/learn, converts the images and targets to integer type, and then writes them to "{}digits\+\_\+images.\+csv"{} and "{}digits\+\_\+targets.\+csv"{} files, respectively. 
+
+Definition at line \mbox{\hyperlink{create__dataset_8py_source_l00025}{25}} of file \mbox{\hyperlink{create__dataset_8py_source}{create\+\_\+dataset.\+py}}.
+
+\Hypertarget{create__dataset_8py_a86f58dbb8d4caf14f5931d8d4d84e097}\index{create\_dataset.py@{create\_dataset.py}!write\_to\_csv@{write\_to\_csv}}
+\index{write\_to\_csv@{write\_to\_csv}!create\_dataset.py@{create\_dataset.py}}
+\doxysubsubsection{\texorpdfstring{write\_to\_csv()}{write\_to\_csv()}}
+{\footnotesize\ttfamily \label{create__dataset_8py_a86f58dbb8d4caf14f5931d8d4d84e097} 
+create\+\_\+dataset.\+write\+\_\+to\+\_\+csv (\begin{DoxyParamCaption}\item[{np.\+ndarray}]{data}{, }\item[{str}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Writes a Num\+Py array to a CSV file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & A numpy array containing the data to write. \\
+\hline
+{\em filename} & The name of the output CSV file. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{create__dataset_8py_source_l00018}{18}} of file \mbox{\hyperlink{create__dataset_8py_source}{create\+\_\+dataset.\+py}}.
+

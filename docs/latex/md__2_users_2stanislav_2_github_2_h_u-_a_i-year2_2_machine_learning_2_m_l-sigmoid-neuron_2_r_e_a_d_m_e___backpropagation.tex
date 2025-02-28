@@ -1,0 +1,38 @@
+\chapter{ML-\/perceptron}
+\hypertarget{md__2_users_2stanislav_2_github_2_h_u-_a_i-year2_2_machine_learning_2_m_l-sigmoid-neuron_2_r_e_a_d_m_e___backpropagation}{}\label{md__2_users_2stanislav_2_github_2_h_u-_a_i-year2_2_machine_learning_2_m_l-sigmoid-neuron_2_r_e_a_d_m_e___backpropagation}\index{ML-\/perceptron@{ML-\/perceptron}}
+\label{md__2_users_2stanislav_2_github_2_h_u-_a_i-year2_2_machine_learning_2_m_l-sigmoid-neuron_2_r_e_a_d_m_e___backpropagation_autotoc_md5}%
+\Hypertarget{md__2_users_2stanislav_2_github_2_h_u-_a_i-year2_2_machine_learning_2_m_l-sigmoid-neuron_2_r_e_a_d_m_e___backpropagation_autotoc_md5}%
+\hypertarget{md__2_users_2stanislav_2_github_2_h_u-_a_i-year2_2_machine_learning_2_m_l-sigmoid-neuron_2_r_e_a_d_m_e___backpropagation_autotoc_md6}{}\doxysection{\texorpdfstring{Student}{Student}}\label{md__2_users_2stanislav_2_github_2_h_u-_a_i-year2_2_machine_learning_2_m_l-sigmoid-neuron_2_r_e_a_d_m_e___backpropagation_autotoc_md6}
+Name\+: Stan Merlijn
+
+Student nummer\+: 1863967\hypertarget{md__2_users_2stanislav_2_github_2_h_u-_a_i-year2_2_machine_learning_2_m_l-sigmoid-neuron_2_r_e_a_d_m_e___backpropagation_autotoc_md7}{}\doxysection{\texorpdfstring{Introduction}{Introduction}}\label{md__2_users_2stanislav_2_github_2_h_u-_a_i-year2_2_machine_learning_2_m_l-sigmoid-neuron_2_r_e_a_d_m_e___backpropagation_autotoc_md7}
+In this repository, we implement and test the backpropagation algorithm for training a neural network. Building upon a previously implemented neuron network, the project extends the model by incorporating error calculations, gradient computations, and simultaneous weight and bias updates using backpropagation. The network is trained using an online training approach and evaluated through various tasks including learning AND and XOR gates, constructing a half adder, and classifying both the Iris and Digit datasets. Performance is assessed by measuring classification accuracy and training efficiency. You can find the assignment \href{https://canvas.hu.nl/courses/44675/assignments/343531}{\texttt{ here}}\hypertarget{md__2_users_2stanislav_2_github_2_h_u-_a_i-year2_2_machine_learning_2_m_l-sigmoid-neuron_2_r_e_a_d_m_e___backpropagation_autotoc_md8}{}\doxysection{\texorpdfstring{Documentation}{Documentation}}\label{md__2_users_2stanislav_2_github_2_h_u-_a_i-year2_2_machine_learning_2_m_l-sigmoid-neuron_2_r_e_a_d_m_e___backpropagation_autotoc_md8}
+\hypertarget{md__2_users_2stanislav_2_github_2_h_u-_a_i-year2_2_machine_learning_2_m_l-sigmoid-neuron_2_r_e_a_d_m_e___backpropagation_autotoc_md9}{}\doxysection{\texorpdfstring{Installing}{Installing}}\label{md__2_users_2stanislav_2_github_2_h_u-_a_i-year2_2_machine_learning_2_m_l-sigmoid-neuron_2_r_e_a_d_m_e___backpropagation_autotoc_md9}
+Enter the test dir then
+
+Generate build files\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\ -\/S\ .\ -\/B\ build}
+
+\end{DoxyCode}
+
+
+Build the project\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\ -\/-\/build\ build}
+
+\end{DoxyCode}
+
+
+Run the executable\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./build/MLPerceptronTest}
+
+\end{DoxyCode}
+ 

@@ -1,0 +1,261 @@
+\doxysection{/\+Users/stanislav/\+Github/\+HU-\/\+AI-\/year2/\+Machine\+Learning/\+ML-\/sigmoid-\/neuron/src/header/common.hpp File Reference}
+\hypertarget{common_8hpp}{}\label{common_8hpp}\index{/Users/stanislav/Github/HU-\/AI-\/year2/MachineLearning/ML-\/sigmoid-\/neuron/src/header/common.hpp@{/Users/stanislav/Github/HU-\/AI-\/year2/MachineLearning/ML-\/sigmoid-\/neuron/src/header/common.hpp}}
+
+
+In this file the common utilities are defined.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for common.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structiris_data}{iris\+Data}}
+\begin{DoxyCompactList}\small\item\em A structure to hold the features and targets read from a CSV file. This is fdor the iris data set. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structdigit_data}{digit\+Data$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em A structure to hold the features and targets read from a CSV file. This is for the digit data set. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_train_test_split}{Train\+Test\+Split$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em A structure to hold the features and targets read from a CSV file. This is for the digit data set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{common_8hpp_aef89040b439f7b0d9115a9d03521d50c}{INITIAL\+\_\+\+WEIGHT}}~0.\+5f
+\item 
+\#define \mbox{\hyperlink{common_8hpp_acd61cfdcf860a4e2e23eb80ab1d36734}{INITIAL\+\_\+\+WEIGHT\+\_\+\+INPUTN}}~0.\+5f
+\item 
+\#define \mbox{\hyperlink{common_8hpp_a08a08f5fd1f6c5247332dd3538b10d6a}{INITIAL\+\_\+\+BIAS}}~0.\+5f
+\item 
+\#define \mbox{\hyperlink{common_8hpp_a6676b8bbca913b9f54b7ea3d07b838b3}{INITIAL\+\_\+\+BIAS\+\_\+\+INPUTN}}~0.\+5f
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T$>$ }\\\mbox{\hyperlink{struct_train_test_split}{Train\+Test\+Split}}$<$ T $>$ \mbox{\hyperlink{common_8hpp_a61248e8dc643d3bc365b4e7fe91eb6a0}{create\+Train\+Test\+Split}} (const std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \&features, const std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \&targets, float split\+Ratio)
+\item 
+float \mbox{\hyperlink{common_8hpp_a00f0be429c7399dd999d063741939abf}{gradient\+Between\+Neurons}} (float \&output, float \&error)
+\begin{DoxyCompactList}\small\item\em This function calculates the gradient between two neurons. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{common_8hpp_a2eb264b9c955b53d8e62dedeec808b34}{delta\+Gradient}} (float \&learning\+Rate, float \&gradient)
+\begin{DoxyCompactList}\small\item\em This function calculates the delta gradient for a neuron. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{common_8hpp_aa1358e901e2151004d816e81ff3decc6}{delta\+Bias}} (float \&learning\+Rate, float \&\mbox{\hyperlink{common_8hpp_a2eb264b9c955b53d8e62dedeec808b34}{delta\+Gradient}})
+\begin{DoxyCompactList}\small\item\em This function calculates the delta bias for a neuron. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\void \mbox{\hyperlink{common_8hpp_ae976f686650de7a8df93bc16d4929d1c}{print\+Vector}} (const std\+::vector$<$ T $>$ \&vec, const std\+::string extra="{}"{})
+\begin{DoxyCompactList}\small\item\em This function prints the elements of a vector to the console. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\void \mbox{\hyperlink{common_8hpp_aa0d7c531e422a118acbfa56d256729ac}{normalize\+Vector}} (std\+::vector$<$ T $>$ \&vec)
+\begin{DoxyCompactList}\small\item\em This function creates a 2D vector from a 1D vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+In this file the common utilities are defined. 
+
+\begin{DoxyAuthor}{Author}
+Stan Merlijn 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/02-\/22
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}
+
+
+Definition in file \mbox{\hyperlink{common_8hpp_source}{common.\+hpp}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{common_8hpp_a08a08f5fd1f6c5247332dd3538b10d6a}\index{common.hpp@{common.hpp}!INITIAL\_BIAS@{INITIAL\_BIAS}}
+\index{INITIAL\_BIAS@{INITIAL\_BIAS}!common.hpp@{common.hpp}}
+\doxysubsubsection{\texorpdfstring{INITIAL\_BIAS}{INITIAL\_BIAS}}
+{\footnotesize\ttfamily \label{common_8hpp_a08a08f5fd1f6c5247332dd3538b10d6a} 
+\#define INITIAL\+\_\+\+BIAS~0.\+5f}
+
+
+
+Definition at line \mbox{\hyperlink{common_8hpp_source_l00023}{23}} of file \mbox{\hyperlink{common_8hpp_source}{common.\+hpp}}.
+
+\Hypertarget{common_8hpp_a6676b8bbca913b9f54b7ea3d07b838b3}\index{common.hpp@{common.hpp}!INITIAL\_BIAS\_INPUTN@{INITIAL\_BIAS\_INPUTN}}
+\index{INITIAL\_BIAS\_INPUTN@{INITIAL\_BIAS\_INPUTN}!common.hpp@{common.hpp}}
+\doxysubsubsection{\texorpdfstring{INITIAL\_BIAS\_INPUTN}{INITIAL\_BIAS\_INPUTN}}
+{\footnotesize\ttfamily \label{common_8hpp_a6676b8bbca913b9f54b7ea3d07b838b3} 
+\#define INITIAL\+\_\+\+BIAS\+\_\+\+INPUTN~0.\+5f}
+
+
+
+Definition at line \mbox{\hyperlink{common_8hpp_source_l00024}{24}} of file \mbox{\hyperlink{common_8hpp_source}{common.\+hpp}}.
+
+\Hypertarget{common_8hpp_aef89040b439f7b0d9115a9d03521d50c}\index{common.hpp@{common.hpp}!INITIAL\_WEIGHT@{INITIAL\_WEIGHT}}
+\index{INITIAL\_WEIGHT@{INITIAL\_WEIGHT}!common.hpp@{common.hpp}}
+\doxysubsubsection{\texorpdfstring{INITIAL\_WEIGHT}{INITIAL\_WEIGHT}}
+{\footnotesize\ttfamily \label{common_8hpp_aef89040b439f7b0d9115a9d03521d50c} 
+\#define INITIAL\+\_\+\+WEIGHT~0.\+5f}
+
+
+
+Definition at line \mbox{\hyperlink{common_8hpp_source_l00021}{21}} of file \mbox{\hyperlink{common_8hpp_source}{common.\+hpp}}.
+
+\Hypertarget{common_8hpp_acd61cfdcf860a4e2e23eb80ab1d36734}\index{common.hpp@{common.hpp}!INITIAL\_WEIGHT\_INPUTN@{INITIAL\_WEIGHT\_INPUTN}}
+\index{INITIAL\_WEIGHT\_INPUTN@{INITIAL\_WEIGHT\_INPUTN}!common.hpp@{common.hpp}}
+\doxysubsubsection{\texorpdfstring{INITIAL\_WEIGHT\_INPUTN}{INITIAL\_WEIGHT\_INPUTN}}
+{\footnotesize\ttfamily \label{common_8hpp_acd61cfdcf860a4e2e23eb80ab1d36734} 
+\#define INITIAL\+\_\+\+WEIGHT\+\_\+\+INPUTN~0.\+5f}
+
+
+
+Definition at line \mbox{\hyperlink{common_8hpp_source_l00022}{22}} of file \mbox{\hyperlink{common_8hpp_source}{common.\+hpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{common_8hpp_a61248e8dc643d3bc365b4e7fe91eb6a0}\index{common.hpp@{common.hpp}!createTrainTestSplit@{createTrainTestSplit}}
+\index{createTrainTestSplit@{createTrainTestSplit}!common.hpp@{common.hpp}}
+\doxysubsubsection{\texorpdfstring{createTrainTestSplit()}{createTrainTestSplit()}}
+{\footnotesize\ttfamily \label{common_8hpp_a61248e8dc643d3bc365b4e7fe91eb6a0} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{struct_train_test_split}{Train\+Test\+Split}}$<$ T $>$ create\+Train\+Test\+Split (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \&}]{features}{, }\item[{const std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \&}]{targets}{, }\item[{float}]{split\+Ratio}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{common_8hpp_source_l00174}{174}} of file \mbox{\hyperlink{common_8hpp_source}{common.\+hpp}}.
+
+\Hypertarget{common_8hpp_aa1358e901e2151004d816e81ff3decc6}\index{common.hpp@{common.hpp}!deltaBias@{deltaBias}}
+\index{deltaBias@{deltaBias}!common.hpp@{common.hpp}}
+\doxysubsubsection{\texorpdfstring{deltaBias()}{deltaBias()}}
+{\footnotesize\ttfamily \label{common_8hpp_aa1358e901e2151004d816e81ff3decc6} 
+float delta\+Bias (\begin{DoxyParamCaption}\item[{float \&}]{learning\+Rate}{, }\item[{float \&}]{delta\+Gradient}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This function calculates the delta bias for a neuron. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em learning\+Rate} & The learning rate of the network. \\
+\hline
+{\em delta\+Gradient} & The gradient of the neuron. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float The delta bias. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{common_8hpp_source_l00123}{123}} of file \mbox{\hyperlink{common_8hpp_source}{common.\+hpp}}.
+
+\Hypertarget{common_8hpp_a2eb264b9c955b53d8e62dedeec808b34}\index{common.hpp@{common.hpp}!deltaGradient@{deltaGradient}}
+\index{deltaGradient@{deltaGradient}!common.hpp@{common.hpp}}
+\doxysubsubsection{\texorpdfstring{deltaGradient()}{deltaGradient()}}
+{\footnotesize\ttfamily \label{common_8hpp_a2eb264b9c955b53d8e62dedeec808b34} 
+float delta\+Gradient (\begin{DoxyParamCaption}\item[{float \&}]{learning\+Rate}{, }\item[{float \&}]{gradient}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This function calculates the delta gradient for a neuron. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em learning\+Rate} & The learning rate of the network. \\
+\hline
+{\em gradient} & The gradient of the neuron. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float The delta gradient. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{common_8hpp_source_l00111}{111}} of file \mbox{\hyperlink{common_8hpp_source}{common.\+hpp}}.
+
+\Hypertarget{common_8hpp_a00f0be429c7399dd999d063741939abf}\index{common.hpp@{common.hpp}!gradientBetweenNeurons@{gradientBetweenNeurons}}
+\index{gradientBetweenNeurons@{gradientBetweenNeurons}!common.hpp@{common.hpp}}
+\doxysubsubsection{\texorpdfstring{gradientBetweenNeurons()}{gradientBetweenNeurons()}}
+{\footnotesize\ttfamily \label{common_8hpp_a00f0be429c7399dd999d063741939abf} 
+float gradient\+Between\+Neurons (\begin{DoxyParamCaption}\item[{float \&}]{output}{, }\item[{float \&}]{error}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This function calculates the gradient between two neurons. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em output} & The output of the neuron. \\
+\hline
+{\em error} & The error of the neuron. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float The gradient between the neurons. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{common_8hpp_source_l00099}{99}} of file \mbox{\hyperlink{common_8hpp_source}{common.\+hpp}}.
+
+\Hypertarget{common_8hpp_aa0d7c531e422a118acbfa56d256729ac}\index{common.hpp@{common.hpp}!normalizeVector@{normalizeVector}}
+\index{normalizeVector@{normalizeVector}!common.hpp@{common.hpp}}
+\doxysubsubsection{\texorpdfstring{normalizeVector()}{normalizeVector()}}
+{\footnotesize\ttfamily \label{common_8hpp_aa0d7c531e422a118acbfa56d256729ac} 
+template$<$typename T$>$ \\
+void normalize\+Vector (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$ \&}]{vec}{}\end{DoxyParamCaption})}
+
+
+
+This function creates a 2D vector from a 1D vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & The 1D vector to be converted. \\
+\hline
+{\em size} & The size of the inner vectors. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::vector$<$\+T$>$$>$ The 2D vector. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{common_8hpp_source_l00160}{160}} of file \mbox{\hyperlink{common_8hpp_source}{common.\+hpp}}.
+
+\Hypertarget{common_8hpp_ae976f686650de7a8df93bc16d4929d1c}\index{common.hpp@{common.hpp}!printVector@{printVector}}
+\index{printVector@{printVector}!common.hpp@{common.hpp}}
+\doxysubsubsection{\texorpdfstring{printVector()}{printVector()}}
+{\footnotesize\ttfamily \label{common_8hpp_ae976f686650de7a8df93bc16d4929d1c} 
+template$<$typename T$>$ \\
+void print\+Vector (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{vec}{, }\item[{const std\+::string}]{extra}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This function prints the elements of a vector to the console. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & Vector to be printed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\texorpdfstring{$\ast$}{*} template$<$typename T$>$ 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{common_8hpp_source_l00136}{136}} of file \mbox{\hyperlink{common_8hpp_source}{common.\+hpp}}.
+

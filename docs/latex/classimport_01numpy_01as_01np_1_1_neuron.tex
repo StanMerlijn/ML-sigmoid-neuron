@@ -1,0 +1,185 @@
+\doxysection{import numpy as np.\+Neuron Class Reference}
+\hypertarget{classimport_01numpy_01as_01np_1_1_neuron}{}\label{classimport_01numpy_01as_01np_1_1_neuron}\index{import numpy as np.Neuron@{import numpy as np.Neuron}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a45ba7852efa8f26a266145964b259cc8}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, n\+\_\+inputs, learning\+\_\+rate=0.\+1)
+\item 
+\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a39364c1f28b25eef1efef20ac44d0940}{sigmoid}} (self, x)
+\item 
+\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_aa093e99a2f72bd46f6ec4f897200e1e2}{sigmoid\+\_\+derivative}} (self, output)
+\item 
+\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a26f31a6d409f9282b9a2a0f1bf4b0d94}{forward}} (self, inputs)
+\item 
+\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a3ba87600cb77731d5bb2501835dfec50}{compute\+\_\+output\+\_\+delta}} (self, target)
+\item 
+\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a695ffd1cbc375f0383289a8c74fe17c1}{compute\+\_\+hidden\+\_\+delta}} (self, downstream\+\_\+weights, downstream\+\_\+deltas)
+\item 
+\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_aabf288c86fa3ade2d8acc38a69387fcf}{update\+\_\+weights}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+list \mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a146f85cdb8e5b2f67d11c6771297eb6c}{weights}} = \mbox{[}random.\+gauss(0, 1) for \+\_\+ in range(n\+\_\+inputs)\mbox{]}
+\item 
+\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a8eefc020d47397391cee10fb541a360d}{bias}} = random.\+gauss(0, 1)
+\item 
+\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a81a5c1e7c58523c395cdc52d6753975f}{learning\+\_\+rate}} = learning\+\_\+rate
+\item 
+\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_adea7dfbb503a29915da0ea5d2c167cbb}{last\+\_\+input}} = None
+\item 
+\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a01fb8b853cbd537b0c26beb7d6dc3d97}{last\+\_\+output}} = None
+\item 
+\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a2baa76a6b79882b67f720e65b2e46e10}{delta}} = None
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{import_01numpy_01as_01np_8py_source_l00004}{4}} of file \mbox{\hyperlink{import_01numpy_01as_01np_8py_source}{import numpy as np.\+py}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classimport_01numpy_01as_01np_1_1_neuron_a45ba7852efa8f26a266145964b259cc8}\index{import numpy as np.Neuron@{import numpy as np.Neuron}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!import numpy as np.Neuron@{import numpy as np.Neuron}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classimport_01numpy_01as_01np_1_1_neuron_a45ba7852efa8f26a266145964b259cc8} 
+import numpy as np.\+Neuron.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{n\+\_\+inputs}{, }\item[{}]{learning\+\_\+rate}{ = {\ttfamily 0.1}}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{import_01numpy_01as_01np_8py_source_l00005}{5}} of file \mbox{\hyperlink{import_01numpy_01as_01np_8py_source}{import numpy as np.\+py}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classimport_01numpy_01as_01np_1_1_neuron_a695ffd1cbc375f0383289a8c74fe17c1}\index{import numpy as np.Neuron@{import numpy as np.Neuron}!compute\_hidden\_delta@{compute\_hidden\_delta}}
+\index{compute\_hidden\_delta@{compute\_hidden\_delta}!import numpy as np.Neuron@{import numpy as np.Neuron}}
+\doxysubsubsection{\texorpdfstring{compute\_hidden\_delta()}{compute\_hidden\_delta()}}
+{\footnotesize\ttfamily \label{classimport_01numpy_01as_01np_1_1_neuron_a695ffd1cbc375f0383289a8c74fe17c1} 
+import numpy as np.\+Neuron.\+compute\+\_\+hidden\+\_\+delta (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{downstream\+\_\+weights}{, }\item[{}]{downstream\+\_\+deltas}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{import_01numpy_01as_01np_8py_source_l00040}{40}} of file \mbox{\hyperlink{import_01numpy_01as_01np_8py_source}{import numpy as np.\+py}}.
+
+\Hypertarget{classimport_01numpy_01as_01np_1_1_neuron_a3ba87600cb77731d5bb2501835dfec50}\index{import numpy as np.Neuron@{import numpy as np.Neuron}!compute\_output\_delta@{compute\_output\_delta}}
+\index{compute\_output\_delta@{compute\_output\_delta}!import numpy as np.Neuron@{import numpy as np.Neuron}}
+\doxysubsubsection{\texorpdfstring{compute\_output\_delta()}{compute\_output\_delta()}}
+{\footnotesize\ttfamily \label{classimport_01numpy_01as_01np_1_1_neuron_a3ba87600cb77731d5bb2501835dfec50} 
+import numpy as np.\+Neuron.\+compute\+\_\+output\+\_\+delta (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{target}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{import_01numpy_01as_01np_8py_source_l00034}{34}} of file \mbox{\hyperlink{import_01numpy_01as_01np_8py_source}{import numpy as np.\+py}}.
+
+\Hypertarget{classimport_01numpy_01as_01np_1_1_neuron_a26f31a6d409f9282b9a2a0f1bf4b0d94}\index{import numpy as np.Neuron@{import numpy as np.Neuron}!forward@{forward}}
+\index{forward@{forward}!import numpy as np.Neuron@{import numpy as np.Neuron}}
+\doxysubsubsection{\texorpdfstring{forward()}{forward()}}
+{\footnotesize\ttfamily \label{classimport_01numpy_01as_01np_1_1_neuron_a26f31a6d409f9282b9a2a0f1bf4b0d94} 
+import numpy as np.\+Neuron.\+forward (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{inputs}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{import_01numpy_01as_01np_8py_source_l00022}{22}} of file \mbox{\hyperlink{import_01numpy_01as_01np_8py_source}{import numpy as np.\+py}}.
+
+\Hypertarget{classimport_01numpy_01as_01np_1_1_neuron_a39364c1f28b25eef1efef20ac44d0940}\index{import numpy as np.Neuron@{import numpy as np.Neuron}!sigmoid@{sigmoid}}
+\index{sigmoid@{sigmoid}!import numpy as np.Neuron@{import numpy as np.Neuron}}
+\doxysubsubsection{\texorpdfstring{sigmoid()}{sigmoid()}}
+{\footnotesize\ttfamily \label{classimport_01numpy_01as_01np_1_1_neuron_a39364c1f28b25eef1efef20ac44d0940} 
+import numpy as np.\+Neuron.\+sigmoid (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{import_01numpy_01as_01np_8py_source_l00015}{15}} of file \mbox{\hyperlink{import_01numpy_01as_01np_8py_source}{import numpy as np.\+py}}.
+
+\Hypertarget{classimport_01numpy_01as_01np_1_1_neuron_aa093e99a2f72bd46f6ec4f897200e1e2}\index{import numpy as np.Neuron@{import numpy as np.Neuron}!sigmoid\_derivative@{sigmoid\_derivative}}
+\index{sigmoid\_derivative@{sigmoid\_derivative}!import numpy as np.Neuron@{import numpy as np.Neuron}}
+\doxysubsubsection{\texorpdfstring{sigmoid\_derivative()}{sigmoid\_derivative()}}
+{\footnotesize\ttfamily \label{classimport_01numpy_01as_01np_1_1_neuron_aa093e99a2f72bd46f6ec4f897200e1e2} 
+import numpy as np.\+Neuron.\+sigmoid\+\_\+derivative (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{output}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{import_01numpy_01as_01np_8py_source_l00018}{18}} of file \mbox{\hyperlink{import_01numpy_01as_01np_8py_source}{import numpy as np.\+py}}.
+
+\Hypertarget{classimport_01numpy_01as_01np_1_1_neuron_aabf288c86fa3ade2d8acc38a69387fcf}\index{import numpy as np.Neuron@{import numpy as np.Neuron}!update\_weights@{update\_weights}}
+\index{update\_weights@{update\_weights}!import numpy as np.Neuron@{import numpy as np.Neuron}}
+\doxysubsubsection{\texorpdfstring{update\_weights()}{update\_weights()}}
+{\footnotesize\ttfamily \label{classimport_01numpy_01as_01np_1_1_neuron_aabf288c86fa3ade2d8acc38a69387fcf} 
+import numpy as np.\+Neuron.\+update\+\_\+weights (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{import_01numpy_01as_01np_8py_source_l00048}{48}} of file \mbox{\hyperlink{import_01numpy_01as_01np_8py_source}{import numpy as np.\+py}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classimport_01numpy_01as_01np_1_1_neuron_a8eefc020d47397391cee10fb541a360d}\index{import numpy as np.Neuron@{import numpy as np.Neuron}!bias@{bias}}
+\index{bias@{bias}!import numpy as np.Neuron@{import numpy as np.Neuron}}
+\doxysubsubsection{\texorpdfstring{bias}{bias}}
+{\footnotesize\ttfamily \label{classimport_01numpy_01as_01np_1_1_neuron_a8eefc020d47397391cee10fb541a360d} 
+import numpy as np.\+Neuron.\+bias = random.\+gauss(0, 1)}
+
+
+
+Definition at line \mbox{\hyperlink{import_01numpy_01as_01np_8py_source_l00008}{8}} of file \mbox{\hyperlink{import_01numpy_01as_01np_8py_source}{import numpy as np.\+py}}.
+
+\Hypertarget{classimport_01numpy_01as_01np_1_1_neuron_a2baa76a6b79882b67f720e65b2e46e10}\index{import numpy as np.Neuron@{import numpy as np.Neuron}!delta@{delta}}
+\index{delta@{delta}!import numpy as np.Neuron@{import numpy as np.Neuron}}
+\doxysubsubsection{\texorpdfstring{delta}{delta}}
+{\footnotesize\ttfamily \label{classimport_01numpy_01as_01np_1_1_neuron_a2baa76a6b79882b67f720e65b2e46e10} 
+import numpy as np.\+Neuron.\+delta = None}
+
+
+
+Definition at line \mbox{\hyperlink{import_01numpy_01as_01np_8py_source_l00013}{13}} of file \mbox{\hyperlink{import_01numpy_01as_01np_8py_source}{import numpy as np.\+py}}.
+
+\Hypertarget{classimport_01numpy_01as_01np_1_1_neuron_adea7dfbb503a29915da0ea5d2c167cbb}\index{import numpy as np.Neuron@{import numpy as np.Neuron}!last\_input@{last\_input}}
+\index{last\_input@{last\_input}!import numpy as np.Neuron@{import numpy as np.Neuron}}
+\doxysubsubsection{\texorpdfstring{last\_input}{last\_input}}
+{\footnotesize\ttfamily \label{classimport_01numpy_01as_01np_1_1_neuron_adea7dfbb503a29915da0ea5d2c167cbb} 
+import numpy as np.\+Neuron.\+last\+\_\+input = None}
+
+
+
+Definition at line \mbox{\hyperlink{import_01numpy_01as_01np_8py_source_l00011}{11}} of file \mbox{\hyperlink{import_01numpy_01as_01np_8py_source}{import numpy as np.\+py}}.
+
+\Hypertarget{classimport_01numpy_01as_01np_1_1_neuron_a01fb8b853cbd537b0c26beb7d6dc3d97}\index{import numpy as np.Neuron@{import numpy as np.Neuron}!last\_output@{last\_output}}
+\index{last\_output@{last\_output}!import numpy as np.Neuron@{import numpy as np.Neuron}}
+\doxysubsubsection{\texorpdfstring{last\_output}{last\_output}}
+{\footnotesize\ttfamily \label{classimport_01numpy_01as_01np_1_1_neuron_a01fb8b853cbd537b0c26beb7d6dc3d97} 
+import numpy as np.\+Neuron.\+last\+\_\+output = None}
+
+
+
+Definition at line \mbox{\hyperlink{import_01numpy_01as_01np_8py_source_l00012}{12}} of file \mbox{\hyperlink{import_01numpy_01as_01np_8py_source}{import numpy as np.\+py}}.
+
+\Hypertarget{classimport_01numpy_01as_01np_1_1_neuron_a81a5c1e7c58523c395cdc52d6753975f}\index{import numpy as np.Neuron@{import numpy as np.Neuron}!learning\_rate@{learning\_rate}}
+\index{learning\_rate@{learning\_rate}!import numpy as np.Neuron@{import numpy as np.Neuron}}
+\doxysubsubsection{\texorpdfstring{learning\_rate}{learning\_rate}}
+{\footnotesize\ttfamily \label{classimport_01numpy_01as_01np_1_1_neuron_a81a5c1e7c58523c395cdc52d6753975f} 
+import numpy as np.\+Neuron.\+learning\+\_\+rate = learning\+\_\+rate}
+
+
+
+Definition at line \mbox{\hyperlink{import_01numpy_01as_01np_8py_source_l00009}{9}} of file \mbox{\hyperlink{import_01numpy_01as_01np_8py_source}{import numpy as np.\+py}}.
+
+\Hypertarget{classimport_01numpy_01as_01np_1_1_neuron_a146f85cdb8e5b2f67d11c6771297eb6c}\index{import numpy as np.Neuron@{import numpy as np.Neuron}!weights@{weights}}
+\index{weights@{weights}!import numpy as np.Neuron@{import numpy as np.Neuron}}
+\doxysubsubsection{\texorpdfstring{weights}{weights}}
+{\footnotesize\ttfamily \label{classimport_01numpy_01as_01np_1_1_neuron_a146f85cdb8e5b2f67d11c6771297eb6c} 
+import numpy as np.\+Neuron.\+weights = \mbox{[}random.\+gauss(0, 1) for \+\_\+ in range(n\+\_\+inputs)\mbox{]}}
+
+
+
+Definition at line \mbox{\hyperlink{import_01numpy_01as_01np_8py_source_l00007}{7}} of file \mbox{\hyperlink{import_01numpy_01as_01np_8py_source}{import numpy as np.\+py}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/stanislav/\+Github/\+HU-\/\+AI-\/year2/\+Machine\+Learning/\+ML-\/sigmoid-\/neuron/src/test\+Backpropagation/import numpy as np.\+py\end{DoxyCompactItemize}

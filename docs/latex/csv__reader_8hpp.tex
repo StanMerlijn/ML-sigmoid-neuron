@@ -1,0 +1,283 @@
+\doxysection{/\+Users/stanislav/\+Github/\+HU-\/\+AI-\/year2/\+Machine\+Learning/\+ML-\/sigmoid-\/neuron/src/header/csv\+\_\+reader.hpp File Reference}
+\hypertarget{csv__reader_8hpp}{}\label{csv__reader_8hpp}\index{/Users/stanislav/Github/HU-\/AI-\/year2/MachineLearning/ML-\/sigmoid-\/neuron/src/header/csv\_reader.hpp@{/Users/stanislav/Github/HU-\/AI-\/year2/MachineLearning/ML-\/sigmoid-\/neuron/src/header/csv\_reader.hpp}}
+
+
+In this class the CSV reader is defined. This is for reading the iris data set.  
+
+
+{\ttfamily \#include "{}common.\+hpp"{}}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+Include dependency graph for csv\+\_\+reader.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{csv__reader_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{csv__reader_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ \mbox{\hyperlink{csv__reader_8hpp_a38550954af601075a26826f7a3468e44}{read\+\_\+csv}} (const std\+::string \&filename, char delimiter=\textquotesingle{},\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Reads a CSV file and returns a vector of vectors. \end{DoxyCompactList}\item 
+std\+::vector$<$ float $>$ \mbox{\hyperlink{csv__reader_8hpp_ad19fdb0e26c14e70375734dd9e8bfda7}{get\+Targets}} (const std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ \&data)
+\begin{DoxyCompactList}\small\item\em Extracts the features from the data (column). \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \mbox{\hyperlink{csv__reader_8hpp_aa5d01d94f7aabd0cb2e8dc9e5ebd1333}{get\+Features}} (const std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ \&data)
+\begin{DoxyCompactList}\small\item\em Extracts the features from the data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structiris_data}{iris\+Data}} \mbox{\hyperlink{csv__reader_8hpp_ac59e889471fd50a6b55ea333a879fe74}{filter\+Data}} (const std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \&features, const std\+::vector$<$ float $>$ \&targets, int target)
+\begin{DoxyCompactList}\small\item\em Filters out data points with a specific target value. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\T \mbox{\hyperlink{csv__reader_8hpp_add3dd22a0cc005cffa7feed7cf61f622}{convert}} (const std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em Reads the digit data from a CSV file. \end{DoxyCompactList}\item 
+template$<$$>$ int \mbox{\hyperlink{csv__reader_8hpp_ae574eecad127d4f4b2b9fec6e20b598c}{convert$<$ int $>$}} (const std\+::string \&str)
+\item 
+template$<$$>$ float \mbox{\hyperlink{csv__reader_8hpp_ab08933263554b2ee487061ca5ba809c7}{convert$<$ float $>$}} (const std\+::string \&str)
+\item 
+{\footnotesize template$<$typename T$>$ }\\std\+::vector$<$ T $>$ \mbox{\hyperlink{csv__reader_8hpp_a423dd294d74ad8f86a3534d5a1a970b8}{reald\+Csv\+Flat}} (const std\+::string \&filename, char delimiter=\textquotesingle{},\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Reads a CSV file and returns a vector of the specified type. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \mbox{\hyperlink{csv__reader_8hpp_afc245cabee5b6a9c619cc5e3b8d79d04}{create2\+DVector}} (const std\+::vector$<$ T $>$ vec, int size)
+\item 
+{\footnotesize template$<$typename T$>$ }\\\mbox{\hyperlink{structdigit_data}{digit\+Data}}$<$ T $>$ \mbox{\hyperlink{csv__reader_8hpp_a78a75d0ce6493c648fe7d181b67754b2}{read\+Digit\+Data}} ()
+\item 
+{\footnotesize template$<$typename T$>$ }\\std\+::vector$<$ T $>$ \mbox{\hyperlink{csv__reader_8hpp_a276146b1cac2e761d82c2790d6de78de}{mask\+Data}} (std\+::vector$<$ T $>$ \&data, std\+::vector$<$ T $>$ \&mask)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+In this class the CSV reader is defined. This is for reading the iris data set. 
+
+\begin{DoxyAuthor}{Author}
+Stan Merlijn 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/02-\/14
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}
+
+
+Definition in file \mbox{\hyperlink{csv__reader_8hpp_source}{csv\+\_\+reader.\+hpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{csv__reader_8hpp_add3dd22a0cc005cffa7feed7cf61f622}\index{csv\_reader.hpp@{csv\_reader.hpp}!convert@{convert}}
+\index{convert@{convert}!csv\_reader.hpp@{csv\_reader.hpp}}
+\doxysubsubsection{\texorpdfstring{convert()}{convert()}}
+{\footnotesize\ttfamily \label{csv__reader_8hpp_add3dd22a0cc005cffa7feed7cf61f622} 
+template$<$typename T$>$ \\
+T convert (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str}{}\end{DoxyParamCaption})}
+
+
+
+Reads the digit data from a CSV file. 
+
+This function reads the digit data from a CSV file and returns a structure containing the features and target values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the CSV file to read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{structiris_data}{iris\+Data} A structure containing the features and target values. 
+\end{DoxyReturn}
+\Hypertarget{csv__reader_8hpp_ab08933263554b2ee487061ca5ba809c7}\index{csv\_reader.hpp@{csv\_reader.hpp}!convert$<$ float $>$@{convert$<$ float $>$}}
+\index{convert$<$ float $>$@{convert$<$ float $>$}!csv\_reader.hpp@{csv\_reader.hpp}}
+\doxysubsubsection{\texorpdfstring{convert$<$ float $>$()}{convert< float >()}}
+{\footnotesize\ttfamily \label{csv__reader_8hpp_ab08933263554b2ee487061ca5ba809c7} 
+template$<$$>$ \\
+float \mbox{\hyperlink{csv__reader_8hpp_add3dd22a0cc005cffa7feed7cf61f622}{convert}}$<$ float $>$ (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{csv__reader_8hpp_source_l00157}{157}} of file \mbox{\hyperlink{csv__reader_8hpp_source}{csv\+\_\+reader.\+hpp}}.
+
+\Hypertarget{csv__reader_8hpp_ae574eecad127d4f4b2b9fec6e20b598c}\index{csv\_reader.hpp@{csv\_reader.hpp}!convert$<$ int $>$@{convert$<$ int $>$}}
+\index{convert$<$ int $>$@{convert$<$ int $>$}!csv\_reader.hpp@{csv\_reader.hpp}}
+\doxysubsubsection{\texorpdfstring{convert$<$ int $>$()}{convert< int >()}}
+{\footnotesize\ttfamily \label{csv__reader_8hpp_ae574eecad127d4f4b2b9fec6e20b598c} 
+template$<$$>$ \\
+int \mbox{\hyperlink{csv__reader_8hpp_add3dd22a0cc005cffa7feed7cf61f622}{convert}}$<$ int $>$ (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{csv__reader_8hpp_source_l00152}{152}} of file \mbox{\hyperlink{csv__reader_8hpp_source}{csv\+\_\+reader.\+hpp}}.
+
+\Hypertarget{csv__reader_8hpp_afc245cabee5b6a9c619cc5e3b8d79d04}\index{csv\_reader.hpp@{csv\_reader.hpp}!create2DVector@{create2DVector}}
+\index{create2DVector@{create2DVector}!csv\_reader.hpp@{csv\_reader.hpp}}
+\doxysubsubsection{\texorpdfstring{create2DVector()}{create2DVector()}}
+{\footnotesize\ttfamily \label{csv__reader_8hpp_afc245cabee5b6a9c619cc5e3b8d79d04} 
+template$<$typename T$>$ \\
+std\+::vector$<$ std\+::vector$<$ T $>$ $>$ create2\+DVector (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$}]{vec}{, }\item[{int}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{csv__reader_8hpp_source_l00197}{197}} of file \mbox{\hyperlink{csv__reader_8hpp_source}{csv\+\_\+reader.\+hpp}}.
+
+\Hypertarget{csv__reader_8hpp_ac59e889471fd50a6b55ea333a879fe74}\index{csv\_reader.hpp@{csv\_reader.hpp}!filterData@{filterData}}
+\index{filterData@{filterData}!csv\_reader.hpp@{csv\_reader.hpp}}
+\doxysubsubsection{\texorpdfstring{filterData()}{filterData()}}
+{\footnotesize\ttfamily \label{csv__reader_8hpp_ac59e889471fd50a6b55ea333a879fe74} 
+\mbox{\hyperlink{structiris_data}{iris\+Data}} filter\+Data (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \&}]{features}{, }\item[{const std\+::vector$<$ float $>$ \&}]{targets}{, }\item[{int}]{target}{}\end{DoxyParamCaption})}
+
+
+
+Filters out data points with a specific target value. 
+
+This function takes a set of features and corresponding target values, and filters out the data points where the target value matches the specified target. The remaining data points are returned in a new \doxylink{structiris_data}{iris\+Data} structure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em features} & A vector of vectors containing the feature data. \\
+\hline
+{\em targets} & A vector containing the target values corresponding to the feature data. \\
+\hline
+{\em target} & The target value to filter out from the data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{structiris_data}{iris\+Data} A structure containing the filtered feature data and target values. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{csv__reader_8hpp_source_l00119}{119}} of file \mbox{\hyperlink{csv__reader_8hpp_source}{csv\+\_\+reader.\+hpp}}.
+
+\Hypertarget{csv__reader_8hpp_aa5d01d94f7aabd0cb2e8dc9e5ebd1333}\index{csv\_reader.hpp@{csv\_reader.hpp}!getFeatures@{getFeatures}}
+\index{getFeatures@{getFeatures}!csv\_reader.hpp@{csv\_reader.hpp}}
+\doxysubsubsection{\texorpdfstring{getFeatures()}{getFeatures()}}
+{\footnotesize\ttfamily \label{csv__reader_8hpp_aa5d01d94f7aabd0cb2e8dc9e5ebd1333} 
+std\+::vector$<$ std\+::vector$<$ float $>$ $>$ get\+Features (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ \&}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Extracts the features from the data. 
+
+This function extracts the features from the data and returns a vector of vectors containing the features.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & A vector of vectors representing the rows in the CSV file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector containing the features. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{csv__reader_8hpp_source_l00093}{93}} of file \mbox{\hyperlink{csv__reader_8hpp_source}{csv\+\_\+reader.\+hpp}}.
+
+\Hypertarget{csv__reader_8hpp_ad19fdb0e26c14e70375734dd9e8bfda7}\index{csv\_reader.hpp@{csv\_reader.hpp}!getTargets@{getTargets}}
+\index{getTargets@{getTargets}!csv\_reader.hpp@{csv\_reader.hpp}}
+\doxysubsubsection{\texorpdfstring{getTargets()}{getTargets()}}
+{\footnotesize\ttfamily \label{csv__reader_8hpp_ad19fdb0e26c14e70375734dd9e8bfda7} 
+std\+::vector$<$ float $>$ get\+Targets (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ \&}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Extracts the features from the data (column). 
+
+This function extracts the features from the data and returns a vector of vectors containing the features.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & A vector of vectors representing the rows in the CSV file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector containing the features. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{csv__reader_8hpp_source_l00075}{75}} of file \mbox{\hyperlink{csv__reader_8hpp_source}{csv\+\_\+reader.\+hpp}}.
+
+\Hypertarget{csv__reader_8hpp_a276146b1cac2e761d82c2790d6de78de}\index{csv\_reader.hpp@{csv\_reader.hpp}!maskData@{maskData}}
+\index{maskData@{maskData}!csv\_reader.hpp@{csv\_reader.hpp}}
+\doxysubsubsection{\texorpdfstring{maskData()}{maskData()}}
+{\footnotesize\ttfamily \label{csv__reader_8hpp_a276146b1cac2e761d82c2790d6de78de} 
+template$<$typename T$>$ \\
+std\+::vector$<$ T $>$ mask\+Data (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$ \&}]{data}{, }\item[{std\+::vector$<$ T $>$ \&}]{mask}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{csv__reader_8hpp_source_l00231}{231}} of file \mbox{\hyperlink{csv__reader_8hpp_source}{csv\+\_\+reader.\+hpp}}.
+
+\Hypertarget{csv__reader_8hpp_a38550954af601075a26826f7a3468e44}\index{csv\_reader.hpp@{csv\_reader.hpp}!read\_csv@{read\_csv}}
+\index{read\_csv@{read\_csv}!csv\_reader.hpp@{csv\_reader.hpp}}
+\doxysubsubsection{\texorpdfstring{read\_csv()}{read\_csv()}}
+{\footnotesize\ttfamily \label{csv__reader_8hpp_a38550954af601075a26826f7a3468e44} 
+std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ read\+\_\+csv (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{char}]{delimiter}{ = {\ttfamily \textquotesingle{},\textquotesingle{}}}\end{DoxyParamCaption})}
+
+
+
+Reads a CSV file and returns a vector of vectors. 
+
+This function reads a CSV file and returns a vector of vectors. Each inner vector represents a row in the CSV file. The function assumes that the CSV file is well-\/formed and does not contain any missing values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the CSV file to read. \\
+\hline
+{\em delimiter} & The delimiter used in the CSV file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of vectors representing the rows in the CSV file. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{csv__reader_8hpp_source_l00032}{32}} of file \mbox{\hyperlink{csv__reader_8hpp_source}{csv\+\_\+reader.\+hpp}}.
+
+\Hypertarget{csv__reader_8hpp_a78a75d0ce6493c648fe7d181b67754b2}\index{csv\_reader.hpp@{csv\_reader.hpp}!readDigitData@{readDigitData}}
+\index{readDigitData@{readDigitData}!csv\_reader.hpp@{csv\_reader.hpp}}
+\doxysubsubsection{\texorpdfstring{readDigitData()}{readDigitData()}}
+{\footnotesize\ttfamily \label{csv__reader_8hpp_a78a75d0ce6493c648fe7d181b67754b2} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{structdigit_data}{digit\+Data}}$<$ T $>$ read\+Digit\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{csv__reader_8hpp_source_l00213}{213}} of file \mbox{\hyperlink{csv__reader_8hpp_source}{csv\+\_\+reader.\+hpp}}.
+
+\Hypertarget{csv__reader_8hpp_a423dd294d74ad8f86a3534d5a1a970b8}\index{csv\_reader.hpp@{csv\_reader.hpp}!realdCsvFlat@{realdCsvFlat}}
+\index{realdCsvFlat@{realdCsvFlat}!csv\_reader.hpp@{csv\_reader.hpp}}
+\doxysubsubsection{\texorpdfstring{realdCsvFlat()}{realdCsvFlat()}}
+{\footnotesize\ttfamily \label{csv__reader_8hpp_a423dd294d74ad8f86a3534d5a1a970b8} 
+template$<$typename T$>$ \\
+std\+::vector$<$ T $>$ reald\+Csv\+Flat (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{char}]{delimiter}{ = {\ttfamily \textquotesingle{},\textquotesingle{}}}\end{DoxyParamCaption})}
+
+
+
+Reads a CSV file and returns a vector of the specified type. 
+
+This templatized function reads a CSV file, splits each line by the given delimiter, converts the tokens to type T, and returns them.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type to convert the CSV tokens into. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the CSV file to read. \\
+\hline
+{\em delimiter} & The delimiter used in the CSV file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of all the tokens in the CSV file converted to type T. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{csv__reader_8hpp_source_l00173}{173}} of file \mbox{\hyperlink{csv__reader_8hpp_source}{csv\+\_\+reader.\+hpp}}.
+

@@ -1,0 +1,147 @@
+\doxysection{import numpy as np.\+py}
+\hypertarget{import_01numpy_01as_01np_8py_source}{}\label{import_01numpy_01as_01np_8py_source}\index{/Users/stanislav/Github/HU-\/AI-\/year2/MachineLearning/ML-\/sigmoid-\/neuron/src/testBackpropagation/import numpy as np.py@{/Users/stanislav/Github/HU-\/AI-\/year2/MachineLearning/ML-\/sigmoid-\/neuron/src/testBackpropagation/import numpy as np.py}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00001}00001\ \textcolor{keyword}{import}\ math}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00002}00002\ \textcolor{keyword}{import}\ random}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00004}\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron}{00004}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron}{Neuron}}:}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00005}00005\ \ \ \ \ \textcolor{keyword}{def\ }\_\_init\_\_(self,\ n\_inputs,\ learning\_rate=0.1):}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00006}00006\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Initialize\ weights\ and\ bias\ randomly}}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00007}00007\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a146f85cdb8e5b2f67d11c6771297eb6c}{weights}}\ =\ [random.gauss(0,\ 1)\ \textcolor{keywordflow}{for}\ \_\ \textcolor{keywordflow}{in}\ range(n\_inputs)]}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00008}00008\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a8eefc020d47397391cee10fb541a360d}{bias}}\ =\ random.gauss(0,\ 1)}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00009}00009\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a81a5c1e7c58523c395cdc52d6753975f}{learning\_rate}}\ =\ learning\_rate}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00010}00010\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Variables\ to\ store\ values\ during\ forward\ and\ backpropagation}}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00011}00011\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_adea7dfbb503a29915da0ea5d2c167cbb}{last\_input}}\ =\ \textcolor{keywordtype}{None}}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00012}00012\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a01fb8b853cbd537b0c26beb7d6dc3d97}{last\_output}}\ =\ \textcolor{keywordtype}{None}}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00013}00013\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a2baa76a6b79882b67f720e65b2e46e10}{delta}}\ =\ \textcolor{keywordtype}{None}}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{def\ }sigmoid(self,\ x):}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1\ /\ (1\ +\ math.exp(-\/x))}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00017}00017\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{def\ }sigmoid\_derivative(self,\ output):}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Given\ output\ =\ σ(x),\ the\ derivative\ is\ output\ *\ (1\ -\/\ output)}}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output\ *\ (1\ -\/\ output)}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00021}00021\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{def\ }forward(self,\ inputs):}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Save\ the\ inputs\ for\ use\ in\ backpropagation}}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00024}00024\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_adea7dfbb503a29915da0ea5d2c167cbb}{last\_input}}\ =\ list(inputs)}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Compute\ weighted\ sum\ +\ bias}}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00026}00026\ \ \ \ \ \ \ \ \ z\ =\ 0}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ w,\ inp\ \textcolor{keywordflow}{in}\ zip(self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a146f85cdb8e5b2f67d11c6771297eb6c}{weights}},\ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_adea7dfbb503a29915da0ea5d2c167cbb}{last\_input}}):}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ z\ +=\ w\ *\ inp}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00029}00029\ \ \ \ \ \ \ \ \ z\ +=\ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a8eefc020d47397391cee10fb541a360d}{bias}}}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Apply\ sigmoid\ activation}}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00031}00031\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a01fb8b853cbd537b0c26beb7d6dc3d97}{last\_output}}\ =\ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a39364c1f28b25eef1efef20ac44d0940}{sigmoid}}(z)}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a01fb8b853cbd537b0c26beb7d6dc3d97}{last\_output}}}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{def\ }compute\_output\_delta(self,\ target):}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ For\ an\ output\ neuron,\ delta\ =\ σ'(input)\ *\ –(target\ –\ output)}}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00036}00036\ \ \ \ \ \ \ \ \ error\ =\ -\/(target\ -\/\ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a01fb8b853cbd537b0c26beb7d6dc3d97}{last\_output}})}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00037}00037\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a2baa76a6b79882b67f720e65b2e46e10}{delta}}\ =\ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_aa093e99a2f72bd46f6ec4f897200e1e2}{sigmoid\_derivative}}(self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a01fb8b853cbd537b0c26beb7d6dc3d97}{last\_output}})\ *\ error}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a2baa76a6b79882b67f720e65b2e46e10}{delta}}}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{def\ }compute\_hidden\_delta(self,\ downstream\_weights,\ downstream\_deltas):}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ For\ a\ hidden\ neuron,\ delta\ =\ σ'(input)\ *\ Σ\ (w\_ij\ ·\ Δ\_j)}}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00042}00042\ \ \ \ \ \ \ \ \ error\ =\ 0}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ w,\ d\ \textcolor{keywordflow}{in}\ zip(downstream\_weights,\ downstream\_deltas):}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ error\ +=\ w\ *\ d}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00045}00045\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a2baa76a6b79882b67f720e65b2e46e10}{delta}}\ =\ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_aa093e99a2f72bd46f6ec4f897200e1e2}{sigmoid\_derivative}}(self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a01fb8b853cbd537b0c26beb7d6dc3d97}{last\_output}})\ *\ error}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a2baa76a6b79882b67f720e65b2e46e10}{delta}}}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{def\ }update\_weights(self):}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Update\ each\ weight:\ w'\ =\ w\ -\/\ η\ *\ (input\ ·\ delta)}}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ i\ \textcolor{keywordflow}{in}\ range(len(self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a146f85cdb8e5b2f67d11c6771297eb6c}{weights}})):}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a146f85cdb8e5b2f67d11c6771297eb6c}{weights}}[i]\ -\/=\ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a81a5c1e7c58523c395cdc52d6753975f}{learning\_rate}}\ *\ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_adea7dfbb503a29915da0ea5d2c167cbb}{last\_input}}[i]\ *\ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a2baa76a6b79882b67f720e65b2e46e10}{delta}}}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Update\ bias:\ b'\ =\ b\ -\/\ η\ *\ delta}}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00053}00053\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a8eefc020d47397391cee10fb541a360d}{bias}}\ -\/=\ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a81a5c1e7c58523c395cdc52d6753975f}{learning\_rate}}\ *\ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron_a2baa76a6b79882b67f720e65b2e46e10}{delta}}}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00055}\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neural_network}{00055}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neural_network}{NeuralNetwork}}:}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00056}00056\ \ \ \ \ \textcolor{keyword}{def\ }\_\_init\_\_(self,\ layer\_sizes,\ learning\_rate=0.1):}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ layer\_sizes\ is\ a\ list\ like\ [n\_inputs,\ n\_hidden,\ n\_outputs]}}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00058}00058\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neural_network_a040e425563323ec7c454a31ca575f589}{learning\_rate}}\ =\ learning\_rate}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00059}00059\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neural_network_ae49fa41bfdcf4486adadbae73d0018f4}{layers}}\ =\ []}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Create\ the\ layers\ (each\ layer\ is\ a\ list\ of\ neurons)}}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ i\ \textcolor{keywordflow}{in}\ range(1,\ len(layer\_sizes)):}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ layer\ =\ [\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neuron}{Neuron}}(n\_inputs=layer\_sizes[i-\/1],\ learning\_rate=self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neural_network_a040e425563323ec7c454a31ca575f589}{learning\_rate}})}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ \_\ \textcolor{keywordflow}{in}\ range(layer\_sizes[i])]}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neural_network_ae49fa41bfdcf4486adadbae73d0018f4}{layers}}.append(layer)}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00065}00065\ \ \ \ \ \ \ \ \ print(len(self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neural_network_ae49fa41bfdcf4486adadbae73d0018f4}{layers}}))}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00066}00066\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00067}00067\ \ \ \ \ \textcolor{keyword}{def\ }forward(self,\ inputs):}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00068}00068\ \ \ \ \ \ \ \ \ activations\ =\ list(inputs)}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ layer\ \textcolor{keywordflow}{in}\ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neural_network_ae49fa41bfdcf4486adadbae73d0018f4}{layers}}:}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ next\_activations\ =\ []}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ neuron\ \textcolor{keywordflow}{in}\ layer:}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ next\_activations.append(neuron.forward(activations))}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ activations\ =\ next\_activations}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ activations}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00076}00076\ \ \ \ \ \textcolor{keyword}{def\ }backpropagate(self,\ inputs,\ targets):}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Perform\ a\ forward\ pass\ to\ store\ necessary\ values}}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00078}00078\ \ \ \ \ \ \ \ \ outputs\ =\ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neural_network_ac51e65d08c5eaf662ef310cfccf1aff6}{forward}}(inputs)}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00079}00079\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Compute\ delta\ for\ the\ output\ layer\ neurons}}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00081}00081\ \ \ \ \ \ \ \ \ output\_layer\ =\ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neural_network_ae49fa41bfdcf4486adadbae73d0018f4}{layers}}[-\/1]}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ i,\ neuron\ \textcolor{keywordflow}{in}\ enumerate(output\_layer):}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ neuron.compute\_output\_delta(targets[i])}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00084}00084\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Propagate\ the\ error\ backwards\ for\ hidden\ layers}}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ l\ \textcolor{keywordflow}{in}\ range(len(self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neural_network_ae49fa41bfdcf4486adadbae73d0018f4}{layers}})-\/2,\ -\/1,\ -\/1):}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ current\_layer\ =\ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neural_network_ae49fa41bfdcf4486adadbae73d0018f4}{layers}}[l]}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ next\_layer\ =\ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neural_network_ae49fa41bfdcf4486adadbae73d0018f4}{layers}}[l+1]}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ i,\ neuron\ \textcolor{keywordflow}{in}\ enumerate(current\_layer):}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Collect\ weights\ and\ deltas\ from\ neurons\ in\ the\ next\ layer}}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ downstream\_weights\ =\ [next\_neuron.weights[i]\ \textcolor{keywordflow}{for}\ next\_neuron\ \textcolor{keywordflow}{in}\ next\_layer]}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ downstream\_deltas\ =\ [next\_neuron.delta\ \textcolor{keywordflow}{for}\ next\_neuron\ \textcolor{keywordflow}{in}\ next\_layer]}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ neuron.compute\_hidden\_delta(downstream\_weights,\ downstream\_deltas)}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00094}00094\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Update\ weights\ and\ biases\ for\ all\ neurons}}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ layer\ \textcolor{keywordflow}{in}\ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neural_network_ae49fa41bfdcf4486adadbae73d0018f4}{layers}}:}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ neuron\ \textcolor{keywordflow}{in}\ layer:}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ neuron.update\_weights()}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00100}00100\ \ \ \ \ \textcolor{keyword}{def\ }train(self,\ training\_inputs,\ training\_targets,\ epochs=1000):}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ epoch\ \textcolor{keywordflow}{in}\ range(epochs):}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ inputs,\ targets\ \textcolor{keywordflow}{in}\ zip(training\_inputs,\ training\_targets):}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neural_network_a70c023c0520bbbe025a60098deeb4d64}{backpropagate}}(inputs,\ targets)}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Optionally,\ you\ can\ add\ code\ here\ to\ monitor\ the\ loss\ per\ epoch}}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00106}00106\ \ \ \ \ \textcolor{keyword}{def\ }predict(self,\ inputs):}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00107}00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ self.\mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neural_network_ac51e65d08c5eaf662ef310cfccf1aff6}{forward}}(inputs)}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00109}00109\ \textcolor{comment}{\#\ Example\ usage:}}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00110}00110\ \textcolor{keywordflow}{if}\ \_\_name\_\_\ ==\ \textcolor{stringliteral}{'\_\_main\_\_'}:}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00111}00111\ \ \ \ \ \textcolor{comment}{\#\ Define\ a\ network\ for\ the\ XOR\ problem:\ 2\ inputs,\ one\ hidden\ layer\ with\ 2\ neurons,\ 1\ output\ neuron}}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00112}00112\ \ \ \ \ nn\ =\ \mbox{\hyperlink{classimport_01numpy_01as_01np_1_1_neural_network}{NeuralNetwork}}(layer\_sizes=[2,\ 2,\ 1],\ learning\_rate=0.5)}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00113}00113\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00114}00114\ \ \ \ \ \textcolor{comment}{\#\ Training\ examples\ for\ XOR}}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00115}00115\ \ \ \ \ training\_inputs\ =\ [}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00116}00116\ \ \ \ \ \ \ \ \ [0,\ 0],}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00117}00117\ \ \ \ \ \ \ \ \ [0,\ 1],}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00118}00118\ \ \ \ \ \ \ \ \ [1,\ 0],}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00119}00119\ \ \ \ \ \ \ \ \ [1,\ 1]}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00120}00120\ \ \ \ \ ]}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00121}00121\ \ \ \ \ training\_targets\ =\ [}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00122}00122\ \ \ \ \ \ \ \ \ [0],}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00123}00123\ \ \ \ \ \ \ \ \ [1],}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00124}00124\ \ \ \ \ \ \ \ \ [1],}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00125}00125\ \ \ \ \ \ \ \ \ [0]}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00126}00126\ \ \ \ \ ]}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00127}00127\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00128}00128\ \ \ \ \ \textcolor{comment}{\#time\ the\ function}}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00129}00129\ \ \ \ \ \textcolor{keyword}{import}\ time}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00131}00131\ \ \ \ \ start\ =\ time.time()}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00133}00133\ \ \ \ \ \textcolor{comment}{\#\ Train\ the\ network}}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00134}00134\ \ \ \ \ nn.train(training\_inputs,\ training\_targets,\ epochs=10000)}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00135}00135\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00136}00136\ \ \ \ \ end\ =\ time.time()}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00137}00137\ \ \ \ \ print(f\textcolor{stringliteral}{"{}Time\ taken:\ \{(end\ -\/\ start)*\ 1000\}\ ms"{}})}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00138}00138\ \ \ \ \ \textcolor{comment}{\#\ Test\ the\ network}}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00139}00139\ \ \ \ \ \textcolor{keywordflow}{for}\ x\ \textcolor{keywordflow}{in}\ training\_inputs:}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00140}00140\ \ \ \ \ \ \ \ \ output\ =\ nn.predict(x)}
+\DoxyCodeLine{\Hypertarget{import_01numpy_01as_01np_8py_source_l00141}00141\ \ \ \ \ \ \ \ \ print(f\textcolor{stringliteral}{"{}Input:\ \{x\},\ Output:\ \{output\}"{}})}
+
+\end{DoxyCode}

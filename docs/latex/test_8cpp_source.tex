@@ -1,10 +1,10 @@
 \doxysection{test.\+cpp}
-\hypertarget{test_8cpp_source}{}\label{test_8cpp_source}\index{/Users/stanislav/Github/MachineLearning/ML-\/sigmoid-\/neuron/src/test/test.cpp@{/Users/stanislav/Github/MachineLearning/ML-\/sigmoid-\/neuron/src/test/test.cpp}}
+\hypertarget{test_8cpp_source}{}\label{test_8cpp_source}\index{/Users/stanislav/Github/HU-\/AI-\/year2/MachineLearning/ML-\/sigmoid-\/neuron/src/test/test.cpp@{/Users/stanislav/Github/HU-\/AI-\/year2/MachineLearning/ML-\/sigmoid-\/neuron/src/test/test.cpp}}
 \mbox{\hyperlink{test_8cpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{test_8cpp_source_l00001}00001\ }
 \DoxyCodeLine{\Hypertarget{test_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#define\ CATCH\_CONFIG\_MAIN}}
-\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}catch.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <catch2/catch\_all.hpp>}}
 \DoxyCodeLine{\Hypertarget{test_8cpp_source_l00013}00013\ }
 \DoxyCodeLine{\Hypertarget{test_8cpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{neuron_8hpp}{../header/neuron.hpp}}"{}}}
 \DoxyCodeLine{\Hypertarget{test_8cpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{neuron_layer_8hpp}{../header/neuronLayer.hpp}}"{}}}
@@ -68,10 +68,10 @@
 \DoxyCodeLine{\Hypertarget{test_8cpp_source_l00151}00151\ \ \ \ \ \mbox{\hyperlink{class_neuron_network}{NeuronNetwork}}\ halfAdder(\{hiddenLayer,\ outputLayer\});}
 \DoxyCodeLine{\Hypertarget{test_8cpp_source_l00152}00152\ \ \ \ \ }
 \DoxyCodeLine{\Hypertarget{test_8cpp_source_l00153}00153\ \ \ \ \ \textcolor{comment}{//\ Test\ cases\ for\ half\ adder:\ \{Sum,\ Carry\}}}
-\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00154}00154\ \ \ \ \ REQUIRE(halfAdder.feedForward(\{0,\ 0\})\ ==\ std::vector<int>\{0,\ 0\});}
-\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00155}00155\ \ \ \ \ REQUIRE(halfAdder.feedForward(\{0,\ 1\})\ ==\ std::vector<int>\{1,\ 0\});}
-\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00156}00156\ \ \ \ \ REQUIRE(halfAdder.feedForward(\{1,\ 0\})\ ==\ std::vector<int>\{1,\ 0\});}
-\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00157}00157\ \ \ \ \ REQUIRE(halfAdder.feedForward(\{1,\ 1\})\ ==\ std::vector<int>\{0,\ 1\});}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00154}00154\ \ \ \ \ REQUIRE(halfAdder.feedForward(\{0,\ 0\})\ ==\ std::vector<float>\{0,\ 0\});}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00155}00155\ \ \ \ \ REQUIRE(halfAdder.feedForward(\{0,\ 1\})\ ==\ std::vector<float>\{1,\ 0\});}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00156}00156\ \ \ \ \ REQUIRE(halfAdder.feedForward(\{1,\ 0\})\ ==\ std::vector<float>\{1,\ 0\});}
+\DoxyCodeLine{\Hypertarget{test_8cpp_source_l00157}00157\ \ \ \ \ REQUIRE(halfAdder.feedForward(\{1,\ 1\})\ ==\ std::vector<float>\{0,\ 1\});}
 \DoxyCodeLine{\Hypertarget{test_8cpp_source_l00158}00158\ \}}
 
 \end{DoxyCode}

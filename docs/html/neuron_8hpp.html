@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ML perceptron sigmoid neuron (P3): /Users/stanislav/Github/MachineLearning/ML-sigmoid-neuron/src/header/neuron.hpp File Reference</title>
+<title>ML perceptron sigmoid neuron (P3): /Users/stanislav/Github/HU-AI-year2/MachineLearning/ML-sigmoid-neuron/src/header/neuron.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -117,44 +117,58 @@ $(function(){initNavTree('neuron_8hpp.html',''); initResizable(true); });
 
 <p>In this file the <a class="el" href="class_neuron.html" title="Represents a single neuron in a neural network.">Neuron</a> class is declared. This class represents a single neuron in a neural network.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
-<code>#include &lt;cmath&gt;</code><br />
-<code>#include &lt;vector&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="common_8hpp_source.html">common.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for neuron.hpp:</div>
 <div class="dyncontent">
-<div class="center"><img src="neuron_8hpp__incl.png" border="0" usemap="#a_2_users_2stanislav_2_github_2_machine_learning_2_m_l-sigmoid-neuron_2src_2header_2neuron_8hpp" alt=""/></div>
-<map name="a_2_users_2stanislav_2_github_2_machine_learning_2_m_l-sigmoid-neuron_2src_2header_2neuron_8hpp" id="a_2_users_2stanislav_2_github_2_machine_learning_2_m_l-sigmoid-neuron_2src_2header_2neuron_8hpp">
-<area shape="rect" title="In this file the Neuron class is declared. This class represents a single neuron in a neural network." alt="" coords="30,5,228,61"/>
-<area shape="rect" title=" " alt="" coords="5,109,77,135"/>
-<area shape="poly" title=" " alt="" coords="104,63,66,100,62,96,100,59"/>
-<area shape="rect" title=" " alt="" coords="100,109,158,135"/>
-<area shape="poly" title=" " alt="" coords="132,61,132,93,126,93,126,61"/>
-<area shape="rect" title=" " alt="" coords="182,109,239,135"/>
-<area shape="poly" title=" " alt="" coords="156,59,190,96,187,99,152,63"/>
+<div class="center"><img src="neuron_8hpp__incl.png" border="0" usemap="#a_2_users_2stanislav_2_github_2_h_u-_a_i-year2_2_machine_learning_2_m_l-sigmoid-neuron_2src_2header_2neuron_8hpp" alt=""/></div>
+<map name="a_2_users_2stanislav_2_github_2_h_u-_a_i-year2_2_machine_learning_2_m_l-sigmoid-neuron_2src_2header_2neuron_8hpp" id="a_2_users_2stanislav_2_github_2_h_u-_a_i-year2_2_machine_learning_2_m_l-sigmoid-neuron_2src_2header_2neuron_8hpp">
+<area shape="rect" title="In this file the Neuron class is declared. This class represents a single neuron in a neural network." alt="" coords="217,5,417,76"/>
+<area shape="rect" href="common_8hpp.html" title="In this file the common utilities are defined." alt="" coords="269,124,365,150"/>
+<area shape="poly" title=" " alt="" coords="320,76,320,108,314,108,314,76"/>
+<area shape="rect" title=" " alt="" coords="5,198,77,223"/>
+<area shape="poly" title=" " alt="" coords="271,153,92,199,91,194,270,148"/>
+<area shape="rect" title=" " alt="" coords="101,198,176,223"/>
+<area shape="poly" title=" " alt="" coords="288,153,184,194,182,189,286,148"/>
+<area shape="rect" title=" " alt="" coords="200,198,264,223"/>
+<area shape="poly" title=" " alt="" coords="304,152,259,190,256,186,301,148"/>
+<area shape="rect" title=" " alt="" coords="288,198,346,223"/>
+<area shape="poly" title=" " alt="" coords="320,150,320,182,314,182,314,150"/>
+<area shape="rect" title=" " alt="" coords="370,198,427,223"/>
+<area shape="poly" title=" " alt="" coords="333,148,375,185,372,189,329,152"/>
+<area shape="rect" title=" " alt="" coords="452,198,505,223"/>
+<area shape="poly" title=" " alt="" coords="345,148,439,189,436,194,343,153"/>
+<area shape="rect" title=" " alt="" coords="530,198,590,223"/>
+<area shape="poly" title=" " alt="" coords="359,148,516,193,514,199,357,153"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="neuron_8hpp__dep__incl.png" border="0" usemap="#a_2_users_2stanislav_2_github_2_machine_learning_2_m_l-sigmoid-neuron_2src_2header_2neuron_8hppdep" alt=""/></div>
-<map name="a_2_users_2stanislav_2_github_2_machine_learning_2_m_l-sigmoid-neuron_2src_2header_2neuron_8hppdep" id="a_2_users_2stanislav_2_github_2_machine_learning_2_m_l-sigmoid-neuron_2src_2header_2neuron_8hppdep">
-<area shape="rect" title="In this file the Neuron class is declared. This class represents a single neuron in a neural network." alt="" coords="392,5,590,61"/>
-<area shape="rect" href="neuron_layer_8hpp.html" title="In this file the NeuronLayer class is declared. This class represents a layer of neurons in a neural ..." alt="" coords="242,109,470,165"/>
-<area shape="poly" title=" " alt="" coords="444,73,394,110,391,106,441,69"/>
-<area shape="rect" href="neuron_network_8hpp.html" title="In this file the NeuronNetwork class is declared. This class represents a neural network with multipl..." alt="" coords="14,213,261,268"/>
-<area shape="poly" title=" " alt="" coords="378,52,302,74,265,91,231,111,205,134,183,161,152,213,148,211,179,158,202,130,228,107,263,86,301,69,377,47"/>
-<area shape="rect" href="test_8cpp.html" title="In this file the tests for the Neuron, NeuronLayer and NeuronNetwork classes are implemented." alt="" coords="232,316,427,372"/>
-<area shape="poly" title=" " alt="" coords="519,73,541,116,558,168,562,194,562,221,556,246,544,270,520,295,492,314,460,327,428,336,426,331,458,322,489,309,517,291,539,267,551,244,557,220,557,195,553,169,536,119,515,76"/>
-<area shape="rect" href="neuron_8cpp.html" title="In this file the Neuron class is implemented." alt="" coords="604,109,799,165"/>
-<area shape="poly" title=" " alt="" coords="562,66,646,106,644,111,560,70"/>
-<area shape="poly" title=" " alt="" coords="285,174,198,214,195,210,283,169"/>
-<area shape="poly" title=" " alt="" coords="337,180,326,213,322,268,327,316,322,316,317,268,320,212,332,178"/>
-<area shape="rect" href="neuron_layer_8cpp.html" title="In this file the NeuronLayer class is implemented." alt="" coords="335,213,530,268"/>
-<area shape="poly" title=" " alt="" coords="388,176,414,210,410,214,384,179"/>
-<area shape="rect" href="neuron_network_8cpp.html" title="In this file the NeuronNetwork class is implemented." alt="" coords="5,316,209,372"/>
-<area shape="poly" title=" " alt="" coords="128,284,118,316,113,315,123,282"/>
-<area shape="poly" title=" " alt="" coords="204,274,279,313,277,318,201,278"/>
+<div class="center"><img src="neuron_8hpp__dep__incl.png" border="0" usemap="#a_2_users_2stanislav_2_github_2_h_u-_a_i-year2_2_machine_learning_2_m_l-sigmoid-neuron_2src_2header_2neuron_8hppdep" alt=""/></div>
+<map name="a_2_users_2stanislav_2_github_2_h_u-_a_i-year2_2_machine_learning_2_m_l-sigmoid-neuron_2src_2header_2neuron_8hppdep" id="a_2_users_2stanislav_2_github_2_h_u-_a_i-year2_2_machine_learning_2_m_l-sigmoid-neuron_2src_2header_2neuron_8hppdep">
+<area shape="rect" title="In this file the Neuron class is declared. This class represents a single neuron in a neural network." alt="" coords="496,5,696,76"/>
+<area shape="rect" href="neuron_layer_8hpp.html" title="In this file the NeuronLayer class is declared. This class represents a layer of neurons in a neural ..." alt="" coords="331,124,531,195"/>
+<area shape="poly" title=" " alt="" coords="536,87,482,126,479,121,533,83"/>
+<area shape="rect" href="neuron_network_8hpp.html" title="In this file the NeuronNetwork class is declared. This class represents a neural network with multipl..." alt="" coords="193,243,394,313"/>
+<area shape="poly" title=" " alt="" coords="481,51,438,60,395,75,355,96,321,126,304,152,295,183,292,214,292,243,287,243,287,214,290,182,299,150,317,122,352,92,393,70,436,55,480,46"/>
+<area shape="rect" href="test_8cpp.html" title="In this file the tests for the Neuron, NeuronLayer and NeuronNetwork classes are implemented." alt="" coords="5,361,206,432"/>
+<area shape="poly" title=" " alt="" coords="481,64,384,89,334,106,287,126,235,150,196,172,162,200,130,244,118,273,110,303,106,361,101,361,105,303,113,271,126,241,159,196,193,167,233,146,284,122,332,101,383,84,480,59"/>
+<area shape="rect" href="test_backpropagation_8cpp_source.html" title=" " alt="" coords="528,361,808,432"/>
+<area shape="poly" title=" " alt="" coords="642,86,696,155,720,197,739,242,746,278,739,314,725,340,708,363,704,359,721,337,734,312,741,278,734,243,716,200,692,158,638,89"/>
+<area shape="rect" href="output_neuron_8hpp.html" title="In this file the OutputNeuron class is declared. This class represents a single output neuron in a ne..." alt="" coords="799,124,999,195"/>
+<area shape="poly" title=" " alt="" coords="702,80,810,121,808,126,700,85"/>
+<area shape="rect" href="neuron_8cpp.html" title="In this file the Neuron class is implemented." alt="" coords="1024,132,1249,187"/>
+<area shape="poly" title=" " alt="" coords="712,60,855,88,1011,121,1039,128,1038,133,1010,127,854,93,711,65"/>
+<area shape="poly" title=" " alt="" coords="380,207,336,244,333,240,377,203"/>
+<area shape="poly" title=" " alt="" coords="316,181,246,205,213,223,183,245,159,271,141,302,117,362,112,360,136,299,155,268,180,241,210,218,244,201,315,176"/>
+<area shape="poly" title=" " alt="" coords="430,210,436,263,444,289,458,312,490,341,529,362,526,367,487,345,454,315,439,291,430,264,424,210"/>
+<area shape="rect" href="neuron_layer_8cpp.html" title="In this file the NeuronLayer class is implemented." alt="" coords="468,250,724,306"/>
+<area shape="poly" title=" " alt="" coords="494,201,559,248,556,252,490,206"/>
+<area shape="rect" href="neuron_network_8cpp.html" title="In this file the NeuronNetwork class is implemented." alt="" coords="230,369,504,424"/>
+<area shape="poly" title=" " alt="" coords="325,325,352,367,348,370,321,328"/>
+<area shape="poly" title=" " alt="" coords="226,324,163,363,160,359,223,319"/>
+<area shape="poly" title=" " alt="" coords="409,312,557,358,555,363,407,317"/>
 </map>
 </div>
 </div>

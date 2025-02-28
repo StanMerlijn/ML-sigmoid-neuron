@@ -1,0 +1,38 @@
+\doxysection{create\+\_\+dataset.\+py}
+\hypertarget{create__dataset_8py_source}{}\label{create__dataset_8py_source}\index{/Users/stanislav/Github/HU-\/AI-\/year2/MachineLearning/ML-\/sigmoid-\/neuron/data/create\_dataset.py@{/Users/stanislav/Github/HU-\/AI-\/year2/MachineLearning/ML-\/sigmoid-\/neuron/data/create\_dataset.py}}
+\mbox{\hyperlink{create__dataset_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{create__dataset_8py_source_l00001}00001\ \textcolor{comment}{\#!/usr/bin/env\ python3}}
+\DoxyCodeLine{\Hypertarget{create__dataset_8py_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{create__dataset_8py_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{create__dataset_8py_source_l00008}00008\ \textcolor{keyword}{import}\ matplotlib.pyplot\ \textcolor{keyword}{as}\ plt}
+\DoxyCodeLine{\Hypertarget{create__dataset_8py_source_l00009}00009\ \textcolor{keyword}{import}\ numpy\ \textcolor{keyword}{as}\ np}
+\DoxyCodeLine{\Hypertarget{create__dataset_8py_source_l00010}00010\ \textcolor{keyword}{import}\ csv}
+\DoxyCodeLine{\Hypertarget{create__dataset_8py_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{create__dataset_8py_source_l00012}00012\ \textcolor{comment}{\#\ Import\ datasets,\ classifiers\ and\ performance\ metrics}}
+\DoxyCodeLine{\Hypertarget{create__dataset_8py_source_l00013}00013\ \textcolor{keyword}{from}\ sklearn\ \textcolor{keyword}{import}\ datasets,\ metrics,\ svm}
+\DoxyCodeLine{\Hypertarget{create__dataset_8py_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{create__dataset_8py_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{create__dataset_8py_source_l00018}00018\ \textcolor{keyword}{def\ }write\_to\_csv(data:\ np.ndarray,\ filename:\ str):}
+\DoxyCodeLine{\Hypertarget{create__dataset_8py_source_l00019}00019\ \ \ \ \ np.savetxt(filename,\ data,\ delimiter=\textcolor{stringliteral}{"{},"{}},\ fmt=\textcolor{stringliteral}{"{}\%d"{}})}
+\DoxyCodeLine{\Hypertarget{create__dataset_8py_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{create__dataset_8py_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{create__dataset_8py_source_l00025}00025\ \textcolor{keyword}{def\ }save\_digits\_dataset():}
+\DoxyCodeLine{\Hypertarget{create__dataset_8py_source_l00026}00026\ \ \ \ \ \textcolor{comment}{\#\ Get\ the\ digits\ dataset}}
+\DoxyCodeLine{\Hypertarget{create__dataset_8py_source_l00027}00027\ \ \ \ \ data\ =\ datasets.load\_digits()}
+\DoxyCodeLine{\Hypertarget{create__dataset_8py_source_l00028}00028\ \ \ \ \ images\ =\ data.data\ }
+\DoxyCodeLine{\Hypertarget{create__dataset_8py_source_l00029}00029\ \ \ \ \ targets\ =\ data.target}
+\DoxyCodeLine{\Hypertarget{create__dataset_8py_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{create__dataset_8py_source_l00031}00031\ \ \ \ \ \textcolor{comment}{\#\ Convert\ the\ image\ and\ target\ data\ to\ int\ type}}
+\DoxyCodeLine{\Hypertarget{create__dataset_8py_source_l00032}00032\ \ \ \ \ images\ =\ images.astype(int)}
+\DoxyCodeLine{\Hypertarget{create__dataset_8py_source_l00033}00033\ \ \ \ \ targets\ =\ targets.astype(int)}
+\DoxyCodeLine{\Hypertarget{create__dataset_8py_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{create__dataset_8py_source_l00035}00035\ \ \ \ \ \textcolor{comment}{\#\ Save\ the\ images\ and\ the\ targets\ to\ CSV\ files}}
+\DoxyCodeLine{\Hypertarget{create__dataset_8py_source_l00036}00036\ \ \ \ \ write\_to\_csv(images,\ \textcolor{stringliteral}{"{}digits\_images.csv"{}})}
+\DoxyCodeLine{\Hypertarget{create__dataset_8py_source_l00037}00037\ \ \ \ \ write\_to\_csv(targets,\ \textcolor{stringliteral}{"{}digits\_targets.csv"{}})}
+\DoxyCodeLine{\Hypertarget{create__dataset_8py_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{create__dataset_8py_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{create__dataset_8py_source_l00040}00040\ \textcolor{keywordflow}{if}\ \_\_name\_\_\ ==\ \textcolor{stringliteral}{"{}\_\_main\_\_"{}}:}
+\DoxyCodeLine{\Hypertarget{create__dataset_8py_source_l00041}00041\ \ \ \ \ save\_digits\_dataset()}
+
+\end{DoxyCode}

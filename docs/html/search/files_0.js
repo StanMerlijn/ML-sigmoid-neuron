@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['neuron_2ecpp_0',['neuron.cpp',['../neuron_8cpp.html',1,'']]],
-  ['neuron_2ehpp_1',['neuron.hpp',['../neuron_8hpp.html',1,'']]],
-  ['neuronlayer_2ecpp_2',['neuronLayer.cpp',['../neuron_layer_8cpp.html',1,'']]],
-  ['neuronlayer_2ehpp_3',['neuronLayer.hpp',['../neuron_layer_8hpp.html',1,'']]],
-  ['neuronnetwork_2ecpp_4',['neuronNetwork.cpp',['../neuron_network_8cpp.html',1,'']]],
-  ['neuronnetwork_2ehpp_5',['neuronNetwork.hpp',['../neuron_network_8hpp.html',1,'']]]
+  ['common_2ehpp_0',['common.hpp',['../common_8hpp.html',1,'']]],
+  ['create_5fdataset_2epy_1',['create_dataset.py',['../create__dataset_8py.html',1,'']]],
+  ['csv_5freader_2ehpp_2',['csv_reader.hpp',['../csv__reader_8hpp.html',1,'']]]
 ];
