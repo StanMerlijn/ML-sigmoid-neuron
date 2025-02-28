@@ -14,6 +14,9 @@
 #include <sstream>
 
 
+// =================================================================================================
+// Section: reading iris data
+// =================================================================================================
 
 /**
  * @brief Reads a CSV file and returns a vector of vectors.
@@ -69,11 +72,11 @@ std::vector<std::vector<std::string>> read_csv(const std::string& filename, char
  * @param data A vector of vectors representing the rows in the CSV file.
  * @return A vector containing the features.
  */
-std::vector<int> getTargets(const std::vector<std::vector<std::string>>& data)
+std::vector<float> getTargets(const std::vector<std::vector<std::string>>& data)
 {
-    std::vector<int> targets;
+    std::vector<float> targets;
     for (const auto& row : data) {
-        targets.push_back(std::stoi(row.back()));
+        targets.push_back(std::stof(row.back()));
     }
     return targets;
 }
@@ -113,10 +116,10 @@ std::vector<std::vector<float>> getFeatures(const std::vector<std::vector<std::s
  * @param target The target value to filter out from the data.
  * @return irisData A structure containing the filtered feature data and target values.
  */
-irisData filterData(const std::vector<std::vector<float>>& features, const std::vector<int>& targets, int target)
+irisData filterData(const std::vector<std::vector<float>>& features, const std::vector<float>& targets, int target)
 {
     std::vector<std::vector<float>> filtered_features;
-    std::vector<int> filtered_targets;
+    std::vector<float> filtered_targets;
     for (int i = 0; i < features.size(); i++) {
         if (targets[i] != target) {
             filtered_features.push_back(features[i]);
