@@ -14,7 +14,7 @@ For this assignment, documentation was generated using Doxygen.
 The LaTeX documentation can be found [here](docs/latex/refman.pdf) and if you want to run the HTML local website, you can open the [index.html](docs/html/index.html) in a browser.
 
 ## Installing
-Enter the test dir then
+Enter the testBackpropagation directory and then
 
 Generate build files:
 
