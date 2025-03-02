@@ -4,13 +4,14 @@
  * @brief In this file the NeuronLayer class is declared. This class represents a layer of neurons in a neural network.
  * @version 0.1
  * @date 2025-02-14
- * 
+ *
  * @copyright Copyright (c) 2025
- * 
+ *
  */
 #pragma once
 #include <iostream>
 #include <vector>
+
 #include "neuron.hpp"
 
 /**
@@ -20,7 +21,8 @@
  * The NeuronLayer class has a collection of neurons and provides
  * methods to perform feedforward operations and to represent the layer as a string.
  */
-class NeuronLayer {
+class NeuronLayer
+{
 private:
     std::vector<Neuron> _neurons; /**< The neurons in the layer. */
     std::vector<float> _output;
@@ -38,27 +40,27 @@ public:
      * @param nSizeWeights The size of the weights for each neuron.
      */
     NeuronLayer(int nNeurons, int nSizeWeights);
-    
+
     /**
      * @brief Performs a feedforward operation.
      * @param inputs A vector of input values.
-     * @return The output of the layer. 
+     * @return The output of the layer.
      */
-    std::vector<float>& feedForward(const std::vector<float>& inputs);
+    std::vector<float> &feedForward(const std::vector<float> &inputs);
 
     /**
      * @brief Computes the output errors for the layer.
      * @param targets A vector of target values.
      */
-    void computeOutputErros(const std::vector<float>& targets);
-    
+    void computeOutputErros(const std::vector<float> &targets);
+
     /**
      * @brief Computes the hidden errors for the layer.
      * @param inputs A vector of input values.
      * @param neuronsNextLayer A vector of neurons in the next layer.
      */
-    void computeHiddenErrors(const std::vector<float>& inputs, const std::vector<Neuron>& neuronsNextLayer);
-    
+    void computeHiddenErrors(const std::vector<float> &inputs, const std::vector<Neuron> &neuronsNextLayer);
+
     /**
      * @brief Updates the neurons in the layer.
      */
@@ -68,14 +70,14 @@ public:
      * @brief Returns the neurons in the layer.
      * @return A vector of neurons.
      */
-    const std::vector<Neuron>& getNeurons() { return _neurons; }
-    
+    const std::vector<Neuron> &getNeurons() { return _neurons; }
+
     /**
      * @brief Returns the output of the layer.
      * @return A vector of floats.
      */
-    const std::vector<float>& getOutput() const { return _output; }
-    
+    const std::vector<float> &getOutput() const { return _output; }
+
     /**
      * @brief Prints the layer details.
      */

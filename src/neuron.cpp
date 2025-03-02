@@ -4,18 +4,18 @@
  * @brief In this file the Neuron class is implemented.
  * @version 0.1
  * @date 2025-02-14
- * 
+ *
  * @copyright Copyright (c) 2025
- * 
+ *
  */
 #include "header/neuron.hpp"
 
 Neuron::Neuron(int nSizeWeights, float initialWeight, float initialBias)
-{   
+{
     // Initialize the weights and bias
     _weights = std::vector<float>(nSizeWeights, initialWeight);
     _lastInput.reserve(nSizeWeights);
-    
+
     // Initialize the delta and learning rate
     _delta = 0.0f;
     _bias = initialBias;
@@ -23,16 +23,16 @@ Neuron::Neuron(int nSizeWeights, float initialWeight, float initialBias)
     _lastOutput = 0.0f;
 }
 
-Neuron::Neuron(const std::vector<float>& weights, float bias, float learningRate) 
+Neuron::Neuron(const std::vector<float> &weights, float bias, float learningRate)
     : _weights(weights), _bias(bias), _learningRate(learningRate) {}
 
 float Neuron::sigmoid(float x)
 {
     // Sigmoid activation function
-    return 1 / (1 + exp(-x));    
+    return 1 / (1 + exp(-x));
 }
 
-float Neuron::activate(const std::vector<float>& inputs)
+float Neuron::activate(const std::vector<float> &inputs)
 {
     // Calculate the weighted sum of the inputs
     _lastInput = inputs;
@@ -49,7 +49,7 @@ float Neuron::activate(const std::vector<float>& inputs)
     return _lastOutput;
 }
 
-float Neuron::predict(const std::vector<float>& inputs)
+float Neuron::predict(const std::vector<float> &inputs)
 {
     // Return 1 if the result is greater than 0.5, otherwise return 0(threshold)
     return (activate(inputs) > 0.5) ? 1 : 0;
@@ -66,9 +66,10 @@ void Neuron::update()
     _bias -= _learningRate * _delta;
 }
 
-float Neuron::computeHiddenDelta(const std::vector<float>& inputs, float sum)
+float Neuron::computeHiddenDelta(const std::vector<float> &inputs, float sum)
 {
-    _delta = sigmoidDerivative(_lastOutput) * sum;;
+    _delta = sigmoidDerivative(_lastOutput) * sum;
+    ;
     return _delta;
 }
 
@@ -84,7 +85,7 @@ float Neuron::sigmoidDerivative(float output)
 }
 
 void Neuron::__str__() const
-{   
+{
     // Print the neuron details
     printf("\nNeurons with %zu weights: ", _weights.size());
     printVector(_weights);
