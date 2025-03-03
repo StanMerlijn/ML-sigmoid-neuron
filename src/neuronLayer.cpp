@@ -27,7 +27,8 @@ NeuronLayer::NeuronLayer(int nNeurons, int nSizeWeights)
     std::mt19937 gen(rd());
     std::uniform_real_distribution<> dis(0.1f, 1.0f);
 
-    _neurons.reserve(nNeurons) for (std::size_t i = 0; i < nNeurons; i++)
+    _neurons.reserve(nNeurons);
+    for (std::size_t i = 0; i < nNeurons; i++)
     {
         _neurons.emplace_back(nSizeWeights, dis(gen), dis(gen));
     }
