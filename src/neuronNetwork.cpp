@@ -109,6 +109,19 @@ void NeuronNetwork::trainInputs2D(const std::vector<std::vector<float>> &inputs,
     }
 }
 
+double NeuronNetwork::Loss(const std::vector<std::vector<float>> &inputs, const std::vector<std::vector<float>> &targets)
+{
+    double loss = 0.0f;
+    for (std::size_t i = 0; i < inputs.size(); i++)
+    {
+        std::vector<float> prediction = feedForward(inputs[i]);
+        for (std::size_t j = 0; j < prediction.size(); j++)
+        {
+            loss += (targets[i][j] - prediction[j]) * (targets[i][j] - prediction[j]);
+        }
+    }
+    return loss / inputs.size();
+}
 // void NeuronNetwork::trainInputs(const std::vector<std::vector<float>>& inputs, const std::vector<std::vector<float>>& targets,
 //     int inputSize, int targetSize, int epochs)
 // {

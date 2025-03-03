@@ -79,6 +79,14 @@ public:
     void trainInputs2D(const std::vector<std::vector<float>> &inputs, const std::vector<std::vector<float>> &targets, int epochs);
 
     /**
+     * @brief Calculates the complete loss of the network using MSE.
+     * @param inputs A vector of input values.
+     * @param targets A vector of target values.
+     * @return The loss of the network.
+     */
+    double Loss(const std::vector<std::vector<float>> &inputs, const std::vector<std::vector<float>> &targets);
+
+    /**
      * @brief Returns the layers in the network.
      * @return A vector of neuron layers.
      */

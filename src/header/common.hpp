@@ -18,11 +18,6 @@
 #include <string>
 #include <stdio.h>
 
-#define INITIAL_WEIGHT 0.5f
-#define INITIAL_WEIGHT_INPUTN 0.5f
-#define INITIAL_BIAS 0.5f
-#define INITIAL_BIAS_INPUTN 0.5f
-
 /**
  * @brief A structure to hold the features and targets read from a CSV file. This is fdor the iris data set.
  *

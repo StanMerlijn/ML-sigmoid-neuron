@@ -204,6 +204,10 @@ TEST_CASE("AND neural Network", "[NeuronNetwork][AND]")
             CHECK_THAT(prediction[0], WithinAbs(0.0f, 0.05f));
         }
     }
+
+    // Get the loss
+    double loss = nn.Loss(inputs, targets);
+    printf("Loss for the AND = %.2f\n", loss);
 }
 
 /**
@@ -249,6 +253,10 @@ TEST_CASE("XOR Neural Network", "[NeuronNetwork][XOR]")
             CHECK_THAT(prediction[0], WithinAbs(0.0f, 0.05f));
         }
     }
+
+    // Get the loss
+    double loss = nn.Loss(inputs, targets);
+    printf("Loss for the XOR = %.2f\n", loss);
 }
 
 /**
@@ -294,6 +302,10 @@ TEST_CASE("Half adder Neuron Network", "[NeuronNetwork][HalfAdder]")
             CHECK_THAT(prediction[0], WithinAbs(0.0f, 0.05f));
         }
     }
+
+    // Get the loss
+    double loss = nn.Loss(inputs, targets);
+    printf("Loss for the half adder = %.2f\n", loss);
 }
 
 /**
@@ -406,6 +418,10 @@ TEST_CASE("NeuronNetwork Learning Iris dataset", "[backpropagation][Iris]")
             }
         }
     }
+
+    // Get the loss
+    double loss = nn.Loss(tts.testFeatures, tts.testTargets);
+    printf("Loss for the iris dataset = %.2f\n", loss);
 }
 
 /**
@@ -543,4 +559,10 @@ TEST_CASE("NeuronNetwork Learning digit data", "[backpropagation]")
             CHECK_THAT(1.0f, WithinRel(prediction[targetIndex], 0.1f));
         }
     }
+
+    // Get the loss
+    double lossTest = nn.Loss(tts.testFeatures, tts.testTargets);
+    double lossTrain = nn.Loss(tts.trainFeatures, tts.trainTargets);
+    printf("Loss for the test digit dataset = %.2f\n", lossTest);
+    printf("Loss for the train digit dataset = %.2f\n", lossTrain);
 }
