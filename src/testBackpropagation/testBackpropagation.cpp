@@ -566,3 +566,96 @@ TEST_CASE("NeuronNetwork Learning digit data", "[backpropagation]")
     printf("Loss for the test digit dataset = %.2f\n", lossTest);
     printf("Loss for the train digit dataset = %.2f\n", lossTrain);
 }
+
+TEST_CASE("NeuronNetwork Learning MNIST dataset", "[backpropagation]")
+{
+    // =================================================================================================
+    // Load the MNIST dataset
+    // =================================================================================================
+
+    // Load the MNIST dataset train set
+    std::vector<float> trainX = realdCsvFlat<float>("../../data/mnist_train_X.csv");
+    std::vector<float> trainY = realdCsvFlat<float>("../../data/mnist_train_y.csv");
+
+    // Load the MNIST dataset test set
+    std::vector<float> testX = realdCsvFlat<float>("../../data/mnist_test_X.csv");
+    std::vector<float> testY = realdCsvFlat<float>("../../data/mnist_test_y.csv");
+
+    // Normalize the data
+    normalizeVector(trainX);
+    normalizeVector(testX);
+
+    // Define the output mask
+    std::vector<float> outputMask = {0.0f, 1.0f, 2.0f, 3.0f, 4.0f, 5.0f, 6.0f, 7.0f, 8.0f, 9.0f};
+
+    // Mask the targets
+    std::vector<float> maskedTrainY = maskData<float>(trainY, outputMask);
+    std::vector<float> maskedTestY = maskData<float>(testY, outputMask);
+
+    // Make the data 2D
+    std::vector<std::vector<float>> trainX2D = create2DVector(trainX, 784);
+    std::vector<std::vector<float>> trainY2D = create2DVector(maskedTrainY, 10);
+    std::vector<std::vector<float>> testX2D = create2DVector(testX, 784);
+    std::vector<std::vector<float>> testY2D = create2DVector(maskedTestY, 10);
+
+    // Create the neuron network
+    int inputLayer = 784;
+    int hiddenLayer = 132;
+    int outputLayer = 10;
+
+    NeuronNetwork nn({inputLayer, hiddenLayer, outputLayer});
+
+    // Train the network
+    MEASURE_BLOCK("Training the mnist network", {
+        nn.trainInputs2D(trainX2D, trainY2D, 1);
+    });
+
+    nn.trainInputs2D(trainX2D, trainY2D, 100);
+
+    // Test the network
+    unsigned int correctPredictions = 0;
+    unsigned int totalPredictions = 0;
+    unsigned int falsePredictions = 0;
+
+    SECTION("Testing test set")
+    {
+        printf("\nTesting the test split for MNIST dataset\n");
+        for (std::size_t i = 0; i < testX2D.size(); i++)
+        {
+            std::vector<float> input = testX2D[i];
+            std::vector<float> target = testY2D[i];
+            std::vector<float> prediction = nn.feedForward(input);
+
+            for (std::size_t j = 0; j < prediction.size(); j++)
+            {
+                if (target[j] > 0.95f)
+                { // Check if the target is 1
+                    if (prediction[j] > 0.95f)
+                    {
+                        correctPredictions++;
+                    }
+                    else
+                    {
+                        falsePredictions++;
+                    }
+                    totalPredictions++;
+                }
+                else
+                {
+                    if (prediction[j] < 0.05f)
+                    {
+                        correctPredictions++;
+                    }
+                    else
+                    {
+                        falsePredictions++;
+                    }
+                    totalPredictions++;
+                }
+            }
+        }
+        printf("Correct predictions: %d\n", correctPredictions);
+        printf("False predictions: %d\n", falsePredictions);
+        printf("Total predictions: %d\n", totalPredictions);
+    }
+}
