@@ -15,6 +15,7 @@ NeuronLayer::NeuronLayer(std::vector<Neuron> neurons)
 
 NeuronLayer::NeuronLayer(int nNeurons, int nSizeWeights)
 {
+    e_input = Eigen::VectorXf::Constant(nSizeWeights, 0.0f);
     _output.resize(nNeurons);
     // nNeurons check
     if (nNeurons == 0)
@@ -37,11 +38,12 @@ NeuronLayer::NeuronLayer(int nNeurons, int nSizeWeights)
 std::vector<float> &NeuronLayer::feedForward(const std::vector<float> &inputs)
 {
     // Feed forward through each neuron in the layer
+    e_input = Eigen::VectorXf::Map(inputs.data(), inputs.size());
     for (std::size_t i = 0; i < _neurons.size(); i++)
     {
         // For now using the activate instead of predict.
         // The predict function is used for binary classification i think.
-        _output[i] = _neurons[i].activate(inputs);
+        _output[i] = _neurons[i].activate(e_input);
     }
     return _output;
 }
@@ -55,7 +57,7 @@ void NeuronLayer::computeOutputErros(const std::vector<float> &targets)
     }
 }
 
-void NeuronLayer::computeHiddenErrors(const std::vector<float> &inputs, const std::vector<Neuron> &neuronsNextLayer)
+void NeuronLayer::computeHiddenErrors(const std::vector<Neuron> &neuronsNextLayer)
 {
     // // Simply get the first neurons weight size
     for (std::size_t i = 0; i < _neurons.size(); i++)
@@ -68,7 +70,7 @@ void NeuronLayer::computeHiddenErrors(const std::vector<float> &inputs, const st
             sum += neuronsNextLayer[j].getWeights()[i] * neuronsNextLayer[j].getError();
         }
 
-        _neurons[i].computeHiddenDelta(inputs, sum);
+        _neurons[i].computeHiddenDelta(sum);
     }
 }
 

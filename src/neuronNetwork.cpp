@@ -68,15 +68,17 @@ void NeuronNetwork::backPropagation(const std::vector<float> &targets)
     // Reverse loop For hidden layers
     for (int i = last - 1; i > -1; i--)
     {
-        // If is output neuron compute the output error
-        if (i == 0)
-        { // If i == 0 then its the input layer
-            _layers[i].computeHiddenErrors(_inputVec, _layers[i + 1].getNeurons());
-        }
-        else
-        { // Else compute the hidden error
-            _layers[i].computeHiddenErrors(_layers[i - 1].getOutput(), _layers[i + 1].getNeurons());
-        }
+        _layers[i].computeHiddenErrors(_layers[i + 1].getNeurons());
+
+        // // If is output neuron compute the output error
+        // if (i == 0)
+        // { // If i == 0 then its the input layer
+        //     _layers[i].computeHiddenErrors(_layers[i + 1].getNeurons());
+        // }
+        // else
+        // { // Else compute the hidden error
+        //     _layers[i].computeHiddenErrors(_layers[i + 1].getNeurons());
+        // }
     }
 }
 
@@ -122,6 +124,7 @@ double NeuronNetwork::Loss(const std::vector<std::vector<float>> &inputs, const 
     }
     return loss / inputs.size();
 }
+
 // void NeuronNetwork::trainInputs(const std::vector<std::vector<float>>& inputs, const std::vector<std::vector<float>>& targets,
 //     int inputSize, int targetSize, int epochs)
 // {

@@ -10,6 +10,7 @@
  */
 #pragma once
 #include "common.hpp"
+
 /**
  * @class Neuron
  * @brief Represents a single neuron in a neural network.
@@ -23,10 +24,15 @@ class Neuron
 private:
     std::vector<float> _weights;   /**< The weights for the neuron. */
     std::vector<float> _lastInput; /**< The last input values. */
-    float _bias;                   /**< The bias term for the neuron. */
-    float _learningRate;           /**< The learning rate for updating the weights. */
-    float _lastOutput;             /**< The last saved output of the neuron. */
-    float _delta;                  /**< The error for the neuron. */
+
+    Eigen::VectorXf e_weights;
+    Eigen::VectorXf e_lastInput;
+
+    std::size_t _nSizeWeights; /**< The size of the weights vector. */
+    float _bias;               /**< The bias term for the neuron. */
+    float _learningRate;       /**< The learning rate for updating the weights. */
+    float _lastOutput;         /**< The last saved output of the neuron. */
+    float _delta;              /**< The error for the neuron. */
 
 public:
     /**
@@ -54,14 +60,14 @@ public:
      * @param inputs A vector of input values.
      * @return The output of the neuron after applying the weights, bias, and activation function.
      */
-    float activate(const std::vector<float> &inputs);
+    float activate(const Eigen::VectorXf &inputs);
 
     /**
      * @brief Performs a feedforward operation.
      * @param inputs A vector of input values.
      * @return The output of the neuron after applying the weights, bias, and activation function.
      */
-    float predict(const std::vector<float> &inputs);
+    float predict(const Eigen::VectorXf &inputs);
 
     /**
      * @brief Calculates errors for the weights and bias of the neuron.
@@ -81,7 +87,7 @@ public:
      * @param target The target value.
      * @return The error for the ou tput layer.
      */
-    float computeHiddenDelta(const std::vector<float> &inputs, float sum);
+    float computeHiddenDelta(float sum);
 
     /**
      * @brief Calculates the error for the hidden layer.

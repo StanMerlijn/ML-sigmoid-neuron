@@ -26,6 +26,7 @@ class NeuronLayer
 private:
     std::vector<Neuron> _neurons; /**< The neurons in the layer. */
     std::vector<float> _output;
+    Eigen::VectorXf e_input;
 
 public:
     /**
@@ -59,7 +60,7 @@ public:
      * @param inputs A vector of input values.
      * @param neuronsNextLayer A vector of neurons in the next layer.
      */
-    void computeHiddenErrors(const std::vector<float> &inputs, const std::vector<Neuron> &neuronsNextLayer);
+    void computeHiddenErrors(const std::vector<Neuron> &neuronsNextLayer);
 
     /**
      * @brief Updates the neurons in the layer.

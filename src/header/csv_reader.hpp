@@ -38,6 +38,7 @@ std::vector<std::vector<std::string>> readCsv(const std::string &filename, char 
     if (!file.is_open())
     {
         std::cerr << "Error: Could not open file " << filename << std::endl;
+        std::cerr << "From the current directory: " << std::filesystem::current_path() << std::endl;
         return rows;
     }
 
@@ -185,6 +186,7 @@ std::vector<T> realdCsvFlat(const std::string &filename, char delimiter = ',')
     if (!file.is_open())
     {
         std::cerr << "Error: Could not open file " << filename << std::endl;
+        std::cerr << "From the current directory: " << std::filesystem::current_path() << std::endl;
         return data;
     }
 

@@ -18,6 +18,7 @@
 #include <string>
 #include <stdio.h>
 
+#include <Eigen/Dense>
 /**
  * @brief A structure to hold the features and targets read from a CSV file. This is fdor the iris data set.
  *
@@ -143,6 +144,18 @@ inline void printVector(const std::vector<T> &vec, const std::string extra = "")
         {
             printf("%i ", item);
         }
+    }
+    if (!extra.empty())
+    {
+        printf("%s", extra.c_str());
+    }
+}
+
+inline void printEigenVector(const Eigen::VectorXf &vec, const std::string extra = "")
+{
+    for (int i = 0; i < vec.size(); i++)
+    {
+        printf("%.2f ", vec(i));
     }
     if (!extra.empty())
     {
