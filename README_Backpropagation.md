@@ -11,7 +11,9 @@ In this repository, we implement and test the backpropagation algorithm for trai
 
 ## Documentation
 For this assignment, documentation was generated using Doxygen. 
-The LaTeX documentation can be found [here](docs/latex/refman.pdf) and if you want to run the HTML local website, you can open the [index.html](docs/html/index.html) in a browser.
+The LaTeX documentation can be found [here](docs/latex/refman.pdf) and if you want to run the HTML local website, you can open the [index.html](docs/html/index.html) in a browser. 
+
+For a brief summary of the performance improvements, please see the [performance analysis](docs/performance_analysis/perf_analysis.pdf).
 
 ## Installing
 Enter the testBackpropagation directory and then
