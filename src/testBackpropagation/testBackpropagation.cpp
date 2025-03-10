@@ -466,9 +466,9 @@ TEST_CASE("NeuronNetwork Learning digit data", "[backpropagation]")
 
     printf("vector size for test features %zu\n", tts.testFeatures.size());
 
-    MEASURE_BLOCK("Training the network", {
-        nn.trainInputs2D(tts.trainFeatures, tts.trainTargets, 2000);
-    });
+    // MEASURE_BLOCK("Training the network", {
+    //     nn.trainInputs2D(tts.trainFeatures, tts.trainTargets, 2000);
+    // });
 
     nn.trainInputs2D(tts.trainFeatures, tts.trainTargets, 5000);
 
@@ -488,33 +488,36 @@ TEST_CASE("NeuronNetwork Learning digit data", "[backpropagation]")
             // printVector(target, " | ");
             // printVector(prediction, "\n");
 
-            for (std::size_t j = 0; j < prediction.size(); j++)
+            for (std::size_t i = 0; i < target.size(); i++)
             {
-                if (target[j] > 0.95f)
-                { // Check if the target is 1
-                    // CHECK_THAT(prediction[j], WithinAbs(1.0f, 0.1f));
-                    if (prediction[j] > 0.95f)
-                    {
-                        correctPredictions++;
-                    }
-                    else
-                    {
-                        falsePredictions++;
-                    }
-                    totalPredictions++;
-                }
-                else
+                for (std::size_t j = 0; j < prediction.size(); j++)
                 {
-                    // CHECK_THAT(prediction[j], WithinAbs(0.0f, 0.1f));
-                    if (prediction[j] < 0.05f)
-                    {
-                        correctPredictions++;
+                    if (target[j] > 0.95f)
+                    { // Check if the target is 1
+                        // CHECK_THAT(prediction[j], WithinAbs(1.0f, 0.1f));
+                        if (prediction[j] > 0.95f)
+                        {
+                            correctPredictions++;
+                        }
+                        else
+                        {
+                            falsePredictions++;
+                        }
+                        totalPredictions++;
                     }
                     else
                     {
-                        falsePredictions++;
+                        // CHECK_THAT(prediction[j], WithinAbs(0.0f, 0.1f));
+                        if (prediction[j] < 0.05f)
+                        {
+                            correctPredictions++;
+                        }
+                        else
+                        {
+                            falsePredictions++;
+                        }
+                        totalPredictions++;
                     }
-                    totalPredictions++;
                 }
             }
         }
@@ -530,7 +533,7 @@ TEST_CASE("NeuronNetwork Learning digit data", "[backpropagation]")
         int nToCheck = 20;
         std::random_device rd;
         std::mt19937 gen(rd());
-        int min = 0, max = tts.testTargets.size() - 1;
+        int min = 0, max = tts.trainTargets.size() - 1;
         std::uniform_int_distribution<> dist(min, max);
 
         // Print the output mask for the network
@@ -549,6 +552,7 @@ TEST_CASE("NeuronNetwork Learning digit data", "[backpropagation]")
             std::vector<float> prediction = nn.feedForward(input);
 
             // Print the predictions
+            // printVector(target, "| ");
             printf("Prediction for target %.2f | ", targetValue);
             printVector(prediction, "\n");
 
@@ -610,7 +614,7 @@ TEST_CASE("NeuronNetwork Learning MNIST dataset", "[backpropagation]")
         nn.trainInputs2D(trainX2D, trainY2D, 1);
     });
 
-    nn.trainInputs2D(trainX2D, trainY2D, 100);
+    nn.trainInputs2D(trainX2D, trainY2D, 5);
 
     // Test the network
     unsigned int correctPredictions = 0;
