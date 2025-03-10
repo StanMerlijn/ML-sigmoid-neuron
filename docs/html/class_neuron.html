@@ -120,16 +120,6 @@ $(function(){initNavTree('class_neuron.html',''); initResizable(true); });
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="neuron_8hpp_source.html">neuron.hpp</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for Neuron:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_neuron__inherit__graph.png" border="0" usemap="#a_neuron_inherit__map" alt="Inheritance graph"/></div>
-<map name="a_neuron_inherit__map" id="a_neuron_inherit__map">
-<area shape="rect" title="Represents a single neuron in a neural network." alt="" coords="25,5,88,31"/>
-<area shape="rect" href="class_output_nueron.html" title=" " alt="" coords="5,79,108,105"/>
-<area shape="poly" title=" " alt="" coords="59,46,59,79,54,79,54,46"/>
-</map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -142,21 +132,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aac6704db680726e9a4cbc4574e8cd026" id="r_aac6704db680726e9a4cbc4574e8cd026"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac6704db680726e9a4cbc4574e8cd026">sigmoid</a> (float x)</td></tr>
 <tr class="memdesc:aac6704db680726e9a4cbc4574e8cd026"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the sigmoid activation function.  <br /></td></tr>
 <tr class="separator:aac6704db680726e9a4cbc4574e8cd026"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7ee42ccfd6fa5ff648e8919d3aa7cd7" id="r_ad7ee42ccfd6fa5ff648e8919d3aa7cd7"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7ee42ccfd6fa5ff648e8919d3aa7cd7">activate</a> (const std::vector&lt; float &gt; &amp;inputs)</td></tr>
-<tr class="memdesc:ad7ee42ccfd6fa5ff648e8919d3aa7cd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs an activation operation.  <br /></td></tr>
-<tr class="separator:ad7ee42ccfd6fa5ff648e8919d3aa7cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85d28e2e9ceed71073549b6fc7ac2a8d" id="r_a85d28e2e9ceed71073549b6fc7ac2a8d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85d28e2e9ceed71073549b6fc7ac2a8d">predict</a> (const std::vector&lt; float &gt; &amp;inputs)</td></tr>
-<tr class="memdesc:a85d28e2e9ceed71073549b6fc7ac2a8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a feedforward operation.  <br /></td></tr>
-<tr class="separator:a85d28e2e9ceed71073549b6fc7ac2a8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad764f9a5ac5e49f64b0a56692d0e9af8" id="r_ad764f9a5ac5e49f64b0a56692d0e9af8"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad764f9a5ac5e49f64b0a56692d0e9af8">activate</a> (const Eigen::VectorXf &amp;inputs)</td></tr>
+<tr class="memdesc:ad764f9a5ac5e49f64b0a56692d0e9af8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs an activation operation.  <br /></td></tr>
+<tr class="separator:ad764f9a5ac5e49f64b0a56692d0e9af8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa54c72420044013f7834c700fa6b8050" id="r_aa54c72420044013f7834c700fa6b8050"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa54c72420044013f7834c700fa6b8050">predict</a> (const Eigen::VectorXf &amp;inputs)</td></tr>
+<tr class="memdesc:aa54c72420044013f7834c700fa6b8050"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a feedforward operation.  <br /></td></tr>
+<tr class="separator:aa54c72420044013f7834c700fa6b8050"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ccf1bbe801cf556b9ac102ffac14709" id="r_a8ccf1bbe801cf556b9ac102ffac14709"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ccf1bbe801cf556b9ac102ffac14709">deltaError</a> (const std::vector&lt; float &gt; &amp;inputs, const std::vector&lt; <a class="el" href="class_neuron.html">Neuron</a> &gt; &amp;neuronsNextLayer, float target, bool isOutputNeuron)</td></tr>
 <tr class="memdesc:a8ccf1bbe801cf556b9ac102ffac14709"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates errors for the weights and bias of the neuron.  <br /></td></tr>
 <tr class="separator:a8ccf1bbe801cf556b9ac102ffac14709"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a782b3b728eee5097ab205a7a7990225b" id="r_a782b3b728eee5097ab205a7a7990225b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a782b3b728eee5097ab205a7a7990225b">update</a> ()</td></tr>
 <tr class="memdesc:a782b3b728eee5097ab205a7a7990225b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the weights and bias of the neuron. Using the previously calculated errors.  <br /></td></tr>
 <tr class="separator:a782b3b728eee5097ab205a7a7990225b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace94c2991170896f4ab673cf17d19ae9" id="r_ace94c2991170896f4ab673cf17d19ae9"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace94c2991170896f4ab673cf17d19ae9">computeHiddenDelta</a> (const std::vector&lt; float &gt; &amp;inputs, float sum)</td></tr>
-<tr class="memdesc:ace94c2991170896f4ab673cf17d19ae9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the error for the output layer.  <br /></td></tr>
-<tr class="separator:ace94c2991170896f4ab673cf17d19ae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa604b864669a38814d9763d2ab3874c0" id="r_aa604b864669a38814d9763d2ab3874c0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa604b864669a38814d9763d2ab3874c0">computeHiddenDelta</a> (float sum)</td></tr>
+<tr class="memdesc:aa604b864669a38814d9763d2ab3874c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the error for the output layer.  <br /></td></tr>
+<tr class="separator:aa604b864669a38814d9763d2ab3874c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54273186a0610f14caac64cf607f4664" id="r_a54273186a0610f14caac64cf607f4664"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54273186a0610f14caac64cf607f4664">sigmoidDerivative</a> (float output)</td></tr>
 <tr class="memdesc:a54273186a0610f14caac64cf607f4664"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the error for the hidden layer.  <br /></td></tr>
 <tr class="separator:a54273186a0610f14caac64cf607f4664"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -180,7 +170,7 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p>Represents a single neuron in a neural network. </p>
 <p>This class models a neuron with a set of weights and a bias. It provides methods to compute the sigmoid activation function and to perform a feedforward operation given a set of inputs. </p>
 
-<p class="definition">Definition at line <a class="el" href="neuron_8hpp_source.html#l00021">21</a> of file <a class="el" href="neuron_8hpp_source.html">neuron.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="neuron_8hpp_source.html#l00022">22</a> of file <a class="el" href="neuron_8hpp_source.html">neuron.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0c53df43dc72aefd546df3e0f49c4c1e" name="a0c53df43dc72aefd546df3e0f49c4c1e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0c53df43dc72aefd546df3e0f49c4c1e">&#9670;&#160;</a></span>Neuron() <span class="overload">[1/2]</span></h2>
@@ -208,7 +198,7 @@ Public Member Functions</h2></td></tr>
 
 <p>constructer <a class="el" href="class_neuron.html" title="Represents a single neuron in a neural network.">Neuron</a> object. </p>
 
-<p class="definition">Definition at line <a class="el" href="neuron_8cpp_source.html#l00013">13</a> of file <a class="el" href="neuron_8cpp_source.html">neuron.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="neuron_8cpp_source.html#l00021">21</a> of file <a class="el" href="neuron_8cpp_source.html">neuron.cpp</a>.</p>
 
 </div>
 </div>
@@ -245,7 +235,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="neuron_8cpp_source.html#l00026">26</a> of file <a class="el" href="neuron_8cpp_source.html">neuron.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="neuron_8cpp_source.html#l00038">38</a> of file <a class="el" href="neuron_8cpp_source.html">neuron.cpp</a>.</p>
 
 </div>
 </div>
@@ -267,12 +257,12 @@ Public Member Functions</h2></td></tr>
 
 <p>Prints the neuron details. </p>
 
-<p class="definition">Definition at line <a class="el" href="neuron_8cpp_source.html#l00086">86</a> of file <a class="el" href="neuron_8cpp_source.html">neuron.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="neuron_8cpp_source.html#l00097">97</a> of file <a class="el" href="neuron_8cpp_source.html">neuron.cpp</a>.</p>
 
 </div>
 </div>
-<a id="ad7ee42ccfd6fa5ff648e8919d3aa7cd7" name="ad7ee42ccfd6fa5ff648e8919d3aa7cd7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7ee42ccfd6fa5ff648e8919d3aa7cd7">&#9670;&#160;</a></span>activate()</h2>
+<a id="ad764f9a5ac5e49f64b0a56692d0e9af8" name="ad764f9a5ac5e49f64b0a56692d0e9af8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad764f9a5ac5e49f64b0a56692d0e9af8">&#9670;&#160;</a></span>activate()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -280,7 +270,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">float Neuron::activate </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; float &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>inputs</em></span></td><td>)</td>
+          <td class="paramtype">const Eigen::VectorXf &amp;</td>          <td class="paramname"><span class="paramname"><em>inputs</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -295,12 +285,12 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The output of the neuron after applying the weights, bias, and activation function. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="neuron_8cpp_source.html#l00035">35</a> of file <a class="el" href="neuron_8cpp_source.html">neuron.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="neuron_8cpp_source.html#l00047">47</a> of file <a class="el" href="neuron_8cpp_source.html">neuron.cpp</a>.</p>
 
 </div>
 </div>
-<a id="ace94c2991170896f4ab673cf17d19ae9" name="ace94c2991170896f4ab673cf17d19ae9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace94c2991170896f4ab673cf17d19ae9">&#9670;&#160;</a></span>computeHiddenDelta()</h2>
+<a id="aa604b864669a38814d9763d2ab3874c0" name="aa604b864669a38814d9763d2ab3874c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa604b864669a38814d9763d2ab3874c0">&#9670;&#160;</a></span>computeHiddenDelta()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -308,12 +298,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">float Neuron::computeHiddenDelta </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; float &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>inputs</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>sum</em></span></td><td>)</td>
           <td></td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>sum</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -328,7 +314,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The error for the ou tput layer. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="neuron_8cpp_source.html#l00069">69</a> of file <a class="el" href="neuron_8cpp_source.html">neuron.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="neuron_8cpp_source.html#l00080">80</a> of file <a class="el" href="neuron_8cpp_source.html">neuron.cpp</a>.</p>
 
 </div>
 </div>
@@ -357,7 +343,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The error for the output layer. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="neuron_8cpp_source.html#l00075">75</a> of file <a class="el" href="neuron_8cpp_source.html">neuron.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="neuron_8cpp_source.html#l00086">86</a> of file <a class="el" href="neuron_8cpp_source.html">neuron.cpp</a>.</p>
 
 </div>
 </div>
@@ -427,7 +413,7 @@ Public Member Functions</h2></td></tr>
 <p>Returns the bias of the neuron. </p>
 <dl class="section return"><dt>Returns</dt><dd>The bias value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="neuron_8hpp_source.html#l00111">111</a> of file <a class="el" href="neuron_8hpp_source.html">neuron.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="neuron_8hpp_source.html#l00118">118</a> of file <a class="el" href="neuron_8hpp_source.html">neuron.hpp</a>.</p>
 
 </div>
 </div>
@@ -457,7 +443,7 @@ Public Member Functions</h2></td></tr>
 <p>Returns the error of the neuron. </p>
 <dl class="section return"><dt>Returns</dt><dd>The error value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="neuron_8hpp_source.html#l00117">117</a> of file <a class="el" href="neuron_8hpp_source.html">neuron.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="neuron_8hpp_source.html#l00124">124</a> of file <a class="el" href="neuron_8hpp_source.html">neuron.hpp</a>.</p>
 
 </div>
 </div>
@@ -487,12 +473,12 @@ Public Member Functions</h2></td></tr>
 <p>Returns the weights of the neuron. </p>
 <dl class="section return"><dt>Returns</dt><dd>A vector of weights. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="neuron_8hpp_source.html#l00105">105</a> of file <a class="el" href="neuron_8hpp_source.html">neuron.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="neuron_8hpp_source.html#l00112">112</a> of file <a class="el" href="neuron_8hpp_source.html">neuron.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a85d28e2e9ceed71073549b6fc7ac2a8d" name="a85d28e2e9ceed71073549b6fc7ac2a8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a85d28e2e9ceed71073549b6fc7ac2a8d">&#9670;&#160;</a></span>predict()</h2>
+<a id="aa54c72420044013f7834c700fa6b8050" name="aa54c72420044013f7834c700fa6b8050"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa54c72420044013f7834c700fa6b8050">&#9670;&#160;</a></span>predict()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -500,7 +486,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">float Neuron::predict </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; float &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>inputs</em></span></td><td>)</td>
+          <td class="paramtype">const Eigen::VectorXf &amp;</td>          <td class="paramname"><span class="paramname"><em>inputs</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -515,7 +501,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The output of the neuron after applying the weights, bias, and activation function. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="neuron_8cpp_source.html#l00052">52</a> of file <a class="el" href="neuron_8cpp_source.html">neuron.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="neuron_8cpp_source.html#l00061">61</a> of file <a class="el" href="neuron_8cpp_source.html">neuron.cpp</a>.</p>
 
 </div>
 </div>
@@ -543,7 +529,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of the sigmoid function applied to x. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="neuron_8cpp_source.html#l00029">29</a> of file <a class="el" href="neuron_8cpp_source.html">neuron.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="neuron_8cpp_source.html#l00041">41</a> of file <a class="el" href="neuron_8cpp_source.html">neuron.cpp</a>.</p>
 
 </div>
 </div>
@@ -572,7 +558,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The error for the hidden layer. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="neuron_8cpp_source.html#l00081">81</a> of file <a class="el" href="neuron_8cpp_source.html">neuron.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="neuron_8cpp_source.html#l00092">92</a> of file <a class="el" href="neuron_8cpp_source.html">neuron.cpp</a>.</p>
 
 </div>
 </div>
@@ -593,7 +579,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Updates the weights and bias of the neuron. Using the previously calculated errors. </p>
 
-<p class="definition">Definition at line <a class="el" href="neuron_8cpp_source.html#l00058">58</a> of file <a class="el" href="neuron_8cpp_source.html">neuron.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="neuron_8cpp_source.html#l00067">67</a> of file <a class="el" href="neuron_8cpp_source.html">neuron.cpp</a>.</p>
 
 </div>
 </div>

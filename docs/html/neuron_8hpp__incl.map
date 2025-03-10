@@ -1,19 +1,21 @@
 <map id="neuron.hpp" name="neuron.hpp">
-<area shape="rect" id="Node000001" title="In this file the Neuron class is declared. This class represents a single neuron in a neural network." alt="" coords="274,5,360,31"/>
-<area shape="rect" id="Node000002" href="$common_8hpp.html" title="In this file the common utilities are defined." alt="" coords="269,79,365,105"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="320,31,320,63,314,63,314,31"/>
+<area shape="rect" id="Node000001" title="In this file the Neuron class is declared. This class represents a single neuron in a neural network." alt="" coords="314,5,400,31"/>
+<area shape="rect" id="Node000002" href="$common_8hpp.html" title="In this file the common utilities are defined." alt="" coords="309,79,405,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="360,31,360,63,354,63,354,31"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,153,77,178"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="271,108,92,154,91,149,270,103"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="309,106,92,155,91,149,308,101"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="101,153,176,178"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="288,108,184,149,182,144,286,103"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="321,108,191,150,189,145,319,103"/>
 <area shape="rect" id="Node000005" title=" " alt="" coords="200,153,264,178"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="304,107,259,145,256,141,301,103"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="337,108,267,147,265,142,334,103"/>
 <area shape="rect" id="Node000006" title=" " alt="" coords="288,153,346,178"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="320,105,320,137,314,137,314,105"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="353,106,333,140,329,138,348,104"/>
 <area shape="rect" id="Node000007" title=" " alt="" coords="370,153,427,178"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="333,103,375,140,372,144,329,107"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="366,104,386,138,381,141,362,106"/>
 <area shape="rect" id="Node000008" title=" " alt="" coords="452,153,505,178"/>
-<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="345,103,439,144,436,149,343,108"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="379,103,446,142,443,147,376,108"/>
 <area shape="rect" id="Node000009" title=" " alt="" coords="530,153,590,178"/>
-<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="359,103,516,148,514,154,357,108"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="392,103,516,146,514,151,390,108"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="614,153,710,178"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="406,102,600,147,598,152,405,107"/>
 </map>

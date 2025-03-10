@@ -115,116 +115,127 @@ $(function(){initNavTree('neuron_8cpp_source.html',''); initResizable(true); });
 <a href="neuron_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="neuron_8hpp.html">header/neuron.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_neuron.html#a0c53df43dc72aefd546df3e0f49c4c1e">   13</a></span><a class="code hl_function" href="class_neuron.html#a0c53df43dc72aefd546df3e0f49c4c1e">Neuron::Neuron</a>(<span class="keywordtype">int</span> nSizeWeights, <span class="keywordtype">float</span> initialWeight, <span class="keywordtype">float</span> initialBias)</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{   </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="comment">// Initialize the weights and bias</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    _weights = std::vector&lt;float&gt;(nSizeWeights, initialWeight);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    _lastInput.reserve(nSizeWeights);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="comment">// Initialize the delta and learning rate</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    _delta = 0.0f;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    _bias = initialBias;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    _learningRate = 0.5f;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    _lastOutput = 0.0f;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>}</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * TODO LIST:</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * - Implement the Eigen library for the Neuron class.</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * - fix utiliszation of lastinput and lastoutput</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> * - Implement the update function with Eigen</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> * - Implement the deltaError function with Eigen</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="}">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_neuron.html#a0c53df43dc72aefd546df3e0f49c4c1e">   21</a></span><a class="code hl_function" href="class_neuron.html#a0c53df43dc72aefd546df3e0f49c4c1e">Neuron::Neuron</a>(<span class="keywordtype">int</span> nSizeWeights, <span class="keywordtype">float</span> initialWeight, <span class="keywordtype">float</span> initialBias)</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="comment">// Initialize the weights and bias</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    _weights = std::vector&lt;float&gt;(nSizeWeights, initialWeight);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    e_weights = Eigen::VectorXf::Constant(nSizeWeights, initialWeight);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    e_lastInput = Eigen::VectorXf::Constant(nSizeWeights, 0.0f);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    _lastInput.reserve(nSizeWeights);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="comment">// Initialize the delta and learning rate</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    _nSizeWeights = nSizeWeights;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    _delta = 0.0f;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    _bias = initialBias;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    _learningRate = 0.5f;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    _lastOutput = 0.0f;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
 </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="foldopen" id="foldopen00026" data-start="{" data-end="}">
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_neuron.html#ae75135d2bfe2dd558db1d0a2d059ecc2">   26</a></span><a class="code hl_function" href="class_neuron.html#a0c53df43dc72aefd546df3e0f49c4c1e">Neuron::Neuron</a>(<span class="keyword">const</span> std::vector&lt;float&gt;&amp; weights, <span class="keywordtype">float</span> bias, <span class="keywordtype">float</span> learningRate) </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    : _weights(weights), _bias(bias), _learningRate(learningRate) {}</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="foldopen" id="foldopen00038" data-start="{" data-end="}">
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="class_neuron.html#ae75135d2bfe2dd558db1d0a2d059ecc2">   38</a></span><a class="code hl_function" href="class_neuron.html#a0c53df43dc72aefd546df3e0f49c4c1e">Neuron::Neuron</a>(<span class="keyword">const</span> std::vector&lt;float&gt; &amp;weights, <span class="keywordtype">float</span> bias, <span class="keywordtype">float</span> learningRate)</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    : _weights(weights), _bias(bias), _learningRate(learningRate) {}</div>
 </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_neuron.html#aac6704db680726e9a4cbc4574e8cd026">   29</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="class_neuron.html#aac6704db680726e9a4cbc4574e8cd026">Neuron::sigmoid</a>(<span class="keywordtype">float</span> x)</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>{</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="comment">// Sigmoid activation function</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">return</span> 1 / (1 + exp(-x));    </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
-</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_neuron.html#ad7ee42ccfd6fa5ff648e8919d3aa7cd7">   35</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="class_neuron.html#ad7ee42ccfd6fa5ff648e8919d3aa7cd7">Neuron::activate</a>(<span class="keyword">const</span> std::vector&lt;float&gt;&amp; inputs)</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>{</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="comment">// Calculate the weighted sum of the inputs</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    _lastInput = inputs;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">float</span> weightedSum = _bias;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="comment">// Dot product of the weights and inputs</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; _weights.size(); i++)</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    {</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        weightedSum += _weights[i] * inputs[i];</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    }</div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_neuron.html#aac6704db680726e9a4cbc4574e8cd026">   41</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="class_neuron.html#aac6704db680726e9a4cbc4574e8cd026">Neuron::sigmoid</a>(<span class="keywordtype">float</span> x)</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>{</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="comment">// Sigmoid activation function</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordflow">return</span> 1 / (1 + std::exp(-x));</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>}</div>
+</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="comment">// Return the result of the sigmoid function</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    _lastOutput = <a class="code hl_function" href="class_neuron.html#aac6704db680726e9a4cbc4574e8cd026">sigmoid</a>(weightedSum);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">return</span> _lastOutput;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}</div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_neuron.html#ad764f9a5ac5e49f64b0a56692d0e9af8">   47</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="class_neuron.html#ad764f9a5ac5e49f64b0a56692d0e9af8">Neuron::activate</a>(<span class="keyword">const</span> Eigen::VectorXf &amp;inputs)</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>{</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="comment">// Calculate the weighted sum of the inputs</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    e_lastInput = inputs;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    e_weights = Eigen::Map&lt;Eigen::VectorXf&gt;(_weights.data(), _weights.size());</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="comment">// Calculate the weighted sum of the inputs</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">float</span> weightedSum = _bias + e_weights.dot(inputs);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="comment">// Return the result of the sigmoid function</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    _lastOutput = <a class="code hl_function" href="class_neuron.html#aac6704db680726e9a4cbc4574e8cd026">sigmoid</a>(weightedSum);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">return</span> _lastOutput;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
 </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_neuron.html#a85d28e2e9ceed71073549b6fc7ac2a8d">   52</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="class_neuron.html#a85d28e2e9ceed71073549b6fc7ac2a8d">Neuron::predict</a>(<span class="keyword">const</span> std::vector&lt;float&gt;&amp; inputs)</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>{</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="comment">// Return 1 if the result is greater than 0.5, otherwise return 0(threshold)</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">return</span> (<a class="code hl_function" href="class_neuron.html#ad7ee42ccfd6fa5ff648e8919d3aa7cd7">activate</a>(inputs) &gt; 0.5) ? 1 : 0;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="}">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="class_neuron.html#aa54c72420044013f7834c700fa6b8050">   61</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="class_neuron.html#aa54c72420044013f7834c700fa6b8050">Neuron::predict</a>(<span class="keyword">const</span> Eigen::VectorXf &amp;inputs)</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>{</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="comment">// Return 1 if the result is greater than 0.5, otherwise return 0(threshold)</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">return</span> (<a class="code hl_function" href="class_neuron.html#ad764f9a5ac5e49f64b0a56692d0e9af8">activate</a>(inputs) &gt; 0.5) ? 1 : 0;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>}</div>
 </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="foldopen" id="foldopen00058" data-start="{" data-end="}">
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="class_neuron.html#a782b3b728eee5097ab205a7a7990225b">   58</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_neuron.html#a782b3b728eee5097ab205a7a7990225b">Neuron::update</a>()</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>{</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="comment">// Update the weights and bias</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; _weights.size(); i++)</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    {</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        _weights[i] -= _learningRate * _lastInput[i] * _delta;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    }</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="comment">// Update the bias</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    _bias -= _learningRate * _delta;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>}</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="foldopen" id="foldopen00067" data-start="{" data-end="}">
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_neuron.html#a782b3b728eee5097ab205a7a7990225b">   67</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_neuron.html#a782b3b728eee5097ab205a7a7990225b">Neuron::update</a>()</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>{</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="comment">// Update the weights and bias</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordtype">float</span> error = _learningRate * _delta;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; _nSizeWeights; i++)</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        _weights[i] -= e_lastInput[i] * error;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="comment">// Update the bias</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    _bias -= error;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>}</div>
 </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="class_neuron.html#ace94c2991170896f4ab673cf17d19ae9">   69</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="class_neuron.html#ace94c2991170896f4ab673cf17d19ae9">Neuron::computeHiddenDelta</a>(<span class="keyword">const</span> std::vector&lt;float&gt;&amp; inputs, <span class="keywordtype">float</span> sum)</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>{</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    _delta = <a class="code hl_function" href="class_neuron.html#a54273186a0610f14caac64cf607f4664">sigmoidDerivative</a>(_lastOutput) * sum;;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordflow">return</span> _delta;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>}</div>
-</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="foldopen" id="foldopen00075" data-start="{" data-end="}">
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="class_neuron.html#a37509a0aef7fe8818501300608ad2d81">   75</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="class_neuron.html#a37509a0aef7fe8818501300608ad2d81">Neuron::computeOutputDelta</a>(<span class="keywordtype">float</span> target)</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>{</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    _delta = <a class="code hl_function" href="class_neuron.html#a54273186a0610f14caac64cf607f4664">sigmoidDerivative</a>(_lastOutput) * -(target - _lastOutput);</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordflow">return</span> _delta;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>}</div>
-</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="foldopen" id="foldopen00081" data-start="{" data-end="}">
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="class_neuron.html#a54273186a0610f14caac64cf607f4664">   81</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="class_neuron.html#a54273186a0610f14caac64cf607f4664">Neuron::sigmoidDerivative</a>(<span class="keywordtype">float</span> output)</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>{</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordflow">return</span> output * (1 - output);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="foldopen" id="foldopen00080" data-start="{" data-end="}">
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="class_neuron.html#aa604b864669a38814d9763d2ab3874c0">   80</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="class_neuron.html#aa604b864669a38814d9763d2ab3874c0">Neuron::computeHiddenDelta</a>(<span class="keywordtype">float</span> sum)</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>{</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    _delta = <a class="code hl_function" href="class_neuron.html#a54273186a0610f14caac64cf607f4664">sigmoidDerivative</a>(_lastOutput) * sum;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordflow">return</span> _delta;</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>}</div>
 </div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
 <div class="foldopen" id="foldopen00086" data-start="{" data-end="}">
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="class_neuron.html#a5cf2529f3b2b8dae59ee87239ab5f62c">   86</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_neuron.html#a5cf2529f3b2b8dae59ee87239ab5f62c">Neuron::__str__</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="keyword"></span>{   </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="comment">// Print the neuron details</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    printf(<span class="stringliteral">&quot;\nNeurons with %zu weights: &quot;</span>, _weights.size());</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <a class="code hl_function" href="common_8hpp.html#ae976f686650de7a8df93bc16d4929d1c">printVector</a>(_weights);</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    printf(<span class="stringliteral">&quot;| Bias = %f | Learning rate = %f&quot;</span>, _bias, _learningRate);</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>}</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="class_neuron.html#a37509a0aef7fe8818501300608ad2d81">   86</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="class_neuron.html#a37509a0aef7fe8818501300608ad2d81">Neuron::computeOutputDelta</a>(<span class="keywordtype">float</span> target)</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>{</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    _delta = <a class="code hl_function" href="class_neuron.html#a54273186a0610f14caac64cf607f4664">sigmoidDerivative</a>(_lastOutput) * -(target - _lastOutput);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordflow">return</span> _delta;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>}</div>
 </div>
-<div class="ttc" id="aclass_neuron_html_a0c53df43dc72aefd546df3e0f49c4c1e"><div class="ttname"><a href="class_neuron.html#a0c53df43dc72aefd546df3e0f49c4c1e">Neuron::Neuron</a></div><div class="ttdeci">Neuron(int nSizeWeights, float initialWeight, float initialBias)</div><div class="ttdoc">constructer Neuron object.</div><div class="ttdef"><b>Definition</b> <a href="#l00013">neuron.cpp:13</a></div></div>
-<div class="ttc" id="aclass_neuron_html_a37509a0aef7fe8818501300608ad2d81"><div class="ttname"><a href="class_neuron.html#a37509a0aef7fe8818501300608ad2d81">Neuron::computeOutputDelta</a></div><div class="ttdeci">float computeOutputDelta(float target)</div><div class="ttdoc">Calculates the error for the output layer.</div><div class="ttdef"><b>Definition</b> <a href="#l00075">neuron.cpp:75</a></div></div>
-<div class="ttc" id="aclass_neuron_html_a54273186a0610f14caac64cf607f4664"><div class="ttname"><a href="class_neuron.html#a54273186a0610f14caac64cf607f4664">Neuron::sigmoidDerivative</a></div><div class="ttdeci">float sigmoidDerivative(float output)</div><div class="ttdoc">Calculates the error for the hidden layer.</div><div class="ttdef"><b>Definition</b> <a href="#l00081">neuron.cpp:81</a></div></div>
-<div class="ttc" id="aclass_neuron_html_a5cf2529f3b2b8dae59ee87239ab5f62c"><div class="ttname"><a href="class_neuron.html#a5cf2529f3b2b8dae59ee87239ab5f62c">Neuron::__str__</a></div><div class="ttdeci">void __str__() const</div><div class="ttdoc">Prints the neuron details.</div><div class="ttdef"><b>Definition</b> <a href="#l00086">neuron.cpp:86</a></div></div>
-<div class="ttc" id="aclass_neuron_html_a782b3b728eee5097ab205a7a7990225b"><div class="ttname"><a href="class_neuron.html#a782b3b728eee5097ab205a7a7990225b">Neuron::update</a></div><div class="ttdeci">void update()</div><div class="ttdoc">Updates the weights and bias of the neuron. Using the previously calculated errors.</div><div class="ttdef"><b>Definition</b> <a href="#l00058">neuron.cpp:58</a></div></div>
-<div class="ttc" id="aclass_neuron_html_a85d28e2e9ceed71073549b6fc7ac2a8d"><div class="ttname"><a href="class_neuron.html#a85d28e2e9ceed71073549b6fc7ac2a8d">Neuron::predict</a></div><div class="ttdeci">float predict(const std::vector&lt; float &gt; &amp;inputs)</div><div class="ttdoc">Performs a feedforward operation.</div><div class="ttdef"><b>Definition</b> <a href="#l00052">neuron.cpp:52</a></div></div>
-<div class="ttc" id="aclass_neuron_html_aac6704db680726e9a4cbc4574e8cd026"><div class="ttname"><a href="class_neuron.html#aac6704db680726e9a4cbc4574e8cd026">Neuron::sigmoid</a></div><div class="ttdeci">float sigmoid(float x)</div><div class="ttdoc">Computes the sigmoid activation function.</div><div class="ttdef"><b>Definition</b> <a href="#l00029">neuron.cpp:29</a></div></div>
-<div class="ttc" id="aclass_neuron_html_ace94c2991170896f4ab673cf17d19ae9"><div class="ttname"><a href="class_neuron.html#ace94c2991170896f4ab673cf17d19ae9">Neuron::computeHiddenDelta</a></div><div class="ttdeci">float computeHiddenDelta(const std::vector&lt; float &gt; &amp;inputs, float sum)</div><div class="ttdoc">Calculates the error for the output layer.</div><div class="ttdef"><b>Definition</b> <a href="#l00069">neuron.cpp:69</a></div></div>
-<div class="ttc" id="aclass_neuron_html_ad7ee42ccfd6fa5ff648e8919d3aa7cd7"><div class="ttname"><a href="class_neuron.html#ad7ee42ccfd6fa5ff648e8919d3aa7cd7">Neuron::activate</a></div><div class="ttdeci">float activate(const std::vector&lt; float &gt; &amp;inputs)</div><div class="ttdoc">Performs an activation operation.</div><div class="ttdef"><b>Definition</b> <a href="#l00035">neuron.cpp:35</a></div></div>
-<div class="ttc" id="acommon_8hpp_html_ae976f686650de7a8df93bc16d4929d1c"><div class="ttname"><a href="common_8hpp.html#ae976f686650de7a8df93bc16d4929d1c">printVector</a></div><div class="ttdeci">void printVector(const std::vector&lt; T &gt; &amp;vec, const std::string extra=&quot;&quot;)</div><div class="ttdoc">This function prints the elements of a vector to the console.</div><div class="ttdef"><b>Definition</b> <a href="common_8hpp_source.html#l00137">common.hpp:137</a></div></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="foldopen" id="foldopen00092" data-start="{" data-end="}">
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="class_neuron.html#a54273186a0610f14caac64cf607f4664">   92</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="class_neuron.html#a54273186a0610f14caac64cf607f4664">Neuron::sigmoidDerivative</a>(<span class="keywordtype">float</span> output)</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>{</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">return</span> output * (1 - output);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}</div>
+</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="foldopen" id="foldopen00097" data-start="{" data-end="}">
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="class_neuron.html#a5cf2529f3b2b8dae59ee87239ab5f62c">   97</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_neuron.html#a5cf2529f3b2b8dae59ee87239ab5f62c">Neuron::__str__</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="comment">// Print the neuron details</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    printf(<span class="stringliteral">&quot;\nNeurons with %zu weights: &quot;</span>, _weights.size());</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <a class="code hl_function" href="common_8hpp.html#ae976f686650de7a8df93bc16d4929d1c">printVector</a>(_weights);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    printf(<span class="stringliteral">&quot;| Bias = %f | Learning rate = %f&quot;</span>, _bias, _learningRate);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>}</div>
+</div>
+<div class="ttc" id="aclass_neuron_html_a0c53df43dc72aefd546df3e0f49c4c1e"><div class="ttname"><a href="class_neuron.html#a0c53df43dc72aefd546df3e0f49c4c1e">Neuron::Neuron</a></div><div class="ttdeci">Neuron(int nSizeWeights, float initialWeight, float initialBias)</div><div class="ttdoc">constructer Neuron object.</div><div class="ttdef"><b>Definition</b> <a href="#l00021">neuron.cpp:21</a></div></div>
+<div class="ttc" id="aclass_neuron_html_a37509a0aef7fe8818501300608ad2d81"><div class="ttname"><a href="class_neuron.html#a37509a0aef7fe8818501300608ad2d81">Neuron::computeOutputDelta</a></div><div class="ttdeci">float computeOutputDelta(float target)</div><div class="ttdoc">Calculates the error for the output layer.</div><div class="ttdef"><b>Definition</b> <a href="#l00086">neuron.cpp:86</a></div></div>
+<div class="ttc" id="aclass_neuron_html_a54273186a0610f14caac64cf607f4664"><div class="ttname"><a href="class_neuron.html#a54273186a0610f14caac64cf607f4664">Neuron::sigmoidDerivative</a></div><div class="ttdeci">float sigmoidDerivative(float output)</div><div class="ttdoc">Calculates the error for the hidden layer.</div><div class="ttdef"><b>Definition</b> <a href="#l00092">neuron.cpp:92</a></div></div>
+<div class="ttc" id="aclass_neuron_html_a5cf2529f3b2b8dae59ee87239ab5f62c"><div class="ttname"><a href="class_neuron.html#a5cf2529f3b2b8dae59ee87239ab5f62c">Neuron::__str__</a></div><div class="ttdeci">void __str__() const</div><div class="ttdoc">Prints the neuron details.</div><div class="ttdef"><b>Definition</b> <a href="#l00097">neuron.cpp:97</a></div></div>
+<div class="ttc" id="aclass_neuron_html_a782b3b728eee5097ab205a7a7990225b"><div class="ttname"><a href="class_neuron.html#a782b3b728eee5097ab205a7a7990225b">Neuron::update</a></div><div class="ttdeci">void update()</div><div class="ttdoc">Updates the weights and bias of the neuron. Using the previously calculated errors.</div><div class="ttdef"><b>Definition</b> <a href="#l00067">neuron.cpp:67</a></div></div>
+<div class="ttc" id="aclass_neuron_html_aa54c72420044013f7834c700fa6b8050"><div class="ttname"><a href="class_neuron.html#aa54c72420044013f7834c700fa6b8050">Neuron::predict</a></div><div class="ttdeci">float predict(const Eigen::VectorXf &amp;inputs)</div><div class="ttdoc">Performs a feedforward operation.</div><div class="ttdef"><b>Definition</b> <a href="#l00061">neuron.cpp:61</a></div></div>
+<div class="ttc" id="aclass_neuron_html_aa604b864669a38814d9763d2ab3874c0"><div class="ttname"><a href="class_neuron.html#aa604b864669a38814d9763d2ab3874c0">Neuron::computeHiddenDelta</a></div><div class="ttdeci">float computeHiddenDelta(float sum)</div><div class="ttdoc">Calculates the error for the output layer.</div><div class="ttdef"><b>Definition</b> <a href="#l00080">neuron.cpp:80</a></div></div>
+<div class="ttc" id="aclass_neuron_html_aac6704db680726e9a4cbc4574e8cd026"><div class="ttname"><a href="class_neuron.html#aac6704db680726e9a4cbc4574e8cd026">Neuron::sigmoid</a></div><div class="ttdeci">float sigmoid(float x)</div><div class="ttdoc">Computes the sigmoid activation function.</div><div class="ttdef"><b>Definition</b> <a href="#l00041">neuron.cpp:41</a></div></div>
+<div class="ttc" id="aclass_neuron_html_ad764f9a5ac5e49f64b0a56692d0e9af8"><div class="ttname"><a href="class_neuron.html#ad764f9a5ac5e49f64b0a56692d0e9af8">Neuron::activate</a></div><div class="ttdeci">float activate(const Eigen::VectorXf &amp;inputs)</div><div class="ttdoc">Performs an activation operation.</div><div class="ttdef"><b>Definition</b> <a href="#l00047">neuron.cpp:47</a></div></div>
+<div class="ttc" id="acommon_8hpp_html_ae976f686650de7a8df93bc16d4929d1c"><div class="ttname"><a href="common_8hpp.html#ae976f686650de7a8df93bc16d4929d1c">printVector</a></div><div class="ttdeci">void printVector(const std::vector&lt; T &gt; &amp;vec, const std::string extra=&quot;&quot;)</div><div class="ttdoc">This function prints the elements of a vector to the console.</div><div class="ttdef"><b>Definition</b> <a href="common_8hpp_source.html#l00132">common.hpp:132</a></div></div>
 <div class="ttc" id="aneuron_8hpp_html"><div class="ttname"><a href="neuron_8hpp.html">neuron.hpp</a></div><div class="ttdoc">In this file the Neuron class is declared. This class represents a single neuron in a neural network.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

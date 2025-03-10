@@ -6,7 +6,7 @@
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="231,42,257,77,253,80,227,45"/>
 <area shape="rect" id="Node000005" href="$test_8cpp.html" title="In this file the tests for the Neuron, NeuronLayer and NeuronNetwork classes are implemented." alt="" coords="104,153,172,178"/>
 <area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="201,46,147,153,142,151,196,44"/>
-<area shape="rect" id="Node000006" href="$test_backpropagation_8cpp_source.html" title=" " alt="" coords="354,153,520,178"/>
+<area shape="rect" id="Node000006" href="$test_backpropagation_8cpp.html" title="In this file the tests for Backpropagation are implemented." alt="" coords="354,153,520,178"/>
 <area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="260,35,302,53,344,77,392,115,428,151,424,154,389,119,341,81,299,58,258,39"/>
 <area shape="rect" id="Node000004" href="$neuron_network_8cpp.html" title="In this file the NeuronNetwork class is implemented." alt="" coords="196,153,331,178"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="266,120,266,152,261,152,261,120"/>

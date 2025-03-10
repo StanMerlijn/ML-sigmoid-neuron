@@ -9,15 +9,6 @@ Represents a single neuron in a neural network.
 
 {\ttfamily \#include $<$neuron.\+hpp$>$}
 
-
-
-Inheritance diagram for Neuron\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=157pt]{class_neuron__inherit__graph}
-\end{center}
-\end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -27,15 +18,15 @@ Inheritance diagram for Neuron\+:\nopagebreak
 \begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_neuron}{Neuron} with the given weights and bias. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{class_neuron_aac6704db680726e9a4cbc4574e8cd026}{sigmoid}} (float x)
 \begin{DoxyCompactList}\small\item\em Computes the sigmoid activation function. \end{DoxyCompactList}\item 
-float \mbox{\hyperlink{class_neuron_ad7ee42ccfd6fa5ff648e8919d3aa7cd7}{activate}} (const std\+::vector$<$ float $>$ \&inputs)
+float \mbox{\hyperlink{class_neuron_ad764f9a5ac5e49f64b0a56692d0e9af8}{activate}} (const Eigen\+::\+Vector\+Xf \&inputs)
 \begin{DoxyCompactList}\small\item\em Performs an activation operation. \end{DoxyCompactList}\item 
-float \mbox{\hyperlink{class_neuron_a85d28e2e9ceed71073549b6fc7ac2a8d}{predict}} (const std\+::vector$<$ float $>$ \&inputs)
+float \mbox{\hyperlink{class_neuron_aa54c72420044013f7834c700fa6b8050}{predict}} (const Eigen\+::\+Vector\+Xf \&inputs)
 \begin{DoxyCompactList}\small\item\em Performs a feedforward operation. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_neuron_a8ccf1bbe801cf556b9ac102ffac14709}{delta\+Error}} (const std\+::vector$<$ float $>$ \&inputs, const std\+::vector$<$ \mbox{\hyperlink{class_neuron}{Neuron}} $>$ \&neurons\+Next\+Layer, float target, bool is\+Output\+Neuron)
 \begin{DoxyCompactList}\small\item\em Calculates errors for the weights and bias of the neuron. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_neuron_a782b3b728eee5097ab205a7a7990225b}{update}} ()
 \begin{DoxyCompactList}\small\item\em Updates the weights and bias of the neuron. Using the previously calculated errors. \end{DoxyCompactList}\item 
-float \mbox{\hyperlink{class_neuron_ace94c2991170896f4ab673cf17d19ae9}{compute\+Hidden\+Delta}} (const std\+::vector$<$ float $>$ \&inputs, float sum)
+float \mbox{\hyperlink{class_neuron_aa604b864669a38814d9763d2ab3874c0}{compute\+Hidden\+Delta}} (float sum)
 \begin{DoxyCompactList}\small\item\em Calculates the error for the output layer. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{class_neuron_a54273186a0610f14caac64cf607f4664}{sigmoid\+Derivative}} (float output)
 \begin{DoxyCompactList}\small\item\em Calculates the error for the hidden layer. \end{DoxyCompactList}\item 
@@ -56,7 +47,7 @@ Represents a single neuron in a neural network.
 
 This class models a neuron with a set of weights and a bias. It provides methods to compute the sigmoid activation function and to perform a feedforward operation given a set of inputs. 
 
-Definition at line \mbox{\hyperlink{neuron_8hpp_source_l00021}{21}} of file \mbox{\hyperlink{neuron_8hpp_source}{neuron.\+hpp}}.
+Definition at line \mbox{\hyperlink{neuron_8hpp_source_l00022}{22}} of file \mbox{\hyperlink{neuron_8hpp_source}{neuron.\+hpp}}.
 
 
 
@@ -73,7 +64,7 @@ constructer \doxylink{class_neuron}{Neuron} object.
 
 
 
-Definition at line \mbox{\hyperlink{neuron_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{neuron_8cpp_source}{neuron.\+cpp}}.
+Definition at line \mbox{\hyperlink{neuron_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{neuron_8cpp_source}{neuron.\+cpp}}.
 
 \Hypertarget{class_neuron_ae75135d2bfe2dd558db1d0a2d059ecc2}\index{Neuron@{Neuron}!Neuron@{Neuron}}
 \index{Neuron@{Neuron}!Neuron@{Neuron}}
@@ -94,7 +85,7 @@ Constructs a \doxylink{class_neuron}{Neuron} with the given weights and bias.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{neuron_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{neuron_8cpp_source}{neuron.\+cpp}}.
+Definition at line \mbox{\hyperlink{neuron_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{neuron_8cpp_source}{neuron.\+cpp}}.
 
 
 
@@ -111,13 +102,13 @@ Prints the neuron details.
 
 
 
-Definition at line \mbox{\hyperlink{neuron_8cpp_source_l00086}{86}} of file \mbox{\hyperlink{neuron_8cpp_source}{neuron.\+cpp}}.
+Definition at line \mbox{\hyperlink{neuron_8cpp_source_l00097}{97}} of file \mbox{\hyperlink{neuron_8cpp_source}{neuron.\+cpp}}.
 
-\Hypertarget{class_neuron_ad7ee42ccfd6fa5ff648e8919d3aa7cd7}\index{Neuron@{Neuron}!activate@{activate}}
+\Hypertarget{class_neuron_ad764f9a5ac5e49f64b0a56692d0e9af8}\index{Neuron@{Neuron}!activate@{activate}}
 \index{activate@{activate}!Neuron@{Neuron}}
 \doxysubsubsection{\texorpdfstring{activate()}{activate()}}
-{\footnotesize\ttfamily \label{class_neuron_ad7ee42ccfd6fa5ff648e8919d3aa7cd7} 
-float Neuron\+::activate (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{inputs}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_neuron_ad764f9a5ac5e49f64b0a56692d0e9af8} 
+float Neuron\+::activate (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xf \&}]{inputs}{}\end{DoxyParamCaption})}
 
 
 
@@ -133,13 +124,13 @@ The output of the neuron after applying the weights, bias, and activation functi
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{neuron_8cpp_source_l00035}{35}} of file \mbox{\hyperlink{neuron_8cpp_source}{neuron.\+cpp}}.
+Definition at line \mbox{\hyperlink{neuron_8cpp_source_l00047}{47}} of file \mbox{\hyperlink{neuron_8cpp_source}{neuron.\+cpp}}.
 
-\Hypertarget{class_neuron_ace94c2991170896f4ab673cf17d19ae9}\index{Neuron@{Neuron}!computeHiddenDelta@{computeHiddenDelta}}
+\Hypertarget{class_neuron_aa604b864669a38814d9763d2ab3874c0}\index{Neuron@{Neuron}!computeHiddenDelta@{computeHiddenDelta}}
 \index{computeHiddenDelta@{computeHiddenDelta}!Neuron@{Neuron}}
 \doxysubsubsection{\texorpdfstring{computeHiddenDelta()}{computeHiddenDelta()}}
-{\footnotesize\ttfamily \label{class_neuron_ace94c2991170896f4ab673cf17d19ae9} 
-float Neuron\+::compute\+Hidden\+Delta (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{inputs}{, }\item[{float}]{sum}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_neuron_aa604b864669a38814d9763d2ab3874c0} 
+float Neuron\+::compute\+Hidden\+Delta (\begin{DoxyParamCaption}\item[{float}]{sum}{}\end{DoxyParamCaption})}
 
 
 
@@ -157,7 +148,7 @@ The error for the ou tput layer.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{neuron_8cpp_source_l00069}{69}} of file \mbox{\hyperlink{neuron_8cpp_source}{neuron.\+cpp}}.
+Definition at line \mbox{\hyperlink{neuron_8cpp_source_l00080}{80}} of file \mbox{\hyperlink{neuron_8cpp_source}{neuron.\+cpp}}.
 
 \Hypertarget{class_neuron_a37509a0aef7fe8818501300608ad2d81}\index{Neuron@{Neuron}!computeOutputDelta@{computeOutputDelta}}
 \index{computeOutputDelta@{computeOutputDelta}!Neuron@{Neuron}}
@@ -181,7 +172,7 @@ The error for the output layer.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{neuron_8cpp_source_l00075}{75}} of file \mbox{\hyperlink{neuron_8cpp_source}{neuron.\+cpp}}.
+Definition at line \mbox{\hyperlink{neuron_8cpp_source_l00086}{86}} of file \mbox{\hyperlink{neuron_8cpp_source}{neuron.\+cpp}}.
 
 \Hypertarget{class_neuron_a8ccf1bbe801cf556b9ac102ffac14709}\index{Neuron@{Neuron}!deltaError@{deltaError}}
 \index{deltaError@{deltaError}!Neuron@{Neuron}}
@@ -215,7 +206,7 @@ The bias value.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{neuron_8hpp_source_l00111}{111}} of file \mbox{\hyperlink{neuron_8hpp_source}{neuron.\+hpp}}.
+Definition at line \mbox{\hyperlink{neuron_8hpp_source_l00118}{118}} of file \mbox{\hyperlink{neuron_8hpp_source}{neuron.\+hpp}}.
 
 \Hypertarget{class_neuron_a12b3d55099d75b508bbcd305b5dc70fc}\index{Neuron@{Neuron}!getError@{getError}}
 \index{getError@{getError}!Neuron@{Neuron}}
@@ -232,7 +223,7 @@ The error value.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{neuron_8hpp_source_l00117}{117}} of file \mbox{\hyperlink{neuron_8hpp_source}{neuron.\+hpp}}.
+Definition at line \mbox{\hyperlink{neuron_8hpp_source_l00124}{124}} of file \mbox{\hyperlink{neuron_8hpp_source}{neuron.\+hpp}}.
 
 \Hypertarget{class_neuron_a2e739b9d6960c907b0f4de14de8f93ba}\index{Neuron@{Neuron}!getWeights@{getWeights}}
 \index{getWeights@{getWeights}!Neuron@{Neuron}}
@@ -249,13 +240,13 @@ A vector of weights.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{neuron_8hpp_source_l00105}{105}} of file \mbox{\hyperlink{neuron_8hpp_source}{neuron.\+hpp}}.
+Definition at line \mbox{\hyperlink{neuron_8hpp_source_l00112}{112}} of file \mbox{\hyperlink{neuron_8hpp_source}{neuron.\+hpp}}.
 
-\Hypertarget{class_neuron_a85d28e2e9ceed71073549b6fc7ac2a8d}\index{Neuron@{Neuron}!predict@{predict}}
+\Hypertarget{class_neuron_aa54c72420044013f7834c700fa6b8050}\index{Neuron@{Neuron}!predict@{predict}}
 \index{predict@{predict}!Neuron@{Neuron}}
 \doxysubsubsection{\texorpdfstring{predict()}{predict()}}
-{\footnotesize\ttfamily \label{class_neuron_a85d28e2e9ceed71073549b6fc7ac2a8d} 
-float Neuron\+::predict (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{inputs}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_neuron_aa54c72420044013f7834c700fa6b8050} 
+float Neuron\+::predict (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xf \&}]{inputs}{}\end{DoxyParamCaption})}
 
 
 
@@ -271,7 +262,7 @@ The output of the neuron after applying the weights, bias, and activation functi
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{neuron_8cpp_source_l00052}{52}} of file \mbox{\hyperlink{neuron_8cpp_source}{neuron.\+cpp}}.
+Definition at line \mbox{\hyperlink{neuron_8cpp_source_l00061}{61}} of file \mbox{\hyperlink{neuron_8cpp_source}{neuron.\+cpp}}.
 
 \Hypertarget{class_neuron_aac6704db680726e9a4cbc4574e8cd026}\index{Neuron@{Neuron}!sigmoid@{sigmoid}}
 \index{sigmoid@{sigmoid}!Neuron@{Neuron}}
@@ -293,7 +284,7 @@ The result of the sigmoid function applied to x.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{neuron_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{neuron_8cpp_source}{neuron.\+cpp}}.
+Definition at line \mbox{\hyperlink{neuron_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{neuron_8cpp_source}{neuron.\+cpp}}.
 
 \Hypertarget{class_neuron_a54273186a0610f14caac64cf607f4664}\index{Neuron@{Neuron}!sigmoidDerivative@{sigmoidDerivative}}
 \index{sigmoidDerivative@{sigmoidDerivative}!Neuron@{Neuron}}
@@ -317,7 +308,7 @@ The error for the hidden layer.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{neuron_8cpp_source_l00081}{81}} of file \mbox{\hyperlink{neuron_8cpp_source}{neuron.\+cpp}}.
+Definition at line \mbox{\hyperlink{neuron_8cpp_source_l00092}{92}} of file \mbox{\hyperlink{neuron_8cpp_source}{neuron.\+cpp}}.
 
 \Hypertarget{class_neuron_a782b3b728eee5097ab205a7a7990225b}\index{Neuron@{Neuron}!update@{update}}
 \index{update@{update}!Neuron@{Neuron}}
@@ -331,7 +322,7 @@ Updates the weights and bias of the neuron. Using the previously calculated erro
 
 
 
-Definition at line \mbox{\hyperlink{neuron_8cpp_source_l00058}{58}} of file \mbox{\hyperlink{neuron_8cpp_source}{neuron.\+cpp}}.
+Definition at line \mbox{\hyperlink{neuron_8cpp_source_l00067}{67}} of file \mbox{\hyperlink{neuron_8cpp_source}{neuron.\+cpp}}.
 
 
 

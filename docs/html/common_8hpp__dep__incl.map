@@ -1,31 +1,28 @@
 <map id="common.hpp" name="common.hpp">
-<area shape="rect" id="Node000001" title="In this file the common utilities are defined." alt="" coords="170,5,267,31"/>
-<area shape="rect" id="Node000002" href="$csv__reader_8hpp.html" title="In this class the CSV reader is defined. This is for reading the iris data set." alt="" coords="104,79,213,105"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,44,171,80,167,77,197,41"/>
-<area shape="rect" id="Node000003" href="$test_backpropagation_8cpp_source.html" title=" " alt="" coords="5,300,171,326"/>
-<area shape="poly" id="edge18_Node000001_Node000003" title=" " alt="" coords="163,39,127,57,94,81,78,98,69,113,57,153,49,202,57,251,68,277,81,298,77,301,63,279,52,253,44,202,52,152,64,111,74,95,90,77,124,52,161,34"/>
-<area shape="rect" id="Node000004" href="$neuron_8hpp.html" title="In this file the Neuron class is declared. This class represents a single neuron in a neural network." alt="" coords="317,79,403,105"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="257,36,337,76,335,81,255,41"/>
-<area shape="rect" id="Node000011" href="$output_neuron_8hpp.html" title="In this file the OutputNeuron class is declared. This class represents a single output neuron in a ne..." alt="" coords="576,153,701,178"/>
-<area shape="poly" id="edge17_Node000001_Node000011" title=" " alt="" coords="277,33,416,76,610,150,608,155,414,82,275,38"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="115,114,90,131,72,154,64,173,61,193,64,234,74,271,85,298,80,300,69,273,58,235,56,192,59,171,67,151,87,127,112,110"/>
-<area shape="poly" id="edge16_Node000004_Node000003" title=" " alt="" coords="303,101,232,118,197,133,166,155,136,190,114,231,100,271,93,300,88,299,95,269,109,229,131,187,162,151,195,129,231,113,301,96"/>
-<area shape="rect" id="Node000005" href="$neuron_8cpp.html" title="In this file the Neuron class is implemented." alt="" coords="317,153,403,178"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="363,120,363,152,357,152,357,120"/>
-<area shape="rect" id="Node000006" href="$neuron_layer_8hpp.html" title="In this file the NeuronLayer class is declared. This class represents a layer of neurons in a neural ..." alt="" coords="176,153,293,178"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="327,115,257,154,255,150,324,110"/>
-<area shape="rect" id="Node000008" href="$neuron_network_8hpp.html" title="In this file the NeuronNetwork class is declared. This class represents a neural network with multipl..." alt="" coords="317,226,451,252"/>
-<area shape="poly" id="edge13_Node000004_Node000008" title=" " alt="" coords="390,114,405,131,417,152,420,173,415,194,396,228,391,225,410,192,415,173,412,154,401,134,386,117"/>
-<area shape="rect" id="Node000010" href="$test_8cpp.html" title="In this file the tests for the Neuron, NeuronLayer and NeuronNetwork classes are implemented." alt="" coords="464,300,533,326"/>
-<area shape="poly" id="edge15_Node000004_Node000010" title=" " alt="" coords="394,112,448,158,474,190,493,225,502,265,502,299,497,300,496,266,488,227,469,193,444,162,390,116"/>
-<area shape="poly" id="edge14_Node000004_Node000011" title=" " alt="" coords="418,105,592,149,590,155,417,110"/>
-<area shape="poly" id="edge12_Node000006_Node000003" title=" " alt="" coords="209,191,166,228,100,301,96,298,162,224,205,187"/>
-<area shape="rect" id="Node000007" href="$neuron_layer_8cpp.html" title="In this file the NeuronLayer class is implemented." alt="" coords="176,226,293,252"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="237,194,237,226,232,226,232,194"/>
-<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="275,183,360,223,357,228,272,188"/>
-<area shape="poly" id="edge11_Node000006_Node000010" title=" " alt="" coords="307,180,404,203,443,215,464,224,479,242,490,262,500,299,494,300,485,264,475,245,461,228,441,220,403,208,306,185"/>
-<area shape="poly" id="edge10_Node000008_Node000003" title=" " alt="" coords="319,259,139,302,138,297,318,254"/>
-<area shape="rect" id="Node000009" href="$neuron_network_8cpp.html" title="In this file the NeuronNetwork class is implemented." alt="" coords="306,300,440,326"/>
-<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="383,268,378,300,372,299,377,267"/>
-<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="418,258,481,297,478,302,415,263"/>
+<area shape="rect" id="Node000001" title="In this file the common utilities are defined." alt="" coords="104,5,200,31"/>
+<area shape="rect" id="Node000002" href="$csv__reader_8hpp.html" title="In this class the CSV reader is defined. This is for reading the iris data set." alt="" coords="5,79,115,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,43,77,81,74,77,123,39"/>
+<area shape="rect" id="Node000003" href="$test_backpropagation_8cpp.html" title="In this file the tests for Backpropagation are implemented." alt="" coords="101,300,267,326"/>
+<area shape="poly" id="edge16_Node000001_Node000003" title=" " alt="" coords="158,46,185,300,180,300,152,47"/>
+<area shape="rect" id="Node000004" href="$neuron_8hpp.html" title="In this file the Neuron class is declared. This class represents a single neuron in a neural network." alt="" coords="252,79,337,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="191,36,272,76,269,81,189,41"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="72,119,98,180,136,251,174,298,170,301,131,253,93,183,67,121"/>
+<area shape="poly" id="edge15_Node000004_Node000003" title=" " alt="" coords="284,119,192,301,188,298,280,117"/>
+<area shape="rect" id="Node000005" href="$neuron_8cpp.html" title="In this file the Neuron class is implemented." alt="" coords="292,153,377,178"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="311,117,330,151,326,153,306,120"/>
+<area shape="rect" id="Node000006" href="$neuron_layer_8hpp.html" title="In this file the NeuronLayer class is declared. This class represents a layer of neurons in a neural ..." alt="" coords="402,153,518,178"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="338,109,433,150,431,155,335,114"/>
+<area shape="rect" id="Node000008" href="$neuron_network_8hpp.html" title="In this file the NeuronNetwork class is declared. This class represents a neural network with multipl..." alt="" coords="290,226,424,252"/>
+<area shape="poly" id="edge13_Node000004_Node000008" title=" " alt="" coords="285,119,278,148,278,163,282,177,292,192,305,204,333,224,330,228,301,208,288,195,278,179,273,164,273,148,280,118"/>
+<area shape="rect" id="Node000010" href="$test_8cpp.html" title="In this file the tests for the Neuron, NeuronLayer and NeuronNetwork classes are implemented." alt="" coords="448,300,517,326"/>
+<area shape="poly" id="edge14_Node000004_Node000010" title=" " alt="" coords="353,92,424,101,503,123,542,140,577,162,607,190,630,225,635,243,630,259,618,272,602,283,560,299,518,309,517,304,558,294,599,278,615,268,625,256,629,243,626,227,603,194,574,167,539,145,501,128,423,107,353,98"/>
+<area shape="poly" id="edge12_Node000006_Node000003" title=" " alt="" coords="390,185,335,203,280,229,231,266,196,302,192,298,227,262,277,224,333,198,388,180"/>
+<area shape="rect" id="Node000007" href="$neuron_layer_8cpp.html" title="In this file the NeuronLayer class is implemented." alt="" coords="499,226,616,252"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="490,186,543,224,539,228,487,190"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="432,189,376,228,373,224,429,185"/>
+<area shape="poly" id="edge11_Node000006_Node000010" title=" " alt="" coords="467,193,483,299,478,300,462,194"/>
+<area shape="poly" id="edge10_Node000008_Node000003" title=" " alt="" coords="315,261,215,302,213,297,313,256"/>
+<area shape="rect" id="Node000009" href="$neuron_network_8cpp.html" title="In this file the NeuronNetwork class is implemented." alt="" coords="290,300,424,326"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="360,267,360,300,355,300,355,267"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="393,258,463,297,460,302,390,262"/>
 </map>

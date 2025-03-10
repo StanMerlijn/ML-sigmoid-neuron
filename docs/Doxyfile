@@ -1099,6 +1099,9 @@ RECURSIVE              = YES
 
 EXCLUDE                = ../src/test/catch.hpp \
                         ../src/header/omp.h \
+                        ../src/header/progressbar.hpp \
+                        ../src/header/MTNeuronNetwork.hpp \
+                        ../src/header/outputNeuron.hpp \
 
 # The EXCLUDE_SYMLINKS tag can be used to select whether or not files or
 # directories that are symbolic links (a Unix file system feature) are excluded

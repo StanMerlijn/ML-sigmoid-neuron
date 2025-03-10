@@ -6,31 +6,34 @@
 \DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00011}00011\ \textcolor{preprocessor}{\#pragma\ once}}
 \DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <iostream>}}
 \DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{neuron_8hpp}{neuron.hpp}}"{}}}
-\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00015}00015\ }
-\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00023}\mbox{\hyperlink{class_neuron_layer}{00023}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_neuron_layer_a721acf2ce4c9f6cdd45856ecc6b3267e}{NeuronLayer}}\ \{}
-\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00024}00024\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00025}00025\ \ \ \ \ std::vector<Neuron>\ \_neurons;\ }
-\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00026}00026\ \ \ \ \ std::vector<float>\ \_output;}
-\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00027}00027\ }
-\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00028}00028\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00033}00033\ \ \ \ \ \mbox{\hyperlink{class_neuron_layer_a721acf2ce4c9f6cdd45856ecc6b3267e}{NeuronLayer}}(std::vector<Neuron>\ neurons);}
-\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00034}00034\ }
-\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00040}00040\ \ \ \ \ \mbox{\hyperlink{class_neuron_layer_a721acf2ce4c9f6cdd45856ecc6b3267e}{NeuronLayer}}(\textcolor{keywordtype}{int}\ nNeurons,\ \textcolor{keywordtype}{int}\ nSizeWeights);}
-\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00041}00041\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00047}00047\ \ \ \ \ std::vector<float>\&\ \mbox{\hyperlink{class_neuron_layer_ae1321e96085805de5b172df13cc5a157}{feedForward}}(\textcolor{keyword}{const}\ std::vector<float>\&\ inputs);}
-\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00048}00048\ }
-\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00053}00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_neuron_layer_ae5735211176c5268ffa46958cc27e701}{computeOutputErros}}(\textcolor{keyword}{const}\ std::vector<float>\&\ targets);}
-\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00054}00054\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00060}00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_neuron_layer_ae6b42fdb9f3705d7d875794f1ca244eb}{computeHiddenErrors}}(\textcolor{keyword}{const}\ std::vector<float>\&\ inputs,\ \textcolor{keyword}{const}\ std::vector<Neuron>\&\ neuronsNextLayer);}
-\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00061}00061\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00065}00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_neuron_layer_a8e3906bee15b14174c4caf4824ac9397}{update}}();}
-\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00066}00066\ }
-\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00071}\mbox{\hyperlink{class_neuron_layer_ad54a2dda955d49b7c665970b7944bf31}{00071}}\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Neuron>\&\ \mbox{\hyperlink{class_neuron_layer_ad54a2dda955d49b7c665970b7944bf31}{getNeurons}}()\ \{\ \textcolor{keywordflow}{return}\ \_neurons;\ \}}
-\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00072}00072\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00077}\mbox{\hyperlink{class_neuron_layer_a1d8741c949323d86d30d7f247e35f9e1}{00077}}\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<float>\&\ \mbox{\hyperlink{class_neuron_layer_a1d8741c949323d86d30d7f247e35f9e1}{getOutput}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_output;\ \}}
-\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00078}00078\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00082}00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_neuron_layer_a9f6cfac99b6ff59bb515ef523a6e3b55}{\_\_str\_\_}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00083}00083\ \};}
+\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{neuron_8hpp}{neuron.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00024}\mbox{\hyperlink{class_neuron_layer}{00024}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_neuron_layer_a721acf2ce4c9f6cdd45856ecc6b3267e}{NeuronLayer}}}
+\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00025}00025\ \{}
+\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00026}00026\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00027}00027\ \ \ \ \ std::vector<Neuron>\ \_neurons;\ }
+\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00028}00028\ \ \ \ \ std::vector<float>\ \_output;}
+\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00029}00029\ \ \ \ \ Eigen::VectorXf\ e\_input;}
+\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00031}00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00036}00036\ \ \ \ \ \mbox{\hyperlink{class_neuron_layer_a721acf2ce4c9f6cdd45856ecc6b3267e}{NeuronLayer}}(std::vector<Neuron>\ neurons);}
+\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00043}00043\ \ \ \ \ \mbox{\hyperlink{class_neuron_layer_a721acf2ce4c9f6cdd45856ecc6b3267e}{NeuronLayer}}(\textcolor{keywordtype}{int}\ nNeurons,\ \textcolor{keywordtype}{int}\ nSizeWeights);}
+\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00050}00050\ \ \ \ \ std::vector<float>\ \&\mbox{\hyperlink{class_neuron_layer_ae1321e96085805de5b172df13cc5a157}{feedForward}}(\textcolor{keyword}{const}\ std::vector<float>\ \&inputs);}
+\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00056}00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_neuron_layer_ae5735211176c5268ffa46958cc27e701}{computeOutputErros}}(\textcolor{keyword}{const}\ std::vector<float>\ \&targets);}
+\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00063}00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_neuron_layer_a189c915611a4971ecb711b8d4af5221b}{computeHiddenErrors}}(\textcolor{keyword}{const}\ std::vector<Neuron>\ \&neuronsNextLayer);}
+\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00068}00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_neuron_layer_a8e3906bee15b14174c4caf4824ac9397}{update}}();}
+\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00074}\mbox{\hyperlink{class_neuron_layer_ad54a2dda955d49b7c665970b7944bf31}{00074}}\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Neuron>\ \&\mbox{\hyperlink{class_neuron_layer_ad54a2dda955d49b7c665970b7944bf31}{getNeurons}}()\ \{\ \textcolor{keywordflow}{return}\ \_neurons;\ \}}
+\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00080}\mbox{\hyperlink{class_neuron_layer_a1d8741c949323d86d30d7f247e35f9e1}{00080}}\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<float>\ \&\mbox{\hyperlink{class_neuron_layer_a1d8741c949323d86d30d7f247e35f9e1}{getOutput}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_output;\ \}}
+\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00085}00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_neuron_layer_a9f6cfac99b6ff59bb515ef523a6e3b55}{\_\_str\_\_}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{neuron_layer_8hpp_source_l00086}00086\ \};}
 
 \end{DoxyCode}

@@ -1,8 +1,8 @@
 var searchData=
 [
   ['common_2ehpp_0',['common.hpp',['../common_8hpp.html',1,'']]],
-  ['computehiddendelta_1',['computeHiddenDelta',['../class_neuron.html#ace94c2991170896f4ab673cf17d19ae9',1,'Neuron']]],
-  ['computehiddenerrors_2',['computeHiddenErrors',['../class_neuron_layer.html#ae6b42fdb9f3705d7d875794f1ca244eb',1,'NeuronLayer']]],
+  ['computehiddendelta_1',['computeHiddenDelta',['../class_neuron.html#aa604b864669a38814d9763d2ab3874c0',1,'Neuron']]],
+  ['computehiddenerrors_2',['computeHiddenErrors',['../class_neuron_layer.html#a189c915611a4971ecb711b8d4af5221b',1,'NeuronLayer']]],
   ['computeoutputdelta_3',['computeOutputDelta',['../class_neuron.html#a37509a0aef7fe8818501300608ad2d81',1,'Neuron']]],
   ['computeoutputerros_4',['computeOutputErros',['../class_neuron_layer.html#ae5735211176c5268ffa46958cc27e701',1,'NeuronLayer']]],
   ['convert_5',['convert',['../csv__reader_8hpp.html#add3dd22a0cc005cffa7feed7cf61f622',1,'csv_reader.hpp']]],

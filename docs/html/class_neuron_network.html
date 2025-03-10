@@ -146,6 +146,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac256ee88197f4827c3b873385e016ffe" id="r_ac256ee88197f4827c3b873385e016ffe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac256ee88197f4827c3b873385e016ffe">trainInputs2D</a> (const std::vector&lt; std::vector&lt; float &gt; &gt; &amp;inputs, const std::vector&lt; std::vector&lt; float &gt; &gt; &amp;targets, int epochs)</td></tr>
 <tr class="memdesc:ac256ee88197f4827c3b873385e016ffe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trains the network on a set of inputs and targets.  <br /></td></tr>
 <tr class="separator:ac256ee88197f4827c3b873385e016ffe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa65b1606c5c464ec814f87bd8b3ce48b" id="r_aa65b1606c5c464ec814f87bd8b3ce48b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa65b1606c5c464ec814f87bd8b3ce48b">Loss</a> (const std::vector&lt; std::vector&lt; float &gt; &gt; &amp;inputs, const std::vector&lt; std::vector&lt; float &gt; &gt; &amp;targets)</td></tr>
+<tr class="memdesc:aa65b1606c5c464ec814f87bd8b3ce48b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the complete loss of the network using MSE.  <br /></td></tr>
+<tr class="separator:aa65b1606c5c464ec814f87bd8b3ce48b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11cbabd86e73a9101a089313af3ad2ae" id="r_a11cbabd86e73a9101a089313af3ad2ae"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_neuron_layer.html">NeuronLayer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11cbabd86e73a9101a089313af3ad2ae">getLayers</a> () const</td></tr>
 <tr class="memdesc:a11cbabd86e73a9101a089313af3ad2ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the layers in the network.  <br /></td></tr>
 <tr class="separator:a11cbabd86e73a9101a089313af3ad2ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -235,7 +238,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Prints the network details. </p>
 
-<p class="definition">Definition at line <a class="el" href="neuron_network_8cpp_source.html#l00153">153</a> of file <a class="el" href="neuron_network_8cpp_source.html">neuronNetwork.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="neuron_network_8cpp_source.html#l00185">185</a> of file <a class="el" href="neuron_network_8cpp_source.html">neuronNetwork.cpp</a>.</p>
 
 </div>
 </div>
@@ -256,7 +259,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Performs a backpropagation operation. On all the layers sequentially. </p>
 
-<p class="definition">Definition at line <a class="el" href="neuron_network_8cpp_source.html#l00057">57</a> of file <a class="el" href="neuron_network_8cpp_source.html">neuronNetwork.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="neuron_network_8cpp_source.html#l00062">62</a> of file <a class="el" href="neuron_network_8cpp_source.html">neuronNetwork.cpp</a>.</p>
 
 </div>
 </div>
@@ -284,7 +287,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The output of the network. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="neuron_network_8cpp_source.html#l00039">39</a> of file <a class="el" href="neuron_network_8cpp_source.html">neuronNetwork.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="neuron_network_8cpp_source.html#l00043">43</a> of file <a class="el" href="neuron_network_8cpp_source.html">neuronNetwork.cpp</a>.</p>
 
 </div>
 </div>
@@ -314,7 +317,40 @@ Public Member Functions</h2></td></tr>
 <p>Returns the layers in the network. </p>
 <dl class="section return"><dt>Returns</dt><dd>A vector of neuron layers. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="neuron_network_8hpp_source.html#l00084">84</a> of file <a class="el" href="neuron_network_8hpp_source.html">neuronNetwork.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="neuron_network_8hpp_source.html#l00093">93</a> of file <a class="el" href="neuron_network_8hpp_source.html">neuronNetwork.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aa65b1606c5c464ec814f87bd8b3ce48b" name="aa65b1606c5c464ec814f87bd8b3ce48b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa65b1606c5c464ec814f87bd8b3ce48b">&#9670;&#160;</a></span>Loss()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double NeuronNetwork::Loss </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::vector&lt; float &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>inputs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::vector&lt; float &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>targets</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculates the complete loss of the network using MSE. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inputs</td><td>A vector of input values. </td></tr>
+    <tr><td class="paramname">targets</td><td>A vector of target values. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The loss of the network. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="neuron_network_8cpp_source.html#l00114">114</a> of file <a class="el" href="neuron_network_8cpp_source.html">neuronNetwork.cpp</a>.</p>
 
 </div>
 </div>
@@ -333,7 +369,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="neuron_network_8cpp_source.html#l00135">135</a> of file <a class="el" href="neuron_network_8cpp_source.html">neuronNetwork.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="neuron_network_8cpp_source.html#l00164">164</a> of file <a class="el" href="neuron_network_8cpp_source.html">neuronNetwork.cpp</a>.</p>
 
 </div>
 </div>
@@ -361,7 +397,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The output of the network. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="neuron_network_8cpp_source.html#l00052">52</a> of file <a class="el" href="neuron_network_8cpp_source.html">neuronNetwork.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="neuron_network_8cpp_source.html#l00057">57</a> of file <a class="el" href="neuron_network_8cpp_source.html">neuronNetwork.cpp</a>.</p>
 
 </div>
 </div>
@@ -396,7 +432,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="neuron_network_8hpp_source.html#l00091">91</a> of file <a class="el" href="neuron_network_8hpp_source.html">neuronNetwork.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="neuron_network_8hpp_source.html#l00100">100</a> of file <a class="el" href="neuron_network_8hpp_source.html">neuronNetwork.hpp</a>.</p>
 
 </div>
 </div>
@@ -435,7 +471,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="neuron_network_8cpp_source.html#l00081">81</a> of file <a class="el" href="neuron_network_8cpp_source.html">neuronNetwork.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="neuron_network_8cpp_source.html#l00093">93</a> of file <a class="el" href="neuron_network_8cpp_source.html">neuronNetwork.cpp</a>.</p>
 
 </div>
 </div>
@@ -456,7 +492,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Updates the neurons in the network. </p>
 
-<p class="definition">Definition at line <a class="el" href="neuron_network_8cpp_source.html#l00074">74</a> of file <a class="el" href="neuron_network_8cpp_source.html">neuronNetwork.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="neuron_network_8cpp_source.html#l00085">85</a> of file <a class="el" href="neuron_network_8cpp_source.html">neuronNetwork.cpp</a>.</p>
 
 </div>
 </div>

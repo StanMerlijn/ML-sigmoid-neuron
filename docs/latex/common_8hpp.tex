@@ -12,6 +12,7 @@ In this file the common utilities are defined.
 {\ttfamily \#include $<$cmath$>$}\newline
 {\ttfamily \#include $<$string$>$}\newline
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
 Include dependency graph for common.\+hpp\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -19,7 +20,8 @@ Include dependency graph for common.\+hpp\+:\nopagebreak
 \includegraphics[width=350pt]{common_8hpp__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -35,17 +37,6 @@ struct \mbox{\hyperlink{structdigit_data}{digit\+Data$<$ T $>$}}
 \begin{DoxyCompactList}\small\item\em A structure to hold the features and targets read from a CSV file. This is for the digit data set. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{struct_train_test_split}{Train\+Test\+Split$<$ T $>$}}
 \begin{DoxyCompactList}\small\item\em A structure to hold the features and targets read from a CSV file. This is for the digit data set. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \mbox{\hyperlink{common_8hpp_aef89040b439f7b0d9115a9d03521d50c}{INITIAL\+\_\+\+WEIGHT}}~0.\+5f
-\item 
-\#define \mbox{\hyperlink{common_8hpp_acd61cfdcf860a4e2e23eb80ab1d36734}{INITIAL\+\_\+\+WEIGHT\+\_\+\+INPUTN}}~0.\+5f
-\item 
-\#define \mbox{\hyperlink{common_8hpp_a08a08f5fd1f6c5247332dd3538b10d6a}{INITIAL\+\_\+\+BIAS}}~0.\+5f
-\item 
-\#define \mbox{\hyperlink{common_8hpp_a6676b8bbca913b9f54b7ea3d07b838b3}{INITIAL\+\_\+\+BIAS\+\_\+\+INPUTN}}~0.\+5f
-\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -59,6 +50,8 @@ float \mbox{\hyperlink{common_8hpp_aa1358e901e2151004d816e81ff3decc6}{delta\+Bia
 \begin{DoxyCompactList}\small\item\em This function calculates the delta bias for a neuron. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T$>$ }\\void \mbox{\hyperlink{common_8hpp_ae976f686650de7a8df93bc16d4929d1c}{print\+Vector}} (const std\+::vector$<$ T $>$ \&vec, const std\+::string extra="{}"{})
 \begin{DoxyCompactList}\small\item\em This function prints the elements of a vector to the console. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{common_8hpp_a14ec4c43c303f2172ad0e53efce8cb17}{print\+Eigen\+Vector}} (const Eigen\+::\+Vector\+Xf \&vec, const std\+::string extra="{}"{})
+\item 
 {\footnotesize template$<$typename T$>$ }\\void \mbox{\hyperlink{common_8hpp_aa0d7c531e422a118acbfa56d256729ac}{normalize\+Vector}} (std\+::vector$<$ T $>$ \&vec)
 \begin{DoxyCompactList}\small\item\em This function creates a 2D vector from a 1D vector. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T$>$ }\\void \mbox{\hyperlink{common_8hpp_a04d8d14e34e107e70a33029e25f00018}{normalize2\+DVector}} (std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \&vec)
@@ -83,49 +76,6 @@ Copyright (c) 2025
 
 
 Definition in file \mbox{\hyperlink{common_8hpp_source}{common.\+hpp}}.
-
-
-
-\doxysubsection{Macro Definition Documentation}
-\Hypertarget{common_8hpp_a08a08f5fd1f6c5247332dd3538b10d6a}\index{common.hpp@{common.hpp}!INITIAL\_BIAS@{INITIAL\_BIAS}}
-\index{INITIAL\_BIAS@{INITIAL\_BIAS}!common.hpp@{common.hpp}}
-\doxysubsubsection{\texorpdfstring{INITIAL\_BIAS}{INITIAL\_BIAS}}
-{\footnotesize\ttfamily \label{common_8hpp_a08a08f5fd1f6c5247332dd3538b10d6a} 
-\#define INITIAL\+\_\+\+BIAS~0.\+5f}
-
-
-
-Definition at line \mbox{\hyperlink{common_8hpp_source_l00023}{23}} of file \mbox{\hyperlink{common_8hpp_source}{common.\+hpp}}.
-
-\Hypertarget{common_8hpp_a6676b8bbca913b9f54b7ea3d07b838b3}\index{common.hpp@{common.hpp}!INITIAL\_BIAS\_INPUTN@{INITIAL\_BIAS\_INPUTN}}
-\index{INITIAL\_BIAS\_INPUTN@{INITIAL\_BIAS\_INPUTN}!common.hpp@{common.hpp}}
-\doxysubsubsection{\texorpdfstring{INITIAL\_BIAS\_INPUTN}{INITIAL\_BIAS\_INPUTN}}
-{\footnotesize\ttfamily \label{common_8hpp_a6676b8bbca913b9f54b7ea3d07b838b3} 
-\#define INITIAL\+\_\+\+BIAS\+\_\+\+INPUTN~0.\+5f}
-
-
-
-Definition at line \mbox{\hyperlink{common_8hpp_source_l00024}{24}} of file \mbox{\hyperlink{common_8hpp_source}{common.\+hpp}}.
-
-\Hypertarget{common_8hpp_aef89040b439f7b0d9115a9d03521d50c}\index{common.hpp@{common.hpp}!INITIAL\_WEIGHT@{INITIAL\_WEIGHT}}
-\index{INITIAL\_WEIGHT@{INITIAL\_WEIGHT}!common.hpp@{common.hpp}}
-\doxysubsubsection{\texorpdfstring{INITIAL\_WEIGHT}{INITIAL\_WEIGHT}}
-{\footnotesize\ttfamily \label{common_8hpp_aef89040b439f7b0d9115a9d03521d50c} 
-\#define INITIAL\+\_\+\+WEIGHT~0.\+5f}
-
-
-
-Definition at line \mbox{\hyperlink{common_8hpp_source_l00021}{21}} of file \mbox{\hyperlink{common_8hpp_source}{common.\+hpp}}.
-
-\Hypertarget{common_8hpp_acd61cfdcf860a4e2e23eb80ab1d36734}\index{common.hpp@{common.hpp}!INITIAL\_WEIGHT\_INPUTN@{INITIAL\_WEIGHT\_INPUTN}}
-\index{INITIAL\_WEIGHT\_INPUTN@{INITIAL\_WEIGHT\_INPUTN}!common.hpp@{common.hpp}}
-\doxysubsubsection{\texorpdfstring{INITIAL\_WEIGHT\_INPUTN}{INITIAL\_WEIGHT\_INPUTN}}
-{\footnotesize\ttfamily \label{common_8hpp_acd61cfdcf860a4e2e23eb80ab1d36734} 
-\#define INITIAL\+\_\+\+WEIGHT\+\_\+\+INPUTN~0.\+5f}
-
-
-
-Definition at line \mbox{\hyperlink{common_8hpp_source_l00022}{22}} of file \mbox{\hyperlink{common_8hpp_source}{common.\+hpp}}.
 
 
 
@@ -155,7 +105,7 @@ Create a Train Test Split object from the features and targets.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{common_8hpp_source_l00219}{219}} of file \mbox{\hyperlink{common_8hpp_source}{common.\+hpp}}.
+Definition at line \mbox{\hyperlink{common_8hpp_source_l00237}{237}} of file \mbox{\hyperlink{common_8hpp_source}{common.\+hpp}}.
 
 \Hypertarget{common_8hpp_aa1358e901e2151004d816e81ff3decc6}\index{common.hpp@{common.hpp}!deltaBias@{deltaBias}}
 \index{deltaBias@{deltaBias}!common.hpp@{common.hpp}}
@@ -179,7 +129,7 @@ float The delta bias.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{common_8hpp_source_l00124}{124}} of file \mbox{\hyperlink{common_8hpp_source}{common.\+hpp}}.
+Definition at line \mbox{\hyperlink{common_8hpp_source_l00120}{120}} of file \mbox{\hyperlink{common_8hpp_source}{common.\+hpp}}.
 
 \Hypertarget{common_8hpp_a2eb264b9c955b53d8e62dedeec808b34}\index{common.hpp@{common.hpp}!deltaGradient@{deltaGradient}}
 \index{deltaGradient@{deltaGradient}!common.hpp@{common.hpp}}
@@ -203,7 +153,7 @@ float The delta gradient.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{common_8hpp_source_l00112}{112}} of file \mbox{\hyperlink{common_8hpp_source}{common.\+hpp}}.
+Definition at line \mbox{\hyperlink{common_8hpp_source_l00108}{108}} of file \mbox{\hyperlink{common_8hpp_source}{common.\+hpp}}.
 
 \Hypertarget{common_8hpp_a00f0be429c7399dd999d063741939abf}\index{common.hpp@{common.hpp}!gradientBetweenNeurons@{gradientBetweenNeurons}}
 \index{gradientBetweenNeurons@{gradientBetweenNeurons}!common.hpp@{common.hpp}}
@@ -227,7 +177,7 @@ float The gradient between the neurons.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{common_8hpp_source_l00100}{100}} of file \mbox{\hyperlink{common_8hpp_source}{common.\+hpp}}.
+Definition at line \mbox{\hyperlink{common_8hpp_source_l00096}{96}} of file \mbox{\hyperlink{common_8hpp_source}{common.\+hpp}}.
 
 \Hypertarget{common_8hpp_a04d8d14e34e107e70a33029e25f00018}\index{common.hpp@{common.hpp}!normalize2DVector@{normalize2DVector}}
 \index{normalize2DVector@{normalize2DVector}!common.hpp@{common.hpp}}
@@ -252,7 +202,7 @@ std\+::vector$<$std\+::vector$<$\+T$>$$>$ The 2D vector.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{common_8hpp_source_l00182}{182}} of file \mbox{\hyperlink{common_8hpp_source}{common.\+hpp}}.
+Definition at line \mbox{\hyperlink{common_8hpp_source_l00196}{196}} of file \mbox{\hyperlink{common_8hpp_source}{common.\+hpp}}.
 
 \Hypertarget{common_8hpp_aa0d7c531e422a118acbfa56d256729ac}\index{common.hpp@{common.hpp}!normalizeVector@{normalizeVector}}
 \index{normalizeVector@{normalizeVector}!common.hpp@{common.hpp}}
@@ -277,7 +227,17 @@ std\+::vector$<$std\+::vector$<$\+T$>$$>$ The 2D vector.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{common_8hpp_source_l00161}{161}} of file \mbox{\hyperlink{common_8hpp_source}{common.\+hpp}}.
+Definition at line \mbox{\hyperlink{common_8hpp_source_l00174}{174}} of file \mbox{\hyperlink{common_8hpp_source}{common.\+hpp}}.
+
+\Hypertarget{common_8hpp_a14ec4c43c303f2172ad0e53efce8cb17}\index{common.hpp@{common.hpp}!printEigenVector@{printEigenVector}}
+\index{printEigenVector@{printEigenVector}!common.hpp@{common.hpp}}
+\doxysubsubsection{\texorpdfstring{printEigenVector()}{printEigenVector()}}
+{\footnotesize\ttfamily \label{common_8hpp_a14ec4c43c303f2172ad0e53efce8cb17} 
+void print\+Eigen\+Vector (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xf \&}]{vec}{, }\item[{const std\+::string}]{extra}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{common_8hpp_source_l00154}{154}} of file \mbox{\hyperlink{common_8hpp_source}{common.\+hpp}}.
 
 \Hypertarget{common_8hpp_ae976f686650de7a8df93bc16d4929d1c}\index{common.hpp@{common.hpp}!printVector@{printVector}}
 \index{printVector@{printVector}!common.hpp@{common.hpp}}
@@ -300,5 +260,5 @@ This function prints the elements of a vector to the console.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{common_8hpp_source_l00137}{137}} of file \mbox{\hyperlink{common_8hpp_source}{common.\+hpp}}.
+Definition at line \mbox{\hyperlink{common_8hpp_source_l00132}{132}} of file \mbox{\hyperlink{common_8hpp_source}{common.\+hpp}}.
 

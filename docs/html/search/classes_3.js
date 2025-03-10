@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['outputnueron_0',['OutputNueron',['../class_output_nueron.html',1,'']]]
+  ['traintestsplit_0',['TrainTestSplit',['../struct_train_test_split.html',1,'']]]
 ];

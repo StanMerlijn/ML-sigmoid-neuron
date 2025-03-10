@@ -5,85 +5,96 @@
 \DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00001}00001\ }
 \DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{neuron_8hpp}{header/neuron.hpp}}"{}}}
 \DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00012}00012\ }
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00013}\mbox{\hyperlink{class_neuron_a0c53df43dc72aefd546df3e0f49c4c1e}{00013}}\ \mbox{\hyperlink{class_neuron_a0c53df43dc72aefd546df3e0f49c4c1e}{Neuron::Neuron}}(\textcolor{keywordtype}{int}\ nSizeWeights,\ \textcolor{keywordtype}{float}\ initialWeight,\ \textcolor{keywordtype}{float}\ initialBias)}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00014}00014\ \{\ \ \ }
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{comment}{//\ Initialize\ the\ weights\ and\ bias}}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00016}00016\ \ \ \ \ \_weights\ =\ std::vector<float>(nSizeWeights,\ initialWeight);}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00017}00017\ \ \ \ \ \_lastInput.reserve(nSizeWeights);}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00018}00018\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{comment}{//\ Initialize\ the\ delta\ and\ learning\ rate}}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00020}00020\ \ \ \ \ \_delta\ =\ 0.0f;}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00021}00021\ \ \ \ \ \_bias\ =\ initialBias;}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00022}00022\ \ \ \ \ \_learningRate\ =\ 0.5f;}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00023}00023\ \ \ \ \ \_lastOutput\ =\ 0.0f;}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00024}00024\ \}}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00025}00025\ }
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00026}\mbox{\hyperlink{class_neuron_ae75135d2bfe2dd558db1d0a2d059ecc2}{00026}}\ \mbox{\hyperlink{class_neuron_a0c53df43dc72aefd546df3e0f49c4c1e}{Neuron::Neuron}}(\textcolor{keyword}{const}\ std::vector<float>\&\ weights,\ \textcolor{keywordtype}{float}\ bias,\ \textcolor{keywordtype}{float}\ learningRate)\ }
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00027}00027\ \ \ \ \ :\ \_weights(weights),\ \_bias(bias),\ \_learningRate(learningRate)\ \{\}}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00028}00028\ }
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00029}\mbox{\hyperlink{class_neuron_aac6704db680726e9a4cbc4574e8cd026}{00029}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_neuron_aac6704db680726e9a4cbc4574e8cd026}{Neuron::sigmoid}}(\textcolor{keywordtype}{float}\ x)}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00030}00030\ \{}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{comment}{//\ Sigmoid\ activation\ function}}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{keywordflow}{return}\ 1\ /\ (1\ +\ exp(-\/x));\ \ \ \ }
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00033}00033\ \}}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00034}00034\ }
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00035}\mbox{\hyperlink{class_neuron_ad7ee42ccfd6fa5ff648e8919d3aa7cd7}{00035}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_neuron_ad7ee42ccfd6fa5ff648e8919d3aa7cd7}{Neuron::activate}}(\textcolor{keyword}{const}\ std::vector<float>\&\ inputs)}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00036}00036\ \{}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{comment}{//\ Calculate\ the\ weighted\ sum\ of\ the\ inputs}}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00038}00038\ \ \ \ \ \_lastInput\ =\ inputs;}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordtype}{float}\ weightedSum\ =\ \_bias;}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00013}00013\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00014}00014\ \textcolor{comment}{\ *\ TODO\ LIST:}}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00015}00015\ \textcolor{comment}{\ *\ -\/\ Implement\ the\ Eigen\ library\ for\ the\ Neuron\ class.}}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00016}00016\ \textcolor{comment}{\ *\ -\/\ fix\ utiliszation\ of\ lastinput\ and\ lastoutput}}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00017}00017\ \textcolor{comment}{\ *\ -\/\ Implement\ the\ update\ function\ with\ Eigen}}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00018}00018\ \textcolor{comment}{\ *\ -\/\ Implement\ the\ deltaError\ function\ with\ Eigen}}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00019}00019\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00021}\mbox{\hyperlink{class_neuron_a0c53df43dc72aefd546df3e0f49c4c1e}{00021}}\ \mbox{\hyperlink{class_neuron_a0c53df43dc72aefd546df3e0f49c4c1e}{Neuron::Neuron}}(\textcolor{keywordtype}{int}\ nSizeWeights,\ \textcolor{keywordtype}{float}\ initialWeight,\ \textcolor{keywordtype}{float}\ initialBias)}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00022}00022\ \{}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{comment}{//\ Initialize\ the\ weights\ and\ bias}}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00024}00024\ \ \ \ \ \_weights\ =\ std::vector<float>(nSizeWeights,\ initialWeight);}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00025}00025\ \ \ \ \ e\_weights\ =\ Eigen::VectorXf::Constant(nSizeWeights,\ initialWeight);}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00026}00026\ \ \ \ \ e\_lastInput\ =\ Eigen::VectorXf::Constant(nSizeWeights,\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00028}00028\ \ \ \ \ \_lastInput.reserve(nSizeWeights);}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{comment}{//\ Initialize\ the\ delta\ and\ learning\ rate}}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00031}00031\ \ \ \ \ \_nSizeWeights\ =\ nSizeWeights;}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00032}00032\ \ \ \ \ \_delta\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00033}00033\ \ \ \ \ \_bias\ =\ initialBias;}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00034}00034\ \ \ \ \ \_learningRate\ =\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00035}00035\ \ \ \ \ \_lastOutput\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00036}00036\ \}}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00038}\mbox{\hyperlink{class_neuron_ae75135d2bfe2dd558db1d0a2d059ecc2}{00038}}\ \mbox{\hyperlink{class_neuron_a0c53df43dc72aefd546df3e0f49c4c1e}{Neuron::Neuron}}(\textcolor{keyword}{const}\ std::vector<float>\ \&weights,\ \textcolor{keywordtype}{float}\ bias,\ \textcolor{keywordtype}{float}\ learningRate)}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00039}00039\ \ \ \ \ :\ \_weights(weights),\ \_bias(bias),\ \_learningRate(learningRate)\ \{\}}
 \DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00040}00040\ }
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{comment}{//\ Dot\ product\ of\ the\ weights\ and\ inputs}}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ \_weights.size();\ i++)}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00043}00043\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ weightedSum\ +=\ \_weights[i]\ *\ inputs[i];}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00045}00045\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00041}\mbox{\hyperlink{class_neuron_aac6704db680726e9a4cbc4574e8cd026}{00041}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_neuron_aac6704db680726e9a4cbc4574e8cd026}{Neuron::sigmoid}}(\textcolor{keywordtype}{float}\ x)}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00042}00042\ \{}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{comment}{//\ Sigmoid\ activation\ function}}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{return}\ 1\ /\ (1\ +\ std::exp(-\/x));}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00045}00045\ \}}
 \DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00046}00046\ }
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{comment}{//\ Return\ the\ result\ of\ the\ sigmoid\ function}}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00048}00048\ \ \ \ \ \_lastOutput\ =\ \mbox{\hyperlink{class_neuron_aac6704db680726e9a4cbc4574e8cd026}{sigmoid}}(weightedSum);}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{return}\ \_lastOutput;}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00050}00050\ \}}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00051}00051\ }
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00052}\mbox{\hyperlink{class_neuron_a85d28e2e9ceed71073549b6fc7ac2a8d}{00052}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_neuron_a85d28e2e9ceed71073549b6fc7ac2a8d}{Neuron::predict}}(\textcolor{keyword}{const}\ std::vector<float>\&\ inputs)}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00053}00053\ \{}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{comment}{//\ Return\ 1\ if\ the\ result\ is\ greater\ than\ 0.5,\ otherwise\ return\ 0(threshold)}}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{class_neuron_ad7ee42ccfd6fa5ff648e8919d3aa7cd7}{activate}}(inputs)\ >\ 0.5)\ ?\ 1\ :\ 0;}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00056}00056\ \}}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00057}00057\ }
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00058}\mbox{\hyperlink{class_neuron_a782b3b728eee5097ab205a7a7990225b}{00058}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_neuron_a782b3b728eee5097ab205a7a7990225b}{Neuron::update}}()}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00059}00059\ \{}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00060}00060\ \ \ \ \ \textcolor{comment}{//\ Update\ the\ weights\ and\ bias}}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ \_weights.size();\ i++)}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00062}00062\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \_weights[i]\ -\/=\ \_learningRate\ *\ \_lastInput[i]\ *\ \_delta;}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00064}00064\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{comment}{//\ Update\ the\ bias}}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00066}00066\ \ \ \ \ \_bias\ -\/=\ \_learningRate\ *\ \_delta;}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00067}00067\ \}}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00068}00068\ }
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00069}\mbox{\hyperlink{class_neuron_ace94c2991170896f4ab673cf17d19ae9}{00069}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_neuron_ace94c2991170896f4ab673cf17d19ae9}{Neuron::computeHiddenDelta}}(\textcolor{keyword}{const}\ std::vector<float>\&\ inputs,\ \textcolor{keywordtype}{float}\ sum)}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00070}00070\ \{}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00071}00071\ \ \ \ \ \_delta\ =\ \mbox{\hyperlink{class_neuron_a54273186a0610f14caac64cf607f4664}{sigmoidDerivative}}(\_lastOutput)\ *\ sum;;}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00072}00072\ \ \ \ \ \textcolor{keywordflow}{return}\ \_delta;}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00073}00073\ \}}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00074}00074\ }
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00075}\mbox{\hyperlink{class_neuron_a37509a0aef7fe8818501300608ad2d81}{00075}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_neuron_a37509a0aef7fe8818501300608ad2d81}{Neuron::computeOutputDelta}}(\textcolor{keywordtype}{float}\ target)}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00076}00076\ \{}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00077}00077\ \ \ \ \ \_delta\ =\ \mbox{\hyperlink{class_neuron_a54273186a0610f14caac64cf607f4664}{sigmoidDerivative}}(\_lastOutput)\ *\ -\/(target\ -\/\ \_lastOutput);}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00078}00078\ \ \ \ \ \textcolor{keywordflow}{return}\ \_delta;}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00079}00079\ \}}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00080}00080\ }
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00081}\mbox{\hyperlink{class_neuron_a54273186a0610f14caac64cf607f4664}{00081}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_neuron_a54273186a0610f14caac64cf607f4664}{Neuron::sigmoidDerivative}}(\textcolor{keywordtype}{float}\ output)}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00082}00082\ \{}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00083}00083\ \ \ \ \ \textcolor{keywordflow}{return}\ output\ *\ (1\ -\/\ output);}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00047}\mbox{\hyperlink{class_neuron_ad764f9a5ac5e49f64b0a56692d0e9af8}{00047}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_neuron_ad764f9a5ac5e49f64b0a56692d0e9af8}{Neuron::activate}}(\textcolor{keyword}{const}\ Eigen::VectorXf\ \&inputs)}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00048}00048\ \{}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{comment}{//\ Calculate\ the\ weighted\ sum\ of\ the\ inputs}}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00050}00050\ \ \ \ \ e\_lastInput\ =\ inputs;}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00051}00051\ \ \ \ \ e\_weights\ =\ Eigen::Map<Eigen::VectorXf>(\_weights.data(),\ \_weights.size());}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{comment}{//\ Calculate\ the\ weighted\ sum\ of\ the\ inputs}}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{float}\ weightedSum\ =\ \_bias\ +\ e\_weights.dot(inputs);}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{comment}{//\ Return\ the\ result\ of\ the\ sigmoid\ function}}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00057}00057\ \ \ \ \ \_lastOutput\ =\ \mbox{\hyperlink{class_neuron_aac6704db680726e9a4cbc4574e8cd026}{sigmoid}}(weightedSum);}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{keywordflow}{return}\ \_lastOutput;}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00059}00059\ \}}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00061}\mbox{\hyperlink{class_neuron_aa54c72420044013f7834c700fa6b8050}{00061}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_neuron_aa54c72420044013f7834c700fa6b8050}{Neuron::predict}}(\textcolor{keyword}{const}\ Eigen::VectorXf\ \&inputs)}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00062}00062\ \{}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{comment}{//\ Return\ 1\ if\ the\ result\ is\ greater\ than\ 0.5,\ otherwise\ return\ 0(threshold)}}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{class_neuron_ad764f9a5ac5e49f64b0a56692d0e9af8}{activate}}(inputs)\ >\ 0.5)\ ?\ 1\ :\ 0;}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00065}00065\ \}}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00067}\mbox{\hyperlink{class_neuron_a782b3b728eee5097ab205a7a7990225b}{00067}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_neuron_a782b3b728eee5097ab205a7a7990225b}{Neuron::update}}()}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00068}00068\ \{}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00069}00069\ \ \ \ \ \textcolor{comment}{//\ Update\ the\ weights\ and\ bias}}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{keywordtype}{float}\ error\ =\ \_learningRate\ *\ \_delta;}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00071}00071\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ \_nSizeWeights;\ i++)}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00072}00072\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \_weights[i]\ -\/=\ e\_lastInput[i]\ *\ error;}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00074}00074\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{comment}{//\ Update\ the\ bias}}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00077}00077\ \ \ \ \ \_bias\ -\/=\ error;}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00078}00078\ \}}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00080}\mbox{\hyperlink{class_neuron_aa604b864669a38814d9763d2ab3874c0}{00080}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_neuron_aa604b864669a38814d9763d2ab3874c0}{Neuron::computeHiddenDelta}}(\textcolor{keywordtype}{float}\ sum)}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00081}00081\ \{}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00082}00082\ \ \ \ \ \_delta\ =\ \mbox{\hyperlink{class_neuron_a54273186a0610f14caac64cf607f4664}{sigmoidDerivative}}(\_lastOutput)\ *\ sum;}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00083}00083\ \ \ \ \ \textcolor{keywordflow}{return}\ \_delta;}
 \DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00084}00084\ \}}
 \DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00085}00085\ }
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00086}\mbox{\hyperlink{class_neuron_a5cf2529f3b2b8dae59ee87239ab5f62c}{00086}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_neuron_a5cf2529f3b2b8dae59ee87239ab5f62c}{Neuron::\_\_str\_\_}}()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00087}00087\ \textcolor{keyword}{}\{\ \ \ }
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00088}00088\ \ \ \ \ \textcolor{comment}{//\ Print\ the\ neuron\ details}}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00089}00089\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nNeurons\ with\ \%zu\ weights:\ "{}},\ \_weights.size());}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00090}00090\ \ \ \ \ \mbox{\hyperlink{common_8hpp_ae976f686650de7a8df93bc16d4929d1c}{printVector}}(\_weights);}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00091}00091\ \ \ \ \ printf(\textcolor{stringliteral}{"{}|\ Bias\ =\ \%f\ |\ Learning\ rate\ =\ \%f"{}},\ \_bias,\ \_learningRate);}
-\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00092}00092\ \}}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00086}\mbox{\hyperlink{class_neuron_a37509a0aef7fe8818501300608ad2d81}{00086}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_neuron_a37509a0aef7fe8818501300608ad2d81}{Neuron::computeOutputDelta}}(\textcolor{keywordtype}{float}\ target)}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00087}00087\ \{}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00088}00088\ \ \ \ \ \_delta\ =\ \mbox{\hyperlink{class_neuron_a54273186a0610f14caac64cf607f4664}{sigmoidDerivative}}(\_lastOutput)\ *\ -\/(target\ -\/\ \_lastOutput);}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00089}00089\ \ \ \ \ \textcolor{keywordflow}{return}\ \_delta;}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00090}00090\ \}}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00092}\mbox{\hyperlink{class_neuron_a54273186a0610f14caac64cf607f4664}{00092}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_neuron_a54273186a0610f14caac64cf607f4664}{Neuron::sigmoidDerivative}}(\textcolor{keywordtype}{float}\ output)}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00093}00093\ \{}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00094}00094\ \ \ \ \ \textcolor{keywordflow}{return}\ output\ *\ (1\ -\/\ output);}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00095}00095\ \}}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00097}\mbox{\hyperlink{class_neuron_a5cf2529f3b2b8dae59ee87239ab5f62c}{00097}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_neuron_a5cf2529f3b2b8dae59ee87239ab5f62c}{Neuron::\_\_str\_\_}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00098}00098\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00099}00099\ \ \ \ \ \textcolor{comment}{//\ Print\ the\ neuron\ details}}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00100}00100\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nNeurons\ with\ \%zu\ weights:\ "{}},\ \_weights.size());}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00101}00101\ \ \ \ \ \mbox{\hyperlink{common_8hpp_ae976f686650de7a8df93bc16d4929d1c}{printVector}}(\_weights);}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00102}00102\ \ \ \ \ printf(\textcolor{stringliteral}{"{}|\ Bias\ =\ \%f\ |\ Learning\ rate\ =\ \%f"{}},\ \_bias,\ \_learningRate);}
+\DoxyCodeLine{\Hypertarget{neuron_8cpp_source_l00103}00103\ \}}
 
 \end{DoxyCode}

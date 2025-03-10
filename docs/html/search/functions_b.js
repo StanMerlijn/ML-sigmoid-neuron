@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['test_5fcase_0',['TEST_CASE',['../test_8cpp.html#aa2406315bdd97e70c038abc810269e74',1,'TEST_CASE(&quot;Neuron AND gate&quot;, &quot;[neuron]&quot;):&#160;test.cpp'],['../test_8cpp.html#aaea5777fe5bb771f2b3cf1b166c2ddd5',1,'TEST_CASE(&quot;Neuron OR gate&quot;, &quot;[neuron]&quot;):&#160;test.cpp'],['../test_8cpp.html#ac08b6b89467fcaa1e873ae9cd940121c',1,'TEST_CASE(&quot;Neuron NOT gate&quot;, &quot;[neuron]&quot;):&#160;test.cpp'],['../test_8cpp.html#af2b2755090478b311964d946f400bbbb',1,'TEST_CASE(&quot;Neuron NOR gate (NOT OR)&quot;, &quot;[neuron]&quot;):&#160;test.cpp'],['../test_8cpp.html#aff8bbc98fc598e1ed1d50d0051d36f1c',1,'TEST_CASE(&quot;Half Adder using Two-Layer Neuron Network&quot;, &quot;[half-adder]&quot;):&#160;test.cpp']]],
-  ['traininputs2d_1',['trainInputs2D',['../class_neuron_network.html#ac256ee88197f4827c3b873385e016ffe',1,'NeuronNetwork']]]
+  ['save_5fdigits_5fdataset_0',['save_digits_dataset',['../create__dataset_8py.html#af7ada4e3783d698490247f95a764accb',1,'create_dataset']]],
+  ['settarget_1',['setTarget',['../class_neuron_network.html#afcd87fd05d40dbbe564b27899568529a',1,'NeuronNetwork']]],
+  ['sigmoid_2',['sigmoid',['../class_neuron.html#aac6704db680726e9a4cbc4574e8cd026',1,'Neuron']]],
+  ['sigmoidderivative_3',['sigmoidDerivative',['../class_neuron.html#a54273186a0610f14caac64cf607f4664',1,'Neuron']]]
 ];

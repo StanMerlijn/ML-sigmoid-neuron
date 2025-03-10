@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['write_5fto_5fcsv_0',['write_to_csv',['../create__dataset_8py.html#a86f58dbb8d4caf14f5931d8d4d84e097',1,'create_dataset']]]
+  ['update_0',['update',['../class_neuron.html#a782b3b728eee5097ab205a7a7990225b',1,'Neuron::update()'],['../class_neuron_layer.html#a8e3906bee15b14174c4caf4824ac9397',1,'NeuronLayer::update()'],['../class_neuron_network.html#a5076c9a5f131e6665c6241de72487748',1,'NeuronNetwork::update()']]]
 ];

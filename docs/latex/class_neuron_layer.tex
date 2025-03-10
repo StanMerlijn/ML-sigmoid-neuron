@@ -20,7 +20,7 @@ std\+::vector$<$ float $>$ \& \mbox{\hyperlink{class_neuron_layer_ae1321e9608580
 \begin{DoxyCompactList}\small\item\em Performs a feedforward operation. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_neuron_layer_ae5735211176c5268ffa46958cc27e701}{compute\+Output\+Erros}} (const std\+::vector$<$ float $>$ \&targets)
 \begin{DoxyCompactList}\small\item\em Computes the output errors for the layer. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_neuron_layer_ae6b42fdb9f3705d7d875794f1ca244eb}{compute\+Hidden\+Errors}} (const std\+::vector$<$ float $>$ \&inputs, const std\+::vector$<$ \mbox{\hyperlink{class_neuron}{Neuron}} $>$ \&neurons\+Next\+Layer)
+void \mbox{\hyperlink{class_neuron_layer_a189c915611a4971ecb711b8d4af5221b}{compute\+Hidden\+Errors}} (const std\+::vector$<$ \mbox{\hyperlink{class_neuron}{Neuron}} $>$ \&neurons\+Next\+Layer)
 \begin{DoxyCompactList}\small\item\em Computes the hidden errors for the layer. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_neuron_layer_a8e3906bee15b14174c4caf4824ac9397}{update}} ()
 \begin{DoxyCompactList}\small\item\em Updates the neurons in the layer. \end{DoxyCompactList}\item 
@@ -37,7 +37,7 @@ Represents a layer of neurons in a neural network.
 
 The \doxylink{class_neuron_layer}{Neuron\+Layer} class has a collection of neurons and provides methods to perform feedforward operations and to represent the layer as a string. 
 
-Definition at line \mbox{\hyperlink{neuron_layer_8hpp_source_l00023}{23}} of file \mbox{\hyperlink{neuron_layer_8hpp_source}{neuron\+Layer.\+hpp}}.
+Definition at line \mbox{\hyperlink{neuron_layer_8hpp_source_l00024}{24}} of file \mbox{\hyperlink{neuron_layer_8hpp_source}{neuron\+Layer.\+hpp}}.
 
 
 
@@ -97,13 +97,13 @@ Prints the layer details.
 
 
 
-Definition at line \mbox{\hyperlink{neuron_layer_8cpp_source_l00081}{81}} of file \mbox{\hyperlink{neuron_layer_8cpp_source}{neuron\+Layer.\+cpp}}.
+Definition at line \mbox{\hyperlink{neuron_layer_8cpp_source_l00085}{85}} of file \mbox{\hyperlink{neuron_layer_8cpp_source}{neuron\+Layer.\+cpp}}.
 
-\Hypertarget{class_neuron_layer_ae6b42fdb9f3705d7d875794f1ca244eb}\index{NeuronLayer@{NeuronLayer}!computeHiddenErrors@{computeHiddenErrors}}
+\Hypertarget{class_neuron_layer_a189c915611a4971ecb711b8d4af5221b}\index{NeuronLayer@{NeuronLayer}!computeHiddenErrors@{computeHiddenErrors}}
 \index{computeHiddenErrors@{computeHiddenErrors}!NeuronLayer@{NeuronLayer}}
 \doxysubsubsection{\texorpdfstring{computeHiddenErrors()}{computeHiddenErrors()}}
-{\footnotesize\ttfamily \label{class_neuron_layer_ae6b42fdb9f3705d7d875794f1ca244eb} 
-void Neuron\+Layer\+::compute\+Hidden\+Errors (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{inputs}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_neuron}{Neuron}} $>$ \&}]{neurons\+Next\+Layer}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_neuron_layer_a189c915611a4971ecb711b8d4af5221b} 
+void Neuron\+Layer\+::compute\+Hidden\+Errors (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_neuron}{Neuron}} $>$ \&}]{neurons\+Next\+Layer}{}\end{DoxyParamCaption})}
 
 
 
@@ -118,7 +118,7 @@ Computes the hidden errors for the layer.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{neuron_layer_8cpp_source_l00056}{56}} of file \mbox{\hyperlink{neuron_layer_8cpp_source}{neuron\+Layer.\+cpp}}.
+Definition at line \mbox{\hyperlink{neuron_layer_8cpp_source_l00060}{60}} of file \mbox{\hyperlink{neuron_layer_8cpp_source}{neuron\+Layer.\+cpp}}.
 
 \Hypertarget{class_neuron_layer_ae5735211176c5268ffa46958cc27e701}\index{NeuronLayer@{NeuronLayer}!computeOutputErros@{computeOutputErros}}
 \index{computeOutputErros@{computeOutputErros}!NeuronLayer@{NeuronLayer}}
@@ -137,7 +137,7 @@ Computes the output errors for the layer.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{neuron_layer_8cpp_source_l00048}{48}} of file \mbox{\hyperlink{neuron_layer_8cpp_source}{neuron\+Layer.\+cpp}}.
+Definition at line \mbox{\hyperlink{neuron_layer_8cpp_source_l00051}{51}} of file \mbox{\hyperlink{neuron_layer_8cpp_source}{neuron\+Layer.\+cpp}}.
 
 \Hypertarget{class_neuron_layer_ae1321e96085805de5b172df13cc5a157}\index{NeuronLayer@{NeuronLayer}!feedForward@{feedForward}}
 \index{feedForward@{feedForward}!NeuronLayer@{NeuronLayer}}
@@ -159,7 +159,7 @@ The output of the layer.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{neuron_layer_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{neuron_layer_8cpp_source}{neuron\+Layer.\+cpp}}.
+Definition at line \mbox{\hyperlink{neuron_layer_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{neuron_layer_8cpp_source}{neuron\+Layer.\+cpp}}.
 
 \Hypertarget{class_neuron_layer_ad54a2dda955d49b7c665970b7944bf31}\index{NeuronLayer@{NeuronLayer}!getNeurons@{getNeurons}}
 \index{getNeurons@{getNeurons}!NeuronLayer@{NeuronLayer}}
@@ -176,7 +176,7 @@ A vector of neurons.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{neuron_layer_8hpp_source_l00071}{71}} of file \mbox{\hyperlink{neuron_layer_8hpp_source}{neuron\+Layer.\+hpp}}.
+Definition at line \mbox{\hyperlink{neuron_layer_8hpp_source_l00074}{74}} of file \mbox{\hyperlink{neuron_layer_8hpp_source}{neuron\+Layer.\+hpp}}.
 
 \Hypertarget{class_neuron_layer_a1d8741c949323d86d30d7f247e35f9e1}\index{NeuronLayer@{NeuronLayer}!getOutput@{getOutput}}
 \index{getOutput@{getOutput}!NeuronLayer@{NeuronLayer}}
@@ -193,7 +193,7 @@ A vector of floats.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{neuron_layer_8hpp_source_l00077}{77}} of file \mbox{\hyperlink{neuron_layer_8hpp_source}{neuron\+Layer.\+hpp}}.
+Definition at line \mbox{\hyperlink{neuron_layer_8hpp_source_l00080}{80}} of file \mbox{\hyperlink{neuron_layer_8hpp_source}{neuron\+Layer.\+hpp}}.
 
 \Hypertarget{class_neuron_layer_a8e3906bee15b14174c4caf4824ac9397}\index{NeuronLayer@{NeuronLayer}!update@{update}}
 \index{update@{update}!NeuronLayer@{NeuronLayer}}
@@ -207,7 +207,7 @@ Updates the neurons in the layer.
 
 
 
-Definition at line \mbox{\hyperlink{neuron_layer_8cpp_source_l00073}{73}} of file \mbox{\hyperlink{neuron_layer_8cpp_source}{neuron\+Layer.\+cpp}}.
+Definition at line \mbox{\hyperlink{neuron_layer_8cpp_source_l00077}{77}} of file \mbox{\hyperlink{neuron_layer_8cpp_source}{neuron\+Layer.\+cpp}}.
 
 
 

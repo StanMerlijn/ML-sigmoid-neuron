@@ -1,5 +1,5 @@
 /**
- * @file testBacpropagationcpp
+ * @file testBackpropagation.cpp
  * @author Stan Merlijn
  * @brief In this file the tests for Backpropagation are implemented.
  * @version 0.1

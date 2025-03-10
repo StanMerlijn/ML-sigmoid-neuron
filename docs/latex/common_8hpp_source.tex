@@ -13,161 +13,182 @@
 \DoxyCodeLine{\Hypertarget{common_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{\Hypertarget{common_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
 \DoxyCodeLine{\Hypertarget{common_8hpp_source_l00020}00020\ }
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\#define\ INITIAL\_WEIGHT\ 0.5f}}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00022}00022\ \textcolor{preprocessor}{\#define\ INITIAL\_WEIGHT\_INPUTN\ 0.5f}}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00023}00023\ \textcolor{preprocessor}{\#define\ INITIAL\_BIAS\ 0.5f}}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00024}00024\ \textcolor{preprocessor}{\#define\ INITIAL\_BIAS\_INPUTN\ 0.5f}}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00025}00025\ }
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00033}\mbox{\hyperlink{structiris_data}{00033}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structiris_data}{irisData}}}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00034}00034\ \{}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00035}00035\ \ \ \ \ std::vector<std::vector<float>>\ features;\ }
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00036}00036\ \ \ \ \ std::vector<float>\ targets;}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00037}00037\ \};}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00038}00038\ }
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00046}00046\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00047}\mbox{\hyperlink{structdigit_data}{00047}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structdigit_data}{digitData}}}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00048}00048\ \{}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00049}00049\ \ \ \ \ std::vector<T>\ images;\ }
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00050}00050\ \ \ \ \ std::vector<T>\ targets;}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00051}00051\ \};}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00029}\mbox{\hyperlink{structiris_data}{00029}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structiris_data}{irisData}}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00030}00030\ \{}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00031}00031\ \ \ \ \ std::vector<std::vector<float>>\ features;}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00032}00032\ \ \ \ \ std::vector<float>\ targets;}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00033}00033\ \};}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00042}00042\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00043}\mbox{\hyperlink{structdigit_data}{00043}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structdigit_data}{digitData}}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00044}00044\ \{}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00045}00045\ \ \ \ \ std::vector<T>\ images;}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00046}00046\ \ \ \ \ std::vector<T>\ targets;}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00047}00047\ \};}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00049}00049\ \textcolor{comment}{//\ Add\ forward\ declaration\ for\ TrainTestSplit}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00050}00050\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00051}00051\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_train_test_split}{TrainTestSplit}};}
 \DoxyCodeLine{\Hypertarget{common_8hpp_source_l00052}00052\ }
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00053}00053\ \textcolor{comment}{//\ Add\ forward\ declaration\ for\ TrainTestSplit}}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00054}00054\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00055}00055\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_train_test_split}{TrainTestSplit}};}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00056}00056\ }
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00057}00057\ \textcolor{comment}{//\ Forward\ declaration}}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00058}00058\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00059}00059\ \mbox{\hyperlink{struct_train_test_split}{TrainTestSplit<T>}}\ \mbox{\hyperlink{common_8hpp_a61248e8dc643d3bc365b4e7fe91eb6a0}{createTrainTestSplit}}(}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00060}00060\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<T>>\&\ features,\ }
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00061}00061\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<T>>\&\ targets,\ }
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00062}00062\ \ \ \ \ \textcolor{keywordtype}{float}\ splitRatio);}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00063}00063\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00071}00071\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00072}\mbox{\hyperlink{struct_train_test_split}{00072}}\ \textcolor{keyword}{struct\ }TrainTestSplit}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00073}00073\ \{}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00074}00074\ \ \ \ \ \textcolor{comment}{//\ Constructors}}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00075}00075\ \ \ \ \ TrainTestSplit()\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00076}00076\ \ \ \ \ TrainTestSplit(\textcolor{keyword}{const}\ std::vector<std::vector<T>>\&\ features,\ }
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<T>>\&\ targets,\ }
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ splitRatio)}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00079}00079\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00080}00080\ \ \ \ \ \ \ \ \ TrainTestSplit<T>\ tts\ =\ \mbox{\hyperlink{common_8hpp_a61248e8dc643d3bc365b4e7fe91eb6a0}{createTrainTestSplit}}(features,\ targets,\ splitRatio);}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00081}00081\ \ \ \ \ \ \ \ \ trainFeatures\ =\ tts.trainFeatures;}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00082}00082\ \ \ \ \ \ \ \ \ testFeatures\ =\ tts.testFeatures;}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00083}00083\ \ \ \ \ \ \ \ \ trainTargets\ =\ tts.trainTargets;}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00084}00084\ \ \ \ \ \ \ \ \ testTargets\ =\ tts.testTargets;}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00085}00085\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00086}00086\ }
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00087}00087\ \ \ \ \ std::vector<std::vector<T>>\ trainFeatures;}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00088}00088\ \ \ \ \ std::vector<std::vector<T>>\ testFeatures;}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00089}00089\ \ \ \ \ std::vector<std::vector<T>>\ trainTargets;}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00090}00090\ \ \ \ \ std::vector<std::vector<T>>\ testTargets;}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00091}00091\ \};}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00092}00092\ }
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00100}\mbox{\hyperlink{common_8hpp_a00f0be429c7399dd999d063741939abf}{00100}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{common_8hpp_a00f0be429c7399dd999d063741939abf}{gradientBetweenNeurons}}(\textcolor{keywordtype}{float}\&\ output,\ \textcolor{keywordtype}{float}\&\ error)}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00101}00101\ \{}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00102}00102\ \ \ \ \ \textcolor{keywordflow}{return}\ output\ *\ error;}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00103}00103\ \}}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00104}00104\ }
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00112}\mbox{\hyperlink{common_8hpp_a2eb264b9c955b53d8e62dedeec808b34}{00112}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{common_8hpp_a2eb264b9c955b53d8e62dedeec808b34}{deltaGradient}}(\textcolor{keywordtype}{float}\&\ learningRate,\ \textcolor{keywordtype}{float}\&\ gradient)}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00113}00113\ \{}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00114}00114\ \ \ \ \ \textcolor{keywordflow}{return}\ learningRate\ *\ gradient;}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00115}00115\ \}}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00116}00116\ }
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00124}\mbox{\hyperlink{common_8hpp_aa1358e901e2151004d816e81ff3decc6}{00124}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{common_8hpp_aa1358e901e2151004d816e81ff3decc6}{deltaBias}}(\textcolor{keywordtype}{float}\&\ learningRate,\ \textcolor{keywordtype}{float}\&\ \mbox{\hyperlink{common_8hpp_a2eb264b9c955b53d8e62dedeec808b34}{deltaGradient}})}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00125}00125\ \{}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00126}00126\ \ \ \ \ \textcolor{keywordflow}{return}\ learningRate\ *\ \mbox{\hyperlink{common_8hpp_a2eb264b9c955b53d8e62dedeec808b34}{deltaGradient}};}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00127}00127\ \}}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00128}00128\ }
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00129}00129\ }
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00136}00136\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00137}\mbox{\hyperlink{common_8hpp_ae976f686650de7a8df93bc16d4929d1c}{00137}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common_8hpp_ae976f686650de7a8df93bc16d4929d1c}{printVector}}(\textcolor{keyword}{const}\ std::vector<T>\ \&vec,\ \textcolor{keyword}{const}\ std::string\ extra\ =\ \textcolor{stringliteral}{"{}"{}})}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00138}00138\ \{}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00139}00139\ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_floating\_point\_v<T>)\ \{}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ T\ \&item\ :\ vec)\ \{}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%.2f\ "{}},\ item);\ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00143}00143\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_integral\_v<T>)\ \{}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ T\ \&item\ :\ vec)\ \{}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00053}00053\ \textcolor{comment}{//\ Forward\ declaration}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00054}00054\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00055}00055\ \mbox{\hyperlink{struct_train_test_split}{TrainTestSplit<T>}}\ \mbox{\hyperlink{common_8hpp_a61248e8dc643d3bc365b4e7fe91eb6a0}{createTrainTestSplit}}(}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00056}00056\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<T>>\ \&features,}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00057}00057\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<T>>\ \&targets,}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00058}00058\ \ \ \ \ \textcolor{keywordtype}{float}\ splitRatio);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00067}00067\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00068}\mbox{\hyperlink{struct_train_test_split}{00068}}\ \textcolor{keyword}{struct\ }TrainTestSplit}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00069}00069\ \{}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00070}00070\ \ \ \ \ \textcolor{comment}{//\ Constructors}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00071}00071\ \ \ \ \ TrainTestSplit()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00072}00072\ \ \ \ \ TrainTestSplit(\textcolor{keyword}{const}\ std::vector<std::vector<T>>\ \&features,}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<T>>\ \&targets,}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ splitRatio)}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00075}00075\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00076}00076\ \ \ \ \ \ \ \ \ TrainTestSplit<T>\ tts\ =\ \mbox{\hyperlink{common_8hpp_a61248e8dc643d3bc365b4e7fe91eb6a0}{createTrainTestSplit}}(features,\ targets,\ splitRatio);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00077}00077\ \ \ \ \ \ \ \ \ trainFeatures\ =\ tts.trainFeatures;}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00078}00078\ \ \ \ \ \ \ \ \ testFeatures\ =\ tts.testFeatures;}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00079}00079\ \ \ \ \ \ \ \ \ trainTargets\ =\ tts.trainTargets;}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00080}00080\ \ \ \ \ \ \ \ \ testTargets\ =\ tts.testTargets;}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00081}00081\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00083}00083\ \ \ \ \ std::vector<std::vector<T>>\ trainFeatures;}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00084}00084\ \ \ \ \ std::vector<std::vector<T>>\ testFeatures;}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00085}00085\ \ \ \ \ std::vector<std::vector<T>>\ trainTargets;}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00086}00086\ \ \ \ \ std::vector<std::vector<T>>\ testTargets;}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00087}00087\ \};}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00096}\mbox{\hyperlink{common_8hpp_a00f0be429c7399dd999d063741939abf}{00096}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{common_8hpp_a00f0be429c7399dd999d063741939abf}{gradientBetweenNeurons}}(\textcolor{keywordtype}{float}\ \&output,\ \textcolor{keywordtype}{float}\ \&error)}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00097}00097\ \{}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00098}00098\ \ \ \ \ \textcolor{keywordflow}{return}\ output\ *\ error;}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00099}00099\ \}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00108}\mbox{\hyperlink{common_8hpp_a2eb264b9c955b53d8e62dedeec808b34}{00108}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{common_8hpp_a2eb264b9c955b53d8e62dedeec808b34}{deltaGradient}}(\textcolor{keywordtype}{float}\ \&learningRate,\ \textcolor{keywordtype}{float}\ \&gradient)}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00109}00109\ \{}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00110}00110\ \ \ \ \ \textcolor{keywordflow}{return}\ learningRate\ *\ gradient;}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00111}00111\ \}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00120}\mbox{\hyperlink{common_8hpp_aa1358e901e2151004d816e81ff3decc6}{00120}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{common_8hpp_aa1358e901e2151004d816e81ff3decc6}{deltaBias}}(\textcolor{keywordtype}{float}\ \&learningRate,\ \textcolor{keywordtype}{float}\ \&\mbox{\hyperlink{common_8hpp_a2eb264b9c955b53d8e62dedeec808b34}{deltaGradient}})}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00121}00121\ \{}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00122}00122\ \ \ \ \ \textcolor{keywordflow}{return}\ learningRate\ *\ \mbox{\hyperlink{common_8hpp_a2eb264b9c955b53d8e62dedeec808b34}{deltaGradient}};}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00123}00123\ \}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00131}00131\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00132}\mbox{\hyperlink{common_8hpp_ae976f686650de7a8df93bc16d4929d1c}{00132}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common_8hpp_ae976f686650de7a8df93bc16d4929d1c}{printVector}}(\textcolor{keyword}{const}\ std::vector<T>\ \&vec,\ \textcolor{keyword}{const}\ std::string\ extra\ =\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00133}00133\ \{}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00134}00134\ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_floating\_point\_v<T>)}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00135}00135\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ T\ \&item\ :\ vec)}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%.2f\ "{}},\ item);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00140}00140\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00141}00141\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_integral\_v<T>)}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00142}00142\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ T\ \&item\ :\ vec)}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{common_8hpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%i\ "{}},\ item);}
 \DoxyCodeLine{\Hypertarget{common_8hpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{common_8hpp_source_l00147}00147\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00148}00148\ \ \ \ \ \textcolor{keywordflow}{if}\ (!extra.empty())\ \{}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00149}00149\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%s"{}},\ extra.c\_str());}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00150}00150\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00151}00151\ \}}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00152}00152\ }
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00160}00160\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00161}\mbox{\hyperlink{common_8hpp_aa0d7c531e422a118acbfa56d256729ac}{00161}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common_8hpp_aa0d7c531e422a118acbfa56d256729ac}{normalizeVector}}(std::vector<T>\ \&vec)}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00162}00162\ \{}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00163}00163\ \ \ \ \ T\ maxElement\ =\ *std::max\_element(vec.begin(),\ vec.end());}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00164}00164\ \ \ \ \ T\ minElement\ =\ *std::min\_element(vec.begin(),\ vec.end());}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00165}00165\ \ \ \ \ T\ minMax\ =\ maxElement\ -\/\ minElement;}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00166}00166\ }
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00167}00167\ \ \ \ \ \textcolor{comment}{//\ https://www.statology.org/normalize-\/data-\/between-\/0-\/and-\/1/}}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00168}00168\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ vec.size();\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00169}00169\ \ \ \ \ \ \ \ \ T\ xi\ =\ vec[i];\ }
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00170}00170\ \ \ \ \ \ \ \ \ vec.at(i)\ =\ (xi\ -\/\ minElement)\ /\ minMax;}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00171}00171\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00172}00172\ \}}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00173}00173\ }
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00181}00181\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00182}\mbox{\hyperlink{common_8hpp_a04d8d14e34e107e70a33029e25f00018}{00182}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common_8hpp_a04d8d14e34e107e70a33029e25f00018}{normalize2DVector}}(std::vector<std::vector<T>>\ \&vec)}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00183}00183\ \{}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00184}00184\ \ \ \ \ \textcolor{comment}{//\ Get\ the\ max\ and\ min\ element\ out\ of\ the\ 2D\ vector}}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00185}00185\ \ \ \ \ T\ maxElement,\ minElement\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00186}00186\ \ \ \ \ T\ newMaxElement,\ newMinElement\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00187}00187\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::vector<T>\ \&innerVec\ :\ vec)\ \{}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00188}00188\ \ \ \ \ \ \ \ \ newMaxElement\ =\ *std::max\_element(innerVec.begin(),\ innerVec.end());}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00189}00189\ \ \ \ \ \ \ \ \ newMinElement\ =\ *std::min\_element(innerVec.begin(),\ innerVec.end());}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (newMaxElement\ >\ maxElement)\ \{}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ maxElement\ =\ newMaxElement;}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (newMinElement\ <\ minElement)\ \{}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ minElement\ =\ newMinElement;}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00196}00196\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00197}00197\ }
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00198}00198\ \ \ \ \ T\ minMax\ =\ maxElement\ -\/\ minElement;}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00199}00199\ }
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00200}00200\ \ \ \ \ \textcolor{comment}{//\ https://www.statology.org/normalize-\/data-\/between-\/0-\/and-\/1/}}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00201}00201\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::vector<T>\ \&innerVec\ :\ vec)\ \{}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ innerVec.size();\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ T\ xi\ =\ innerVec[i];\ }
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ innerVec.at(i)\ =\ (xi\ -\/\ minElement)\ /\ minMax;}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00205}00205\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00206}00206\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00207}00207\ }
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00208}00208\ \}}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00209}00209\ }
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00218}00218\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00219}\mbox{\hyperlink{common_8hpp_a61248e8dc643d3bc365b4e7fe91eb6a0}{00219}}\ \mbox{\hyperlink{struct_train_test_split}{TrainTestSplit<T>}}\ \mbox{\hyperlink{common_8hpp_a61248e8dc643d3bc365b4e7fe91eb6a0}{createTrainTestSplit}}(}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00220}00220\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<T>>\&\ features,\ }
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00221}00221\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<T>>\&\ targets,\ }
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00222}00222\ \ \ \ \ \textcolor{keywordtype}{float}\ splitRatio)}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00223}00223\ \{}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00224}00224\ \ \ \ \ \mbox{\hyperlink{struct_train_test_split}{TrainTestSplit<T>}}\ tts;}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00225}00225\ \ \ \ \ \textcolor{comment}{//\ Reserve\ the\ memory\ for\ the\ vectors}}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00226}00226\ \ \ \ \ tts.trainFeatures.reserve(features.size()\ *\ splitRatio);}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00227}00227\ \ \ \ \ tts.testFeatures.reserve(features.size()\ *\ (1\ -\/\ splitRatio));}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00228}00228\ \ \ \ \ tts.trainTargets.reserve(targets.size()\ *\ splitRatio);}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00229}00229\ \ \ \ \ tts.testTargets.reserve(targets.size()\ *\ (1\ -\/\ splitRatio));}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00230}00230\ }
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00231}00231\ \ \ \ \ std::random\_device\ rd;}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00232}00232\ \ \ \ \ std::mt19937\ gen(rd());}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00233}00233\ \ \ \ \ std::uniform\_int\_distribution<>\ dis(0,\ 1);}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00234}00234\ }
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00235}00235\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ features.size();\ i++)}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00236}00236\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00237}00237\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ <\ features.size()\ *\ splitRatio)\ \{}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ tts.trainFeatures.emplace\_back(features[i]);}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ tts.trainTargets.emplace\_back(targets[i]);}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ tts.testFeatures.emplace\_back(features[i]);}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ tts.testTargets.emplace\_back(targets[i]);}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00244}00244\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00245}00245\ \ \ \ \ \textcolor{keywordflow}{return}\ tts;}
-\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00246}00246\ \}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00148}00148\ \ \ \ \ \textcolor{keywordflow}{if}\ (!extra.empty())}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00149}00149\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00150}00150\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%s"{}},\ extra.c\_str());}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00151}00151\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00152}00152\ \}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00154}00154\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ printEigenVector(\textcolor{keyword}{const}\ Eigen::VectorXf\ \&vec,\ \textcolor{keyword}{const}\ std::string\ extra\ =\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00155}00155\ \{}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00156}00156\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ vec.size();\ i++)}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00157}00157\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00158}00158\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%.2f\ "{}},\ vec(i));}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00159}00159\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00160}00160\ \ \ \ \ \textcolor{keywordflow}{if}\ (!extra.empty())}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00161}00161\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00162}00162\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%s"{}},\ extra.c\_str());}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00163}00163\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00164}00164\ \}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00173}00173\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00174}\mbox{\hyperlink{common_8hpp_aa0d7c531e422a118acbfa56d256729ac}{00174}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common_8hpp_aa0d7c531e422a118acbfa56d256729ac}{normalizeVector}}(std::vector<T>\ \&vec)}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00175}00175\ \{}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00176}00176\ \ \ \ \ T\ maxElement\ =\ *std::max\_element(vec.begin(),\ vec.end());}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00177}00177\ \ \ \ \ T\ minElement\ =\ *std::min\_element(vec.begin(),\ vec.end());}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00178}00178\ \ \ \ \ T\ minMax\ =\ maxElement\ -\/\ minElement;}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00180}00180\ \ \ \ \ \textcolor{comment}{//\ https://www.statology.org/normalize-\/data-\/between-\/0-\/and-\/1/}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00181}00181\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ vec.size();\ i++)}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00182}00182\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00183}00183\ \ \ \ \ \ \ \ \ T\ xi\ =\ vec[i];}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00184}00184\ \ \ \ \ \ \ \ \ vec.at(i)\ =\ (xi\ -\/\ minElement)\ /\ minMax;}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00185}00185\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00186}00186\ \}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00195}00195\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00196}\mbox{\hyperlink{common_8hpp_a04d8d14e34e107e70a33029e25f00018}{00196}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common_8hpp_a04d8d14e34e107e70a33029e25f00018}{normalize2DVector}}(std::vector<std::vector<T>>\ \&vec)}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00197}00197\ \{}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00198}00198\ \ \ \ \ \textcolor{comment}{//\ Get\ the\ max\ and\ min\ element\ out\ of\ the\ 2D\ vector}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00199}00199\ \ \ \ \ T\ maxElement,\ minElement\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00200}00200\ \ \ \ \ T\ newMaxElement,\ newMinElement\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00201}00201\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::vector<T>\ \&innerVec\ :\ vec)}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00202}00202\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00203}00203\ \ \ \ \ \ \ \ \ newMaxElement\ =\ *std::max\_element(innerVec.begin(),\ innerVec.end());}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00204}00204\ \ \ \ \ \ \ \ \ newMinElement\ =\ *std::min\_element(innerVec.begin(),\ innerVec.end());}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00205}00205\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (newMaxElement\ >\ maxElement)}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00206}00206\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ maxElement\ =\ newMaxElement;}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00208}00208\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00209}00209\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (newMinElement\ <\ minElement)}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00210}00210\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ minElement\ =\ newMinElement;}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00213}00213\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00214}00214\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00215}00215\ \ \ \ \ T\ minMax\ =\ maxElement\ -\/\ minElement;}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00216}00216\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00217}00217\ \ \ \ \ \textcolor{comment}{//\ https://www.statology.org/normalize-\/data-\/between-\/0-\/and-\/1/}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00218}00218\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::vector<T>\ \&innerVec\ :\ vec)}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00219}00219\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ innerVec.size();\ i++)}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00221}00221\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ T\ xi\ =\ innerVec[i];}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ innerVec.at(i)\ =\ (xi\ -\/\ minElement)\ /\ minMax;}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00225}00225\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00226}00226\ \}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00227}00227\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00236}00236\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00237}\mbox{\hyperlink{common_8hpp_a61248e8dc643d3bc365b4e7fe91eb6a0}{00237}}\ \mbox{\hyperlink{struct_train_test_split}{TrainTestSplit<T>}}\ \mbox{\hyperlink{common_8hpp_a61248e8dc643d3bc365b4e7fe91eb6a0}{createTrainTestSplit}}(}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00238}00238\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<T>>\ \&features,}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00239}00239\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<T>>\ \&targets,}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00240}00240\ \ \ \ \ \textcolor{keywordtype}{float}\ splitRatio)}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00241}00241\ \{}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00242}00242\ \ \ \ \ \mbox{\hyperlink{struct_train_test_split}{TrainTestSplit<T>}}\ tts;}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00243}00243\ \ \ \ \ \textcolor{comment}{//\ Reserve\ the\ memory\ for\ the\ vectors}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00244}00244\ \ \ \ \ tts.trainFeatures.reserve(features.size()\ *\ splitRatio);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00245}00245\ \ \ \ \ tts.testFeatures.reserve(features.size()\ *\ (1\ -\/\ splitRatio));}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00246}00246\ \ \ \ \ tts.trainTargets.reserve(targets.size()\ *\ splitRatio);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00247}00247\ \ \ \ \ tts.testTargets.reserve(targets.size()\ *\ (1\ -\/\ splitRatio));}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00248}00248\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00249}00249\ \ \ \ \ std::random\_device\ rd;}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00250}00250\ \ \ \ \ std::mt19937\ gen(rd());}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00251}00251\ \ \ \ \ std::uniform\_int\_distribution<>\ dis(0,\ 1);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00252}00252\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00253}00253\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ features.size();\ i++)}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00254}00254\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ <\ features.size()\ *\ splitRatio)}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ tts.trainFeatures.emplace\_back(features[i]);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ tts.trainTargets.emplace\_back(targets[i]);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00259}00259\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00260}00260\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00261}00261\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ tts.testFeatures.emplace\_back(features[i]);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ tts.testTargets.emplace\_back(targets[i]);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00264}00264\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00265}00265\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00266}00266\ \ \ \ \ \textcolor{keywordflow}{return}\ tts;}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00267}00267\ \}}
 
 \end{DoxyCode}

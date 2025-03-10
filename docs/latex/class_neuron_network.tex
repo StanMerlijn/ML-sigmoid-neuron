@@ -28,6 +28,8 @@ void \mbox{\hyperlink{class_neuron_network_a5076c9a5f131e6665c6241de72487748}{up
 \begin{DoxyCompactList}\small\item\em Updates the neurons in the network. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_neuron_network_ac256ee88197f4827c3b873385e016ffe}{train\+Inputs2D}} (const std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \&inputs, const std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \&targets, int epochs)
 \begin{DoxyCompactList}\small\item\em Trains the network on a set of inputs and targets. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_neuron_network_aa65b1606c5c464ec814f87bd8b3ce48b}{Loss}} (const std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \&inputs, const std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \&targets)
+\begin{DoxyCompactList}\small\item\em Calculates the complete loss of the network using MSE. \end{DoxyCompactList}\item 
 std\+::vector$<$ \mbox{\hyperlink{class_neuron_layer}{Neuron\+Layer}} $>$ \mbox{\hyperlink{class_neuron_network_a11cbabd86e73a9101a089313af3ad2ae}{get\+Layers}} () const
 \begin{DoxyCompactList}\small\item\em Returns the layers in the network. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_neuron_network_afcd87fd05d40dbbe564b27899568529a}{set\+Target}} (std\+::vector$<$ float $>$ \&targets)
@@ -102,7 +104,7 @@ Prints the network details.
 
 
 
-Definition at line \mbox{\hyperlink{neuron_network_8cpp_source_l00153}{153}} of file \mbox{\hyperlink{neuron_network_8cpp_source}{neuron\+Network.\+cpp}}.
+Definition at line \mbox{\hyperlink{neuron_network_8cpp_source_l00185}{185}} of file \mbox{\hyperlink{neuron_network_8cpp_source}{neuron\+Network.\+cpp}}.
 
 \Hypertarget{class_neuron_network_a261796a9a1b140cf1efeb80ab4f21a11}\index{NeuronNetwork@{NeuronNetwork}!backPropagation@{backPropagation}}
 \index{backPropagation@{backPropagation}!NeuronNetwork@{NeuronNetwork}}
@@ -116,7 +118,7 @@ Performs a backpropagation operation. On all the layers sequentially.
 
 
 
-Definition at line \mbox{\hyperlink{neuron_network_8cpp_source_l00057}{57}} of file \mbox{\hyperlink{neuron_network_8cpp_source}{neuron\+Network.\+cpp}}.
+Definition at line \mbox{\hyperlink{neuron_network_8cpp_source_l00062}{62}} of file \mbox{\hyperlink{neuron_network_8cpp_source}{neuron\+Network.\+cpp}}.
 
 \Hypertarget{class_neuron_network_a24903c532713fe34bdc4f7c49f327730}\index{NeuronNetwork@{NeuronNetwork}!feedForward@{feedForward}}
 \index{feedForward@{feedForward}!NeuronNetwork@{NeuronNetwork}}
@@ -138,7 +140,7 @@ The output of the network.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{neuron_network_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{neuron_network_8cpp_source}{neuron\+Network.\+cpp}}.
+Definition at line \mbox{\hyperlink{neuron_network_8cpp_source_l00043}{43}} of file \mbox{\hyperlink{neuron_network_8cpp_source}{neuron\+Network.\+cpp}}.
 
 \Hypertarget{class_neuron_network_a11cbabd86e73a9101a089313af3ad2ae}\index{NeuronNetwork@{NeuronNetwork}!getLayers@{getLayers}}
 \index{getLayers@{getLayers}!NeuronNetwork@{NeuronNetwork}}
@@ -155,7 +157,31 @@ A vector of neuron layers.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{neuron_network_8hpp_source_l00084}{84}} of file \mbox{\hyperlink{neuron_network_8hpp_source}{neuron\+Network.\+hpp}}.
+Definition at line \mbox{\hyperlink{neuron_network_8hpp_source_l00093}{93}} of file \mbox{\hyperlink{neuron_network_8hpp_source}{neuron\+Network.\+hpp}}.
+
+\Hypertarget{class_neuron_network_aa65b1606c5c464ec814f87bd8b3ce48b}\index{NeuronNetwork@{NeuronNetwork}!Loss@{Loss}}
+\index{Loss@{Loss}!NeuronNetwork@{NeuronNetwork}}
+\doxysubsubsection{\texorpdfstring{Loss()}{Loss()}}
+{\footnotesize\ttfamily \label{class_neuron_network_aa65b1606c5c464ec814f87bd8b3ce48b} 
+double Neuron\+Network\+::\+Loss (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \&}]{inputs}{, }\item[{const std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \&}]{targets}{}\end{DoxyParamCaption})}
+
+
+
+Calculates the complete loss of the network using MSE. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inputs} & A vector of input values. \\
+\hline
+{\em targets} & A vector of target values. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The loss of the network. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{neuron_network_8cpp_source_l00114}{114}} of file \mbox{\hyperlink{neuron_network_8cpp_source}{neuron\+Network.\+cpp}}.
 
 \Hypertarget{class_neuron_network_aa3411e7b43788ab9c2382c17d1d485ab}\index{NeuronNetwork@{NeuronNetwork}!maskTarget@{maskTarget}}
 \index{maskTarget@{maskTarget}!NeuronNetwork@{NeuronNetwork}}
@@ -165,7 +191,7 @@ void Neuron\+Network\+::mask\+Target (\begin{DoxyParamCaption}\item[{float}]{tar
 
 
 
-Definition at line \mbox{\hyperlink{neuron_network_8cpp_source_l00135}{135}} of file \mbox{\hyperlink{neuron_network_8cpp_source}{neuron\+Network.\+cpp}}.
+Definition at line \mbox{\hyperlink{neuron_network_8cpp_source_l00164}{164}} of file \mbox{\hyperlink{neuron_network_8cpp_source}{neuron\+Network.\+cpp}}.
 
 \Hypertarget{class_neuron_network_accc3fa6f6f0355f7cce77daa423209ad}\index{NeuronNetwork@{NeuronNetwork}!predict@{predict}}
 \index{predict@{predict}!NeuronNetwork@{NeuronNetwork}}
@@ -187,7 +213,7 @@ The output of the network.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{neuron_network_8cpp_source_l00052}{52}} of file \mbox{\hyperlink{neuron_network_8cpp_source}{neuron\+Network.\+cpp}}.
+Definition at line \mbox{\hyperlink{neuron_network_8cpp_source_l00057}{57}} of file \mbox{\hyperlink{neuron_network_8cpp_source}{neuron\+Network.\+cpp}}.
 
 \Hypertarget{class_neuron_network_afcd87fd05d40dbbe564b27899568529a}\index{NeuronNetwork@{NeuronNetwork}!setTarget@{setTarget}}
 \index{setTarget@{setTarget}!NeuronNetwork@{NeuronNetwork}}
@@ -206,7 +232,7 @@ Sets the target values in the network.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{neuron_network_8hpp_source_l00091}{91}} of file \mbox{\hyperlink{neuron_network_8hpp_source}{neuron\+Network.\+hpp}}.
+Definition at line \mbox{\hyperlink{neuron_network_8hpp_source_l00100}{100}} of file \mbox{\hyperlink{neuron_network_8hpp_source}{neuron\+Network.\+hpp}}.
 
 \Hypertarget{class_neuron_network_ac256ee88197f4827c3b873385e016ffe}\index{NeuronNetwork@{NeuronNetwork}!trainInputs2D@{trainInputs2D}}
 \index{trainInputs2D@{trainInputs2D}!NeuronNetwork@{NeuronNetwork}}
@@ -231,7 +257,7 @@ Trains the network on a set of inputs and targets.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{neuron_network_8cpp_source_l00081}{81}} of file \mbox{\hyperlink{neuron_network_8cpp_source}{neuron\+Network.\+cpp}}.
+Definition at line \mbox{\hyperlink{neuron_network_8cpp_source_l00093}{93}} of file \mbox{\hyperlink{neuron_network_8cpp_source}{neuron\+Network.\+cpp}}.
 
 \Hypertarget{class_neuron_network_a5076c9a5f131e6665c6241de72487748}\index{NeuronNetwork@{NeuronNetwork}!update@{update}}
 \index{update@{update}!NeuronNetwork@{NeuronNetwork}}
@@ -245,7 +271,7 @@ Updates the neurons in the network.
 
 
 
-Definition at line \mbox{\hyperlink{neuron_network_8cpp_source_l00074}{74}} of file \mbox{\hyperlink{neuron_network_8cpp_source}{neuron\+Network.\+cpp}}.
+Definition at line \mbox{\hyperlink{neuron_network_8cpp_source_l00085}{85}} of file \mbox{\hyperlink{neuron_network_8cpp_source}{neuron\+Network.\+cpp}}.
 
 
 

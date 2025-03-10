@@ -1,0 +1,243 @@
+\doxysection{test\+Backpropagation.\+cpp File Reference}
+\hypertarget{test_backpropagation_8cpp}{}\label{test_backpropagation_8cpp}\index{testBackpropagation.cpp@{testBackpropagation.cpp}}
+
+
+In this file the tests for Backpropagation are implemented.  
+
+
+{\ttfamily \#include $<$catch2/catch\+\_\+all.\+hpp$>$}\newline
+{\ttfamily \#include "{}../header/common.\+hpp"{}}\newline
+{\ttfamily \#include "{}../header/csv\+\_\+reader.\+hpp"{}}\newline
+{\ttfamily \#include "{}../header/neuron.\+hpp"{}}\newline
+{\ttfamily \#include "{}../header/neuron\+Layer.\+hpp"{}}\newline
+{\ttfamily \#include "{}../header/neuron\+Network.\+hpp"{}}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+Include dependency graph for test\+Backpropagation.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{test_backpropagation_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{test_backpropagation_8cpp_a656eb5868e824d59f489f910db438420}{CATCH\+\_\+\+CONFIG\+\_\+\+MAIN}}
+\item 
+\#define \mbox{\hyperlink{test_backpropagation_8cpp_aacd511497174b5d3bb17e088cf2ac71f}{MEASURE\+\_\+\+BLOCK}}(message,  code\+\_\+block)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{test_backpropagation_8cpp_a160dcabc54bbecfc69484678cafadb81}{operator new}} (size\+\_\+t size)
+\item 
+\mbox{\hyperlink{test_backpropagation_8cpp_a835af153be29b7a3c96730ee6f1c0e21}{TEST\+\_\+\+CASE}} ("{}Loading digit data"{}, "{}\mbox{[}backpropagation\mbox{]}"{})
+\begin{DoxyCompactList}\small\item\em In this test case we test if we can load the digits dataset. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{test_backpropagation_8cpp_af2b4f7a34f5d03559ee7a38a893ad9ea}{TEST\+\_\+\+CASE}} ("{}Testing initialization of the Neuron\+Layer"{}, "{}\mbox{[}Neuron\+Layer\mbox{]}"{})
+\begin{DoxyCompactList}\small\item\em In this test case we test the initialization of the \doxylink{class_neuron_layer}{Neuron\+Layer}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{test_backpropagation_8cpp_a4281632183a98cabc6515a7987072a5a}{TEST\+\_\+\+CASE}} ("{}Testing initialization of the Neuron\+Network"{}, "{}\mbox{[}Neuron\+Network\mbox{]}"{})
+\begin{DoxyCompactList}\small\item\em In this test case we test the initialization of the \doxylink{class_neuron_network}{Neuron\+Network}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{test_backpropagation_8cpp_a779e44cbbf67002d008c92032d277918}{TEST\+\_\+\+CASE}} ("{}AND neural Network"{}, "{}\mbox{[}Neuron\+Network\mbox{]}\mbox{[}AND\mbox{]}"{})
+\begin{DoxyCompactList}\small\item\em In this test case we test the ability of a neural network to learn the AND function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{test_backpropagation_8cpp_a8c5107ddd430a0a33624779674b10449}{TEST\+\_\+\+CASE}} ("{}XOR Neural Network"{}, "{}\mbox{[}Neuron\+Network\mbox{]}\mbox{[}XOR\mbox{]}"{})
+\begin{DoxyCompactList}\small\item\em In this test case we test the ability of a neural network to learn the XOR gate. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{test_backpropagation_8cpp_a45cf4f0e8c8eef30f5d9f57417a3f4e0}{TEST\+\_\+\+CASE}} ("{}Half adder \mbox{\hyperlink{class_neuron}{Neuron}} Network"{}, "{}\mbox{[}Neuron\+Network\mbox{]}\mbox{[}Half\+Adder\mbox{]}"{})
+\begin{DoxyCompactList}\small\item\em In this test case we test the ability of a neural network to learn the Half Adder. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{test_backpropagation_8cpp_a3317462aa615529c8b75826682be94bb}{TEST\+\_\+\+CASE}} ("{}Neuron\+Network Learning Iris dataset"{}, "{}\mbox{[}backpropagation\mbox{]}\mbox{[}Iris\mbox{]}"{})
+\begin{DoxyCompactList}\small\item\em In this test case we test the ability of a neural network to learn the Full Adder. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{test_backpropagation_8cpp_a7ebc6b490512a4188a37404dfae0196b}{TEST\+\_\+\+CASE}} ("{}Neuron\+Network Learning digit data"{}, "{}\mbox{[}backpropagation\mbox{]}"{})
+\begin{DoxyCompactList}\small\item\em In this test case we test the ability of a neural network to learn the digit dataset. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{test_backpropagation_8cpp_aea2e82f77bb67077df1d3ffa1680d9a1}{TEST\+\_\+\+CASE}} ("{}Neuron\+Network Learning MNIST dataset"{}, "{}\mbox{[}backpropagation\mbox{]}"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+In this file the tests for Backpropagation are implemented. 
+
+\begin{DoxyAuthor}{Author}
+Stan Merlijn 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/02-\/14
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}
+
+
+Definition in file \mbox{\hyperlink{test_backpropagation_8cpp_source}{test\+Backpropagation.\+cpp}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{test_backpropagation_8cpp_a656eb5868e824d59f489f910db438420}\index{testBackpropagation.cpp@{testBackpropagation.cpp}!CATCH\_CONFIG\_MAIN@{CATCH\_CONFIG\_MAIN}}
+\index{CATCH\_CONFIG\_MAIN@{CATCH\_CONFIG\_MAIN}!testBackpropagation.cpp@{testBackpropagation.cpp}}
+\doxysubsubsection{\texorpdfstring{CATCH\_CONFIG\_MAIN}{CATCH\_CONFIG\_MAIN}}
+{\footnotesize\ttfamily \label{test_backpropagation_8cpp_a656eb5868e824d59f489f910db438420} 
+\#define CATCH\+\_\+\+CONFIG\+\_\+\+MAIN}
+
+
+
+Definition at line \mbox{\hyperlink{test_backpropagation_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{test_backpropagation_8cpp_source}{test\+Backpropagation.\+cpp}}.
+
+\Hypertarget{test_backpropagation_8cpp_aacd511497174b5d3bb17e088cf2ac71f}\index{testBackpropagation.cpp@{testBackpropagation.cpp}!MEASURE\_BLOCK@{MEASURE\_BLOCK}}
+\index{MEASURE\_BLOCK@{MEASURE\_BLOCK}!testBackpropagation.cpp@{testBackpropagation.cpp}}
+\doxysubsubsection{\texorpdfstring{MEASURE\_BLOCK}{MEASURE\_BLOCK}}
+{\footnotesize\ttfamily \label{test_backpropagation_8cpp_aacd511497174b5d3bb17e088cf2ac71f} 
+\#define MEASURE\+\_\+\+BLOCK(\begin{DoxyParamCaption}\item[{}]{message}{, }\item[{}]{code\+\_\+block}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ start\ =\ std::chrono::high\_resolution\_clock::now();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ code\_block;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ end\ =\ std::chrono::high\_resolution\_clock::now();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ duration\ =\ std::chrono::duration<double,\ std::milli>(end\ -\/\ start).count();\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::cout\ <<\ message\ <<\ \textcolor{stringliteral}{"{}\ took\ "{}}\ <<\ duration\ <<\ \textcolor{stringliteral}{"{}\ ms"{}}\ <<\ std::endl;\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{test_backpropagation_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{test_backpropagation_8cpp_source}{test\+Backpropagation.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{test_backpropagation_8cpp_a160dcabc54bbecfc69484678cafadb81}\index{testBackpropagation.cpp@{testBackpropagation.cpp}!operator new@{operator new}}
+\index{operator new@{operator new}!testBackpropagation.cpp@{testBackpropagation.cpp}}
+\doxysubsubsection{\texorpdfstring{operator new()}{operator new()}}
+{\footnotesize\ttfamily \label{test_backpropagation_8cpp_a160dcabc54bbecfc69484678cafadb81} 
+void \texorpdfstring{$\ast$}{*} operator new (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{test_backpropagation_8cpp_source_l00046}{46}} of file \mbox{\hyperlink{test_backpropagation_8cpp_source}{test\+Backpropagation.\+cpp}}.
+
+\Hypertarget{test_backpropagation_8cpp_a779e44cbbf67002d008c92032d277918}\index{testBackpropagation.cpp@{testBackpropagation.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!testBackpropagation.cpp@{testBackpropagation.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/9]}}
+{\footnotesize\ttfamily \label{test_backpropagation_8cpp_a779e44cbbf67002d008c92032d277918} 
+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}AND neural Network"{}}]{}{, }\item[{"{}"{}}]{}{\mbox{[}\+Neuron\+Network\mbox{]}\mbox{[}\+AND\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+In this test case we test the ability of a neural network to learn the AND function. 
+
+
+
+Definition at line \mbox{\hyperlink{test_backpropagation_8cpp_source_l00167}{167}} of file \mbox{\hyperlink{test_backpropagation_8cpp_source}{test\+Backpropagation.\+cpp}}.
+
+\Hypertarget{test_backpropagation_8cpp_a45cf4f0e8c8eef30f5d9f57417a3f4e0}\index{testBackpropagation.cpp@{testBackpropagation.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!testBackpropagation.cpp@{testBackpropagation.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/9]}}
+{\footnotesize\ttfamily \label{test_backpropagation_8cpp_a45cf4f0e8c8eef30f5d9f57417a3f4e0} 
+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Half adder \mbox{\hyperlink{class_neuron}{Neuron}} Network"{}}]{}{, }\item[{"{}"{}}]{}{\mbox{[}\+Neuron\+Network\mbox{]}\mbox{[}\+Half\+Adder\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+In this test case we test the ability of a neural network to learn the Half Adder. 
+
+
+
+Definition at line \mbox{\hyperlink{test_backpropagation_8cpp_source_l00266}{266}} of file \mbox{\hyperlink{test_backpropagation_8cpp_source}{test\+Backpropagation.\+cpp}}.
+
+\Hypertarget{test_backpropagation_8cpp_a835af153be29b7a3c96730ee6f1c0e21}\index{testBackpropagation.cpp@{testBackpropagation.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!testBackpropagation.cpp@{testBackpropagation.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [3/9]}}
+{\footnotesize\ttfamily \label{test_backpropagation_8cpp_a835af153be29b7a3c96730ee6f1c0e21} 
+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Loading digit data"{}}]{}{, }\item[{"{}"{}}]{}{\mbox{[}backpropagation\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+In this test case we test if we can load the digits dataset. 
+
+
+
+Definition at line \mbox{\hyperlink{test_backpropagation_8cpp_source_l00068}{68}} of file \mbox{\hyperlink{test_backpropagation_8cpp_source}{test\+Backpropagation.\+cpp}}.
+
+\Hypertarget{test_backpropagation_8cpp_a7ebc6b490512a4188a37404dfae0196b}\index{testBackpropagation.cpp@{testBackpropagation.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!testBackpropagation.cpp@{testBackpropagation.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [4/9]}}
+{\footnotesize\ttfamily \label{test_backpropagation_8cpp_a7ebc6b490512a4188a37404dfae0196b} 
+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Neuron\+Network Learning digit data"{}}]{}{, }\item[{"{}"{}}]{}{\mbox{[}backpropagation\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+In this test case we test the ability of a neural network to learn the digit dataset. 
+
+
+
+Definition at line \mbox{\hyperlink{test_backpropagation_8cpp_source_l00431}{431}} of file \mbox{\hyperlink{test_backpropagation_8cpp_source}{test\+Backpropagation.\+cpp}}.
+
+\Hypertarget{test_backpropagation_8cpp_a3317462aa615529c8b75826682be94bb}\index{testBackpropagation.cpp@{testBackpropagation.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!testBackpropagation.cpp@{testBackpropagation.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [5/9]}}
+{\footnotesize\ttfamily \label{test_backpropagation_8cpp_a3317462aa615529c8b75826682be94bb} 
+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Neuron\+Network Learning Iris dataset"{}}]{}{, }\item[{"{}"{}}]{}{\mbox{[}backpropagation\mbox{]}\mbox{[}\+Iris\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+In this test case we test the ability of a neural network to learn the Full Adder. 
+
+
+
+Definition at line \mbox{\hyperlink{test_backpropagation_8cpp_source_l00315}{315}} of file \mbox{\hyperlink{test_backpropagation_8cpp_source}{test\+Backpropagation.\+cpp}}.
+
+\Hypertarget{test_backpropagation_8cpp_aea2e82f77bb67077df1d3ffa1680d9a1}\index{testBackpropagation.cpp@{testBackpropagation.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!testBackpropagation.cpp@{testBackpropagation.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [6/9]}}
+{\footnotesize\ttfamily \label{test_backpropagation_8cpp_aea2e82f77bb67077df1d3ffa1680d9a1} 
+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Neuron\+Network Learning MNIST dataset"{}}]{}{, }\item[{"{}"{}}]{}{\mbox{[}backpropagation\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{test_backpropagation_8cpp_source_l00574}{574}} of file \mbox{\hyperlink{test_backpropagation_8cpp_source}{test\+Backpropagation.\+cpp}}.
+
+\Hypertarget{test_backpropagation_8cpp_af2b4f7a34f5d03559ee7a38a893ad9ea}\index{testBackpropagation.cpp@{testBackpropagation.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!testBackpropagation.cpp@{testBackpropagation.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [7/9]}}
+{\footnotesize\ttfamily \label{test_backpropagation_8cpp_af2b4f7a34f5d03559ee7a38a893ad9ea} 
+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Testing initialization of the Neuron\+Layer"{}}]{}{, }\item[{"{}"{}}]{}{\mbox{[}\+Neuron\+Layer\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+In this test case we test the initialization of the \doxylink{class_neuron_layer}{Neuron\+Layer}. 
+
+
+
+Definition at line \mbox{\hyperlink{test_backpropagation_8cpp_source_l00091}{91}} of file \mbox{\hyperlink{test_backpropagation_8cpp_source}{test\+Backpropagation.\+cpp}}.
+
+\Hypertarget{test_backpropagation_8cpp_a4281632183a98cabc6515a7987072a5a}\index{testBackpropagation.cpp@{testBackpropagation.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!testBackpropagation.cpp@{testBackpropagation.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [8/9]}}
+{\footnotesize\ttfamily \label{test_backpropagation_8cpp_a4281632183a98cabc6515a7987072a5a} 
+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Testing initialization of the Neuron\+Network"{}}]{}{, }\item[{"{}"{}}]{}{\mbox{[}\+Neuron\+Network\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+In this test case we test the initialization of the \doxylink{class_neuron_network}{Neuron\+Network}. 
+
+
+
+Definition at line \mbox{\hyperlink{test_backpropagation_8cpp_source_l00106}{106}} of file \mbox{\hyperlink{test_backpropagation_8cpp_source}{test\+Backpropagation.\+cpp}}.
+
+\Hypertarget{test_backpropagation_8cpp_a8c5107ddd430a0a33624779674b10449}\index{testBackpropagation.cpp@{testBackpropagation.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!testBackpropagation.cpp@{testBackpropagation.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [9/9]}}
+{\footnotesize\ttfamily \label{test_backpropagation_8cpp_a8c5107ddd430a0a33624779674b10449} 
+TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}XOR Neural Network"{}}]{}{, }\item[{"{}"{}}]{}{\mbox{[}\+Neuron\+Network\mbox{]}\mbox{[}\+XOR\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+In this test case we test the ability of a neural network to learn the XOR gate. 
+
+
+
+Definition at line \mbox{\hyperlink{test_backpropagation_8cpp_source_l00217}{217}} of file \mbox{\hyperlink{test_backpropagation_8cpp_source}{test\+Backpropagation.\+cpp}}.
+

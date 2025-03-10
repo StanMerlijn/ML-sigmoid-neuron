@@ -1,0 +1,128 @@
+\doxysection{mnist\+\_\+importer.\+py File Reference}
+\hypertarget{mnist__importer_8py}{}\label{mnist__importer_8py}\index{mnist\_importer.py@{mnist\_importer.py}}
+
+
+Module for creating and saving the mnist dataset.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{mnist__importer_8py_aad7d646d211cb87a74f44d83409f94cd}{mnist\+\_\+importer.\+write\+\_\+set\+\_\+to\+\_\+csv}} (X, filename)
+\begin{DoxyCompactList}\small\item\em Writes a set of images to a CSV file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{mnist__importer_8py_a4e1de77340ba2a2f9641b0f456d1f271}{mnist\+\_\+importer.\+write\+\_\+file\+\_\+task}} (X, filename)
+\begin{DoxyCompactList}\small\item\em Handles each file writing operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{mnist__importer_8py_afab07f8e75da9360cc5ed9c6709be468}{mnist\+\_\+importer.\+test\+\_\+X}}
+\item 
+\mbox{\hyperlink{mnist__importer_8py_a44764341d292da74554e4b0ef70885e0}{mnist\+\_\+importer.\+test\+\_\+y}}
+\item 
+list \mbox{\hyperlink{mnist__importer_8py_a1046146b804b6acf4abe04c0c7687bf7}{mnist\+\_\+importer.\+tasks}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Module for creating and saving the mnist dataset. 
+
+This module loads the mnist dataset from keras, converts the images and targets to CSV files, and writes them to CSV files using a helper function. 
+
+Definition in file \mbox{\hyperlink{mnist__importer_8py_source}{mnist\+\_\+importer.\+py}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{mnist__importer_8py_a4e1de77340ba2a2f9641b0f456d1f271}\index{mnist\_importer.py@{mnist\_importer.py}!write\_file\_task@{write\_file\_task}}
+\index{write\_file\_task@{write\_file\_task}!mnist\_importer.py@{mnist\_importer.py}}
+\doxysubsubsection{\texorpdfstring{write\_file\_task()}{write\_file\_task()}}
+{\footnotesize\ttfamily \label{mnist__importer_8py_a4e1de77340ba2a2f9641b0f456d1f271} 
+mnist\+\_\+importer.\+write\+\_\+file\+\_\+task (\begin{DoxyParamCaption}\item[{}]{X}{, }\item[{}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Handles each file writing operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & Array of images or labels to be written to CSV. \\
+\hline
+{\em filename} & Path to the output CSV file. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{mnist__importer_8py_source_l00035}{35}} of file \mbox{\hyperlink{mnist__importer_8py_source}{mnist\+\_\+importer.\+py}}.
+
+\Hypertarget{mnist__importer_8py_aad7d646d211cb87a74f44d83409f94cd}\index{mnist\_importer.py@{mnist\_importer.py}!write\_set\_to\_csv@{write\_set\_to\_csv}}
+\index{write\_set\_to\_csv@{write\_set\_to\_csv}!mnist\_importer.py@{mnist\_importer.py}}
+\doxysubsubsection{\texorpdfstring{write\_set\_to\_csv()}{write\_set\_to\_csv()}}
+{\footnotesize\ttfamily \label{mnist__importer_8py_aad7d646d211cb87a74f44d83409f94cd} 
+mnist\+\_\+importer.\+write\+\_\+set\+\_\+to\+\_\+csv (\begin{DoxyParamCaption}\item[{}]{X}{, }\item[{}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Writes a set of images to a CSV file. 
+
+Each image in X is flattened and written as a comma-\/separated row in the CSV file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & Array of images to be written to CSV. \\
+\hline
+{\em filename} & Path to the output CSV file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function uses tqdm for progress tracking during the writing process. 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{mnist__importer_8py_source_l00021}{21}} of file \mbox{\hyperlink{mnist__importer_8py_source}{mnist\+\_\+importer.\+py}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{mnist__importer_8py_a1046146b804b6acf4abe04c0c7687bf7}\index{mnist\_importer.py@{mnist\_importer.py}!tasks@{tasks}}
+\index{tasks@{tasks}!mnist\_importer.py@{mnist\_importer.py}}
+\doxysubsubsection{\texorpdfstring{tasks}{tasks}}
+{\footnotesize\ttfamily \label{mnist__importer_8py_a1046146b804b6acf4abe04c0c7687bf7} 
+list mnist\+\_\+importer.\+tasks}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ [}
+\DoxyCodeLine{00002\ \ \ \ \ \ \ \ \ \ \ \ \ executor.submit(write\_file\_task,\ train\_X,\ \textcolor{stringliteral}{"{}mnist\_train\_X.csv"{}}),}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \ \ \ \ executor.submit(write\_file\_task,\ test\_X,\ \textcolor{stringliteral}{"{}mnist\_test\_X.csv"{}}),}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \ executor.submit(write\_file\_task,\ train\_y,\ \textcolor{stringliteral}{"{}mnist\_train\_y.csv"{}}),}
+\DoxyCodeLine{00005\ \ \ \ \ \ \ \ \ \ \ \ \ executor.submit(write\_file\_task,\ test\_y,\ \textcolor{stringliteral}{"{}mnist\_test\_y.csv"{}}),}
+\DoxyCodeLine{00006\ \ \ \ \ \ \ \ \ ]}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{mnist__importer_8py_source_l00042}{42}} of file \mbox{\hyperlink{mnist__importer_8py_source}{mnist\+\_\+importer.\+py}}.
+
+\Hypertarget{mnist__importer_8py_afab07f8e75da9360cc5ed9c6709be468}\index{mnist\_importer.py@{mnist\_importer.py}!test\_X@{test\_X}}
+\index{test\_X@{test\_X}!mnist\_importer.py@{mnist\_importer.py}}
+\doxysubsubsection{\texorpdfstring{test\_X}{test\_X}}
+{\footnotesize\ttfamily \label{mnist__importer_8py_afab07f8e75da9360cc5ed9c6709be468} 
+mnist\+\_\+importer.\+test\+\_\+X}
+
+
+
+Definition at line \mbox{\hyperlink{mnist__importer_8py_source_l00029}{29}} of file \mbox{\hyperlink{mnist__importer_8py_source}{mnist\+\_\+importer.\+py}}.
+
+\Hypertarget{mnist__importer_8py_a44764341d292da74554e4b0ef70885e0}\index{mnist\_importer.py@{mnist\_importer.py}!test\_y@{test\_y}}
+\index{test\_y@{test\_y}!mnist\_importer.py@{mnist\_importer.py}}
+\doxysubsubsection{\texorpdfstring{test\_y}{test\_y}}
+{\footnotesize\ttfamily \label{mnist__importer_8py_a44764341d292da74554e4b0ef70885e0} 
+mnist\+\_\+importer.\+test\+\_\+y}
+
+
+
+Definition at line \mbox{\hyperlink{mnist__importer_8py_source_l00029}{29}} of file \mbox{\hyperlink{mnist__importer_8py_source}{mnist\+\_\+importer.\+py}}.
+

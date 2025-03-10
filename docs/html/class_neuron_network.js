@@ -6,6 +6,7 @@ var class_neuron_network =
     [ "backPropagation", "class_neuron_network.html#a261796a9a1b140cf1efeb80ab4f21a11", null ],
     [ "feedForward", "class_neuron_network.html#a24903c532713fe34bdc4f7c49f327730", null ],
     [ "getLayers", "class_neuron_network.html#a11cbabd86e73a9101a089313af3ad2ae", null ],
+    [ "Loss", "class_neuron_network.html#aa65b1606c5c464ec814f87bd8b3ce48b", null ],
     [ "predict", "class_neuron_network.html#accc3fa6f6f0355f7cce77daa423209ad", null ],
     [ "setTarget", "class_neuron_network.html#afcd87fd05d40dbbe564b27899568529a", null ],
     [ "trainInputs2D", "class_neuron_network.html#ac256ee88197f4827c3b873385e016ffe", null ],

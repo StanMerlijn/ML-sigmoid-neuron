@@ -12,6 +12,7 @@ In this repository, we will implement and test a Neuron using the sigmoid functi
 ## Documentation
 For this assignment, the documentation was generated with Doxygen. The LaTeX documentation is available [here](docs/latex/refman.pdf) and, to view the HTML documentation locally, open [index.html](docs/html/index.html) in a browser.
 
+Docs for [backprogation](./README_Backpropagation.md)
 
 ## Installing
 Enter the test dir then

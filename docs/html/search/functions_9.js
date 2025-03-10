@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['readcsv_0',['readCsv',['../csv__reader_8hpp.html#a4f5cdb35bba3dc60a92e0db16efffbd2',1,'csv_reader.hpp']]],
-  ['realdcsvflat_1',['realdCsvFlat',['../csv__reader_8hpp.html#a423dd294d74ad8f86a3534d5a1a970b8',1,'csv_reader.hpp']]]
+  ['predict_0',['predict',['../class_neuron.html#aa54c72420044013f7834c700fa6b8050',1,'Neuron::predict()'],['../class_neuron_network.html#accc3fa6f6f0355f7cce77daa423209ad',1,'NeuronNetwork::predict()']]],
+  ['printvector_1',['printVector',['../common_8hpp.html#ae976f686650de7a8df93bc16d4929d1c',1,'common.hpp']]]
 ];
